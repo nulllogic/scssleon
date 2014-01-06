@@ -1,4 +1,4 @@
-![Head JS](http://headjs.com/media/img/headjs.gif)
+![Head JS](http://nulllogic.github.io/16girls/_tmp/16girls_underlogo.gif)
 
 This project was never announced. `git push` and it was all viral.
 
