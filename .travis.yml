@@ -1,0 +1,12 @@
+# define language used
+language: node_js
+
+# configure node version
+node_js:
+  - "0.11"
+
+# http://about.travis-ci.org/docs/user/build-configuration/#Build-Lifecycle
+# install dependencies
+before_script:
+  - npm install -g grunt-cli
+  - npm install grunt grunt-contrib-qunit
