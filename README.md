@@ -1,6 +1,6 @@
 [![16Girls](https://raw.github.com/nulllogic/16girls/gh-pages/_tmp/16girls_underlogo.gif)](http://nulllogic.github.io/16girls/) 
 
-#+ Welcome [![Build Status](https://travis-ci.org/nulllogic/16girls)](https://travis-ci.org/[nulllogic]/[16girls])
+#+ Welcome [![Build Status](https://travis-ci.org/nulllogic/16girls)](https://api.travis-ci.org/nulllogic/16girls.png)
 
 > Welcome to 16Girls CSS framework, that will give you most of development needs, that can hustle development of websites. It was build in love and with love of many technologies from the internet. 
 
