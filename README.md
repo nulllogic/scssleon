@@ -4,7 +4,7 @@
 
 > Welcome to 16Girls CSS framework, that will give you most of development needs, that can hustle development of websites. It was build in love and with love of many technologies from the internet. 
 
-> [ [Demo](http://nulllogic.github.io/16girls/) ] — [ [Documentation](http://nulllogic.github.io/16girls/docs) ] — [ [Bugs/Issues](https://github.com/nulllogic/16girls/issues) ] — [ [Support](httpshttps://nulllogic.desk.com/customer/portal/articles/1408617-16girls-framework) ] — [ [StackOverflow](http://stackoverflow.com/questions/tagged/16girls) ]
+> [ [Demo](http://nulllogic.github.io/16girls/) ] — [ [Documentation](http://nulllogic.github.io/16girls/docs) ] — [ [Bugs/Issues](https://github.com/nulllogic/16girls/issues) ] — [ [Support](https://nulllogic.desk.com/customer/portal/articles/1408617-16girls-framework) ] — [ [StackOverflow](http://stackoverflow.com/questions/tagged/16girls) ]
 
 
 #✝ Getting started
