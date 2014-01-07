@@ -17,11 +17,11 @@
 
 ### └  Contributing
 
-For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
+> For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
 
 
 
 #✝ License
-[the MIT license](LICENSE).
+> [the MIT license](LICENSE).
 
 [![IMAGE ALT TEXT HERE](http://www.nulllogic.net/_tmp/logo.gif)](http://www.nulllogic.net)
