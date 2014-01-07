@@ -5,4 +5,8 @@ module.exports = function(grunt) {
 		grunt.log.write('Logging some stuff...').ok();
 	});
 
+	// this would be run by typing "grunt test" on the command line
+	grunt.registerTask('test', 'Log some stuff.', function() {
+		grunt.log.write('Logging some stuff...').ok();
+	});
 };

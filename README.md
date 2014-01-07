@@ -12,8 +12,8 @@
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://vimeo.com/83573522)
 
 #✝ License
-Copyright 2014, NullLogic under [the MIT license](LICENSE).
+[the MIT license](LICENSE).
 
-<p align="center">
-  <a href="http://www.nulllogic.net" title="NullLogic syndicate"><img src="http://www.nulllogic.net/_tmp/logo.gif" alt="NullLogic" /></a>
-</p>
+* * *
+
+[![IMAGE ALT TEXT HERE](http://www.nulllogic.net/_tmp/logo.gif)](http://www.nulllogic.net)
