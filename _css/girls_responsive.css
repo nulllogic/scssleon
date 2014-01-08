@@ -1,0 +1,42 @@
+@media all and (max-width: 1200px) {
+
+}
+@media all and (max-width: 1024px) {
+
+}
+
+@media all and (max-width: 768px) {
+
+}
+@media all and (max-width: 600px) {
+
+}
+@media all and (max-width: 480px) {
+	.b-intro .welcome .title {
+		font-size: 5.5em;
+	}
+
+	.b-intro .welcome .subtitle {
+		font-size: 3em;
+	}
+}
+
+/* SMALL SMARTPHONES */
+
+@media all and (max-width: 320px) {
+	.b-intro {
+		height: 450px;
+	}
+
+	.b-intro:after {
+		background: url('../../_tmp/_del/_welcome_bg.png') no-repeat -306px -30px;
+	}
+
+	.b-intro .welcome .title {
+		font-size: 4em;
+	}
+
+	.b-intro .welcome .subtitle {
+		font-size: 2em;
+	}
+}
