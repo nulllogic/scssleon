@@ -14,9 +14,6 @@
 
 
 
-
-
-
 /*      _  _ ____ ____ _  _ ____ _    _ ___  ____   */
 /*      |\ | |  | |__/ |\/| |__| |    |   /  |___   */
 /*      | \| |__| |  \ |  | |  | |___ |  /__ |___   */
@@ -25,6 +22,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+
 	*behavior: url(./boxsizing.htc);
 }
 
@@ -36,14 +34,19 @@ html {
 
 body {
 	background: white;
-	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 1;
 	color: #222222;
 	position: relative;
+
 	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+
+	text-rendering: optimizeLegibility;
+
 	margin: 0;
 	padding:0;
 }
@@ -107,7 +110,6 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-style: normal;
 	color: #222222;
@@ -288,7 +290,10 @@ img, object, embed {
 	max-width: 100%;
 }
 
-#map_canvas img, .map_canvas img { max-width: none!important; }
+#map_canvas img,
+.map_canvas img {
+	max-width: none!important;
+}
 
 
 
@@ -423,20 +428,23 @@ img, object, embed {
 }
 
 .nav li{
-	position: relative;
+	list-style-type: none;
+
 	-webkit-transition: background 0.1s linear;
 	-moz-transition: background 0.1s linear;
 	-ms-transition: background 0.1s linear;
 	transition: background 0.1s linear;
-	list-style-type: none;
 }
 
 .nav ul.dropdown {
-	-webkit-transition: .2s ease-out .2s;
-	-moz-transition: .2s ease-out .2s;
-	-o-transition: .2s ease-out .2s;
-	transition: .2s ease-out .2s;
+	visibility: hidden;
+
+	-webkit-transition: visibility .2s ease-out .2s;
+	-moz-transition: visibility .2s ease-out .2s;
+	-o-transition: visibility .2s ease-out .2s;
+	transition: visibility .2s ease-out .2s;
 }
+
 
 .nav a {
 	border: 1px solid transparent;
@@ -464,7 +472,6 @@ img, object, embed {
 
 /*------------- HORIZONTAL MENU */
 
-
 .nav.nav-horizontal {
 	border-color:#e6e6e6;
 	background: #222222;
@@ -475,7 +482,6 @@ img, object, embed {
 }
 
 .nav.nav-horizontal ul{
-	display: block;
 	list-style-type: none;
 }
 
@@ -501,43 +507,23 @@ img, object, embed {
 	position: relative;
 }
 
-
 .nav.nav-horizontal ul > li.toggle-navbar {
 	display: none;
 }
 
 .nav.nav-horizontal ul > li.has-dropdown:hover > .dropdown,
 .nav.nav-horizontal ul > li.has-dropdown:focus > .dropdown {
-	display: block;
 	visibility: visible;
 }
 
 .nav.nav-horizontal ul > li a {
-	position: relative;
 	display: inline-block;
-}
-
-.nav.nav-horizontal ul > li.has-dropdown a:after {
-	content: "";
-	display: inline-block;
-	width: 0;
-	height: 0;
-	border: solid 5px;
-	border-color: white transparent transparent transparent;
-	position: absolute;
-	right: 5px;
-	top: 45%;
-}
-
-.nav.nav-horizontal > .row > ul > li.has-dropdown a {
-	margin:0 5px 0 -5px;
 }
 
 .nav.nav-horizontal ul > li.has-dropdown ul {
 	background: #222222;
 	left: -1px;
 	position: absolute;
-	visibility: hidden;
 	z-index: 5;
 	border: 1px solid rgba(0,0,0,0.15);
 }
@@ -605,13 +591,6 @@ img, object, embed {
 	padding-right: 30px;
 }
 
-.nav.nav-horizontal ul > li.has-dropdown ul li.has-dropdown > a:after {
-	border: none;
-	content: "\00bb";
-	right: 15px;
-	top: 6px;
-}
-
 .nav.nav-horizontal ul > li.has-dropdown ul li.has-dropdown ul {
 	position: absolute;
 	left: 100%;
@@ -639,6 +618,18 @@ img, object, embed {
 
 .nav.nav-horizontal ul.right > li.has-dropdown ul li:hover {
 
+}
+
+.nav.nav-horizontal ul li.has-dropdown .caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	margin-right: -6px;
+	vertical-align: middle;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
 }
 
 
@@ -678,16 +669,16 @@ img, object, embed {
 	background: inherit;
 }
 
-.nav.nav-vertical li.has-dropdown > a:after {
-	content: "";
+.nav.nav-vertical ul li.has-dropdown .caret {
 	display: inline-block;
 	width: 0;
 	height: 0;
-	border: solid 5px;
-	border-color: transparent transparent transparent white;
-	position: absolute;
-	right: 2px;
-	top: 35%;
+	margin-left: 2px;
+	margin-right: -6px;
+	vertical-align: middle;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
 }
 
 /* navbar */
@@ -1053,16 +1044,16 @@ blockquote cite a:visited {
 .badge {
 	display: inline-block;
 	min-width: 10px;
-	padding: 3px 7px;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 1;
+	padding: 2px 6px;
+	font-size: 11px;
+	font-weight: 700;
 	color: #fff;
-	text-align: center;
-	white-space: nowrap;
+	line-height: 1.1;
 	vertical-align: baseline;
+	white-space: nowrap;
+	text-align: center;
 	background-color: #999;
-	border-radius: 10px;
+	border-radius: 3px;
 }
 
 
@@ -1170,11 +1161,11 @@ p.lead {
 
 /* MISC classes ---------------------- */
 
-.left {
+.to-left {
 	float: left;
 }
 
-.right {
+.to-right {
 	float: right;
 }
 
@@ -1190,8 +1181,9 @@ p.lead {
 	text-align: center;
 }
 
-.hidden {
-	display: none; visibility: hidden;
+.is-hidden {
+	display: none;
+	visibility: hidden;
 }
 
 .hidden-override {
