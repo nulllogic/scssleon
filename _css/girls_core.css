@@ -528,6 +528,11 @@ img, object, embed {
 	border: 1px solid rgba(0,0,0,0.15);
 }
 
+.nav.nav-horizontal ul:last-child > li.has-dropdown ul {
+	left: auto;
+	right: 0;
+}
+
 .nav.nav-horizontal ul > li.has-dropdown ul li {
 	background: #222222;
 }
@@ -875,6 +880,14 @@ select.form-control {
 	color: #333;
 	background-color: #fff;
 	border-color: #ccc;
+
+	border-radius:2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.btn-default:hover {
+
 }
 
 /*           _    _ ____ ___         */
