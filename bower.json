@@ -1,0 +1,23 @@
+{
+	"name": "16Girls",
+	"version": "0.0.5",
+	"description": "An HTML5/CSS3 framework used at SAPO for fast and efficient website design and prototyping.",
+	"keywords": [
+		"HTML",
+		"CSS",
+		"JavaScript"
+	],
+	"main": [
+		"assets/*"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules"
+	],
+	"dependencies": {
+
+	},
+	"devDependencies": {
+
+	}
+}
