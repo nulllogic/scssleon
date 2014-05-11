@@ -336,10 +336,6 @@ img, object, embed {
 	margin: 0 auto;
 }
 
-[class*="column"] + [class*="column"]:last-child {
-	float: left;
-}
-
 [class*="column"] + [class*="column"].end {
 	float: left;
 }
@@ -939,21 +935,15 @@ ol li ul, ol li ol {
 	margin-bottom: 0;
 }
 
-ul.inline-list,
-ul.link-list {
-	margin: 0 0 17px 0;
-	padding: 0;
+.list-inline {
+	padding-left: 0;
+	margin-left: -5px;
 	list-style: none;
-	overflow: hidden;
 }
-ul.inline-list > li,
-ul.link-list > li {
-	list-style: none;
-	float: left;
-	display: block; }
-ul.inline-list > li > *,
-ul.link-list > li > * {
-	display: block;
+.list-inline > li {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
 }
 
 

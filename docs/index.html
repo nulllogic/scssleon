@@ -65,7 +65,7 @@
 		<ul class="to-left">
 			<li class="divider"></li>
 			<li class="has-dropdown">
-				<a class="active" href="#">Grid</a>
+				<a class="active" href="#">Grid <span class="caret"></span></a>
 				<ul class="dropdown">
 					<li class="menu-heading">
 						<a>Section Name</a>
@@ -106,7 +106,7 @@
 		<ul class="to-right">
 			<li class="divider show-for-medium-and-up"></li>
 			<li class="has-dropdown">
-				<a href="#">Item 2</a>
+				<a href="#">Item 2 <span class="caret"></span></a>
 				<ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Item 2</a></h5></li>
 					<li><label>Section Name</label></li>
 					<li><a href="#" class="">Level 1</a></li>
@@ -307,17 +307,14 @@
 					<div class="three column centered">
 						3/16
 					</div>
-				</div>
-				<div class="row centering">
 					<div class="six column centered">
 						6/16
 					</div>
-				</div>
-				<div class="row centering">
 					<div class="nine column centered">
 						9/16
 					</div>
 				</div>
+
 				<hr />
 				<h3>Mobile Grid</h3>
 				<p>Bla bla bla bla</p>
@@ -1597,7 +1594,7 @@
 			Code licensed under Apache License v2.0, documentation under CC BY 3.0. <br />
 			Glyphicons Free licensed under CC BY 3.0. <br />
 		</p>
-		<ul class="copyright">
+		<ul class="copyright list-inline">
 			<li class="item">
 				Examples
 			</li>
@@ -1632,7 +1629,7 @@
 	function init(e) {
 		var element = document.createElement("script");
 
-		element.src = "./_js/vendor/girls_loader.js";
+		element.src = "../assets/_js/girls_loader.js";
 		element.async = true;
 		element.defer = true;
 		document.body.appendChild(element);
