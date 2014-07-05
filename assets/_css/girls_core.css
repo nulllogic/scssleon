@@ -597,7 +597,7 @@ img, object, embed {
 	display: inline-block;
 	width: 0;
 	height: 0;
-	margin-left: 2px;
+	margin-left: 5px;
 	margin-right: -6px;
 	vertical-align: middle;
 	border-top: 4px solid;
