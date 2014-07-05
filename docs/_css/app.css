@@ -1,7 +1,52 @@
 /* Your app CSS here */
 
+
+@-webkit-keyframes grid {
+	0% {
+		width: 100%;
+	}
+	40% {
+		width: 70%;
+	}
+	60% {
+		width: 70%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@-moz-keyframes grid {
+	0% {
+		width: 100%;
+	}
+	40% {
+		width: 70%;
+	}
+	60% {
+		width: 70%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@keyframes grid {
+	0% {
+		width: 100%;
+	}
+	40% {
+		width: 70%;
+	}
+	60% {
+		width: 70%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+
 body {
-	background: url('../tmp/_del/bg_pattern_wrapper.png') repeat 0 0;
+	background: url('../_tmp/bg_pattern.jpg') repeat 0 0;
 }
 
 body .bg {
@@ -237,14 +282,25 @@ body.innerBackground {
 	color: white;
 	font-weight: bold;
 
-	border: 1px dashed #cccccc;
+	border-right:1px dashed #ccc;
 }
 
-.b-section-grid .sub-section .basics {
-	margin: 0 0 10px 0;
+.b-section-grid .sub-section .column:last-child {
+	border:none;
+}
+
+.b-section-grid .sub-section .basics,
+.b-section-grid .sub-section .mobile {
+	margin: 0 auto 10px auto;
 }
 
 .b-section-grid .sub-section .nesting {
+
+	-webkit-animation: grid 15s ease infinite;
+	-moz-animation: grid 15s ease infinite;
+
+	margin: 0 auto;
+	text-align:center;
 
 }
 
@@ -252,6 +308,7 @@ body.innerBackground {
 	margin: 0 25px;
 	position: relative;
 	z-index: 4;
+
 }
 
 .b-section-grid .sub-section .nesting .row:before {
