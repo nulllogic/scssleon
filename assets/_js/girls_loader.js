@@ -3,173 +3,103 @@
  * @namespace 16Girls
  * @author Vladimir Lukyanov <vladimir@liikyanov.ru>
  * @website www.nulllogic.net
- * @version 0.0.1
+ * @version 0.1.0
  */
 
 
-;(function(env) { 'use strict';
+;
+(function () {
+	'use strict';
 
-	env['config'] = function (config) {
+	if (typeof toLoad === 'undefined') {
+		throw new Error('toLoad variable is not defined. See documentation at https://github.com/nulllogic/16Girls');
+	}
 
-		var body = document.body,
-			timer;
 
-		window.addEventListener('scroll', function() {
-			clearTimeout(timer);
-			if(!body.classList.contains('disable-hover')) {
-				body.classList.add('disable-hover')
-			}
+	var _scriptsLoaded = 0;
+	var _scriptsTotal = 0;
+	var doc = document;
 
-			timer = setTimeout(function(){
-				body.classList.remove('disable-hover')
-			},500);
-		}, false);
-
-		/**
-		 * Number of scripts loaded
-		 *
-		 * @private
-		 * @property {Int} scriptsLoaded
-		 */
-		var scriptsLoaded = 0;
-
-		/**
-		 * Number of scripts to be loaded
-		 *
-		 * @private
-		 * @property {Int} scriptsTotal
-		 */
-		var scriptsTotal = 0;
-
-		/**
-		 * Create an element and add it to the link.appendTo parameter
-		 *
-		 * @private
-		 * @param {object} link element configuration
-		 * @return {boolean}
-		 */
-		function createElement(link) {
-
-			var el = document.createElement(link.element);
-			for (var i in link) {
-				if (i !== 'element' && i !== 'appendTo') {
-					el[i] = link[i];
-				}
-			}
-			var root = document.getElementsByTagName(link.appendTo)[0];
-			return (typeof root.appendChild(el) == 'object');
+	// a simple event handler wrapper
+	function on(el, ev, callback) {
+		if (el.addEventListener) {
+			el.addEventListener(ev, callback, false);
+		} else if (el.attachEvent) {
+			el.attachEvent("on" + ev, callback);
 		}
+	}
 
+	for (var k in toLoad) {
 
-		/**
-		 * Load CSS files
-		 *
-		 * @private
-		 * @method create a <link> element and load
-		 * @return {boolean}
-		 */
-
-		function loadCSS(url) {
-			var el = createElement({
-				element: 'link',
-				rel: 'stylesheet',
-				type: 'text/css',
-				href: url,
-				appendTo: 'head'
-			});
-
-			return (el);
-		}
-
-		/**
-		 * Check for events readyState of browser
-		 *
-		 * @private
-		 * @method check and process to callback function // Chrome,FF
-		 * @return {boolean}
-		 */
-
-		function scriptReadyStateChanged() {
-
-			scriptsLoaded += 1;
-			return (scriptsLoaded === scriptsTotal );
-		}
-
-		/**
-		 * Check for events readyState of browser
-		 *
-		 * @private
-		 * @method check and process to callback function // IE
-		 * @return {boolean}
-		 */
-
-		function scriptOnLoad(script) {
-			if (document.readyState == 'loaded' || document.readyState == 'complete') {
-				scriptReadyStateChanged();
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-		/**
-		 * Load JS files
-		 *
-		 * @private
-		 * @method create a <script> element and load
-		 * @return {boolean}
-		 */
-
-		function loadJS(url) {
-			scriptsTotal += 1;
-
-			var el = createElement({
-				element: 'script',
-				type: 'text/javascript',
-				onload: scriptOnLoad(),
-				onreadystatechange: scriptReadyStateChanged(),
-				src: url,
-				appendTo: 'head',
-				async : true,
-				defer : true
-			});
-			return (el);
-		}
-
-		/**
-		 * Process array of element in config object
-		 *
-		 * @private
-		 * @method switch option from params in config object
-		 * @return {boolean}
-		 */
-
-		function processQuery(url, type) {
-			switch (type) {
-				case 'css' :
-					loadCSS(url);
-					break;
+		if (toLoad.hasOwnProperty(k)) {
+			switch (k) {
 				case 'js' :
-					loadJS(url);
-					break;
-				default:
-					break;
-			}
-			return true;
-		}
 
-		if (config instanceof Object === true) {
-			for(var prop in config) {
-				if(config.hasOwnProperty(prop)) {
-					for (var i in config[prop]) {
-						processQuery(config[prop][i], prop);
+					for (var js in toLoad[k]) {
+						if (toLoad[k].hasOwnProperty(js)) {
+
+							injectScript(toLoad[k][js])
+
+						}
 					}
-				}
+
+					break;
+				case 'css' :
+
+					for (var css in toLoad[k]) {
+						if (toLoad[k].hasOwnProperty(css)) {
+							on(window, "load", injectStyleSheet(toLoad[k][css]));
+						}
+					}
+					break;
+
+				case 'callback' :
+					break;
+
+				default :
+					throw new Error('You are declaring variable out of the scope of possible variations. See documentation at https://github.com/nulllogic/16Girls');
+					break;
 			}
 		}
-	};
+
+	}
+
+	function injectStyleSheet(cssObj) {
+
+		var stylesheet = doc.createElement('link');
+		stylesheet.href = cssObj[0];
+		stylesheet.rel = 'stylesheet';
+		stylesheet.type = 'text/css';
+
+		doc.getElementsByTagName('head')[0].appendChild(stylesheet);
+
+	}
 
 
-})(this);
+	function injectScript(jsObj) {
 
+		var callback = jsObj[1];
+
+
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		if (script.readyState) {  //IE
+			script.onreadystatechange = function () {
+				if (script.readyState == "loaded" ||
+					script.readyState == "complete") {
+					script.onreadystatechange = null;
+					callback();
+				}
+			};
+		} else {  //Others
+			script.onload = function () {
+				callback();
+			};
+		}
+		script.src = jsObj[0];
+		document.getElementsByTagName("head")[0].appendChild(script);
+
+	}
+
+})();
 
