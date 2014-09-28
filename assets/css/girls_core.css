@@ -421,7 +421,7 @@ img, object, embed {
 }
 
 .nav ul.dropdown {
-	visibility: hidden;
+	opacity: 0;
 }
 
 .nav a {

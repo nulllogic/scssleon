@@ -18,7 +18,7 @@
 	<!-- STYLESHEET
 	================================================== -->
 
-	<link type="text/css" rel="stylesheet" href="../assets/_css/girls_core.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/girls_core.css" />
 
 	<!-- ICONS
 	================================================== -->
@@ -1629,53 +1629,32 @@
 <!-- Used Google js recommendation to increase page loading speed -->
 
 <script type="text/javascript">
+    var toLoad = {
+        'js': {
+            'xyi': ['js/modernizr.js', function () {
+                return window.Modernizr;
+            }, 'defer', 'cache'],
 
-	// Load script after DOM load - girls_loader.js resource loader
-	function init(e) {
-		var element = document.createElement("script");
+            'modernizr': ['js/modernizr.js', function () {
+                return window.Modernizr;
+            }, 'async', 'cache']
+        },
+        'css': {
+            'girls_core.css': ['./assets/css/girls_core.css', function () {
+                return window.Modernizr;
+            }, 'cache'],
+            'app.css': ['./assets/css/app.css', function () {
+                return window.Modernizr;
+            }, 'cache']
+        },
+        'callback': function () {
 
-		element.src = "../assets/_js/girls_loader.js";
-		element.async = true;
-		element.defer = true;
-		document.body.appendChild(element);
-
-		return function() {
-
-			config({
-
-				// CSS files to include
-				'css' : [
-					'./_css/app.css',
-					'./_css/girls_responsive.css'
-				],
-
-				// JS files to include
-				'js' : [
-					'./_js/girls_core.js'
-				],
-
-				// Caching
-				'cache' : true,
-
-				// Callback function after loading is done
-				'callback' : function () {
-
-				}
-			});
-
-		}
-	}
-
-	// Attach load function after DOM loaded event fired
-	if (window.addEventListener) {
-		window.addEventListener("load", init('xyi'), false);
-	} else if (window.attachEvent) {
-		window.attachEvent("onload", init('xyi'));
-	} else {
-		window.onload = init('xyi');
-	}
-
+        }
+    }
 </script>
+
+<script defer async type="text/javascript" src="./assets/js/girls_loader.js"></script>
+
 
 </body>
 </html>
