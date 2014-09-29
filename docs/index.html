@@ -1640,10 +1640,10 @@
             }, 'async', 'cache']
         },
         'css': {
-            'girls_core.css': ['./assets/css/girls_core.css', function () {
+            'girls_core.css': ['../assets/css/girls_core.css', function () {
                 return window.Modernizr;
             }, 'cache'],
-            'app.css': ['./assets/css/app.css', function () {
+            'app.css': ['./_css/app.css', function () {
                 return window.Modernizr;
             }, 'cache']
         },
@@ -1653,7 +1653,7 @@
     }
 </script>
 
-<script defer async type="text/javascript" src="./assets/js/girls_loader.js"></script>
+<script defer async type="text/javascript" src="../assets/js/girls_loader.js"></script>
 
 
 </body>

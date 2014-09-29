@@ -421,7 +421,7 @@ img, object, embed {
 }
 
 .nav ul.dropdown {
-	opacity: 0;
+	visibility: hidden;
 }
 
 .nav a {
@@ -566,7 +566,7 @@ img, object, embed {
 .nav.nav-horizontal ul > li.has-dropdown ul li.has-dropdown ul {
 	position: absolute;
 	left: 100%;
-	top: 0;
+	top: -1px;
 }
 
 .nav.nav-horizontal ul > li.has-dropdown ul li.has-dropdown:hover > ul,
