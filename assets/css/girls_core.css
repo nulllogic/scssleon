@@ -551,8 +551,18 @@ img, object, embed {
 	background: inherit;
 }
 
+.nav.nav-horizontal ul > li.has-dropdown ul li:last-child {
+	padding-bottom: 2px;
+}
+
+.nav.nav-horizontal ul > li.has-dropdown ul li:first-child {
+	padding-bottom: 0;
+}
+
+/*@TODO rework active*/
+
 .nav.nav-horizontal ul > li.has-dropdown ul li.active a {
-	background: black;
+	/*background: black;*/
 }
 
 .nav.nav-horizontal ul > li.has-dropdown ul li.has-dropdown > a {
