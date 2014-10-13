@@ -252,6 +252,12 @@ body.innerBackground {
 
 }
 
+.b-section-grid .img.grid {
+	background:url('../_tmp/+grid.png') no-repeat 0 0 ;
+	width:400px;
+	height:200px;
+}
+
 .b-section-grid .sub-section {
 
 	background: rgb(239, 239, 239); /* Old browsers */

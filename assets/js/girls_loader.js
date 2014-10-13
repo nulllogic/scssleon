@@ -78,23 +78,42 @@
 
 	function injectScript(jsObj) {
 
-		var callback = jsObj[1];
-
+		var callback;
 
 		var script = document.createElement("script");
 		script.type = "text/javascript";
-		if (script.readyState) {  //IE
-			script.onreadystatechange = function () {
-				if (script.readyState == "loaded" ||
-					script.readyState == "complete") {
-					script.onreadystatechange = null;
-					callback();
-				}
-			};
-		} else {  //Others
+
+		console.log(typeof jsObj[1] !== 'undefined' && typeof jsObj[1] === "function" || typeof jsObj[1] === "object");
+		if(typeof jsObj[1] !== 'undefined' && typeof jsObj[1] === "function" || typeof jsObj[1] === "object") {
+			callback = jsObj[1];
+		} else {
+			callback = function() {};
+		}
+
+		if (typeof jsObj[2] !== 'undefined' && jsObj[2] !== 'cache') {
+
+			if (script.readyState) {  //IE
+				script.onreadystatechange = function () {
+					if (script.readyState == "loaded" ||
+						script.readyState == "complete") {
+						script.onreadystatechange = null;
+						callback.call();
+					}
+				};
+			} else {  //Others
+				console.log(jsObj[0]);
+				script.onload = function () {
+					callback.call();
+				};
+			}
+
+		} else {
+			console.log('good');
+
 			script.onload = function () {
-				callback();
+				callback.call();
 			};
+
 		}
 		script.src = jsObj[0];
 		document.getElementsByTagName("head")[0].appendChild(script);
