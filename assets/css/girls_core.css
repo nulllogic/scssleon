@@ -219,10 +219,57 @@ html input[disabled] {
 	cursor: default;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
+input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime],
+input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search],
+input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+	border: 1px solid #ddd;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+	background-color: #fff;
+	color: #333;
+	outline: 0;
+	-webkit-transition: .05s border-color ease-in-out;
+	transition: .05s border-color ease-in-out;
+}
+
+input[type=checkbox], input[type=radio] {
+	border: 1px solid #bbb;
+	background: #fff;
+	color: #555;
+	clear: none;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 0;
+	height: 16px;
+	margin: -4px 4px 0 0;
+	outline: 0;
+	padding: 0 !important;
+	text-align: center;
+	vertical-align: middle;
+	width: 16px;
+	min-width: 16px;
+	-webkit-appearance: none;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	-webkit-transition: .05s border-color ease-in-out;
+	transition: .05s border-color ease-in-out;
+}
+
+input[type=checkbox]:checked:before {
+	content: '\2714';
+	margin: 1px 0 0 -1px;
+	color: #1e8cbe;
+}
+
+input[type=checkbox]:checked:before, input[type=radio]:checked:before {
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	font: 400 13px/1 sans-serif;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 input[type="search"] {
@@ -721,7 +768,6 @@ input[type="file"] {
 select[multiple].form-control, select[size].form-control {
 	height: auto;
 	background-image: none;
-	min-width: 75px;
 }
 
 select.form-control {
@@ -732,6 +778,7 @@ select.form-control {
 	background-position-y: center;
 
 	border-radius: 0;
+	padding-right: 35px;
 
 }
 
