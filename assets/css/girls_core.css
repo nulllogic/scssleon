@@ -271,7 +271,7 @@ input[type=checkbox]:checked:before, input[type=radio]:checked:before {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-a
+
 input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus,
 input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus,
 input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus,
@@ -754,6 +754,7 @@ img, object, embed {
 	-moz-transition: none;
 	-o-transition: none;
 	transition: none;
+	width:auto;
 }
 
 .nav .navbar-text {
