@@ -757,6 +757,11 @@ img, object, embed {
 	width:auto;
 }
 
+.nav .nav-form label {
+	color:#ffffff;
+	padding-right: 5px;
+}
+
 .nav .navbar-text {
 	color: white;
 	padding: 10px;
@@ -896,7 +901,7 @@ select.form-control {
 
 .btn {
 	display: inline-block;
-	padding: 6px 12px;
+	padding: 4px 12px;
 	margin-bottom: 0;
 	font-size: 14px;
 	font-weight: normal;
@@ -919,14 +924,35 @@ select.form-control {
 }
 
 .btn-default {
-	color: #333;
-	background-color: #fff;
-	border-color: #ccc;
 
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
+
+	color: #333333;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: #f5f5f5;
+	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+
+	border: 1px solid #cccccc;
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border-bottom-color: #b3b3b3;
+
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+
 
 .btn-default:hover {
 
