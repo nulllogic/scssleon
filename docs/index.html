@@ -1744,7 +1744,10 @@
 		'js': {
 			'xyi': {
 				url: '../assets/js/girls_core.js',
-				cache: true
+				cache: true,
+				callback: function() {
+					console.log('123');
+				}
 			},
 
 			'modernizr': ['../assets/js/girls_core.js', function () {

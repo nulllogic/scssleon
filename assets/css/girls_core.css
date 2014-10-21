@@ -970,6 +970,15 @@ select.form-control {
 	background-position: 0 -15px;
 }
 
+.btn-large {
+	padding: 11px 19px;
+	font-size: 18px;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
 
 /*------------- BUTTONS JUSTIFIED */
 .btn-group-justified {
