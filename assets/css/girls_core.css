@@ -76,7 +76,6 @@ th, td, iframe, object, canvas, audio, video {
 	padding: 0;
 	border: 0;
 	font: inherit;
-	vertical-align: baseline;
 	direction: ltr;
 	line-height: normal;
 	text-transform: none;
@@ -230,6 +229,8 @@ input[type=tel], input[type=text], input[type=time], input[type=url], input[type
 	outline: 0;
 	-webkit-transition: .05s border-color ease-in-out;
 	transition: .05s border-color ease-in-out;
+
+	cursor: pointer;
 }
 
 input[type=checkbox], input[type=radio] {
@@ -237,7 +238,6 @@ input[type=checkbox], input[type=radio] {
 	background: #fff;
 	color: #555;
 	clear: none;
-	cursor: pointer;
 	display: inline-block;
 	line-height: 0;
 	height: 16px;
