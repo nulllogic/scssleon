@@ -346,6 +346,58 @@ img, object, embed {
 	max-width: none !important;
 }
 
+/*           ____  ____  _  _  ___  ____   */
+/*           |__   |  |  |\ |   |   [__    */
+/*           |     |__|  | \|   |   ___]   */
+
+@font-face {
+	font-family: 'icons';
+	src: url('./fonts/icons.eot?20415067');
+	src: url('./fonts/icons.eot?20415067#iefix') format('embedded-opentype'),
+	url('./fonts/icons.woff?20415067') format('woff'),
+	url('./fonts/icons.ttf?20415067') format('truetype'),
+	url('./fonts/icons.svg?20415067#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: "icons",sans-serif;
+
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+
+	font-variant: normal;
+	text-transform: none;
+
+	line-height: 1em;
+	margin-left: .2em;
+	text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+}
+
+.icon-cancel:before {
+	content: '\e800';
+}
+
+.icon-ok:before {
+	content: '\e801';
+}
+
+.icon-cog:before {
+	content: '\e802';
+}
+
+.icon-basket:before {
+	content: '\e803';
+}
+
 /*             ____ ____ _ ___             */
 /*             | __ |__/ | |  \            */
 /*             |__] |  \ | |__/            */
@@ -475,6 +527,8 @@ img, object, embed {
 	-moz-transition: background 0.1s linear;
 	-ms-transition: background 0.1s linear;
 	transition: background 0.1s linear;
+
+	position: relative;
 }
 
 .nav ul.dropdown {
@@ -754,11 +808,11 @@ img, object, embed {
 	-moz-transition: none;
 	-o-transition: none;
 	transition: none;
-	width:auto;
+	width: auto;
 }
 
 .nav .nav-form label {
-	color:#ffffff;
+	color: #ffffff;
 	padding-right: 5px;
 }
 
@@ -947,7 +1001,6 @@ select.form-control {
 
 }
 
-
 .btn:hover,
 .btn:focus,
 .btn:active,
@@ -978,7 +1031,6 @@ select.form-control {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
-
 
 /*------------- BUTTONS JUSTIFIED */
 .btn-group-justified {

@@ -98,6 +98,8 @@ body.innerBackground {
 	left: 0;
 	z-index: 5;
 	width: 100%;
+
+	text-align:center;
 }
 
 .b-intro .welcome .title {
@@ -138,7 +140,7 @@ body.innerBackground {
 	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#33000000', EndColorStr='#33000000'); /* For IE6,IE7 */
 
 	zoom: 1;
-	margin: 0 auto;
+	margin: 0 auto 10px auto;
 	display: inline-block;
 	font-weight: normal;
 	color: #ffffff;
@@ -149,6 +151,7 @@ body.innerBackground {
 	box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
 
 	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(40%, #000000), color-stop(100%, rgba(0, 0, 0, 0.6)));
+
 }
 
 .b-social {
