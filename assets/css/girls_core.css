@@ -211,6 +211,8 @@ input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer;
+
+	background-color: transparent;
 }
 
 button[disabled],
@@ -256,7 +258,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 input[type=checkbox]:checked:before {
-	content: '\e802';
+	content: '\e801';
 	margin: 1px 0 0 -1px;
 	color: #1e8cbe;
 }
@@ -266,7 +268,7 @@ input[type=checkbox]:checked:before, input[type=radio]:checked:before {
 	display: inline-block;
 	vertical-align: middle;
 	width: 16px;
-	font: 400 13px/1 sans-serif;
+	font: 400 13px/1 "icons", sans-serif;
 	speak: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -280,6 +282,17 @@ input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
 	border-color: #5b9dd9;
 	-webkit-box-shadow: 0 0 2px rgba(30, 140, 190, .8);
 	box-shadow: 0 0 2px rgba(30, 140, 190, .8);
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+select {
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-appearance: none;
+	text-overflow: '';
 }
 
 input[type="search"] {
@@ -346,9 +359,9 @@ img, object, embed {
 	max-width: none !important;
 }
 
-/*           ____  ____  _  _  ___  ____   */
-/*           |__   |  |  |\ |   |   [__    */
-/*           |     |__|  | \|   |   ___]   */
+/*           ____  ____  _  _  ___  ____        */
+/*           |__   |  |  |\ |   |   [__         */
+/*           |     |__|  | \|   |   ___]        */
 
 @font-face {
 	font-family: 'icons';
@@ -818,6 +831,8 @@ img, object, embed {
 	display: inline-block;
 	margin-bottom: 0;
 	vertical-align: middle;
+
+	position: relative;
 }
 
 .nav .nav-form .form-control {
@@ -843,6 +858,17 @@ img, object, embed {
 .nav .navbar-text {
 	color: white;
 	padding: 10px;
+}
+
+.nav .nav-form .btn {
+	color:#ffffff;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .7);
+}
+
+.nav .nav-form .btn.in-input {
+	position:absolute;
+	top: 8px;
+	right: 4px;
 }
 
 /*           ____  ____  ___   _    _  ____   */
@@ -1201,6 +1227,44 @@ select.form-control {
 [data-toggle="buttons"] > .btn > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"] {
 	display: none;
+}
+
+
+/* etc buttons */
+
+.btn-close:before {
+	font: 400 16px/1 "icons", sans-serif;
+	content: '\e800';
+}
+
+.btn-close {
+	background:none;
+	cursor: pointer;
+
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+
+	padding:0 4px;
+
+	opacity: 0.7;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+.btn-close:hover {
+	background: none;
+
+
+	opacity: 1;
+	-moz-transform: scale(1.3);
+	-webkit-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+
+
 }
 
 /*           _    _ ____ ___         */
