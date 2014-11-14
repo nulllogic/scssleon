@@ -861,7 +861,7 @@ img, object, embed {
 	padding: 10px;
 }
 
-.nav .nav-form .btn {
+.nav .nav-form .btn-close {
 	color: #ffffff;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, .7);
 }
@@ -1000,6 +1000,52 @@ select.form-control {
 
 .form-horizontal .form-group:after {
 	clear: both;
+}
+
+.has-error input,
+.has-error textarea,
+.has-error select,
+.has-warning input,
+.has-warning textarea,
+.has-warning select,
+.has-success input,
+.has-success textarea,
+.has-success select {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAB4CAYAAADyv9IsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgJJREFUeNrs1r9OwkAYAPD7sCBigoTNSRMnkibsJsa+gfoESFwdMPExTGRw1ODibHiDJiTONDFxMpEXIJUB+VM874Ampdy1hy2K5rultFx/vbvvu/YDSimJsyVIzA3BFQQ178lb+SSXTWernV6nslt7tGU3BfVLeDttpbMmAJT4kZ/LsKB+4ikDFEWdXYz/H7qGfOjvvY5BKLVE6BzG+vH+/imDf+uJbuwNnaN0UquHYUJQhFJCP4DARhgmBT2RbLDF191rrO8zi+xBUAb8TGJ7UkN3pzyJE+hBKSUERUHpD5yCLPqBoCw1tm8fWkEpFbhTZKkRlqfBQZGkxhwaljZxvBwAP1IIIojgPyiW/K1dOzfZ4dBzqZ4v3xxHGaH/JduMOuXmstcw9hHaUUF7qSCLcLQpqwBRgmLFBVqq6xe6U6bNnGJK04+9cggdIdvP1BMk+PuvL6y+EEQQQQR/oz6UtXvzIqdlUlWnO6icGtd2pBFybC2TMgmQEj/y82+DLgZAipHX0I+xT5E16g4M/5Q1lXVRxWZGKFuXRTBhlPmNU9RwH6SKzYC8o3vzGN1MNsYPIERXxeY+9LIoqmLCymGCJl8BID/BaHvUHe6pYNJS5O7pcmddS7zw333ns3C2f9WKXNswdBxphtmLJD8WSwgiiCCCCCKIIIIIIojgqoFfAgwAyK5+ujHqbV0AAAAASUVORK5CYII=');
+}
+
+.has-error input,
+.has-error textarea,
+.has-error select {
+	background-color: rgba(237, 95, 132, 0.05);
+	background-position-y: 1px;
+	border-color: #f2948d;
+
+	background-position-x: 99.5%;
+	background-position-y:2px;
+	background-repeat: no-repeat;
+}
+
+.has-warning input,
+.has-warning textarea,
+.has-warning select {
+	background-color: rgba(237, 115, 107, 0.05);
+	border-color: #f3bc98;
+
+	background-position-x: 99.5%;
+	background-position-y:-27px;
+	background-repeat: no-repeat;
+}
+
+.has-success input,
+.has-success textarea,
+.has-success select {
+	background-color: rgba(190, 200, 118, 0.05);
+	border-color: #bbd79a;
+
+	background-position-x: 99.5%;
+	background-position-y: -57px;
+	background-repeat: no-repeat;
 }
 
 /* btns */
