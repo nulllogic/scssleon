@@ -636,17 +636,20 @@ img, object, embed {
 	z-index: 5;
 }
 
-.nav.nav-horizontal ul.to-right > li.has-dropdown:last-child ul,
-.nav.nav-horizontal ul.to-right > li.has-dropdown.last-child ul {
+.nav.nav-horizontal ul > li.has-dropdown.mega-dropdown > ul.dropdown {
 	left: auto;
 	right: 0;
 }
 
-.nav.nav-horizontal ul.to-right > li.has-dropdown:last-child > div,
-.nav.nav-horizontal ul.to-right > li.has-dropdown.last-child > div {
+.nav.nav-horizontal ul > li.has-dropdown.mega-dropdown > div.dropdown {
 	left: auto;
 	right: 0;
 	position: absolute;
+}
+
+.nav.nav-horizontal ul > li.has-dropdown.mega-dropdown .dropdown {
+	top: 99%; /* hover effect needed */
+	z-index: 5;
 }
 
 .nav.nav-horizontal ul > li.has-dropdown ul li {
@@ -834,6 +837,8 @@ img, object, embed {
 	vertical-align: middle;
 
 	position: relative;
+
+	width:100%;
 }
 
 .nav .nav-form .form-control {
@@ -1030,6 +1035,8 @@ select.form-control {
 .has-error select:focus {
 	background: none;
 	border: 1px solid #f2948d;
+
+	-moz-box-shadow: 0 0 2px rgba(242, 142, 148, .8);
 	-webkit-box-shadow: 0 0 2px rgba(242, 142, 148, .8);
 	box-shadow: 0 0 2px rgba(242, 142, 148, .8);
 }
@@ -1045,6 +1052,17 @@ select.form-control {
 	background-repeat: no-repeat;
 }
 
+.has-warning input:focus,
+.has-warning textarea:focus,
+.has-warning select:focus {
+	background: none;
+	border: 1px solid #f3bc98;
+
+	-moz-box-shadow: 0 0 2px rgba(243, 188, 152, .8);
+	-webkit-box-shadow: 0 0 2px rgba(243, 188, 152, .8);
+	box-shadow: 0 0 2px rgba(243, 188, 152, .8);
+}
+
 .has-success input,
 .has-success textarea,
 .has-success select {
@@ -1054,6 +1072,17 @@ select.form-control {
 	background-position-x: 99.5%;
 	background-position-y: -57px;
 	background-repeat: no-repeat;
+}
+
+.has-success input:focus,
+.has-success textarea:focus,
+.has-success select:focus {
+	background: none;
+	border: 1px solid #bbd79a;
+
+	-moz-box-shadow: 0 0 2px rgba(187, 215, 154, .8);
+	-webkit-box-shadow: 0 0 2px rgba(187, 215, 154, .8);
+	box-shadow: 0 0 2px rgba(187, 215, 154, .8);
 }
 
 /* btns */
