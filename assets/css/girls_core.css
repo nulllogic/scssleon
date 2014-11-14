@@ -919,7 +919,7 @@ select.form-control {
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
-	line-height: 1.428571429;
+	line-height: 1;
 	color: #555;
 	vertical-align: middle;
 	background-color: rgba(240, 240, 240, 0.5);
@@ -1018,12 +1018,20 @@ select.form-control {
 .has-error textarea,
 .has-error select {
 	background-color: rgba(237, 95, 132, 0.05);
-	background-position-y: 1px;
 	border-color: #f2948d;
 
 	background-position-x: 99.5%;
 	background-position-y:2px;
 	background-repeat: no-repeat;
+}
+
+.has-error input:focus,
+.has-error textarea:focus,
+.has-error select:focus {
+	background: none;
+	border: 1px solid #f2948d;
+	-webkit-box-shadow: 0 0 2px rgba(242, 142, 148, .8);
+	box-shadow: 0 0 2px rgba(242, 142, 148, .8);
 }
 
 .has-warning input,
