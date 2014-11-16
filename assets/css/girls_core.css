@@ -395,6 +395,7 @@ img, object, embed {
 	text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }
 
+
 .icon-cancel:before {
 	content: '\e800';
 }
@@ -403,13 +404,18 @@ img, object, embed {
 	content: '\e801';
 }
 
-.icon-cog:before {
+.icon-trash-empty:before {
 	content: '\e802';
 }
 
 .icon-basket:before {
 	content: '\e803';
 }
+
+.icon-search:before {
+	content: '\e804';
+}
+
 
 /*             ____ ____ _ ___             */
 /*             | __ |__/ | |  \            */
@@ -924,7 +930,7 @@ select.form-control {
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
-	line-height: 1;
+	line-height: 1.42857143;
 	color: #555;
 	vertical-align: middle;
 	background-color: rgba(240, 240, 240, 0.5);
@@ -945,6 +951,15 @@ select.form-control {
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 	background-color: #ffffff;
+}
+
+.form-error {
+	display: block;
+	width: 100%;
+
+	font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #e84e4e;
+	padding: 5px 0 0 0;
 }
 
 .radio, .checkbox {
@@ -1315,12 +1330,8 @@ select.form-control {
 
 /* etc buttons */
 
-.btn-close:before {
-	font: 400 16px/1 "icons", sans-serif;
-	content: '\e800';
-}
 
-.btn-close {
+.btn-icon {
 	background: none;
 	cursor: pointer;
 
@@ -1328,7 +1339,7 @@ select.form-control {
 	-moz-box-shadow: none;
 	box-shadow: none;
 
-	padding: 0 4px;
+	padding: 0 2px;
 
 	opacity: 0.7;
 	-webkit-transition: all .5s ease;
@@ -1336,7 +1347,7 @@ select.form-control {
 	transition: all .5s ease;
 }
 
-.btn-close:hover {
+.btn-icon:hover {
 	background: none;
 
 	opacity: 1;
