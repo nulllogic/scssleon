@@ -1000,6 +1000,10 @@ select.form-control {
 	display: inline-block;
 }
 
+.checkbox-inline {
+	padding-right:5px; /* additional space to right of checkbox text */
+}
+
 /* HORIZONTAL FORM */
 
 .form-horizontal .form-group:before,
