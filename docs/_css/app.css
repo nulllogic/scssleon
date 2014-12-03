@@ -1,50 +1,3 @@
-/* Your app CSS here */
-
-
-@-webkit-keyframes grid {
-	0% {
-		width: 100%;
-	}
-	40% {
-		width: 70%;
-	}
-	60% {
-		width: 70%;
-	}
-	100% {
-		width: 100%;
-	}
-}
-@-moz-keyframes grid {
-	0% {
-		width: 100%;
-	}
-	40% {
-		width: 70%;
-	}
-	60% {
-		width: 70%;
-	}
-	100% {
-		width: 100%;
-	}
-}
-@keyframes grid {
-	0% {
-		width: 100%;
-	}
-	40% {
-		width: 70%;
-	}
-	60% {
-		width: 70%;
-	}
-	100% {
-		width: 100%;
-	}
-}
-
-
 body {
 	background: url('../_tmp/bg_pattern.jpg') repeat 0 0;
 }
@@ -304,9 +257,6 @@ body.innerBackground {
 }
 
 .b-section-grid .sub-section .nesting {
-
-	-webkit-animation: grid 15s ease infinite;
-	-moz-animation: grid 15s ease infinite;
 
 	margin: 0 auto;
 	text-align:center;
