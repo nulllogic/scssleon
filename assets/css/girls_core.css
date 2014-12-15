@@ -902,10 +902,8 @@ select[multiple].form-control, select[size].form-control {
 select.form-control {
 	-webkit-appearance: none !important;
 	-moz-appearance: none !important;
-
+	
 	background: rgba(240, 240, 240, 0.5) url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xIEJhc2ljLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLWJhc2ljLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImJhc2ljIiBpZD0iTGF5ZXJfMSINCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjIwcHgiDQoJIHZpZXdCb3g9IjAgMCAzMCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8bGluZSBvcGFjaXR5PSIwLjI1IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjIuMjg0IiB5MT0iMCIgeDI9IjIuMjg0IiB5Mj0iMjAiLz4NCjxwb2x5Z29uIG9wYWNpdHk9IjAuMjUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIxNi43MTcsNC4xNzkgMTIuMDc3LDguODE5IA0KCTIxLjM5NSw4LjgxOSAiLz4NCjxwb2x5Z29uIG9wYWNpdHk9IjAuMjUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIxNi43NTUsMTYuNDA0IDIxLjM5NSwxMS43NjMgDQoJMTIuMDc3LDExLjc2MyAiLz4NCjwvc3ZnPg0K") no-repeat 100% 50%;
-	background-position-x: right;
-	background-position-y: center;
 
 	border-radius: 0;
 	padding-right: 35px;
@@ -1042,8 +1040,7 @@ select.form-control {
 	background-color: rgba(237, 95, 132, 0.05);
 	border-color: #f2948d;
 
-	background-position-x: 99.5%;
-	background-position-y: 2px;
+	background-position: 99.5% 2px;
 	background-repeat: no-repeat;
 }
 
@@ -1064,8 +1061,7 @@ select.form-control {
 	background-color: rgba(237, 115, 107, 0.05);
 	border-color: #f3bc98;
 
-	background-position-x: 99.5%;
-	background-position-y: -27px;
+	background-position: 99.5% -27px;
 	background-repeat: no-repeat;
 }
 
@@ -1086,8 +1082,7 @@ select.form-control {
 	background-color: rgba(190, 200, 118, 0.05);
 	border-color: #bbd79a;
 
-	background-position-x: 99.5%;
-	background-position-y: -57px;
+	background-position: 99.5% -57px;
 	background-repeat: no-repeat;
 }
 
