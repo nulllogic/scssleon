@@ -636,3 +636,9 @@ body.innerBackground {
 	min-height: 100%;
 	display: block;
 }
+
+.g-shortparagraph {
+	background: url('../_tmp/short_paragraph.png') no-repeat 0 center;
+	width:100%;
+	height: 100px;
+}
