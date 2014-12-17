@@ -18,6 +18,9 @@
 	<!-- STYLESHEET DYNAMICALLY GENERATED
 	================================================== -->
 
+	<link rel="stylesheet" type="text/css" href="../assets/css/girls_core.css" />
+	<link rel="stylesheet" type="text/css" href="./_css/app.css" />
+
 </head>
 <body>
 
@@ -1605,6 +1608,21 @@
 
 						<hr/>
 
+						<h3>Loader</h3>
+
+						<p>Loader</p>
+
+						<div class="row">
+							<div class="sixteen column dimmer loader">
+
+								<p>fdsfsdfsf</p><br/><p>fdsfsdfsf</p><br/><p>fdsfsdfsf</p><br/><p>fdsfsdfsf</p><br/>
+
+							</div>
+
+						</div>
+
+						<hr/>
+
 						<h3>Tooltips</h3>
 
 						<div class="bs-example-tooltips">
@@ -1743,18 +1761,19 @@
 			'xyi': {
 				url: '../assets/js/girls_core.js',
 				cache: true,
+				dependency: ['modernizr'],
 				callback: function() {
 					console.log('123');
 				}
 			},
-
-			'modernizr': ['../assets/js/girls_core.js', function () {
-				console.log('222');
-			}, null, 'cache'],
-
-			'xxx': ['../assets/js/girls_core.js', function () {
-				console.log('333');
-			}]
+			'xyi2': {
+				url: '../assets/js/girls_core.js',
+				cache: true,
+				dependency: ['xyi'],
+				callback: function() {
+					console.log('123');
+				}
+			}
 		},
 		'css': {
 			'girls_core': ['../assets/css/girls_core.css', 'cache'],
