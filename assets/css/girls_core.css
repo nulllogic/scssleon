@@ -1854,11 +1854,9 @@ blockquote cite a:visited {
 	display: block;
 	padding: 10px 15px;
 
-	margin-right: 2px;
+
 	line-height: 1.42857143;
 	border: 1px solid transparent;
-
-	margin-bottom: -1px;
 
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -1866,10 +1864,7 @@ blockquote cite a:visited {
 }
 
 .nav > li > a:hover {
-
-	border: 1px solid rgba(200, 200, 200, 0.3);
-	border-bottom: transparent;
-
+	
 	background: rgba(150, 150, 150, 0.1);
 
 }
