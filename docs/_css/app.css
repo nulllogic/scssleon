@@ -74,10 +74,6 @@ body.innerBackground {
 	color: #ffffff;
 	padding: 5px 20px 15px 10px;
 
-	-webkit-box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
-	-moz-box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
-	box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
-
 	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(40%, #000000), color-stop(100%, rgba(0, 0, 0, 0.6)));
 }
 
@@ -98,10 +94,6 @@ body.innerBackground {
 	font-weight: normal;
 	color: #ffffff;
 	padding: 5px 20px 15px 10px;
-
-	-webkit-box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
-	-moz-box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
-	box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
 
 	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(40%, #000000), color-stop(100%, rgba(0, 0, 0, 0.6)));
 

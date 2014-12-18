@@ -1859,6 +1859,10 @@ blockquote cite a:visited {
 	border: 1px solid transparent;
 
 	margin-bottom: -1px;
+
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	transition: all .2s ease;
 }
 
 .nav > li > a:hover {
@@ -1866,10 +1870,12 @@ blockquote cite a:visited {
 	border: 1px solid rgba(200, 200, 200, 0.3);
 	border-bottom: transparent;
 
+	background: rgba(150, 150, 150, 0.1);
+
 }
 
 .nav > li.active > a {
-	color: #555;
+	color: #000;
 	cursor: default;
 
 	background: #f1f1f1;
@@ -1878,6 +1884,23 @@ blockquote cite a:visited {
 
 	border: 1px solid #ddd;
 	border-bottom-color: transparent;
+}
+
+.nav-tabs.nav-justified {
+	width: 100%;
+}
+
+.nav-tabs.nav-justified > li {
+	display: table-cell;
+	width: 1%;
+}
+
+.nav-tabs.nav-justified > li {
+	float: none;
+}
+
+.nav-tabs.nav-justified > li > a {
+	text-align: center;
 }
 
 /* S.P.E.C.I.A.L.S classes */
