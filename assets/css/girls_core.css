@@ -433,12 +433,15 @@ img, object, embed {
 	margin: 0 0;
 }
 
-.row:before, .row:after {
+.row:before,
+.row:after,
+.nav:before,
+.nav:after {
 	content: " ";
 	display: table;
 }
 
-.row:after {
+.row:after, .nav:after {
 	clear: both;
 }
 
@@ -1839,11 +1842,42 @@ blockquote cite a:visited {
 /*      | \| |  |  \/      */
 
 .nav-tabs {
-	border-bottom:
+	border-bottom: 1px solid #cccccc;
 }
 
 .nav-tabs > li {
-	float:left;
+	float: left;
+}
+
+.nav > li > a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+
+	margin-right: 2px;
+	line-height: 1.42857143;
+	border: 1px solid transparent;
+
+	margin-bottom: -1px;
+}
+
+.nav > li > a:hover {
+
+	border: 1px solid rgba(200, 200, 200, 0.3);
+	border-bottom: transparent;
+
+}
+
+.nav > li.active > a {
+	color: #555;
+	cursor: default;
+
+	background: #f1f1f1;
+
+	font-weight: bold;
+
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
 }
 
 /* S.P.E.C.I.A.L.S classes */
