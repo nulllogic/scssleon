@@ -830,6 +830,11 @@ img, object, embed {
 	border-left: 4px solid transparent;
 }
 
+.nav-vertical.inverted {
+	background:transparent;
+	border-color: rgba(17, 17, 17, 0.85);
+}
+
 /* navbar */
 
 .nav .nav-form {
