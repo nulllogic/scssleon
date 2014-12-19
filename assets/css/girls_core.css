@@ -830,10 +830,21 @@ img, object, embed {
 	border-left: 4px solid transparent;
 }
 
+/* inverted */
+
 .nav-vertical.inverted {
 	background:transparent;
 	border-color: rgba(17, 17, 17, 0.85);
 }
+
+.nav-vertical.inverted .menu-heading a {
+	color:#000;
+}
+
+.nav-vertical.inverted li:hover {
+	background: rgba(150, 150, 150, 0.35);
+}
+
 
 /* navbar */
 
@@ -1852,6 +1863,7 @@ blockquote cite a:visited {
 
 .nav-tabs > li {
 	float: left;
+	margin-bottom: -1px;
 }
 
 .nav > li > a {
@@ -1888,15 +1900,20 @@ blockquote cite a:visited {
 
 .nav-tabs.nav-justified {
 	width: 100%;
+	border-bottom: none;
 }
 
 .nav-tabs.nav-justified > li {
 	display: table-cell;
 	width: 1%;
+
+	float: none;
+	margin-bottom: -1px;
+	border-bottom: 1px solid #dddddd;
 }
 
-.nav-tabs.nav-justified > li {
-	float: none;
+.nav-tabs.nav-justified > li.active {
+	border-bottom: 1px solid #f2f2f2;
 }
 
 .nav-tabs.nav-justified > li > a {
