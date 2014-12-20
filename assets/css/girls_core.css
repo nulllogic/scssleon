@@ -394,6 +394,10 @@ img, object, embed {
 	text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }
 
+.icon-blank:before {
+	content: ' ';
+}
+
 .icon-cancel:before {
 	content: '\e800';
 }
@@ -412,6 +416,34 @@ img, object, embed {
 
 .icon-search:before {
 	content: '\e804';
+}
+
+.icon-down-dir:before {
+	content: '\e805';
+}
+
+.icon-up-dir:before {
+	content: '\e806';
+}
+
+.icon-left-dir:before {
+	content: '\e807';
+}
+
+.icon-right-dir:before {
+	content: '\e808';
+}
+
+.icon-thumbs-up:before {
+	content: '\e809';
+}
+
+.icon-thumbs-down:before {
+	content: '\e80a';
+}
+
+.icon-arrows-reload:before {
+	content: '\e80b';
 }
 
 /*             ____ ____ _ ___             */
@@ -454,14 +486,14 @@ img, object, embed {
 }
 
 .column.centered,
-.columns.centered{
+.columns.centered {
 	float: none;
 	margin: 0 auto;
 	text-align: center;
 }
 
 [class*="column"] + [class*="column"].end,
-[class*="columns"] + [class*="columns"].end{
+[class*="columns"] + [class*="columns"].end {
 	float: left;
 }
 
@@ -831,23 +863,24 @@ img, object, embed {
 	border-top: 4px solid;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
+
+	content: '\e807';
 }
 
 /* inverted */
 
 .nav-vertical.inverted {
-	background:transparent;
+	background: transparent;
 	border-color: rgba(17, 17, 17, 0.85);
 }
 
 .nav-vertical.inverted .menu-heading a {
-	color:#000;
+	color: #000;
 }
 
 .nav-vertical.inverted li:hover {
 	background: rgba(150, 150, 150, 0.35);
 }
-
 
 /* navbar */
 
@@ -1874,7 +1907,6 @@ blockquote cite a:visited {
 	display: block;
 	padding: 10px 15px;
 
-
 	line-height: 1.42857143;
 	border: 1px solid transparent;
 
@@ -1884,7 +1916,7 @@ blockquote cite a:visited {
 }
 
 .nav > li > a:hover {
-	
+
 	background: rgba(150, 150, 150, 0.1);
 
 }
