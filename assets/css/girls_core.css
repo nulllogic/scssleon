@@ -445,20 +445,23 @@ img, object, embed {
 	clear: both;
 }
 
-.column {
+.column,
+.columns {
 	float: left;
 	min-height: 1px;
 	padding: 0;
 	position: relative;
 }
 
-.column.centered {
+.column.centered,
+.columns.centered{
 	float: none;
 	margin: 0 auto;
 	text-align: center;
 }
 
-[class*="column"] + [class*="column"].end {
+[class*="column"] + [class*="column"].end,
+[class*="columns"] + [class*="columns"].end{
 	float: left;
 }
 
