@@ -1727,6 +1727,10 @@ blockquote cite a:visited {
 	z-index: 1000;
 
 	pointer-events: none;
+
+	width:100%;
+	height:100%;
+
 }
 
 .inverted.dimmer {
@@ -1955,6 +1959,41 @@ blockquote cite a:visited {
 	text-align: center;
 }
 
+/*       _    _ ____ ___  ____ _          */
+/*       |\  /| |  | |  \ |__| |          */
+/*       | \/ | |__| |__/ |  | |___       */
+
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1001;
+	top: 50%;
+	left: 50%;
+	text-align: left;
+	width: 90%;
+	margin-left: -45%;
+	background: #fff;
+	border: none;
+	box-shadow: 0 1px 4px 1px rgba(0,0,0,.3);
+	border-radius: .2857rem;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+
+	will-change: top,left,margin,transform,opacity;
+}
+
+.modal.basic {
+	background-color: transparent;
+	border: none;
+	box-shadow: 0 0;
+	color: #fff;
+}
+
+
+
 /* S.P.E.C.I.A.L.S classes */
 
 p.lead {
@@ -2021,4 +2060,47 @@ p.lead {
 
 .disable-hover {
 	pointer-events: none;
+}
+
+
+
+
+
+@media all and (max-width: 480px) {
+
+}
+
+@media all and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 767px) {
+	.modal {
+		width: 95%;
+		margin: 0 0 0 -47.5%;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.ui.modal {
+		width: 88%;
+		margin: 0 0 0 -44%;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.ui.modal {
+		width: 74%;
+		margin: 0 0 0 -37%;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.ui.modal {
+		width: 56%;
+		margin: 0 0 0 -28%;
+	}
+}
+@media only screen and (min-width: 1920px) {
+	.ui.modal {
+		width: 42%;
+		margin: 0 0 0 -21%;
+	}
 }

@@ -1782,37 +1782,41 @@
 
 											<p><code>.loader</code> added to <code>.dimmer</code></p>
 
-											<div class="row">
-												<div class="sixteen column dimmer loader">
+											<div id="someSpecialBlock1" class="dimmer loader">
+												<div class="row">
+													<div class="sixteen column">
 
-													<div class="g-shortparagraph"></div>
+														<div class="g-shortparagraph"></div>
+
+													</div>
 
 												</div>
-
 											</div>
 
 											<br/>
 
 											<p><code>.loader</code> added to <code>.inverted.dimmer</code></p>
 
-											<div class="row">
-												<div class="sixteen column dimmer loader inverted">
+											<div id="someSpecialBlock2" class="dimmer loader inverted">
+												<div class="row">
+													<div class="sixteen column">
 
-													<div class="g-shortparagraph"></div>
+														<div class="g-shortparagraph"></div>
 
+													</div>
 												</div>
-
 											</div>
 
 											<p><code>.loader-small</code> added to <code>.dimmer</code></p>
 
-											<div class="row">
-												<div class="sixteen column dimmer loader-small">
+											<div id="someSpecialBlock3" class="dimmer loader-small">
+												<div class="row">
+													<div class="sixteen column">
 
-													<div class="g-shortparagraph"></div>
+														<div class="g-shortparagraph"></div>
 
+													</div>
 												</div>
-
 											</div>
 
 											<br/>
@@ -1820,24 +1824,26 @@
 											<p><code>.loader-small</code> added to <code>.inverted.dimmer</code>
 											</p>
 
-											<div class="row">
-												<div class="sixteen column dimmer loader-small inverted">
+											<div id="someSpecialBlock4" class="dimmer loader-small inverted">
+												<div class="row">
+													<div class="sixteen column">
 
-													<div class="g-shortparagraph"></div>
+														<div class="g-shortparagraph"></div>
 
+													</div>
 												</div>
-
 											</div>
 
 											<p><code>.loader-large</code> added to <code>.dimmer</code></p>
 
-											<div class="row">
-												<div class="sixteen column dimmer loader-large">
+											<div id="someSpecialBlock5" class="dimmer loader-large">
+												<div class="row">
+													<div class="sixteen column">
 
-													<div class="g-shortparagraph"></div>
+														<div class="g-shortparagraph"></div>
 
+													</div>
 												</div>
-
 											</div>
 
 											<br/>
@@ -1845,13 +1851,14 @@
 											<p><code>.loader-large</code> added to <code>.inverted.dimmer</code>
 											</p>
 
-											<div class="row">
-												<div class="sixteen column dimmer loader-large inverted">
+											<div id="someSpecialBlock6" class="dimmer loader-large inverted">
+												<div class="row">
+													<div class="sixteen column">
 
-													<div class="g-shortparagraph"></div>
+														<div class="g-shortparagraph"></div>
 
+													</div>
 												</div>
-
 											</div>
 
 											<hr/>
@@ -1883,35 +1890,48 @@
 											<h3>Modal</h3>
 
 											<div class="bs-example-tooltips">
-												<button type="button" class="btn btn-default" data-container="body"
-												        data-toggle="popover"
-												        data-placement="left"
-												        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-												        data-original-title="" title="">
-													Popover on left
+												<button type="button" class="btn btn-default">
+													Usual modal
 												</button>
-												<button type="button" class="btn btn-default" data-container="body"
-												        data-toggle="popover"
-												        data-placement="top"
-												        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-												        data-original-title="" title="">
-													Popover on top
+												<button type="button" class="btn btn-default">
+													Plain modal
 												</button>
-												<button type="button" class="btn btn-default" data-container="body"
-												        data-toggle="popover"
-												        data-placement="bottom"
-												        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-												        data-original-title="" title="">
-													Popover on bottom
-												</button>
-												<button type="button" class="btn btn-default" data-container="body"
-												        data-toggle="popover"
-												        data-placement="right"
-												        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-												        data-original-title="" title="">
-													Popover on right
+												<button type="button" class="btn btn-default">
+													Fullscreen on bottom
 												</button>
 											</div>
+
+											<div class="basic modal" tabindex="-1" role="dialog">
+
+												<div class="header">
+													Archive Old Messages
+												</div>
+
+												<div class="content">
+													<div class="image">
+														<i class="archive icon"></i>
+													</div>
+													<div class="description">
+														<p>Your inbox is getting full, would you like us to enable
+															automatic archiving of old messages?</p>
+													</div>
+												</div>
+
+												<div class="actions">
+													<div class="two fluid ui inverted buttons">
+														<div class="ui red basic cancel inverted button">
+															<i class="remove icon"></i>
+															No
+														</div>
+														<div class="ui green ok basic inverted button">
+															<i class="checkmark icon"></i>
+															Yes
+														</div>
+													</div>
+												</div>
+											</div>
+
+
 										</div>
 									</div>
 								</div>
