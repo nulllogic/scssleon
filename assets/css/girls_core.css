@@ -29,6 +29,7 @@ html {
 }
 
 body {
+	
 	background: white;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-style: normal;
@@ -1731,6 +1732,10 @@ blockquote cite a:visited {
 	width:100%;
 	height:100%;
 
+}
+
+.dimmed {
+	overflow: hidden;
 }
 
 .inverted.dimmer {
