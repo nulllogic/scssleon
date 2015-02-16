@@ -770,22 +770,18 @@ img, object, embed {
 	display: block;
 }
 
-.nav.nav-horizontal ul.right:last-child {
+.nav.nav-horizontal ul.to-right:last-child {
 	border-right: none;
 }
 
-.nav.nav-horizontal ul.right .has-dropdown ul {
+.nav.nav-horizontal ul.to-right .has-dropdown ul {
 	left: auto;
 	right: 0;
 }
 
-.nav.nav-horizontal ul.right .has-dropdown ul li.has-dropdown > ul {
-	left: -100%;
+.nav.nav-horizontal ul.to-right .has-dropdown ul li.has-dropdown > ul {
+	right: 0;
 	width: 100%;
-}
-
-.nav.nav-horizontal ul.right > li.has-dropdown ul li:hover {
-
 }
 
 .nav.nav-horizontal ul li.has-dropdown .caret {
