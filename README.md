@@ -24,4 +24,4 @@
 #✝ License
 > [the MIT license](LICENSE).
 
-[![IMAGE ALT TEXT HERE](nulllogic.net/wp-content/plugins/nullStorage/assets/logo.gif)](http://www.nulllogic.net)
+[![IMAGE ALT TEXT HERE](http://nulllogic.net/wp-content/plugins/nullStorage/assets/logo.gif)](http://www.nulllogic.net)

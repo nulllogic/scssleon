@@ -1,15 +1,12 @@
 /* * * * * * * * * * * * * * * * * * * * * * * *
-        _    ______                  .-""-.
-       | |  |  ____|                (___/\ \
-       | |  | |____                ( |' ' ) )
-       | |  |  __  |             __) _\=_/  (
-       | |  | |__| |        ____(__.' `  \   )
-       |_|  |______|      .(/"-.._.('     ; (
-          GIRLS          /   / .     (' , |  )
-              _.`'---.._/   /.__ ____.'_| |_/
-             '-'``'-._     /  | `-........'
-           CSS        `;-"`;  |
-        FRAMEWORK       `'.__/
+
+  __ ___    _     _            _
+ /_ |__ \  | |   | |          | |
+  | |  ) | | |__ | | ___   ___| | _____
+  | | / /  | '_ \| |/ _ \ / __| |/ / __|
+  | |/ /_  | |_) | | (_) | (__|   <\__ \
+  |_|____| |_.__/|_|\___/ \___|_|\_\___/
+
 * * * * * * * * * * * * * * * * * * * * * * * */
 
 /*      _  _ ____ ____ _  _ ____ _    _ ___  ____   */
@@ -499,73 +496,52 @@ img, object, embed {
 }
 
 .one, .row .one {
-    width: 6.25%;
+    width: 8.33333333%;
 }
 
 .two, .row .two {
-    width: 12.5%;
+    width: 16.66666667%;
 }
 
 .three, .row .three {
-    width: 18.75%;
-}
-
-.four, .row .four {
     width: 25%;
 }
 
+.four, .row .four,
+.one-third, .row .one-third {
+    width: 33.33333333%;
+}
+
 .five, .row .five {
-    width: 31.25%;
+    width: 41.66666667%;
 }
 
 .six, .row .six {
-    width: 37.5%;
-}
-
-.seven, .row .seven {
-    width: 43.75%;
-}
-
-.eight, .row .eight {
     width: 50%;
 }
 
+.seven, .row .seven {
+    width: 58.33333333%;
+}
+
+.eight, .row .eight {
+    width: 66.66666667%;
+}
+
 .nine, .row .nine {
-    width: 56.25%;
-}
-
-.ten, .row .ten {
-    width: 62.5%;
-}
-
-.eleven, .row .eleven {
-    width: 68.75%;
-}
-
-.twelve, .row .twelve {
     width: 75%;
 }
 
-.thirteen, .row .thirteen {
-    width: 81.25%;
+.ten, .row .ten {
+    width: 83.33333333%;
 }
 
-.fourteen, .row .fourteen {
-    width: 87.5%;
+.eleven, .row .eleven {
+    width: 91.66666667%;
 }
 
-.fifteen, .row .fifteen {
-    width: 93.75%;
-}
-
-/*    16teen baby    */
-.sixteen, .row .sixteen {
+.twelve, .row .twelve {
     width: 100%;
-}
-
-/*------------- SPECIAL 1/3 colum */
-.one-third, .row .one-third {
-    width: 33.3333333%;
 }
 
 /*      _  _ ____ _  _ _ ____ ____ ___ _ ____ _  _      */
@@ -963,7 +939,7 @@ select.form-control {
 }
 
 select.form-control option {
-    padding:5px;
+    padding: 5px;
 }
 
 .form-group {
@@ -1636,37 +1612,6 @@ blockquote cite a:visited {
     -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3);
 }
-
-/* Standard Forms ---------------------- */
-/*form { margin: 0 0 19.41641px; }*/
-
-/*.row form .row { margin: 0 -6px; }*/
-/*.row form .row .column, .row form .row .columns { padding: 0 6px; }*/
-/*.row form .row.collapse { margin: 0; }*/
-/*.row form .row.collapse .column, .row form .row.collapse .columns { padding: 0; }*/
-
-/*label { font-size: 14px; color: #4d4d4d; cursor: pointer; display: block; font-weight: 500; margin-bottom: 3px; }*/
-/*label.right { float: none; text-align: right; }*/
-/*label.inline { line-height: 32px; margin: 0 0 12px 0; }*/
-
-/*.prefix, .postfix { display: block; position: relative; z-index: 2; text-align: center; width: 100%; padding-top: 0; padding-bottom: 0; height: 32px; line-height: 31px; }*/
-
-/*a.button.prefix, a.button.postfix { padding-left: 0; padding-right: 0; text-align: center; }*/
-
-/*span.prefix, span.postfix { background: #f2f2f2; border: 1px solid #cccccc; }*/
-
-/*.prefix { left: 2px; -moz-border-radius-topleft: 2px; -webkit-border-top-left-radius: 2px; border-top-left-radius: 2px; -moz-border-radius-bottomleft: 2px; -webkit-border-bottom-left-radius: 2px; border-bottom-left-radius: 2px; overflow: hidden; }*/
-
-/*.postfix { right: 2px; -moz-border-radius-topright: 2px; -webkit-border-top-right-radius: 2px; border-top-right-radius: 2px; -moz-border-radius-bottomright: 2px; -webkit-border-bottom-right-radius: 2px; border-bottom-right-radius: 2px; }*/
-
-/*input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea { background-color: white; font-family: inherit; border: 1px solid #cccccc; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.75); display: block; font-size: 14px; margin: 0 0 12px 0; padding: 6px; height: 32px; width: 100%; -webkit-transition: all 0.15s linear; -moz-transition: all 0.15s linear; -o-transition: all 0.15s linear; transition: all 0.15s linear; }*/
-/*input[type="text"].oversize, input[type="password"].oversize, input[type="date"].oversize, input[type="datetime"].oversize, input[type="email"].oversize, input[type="number"].oversize, input[type="search"].oversize, input[type="tel"].oversize, input[type="time"].oversize, input[type="url"].oversize, textarea.oversize { font-size: 17px; padding: 4px 6px; }*/
-/*input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus { background: #fafafa; border-color: #b3b3b3; }*/
-/*input[type="text"][disabled], input[type="password"][disabled], input[type="date"][disabled], input[type="datetime"][disabled], input[type="email"][disabled], input[type="number"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="time"][disabled], input[type="url"][disabled], textarea[disabled] { background-color: #ddd; }*/
-
-/*textarea { height: auto; }*/
-
-/*select { width: 100%; }*/
 
 /* Errors */
 .error input, input.error, .error textarea, textarea.error, .error input:focus, input.error:focus, .error textarea:focus, textarea.error:focus {
