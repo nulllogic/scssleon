@@ -1,124 +1,277 @@
 /**
- * @name 16Girls basic JS loader and configurator
- * @namespace 16Girls
+ * @name 16Blocks JS loader and configurator
  * @author Vladimir Lukyanov <vladimir@liikyanov.ru>
  * @website www.nulllogic.net
  * @version 0.1.0
  */
 
-
-;
-(function () {
+(function (window, document) {
 	'use strict';
 
-	if (typeof toLoad === 'undefined') {
-		throw new Error('toLoad variable is not defined. See documentation at https://github.com/nulllogic/16Girls');
-	}
+	var head = document.head || document.getElementsByTagName('head')[0];
+	var storagePrefix = 'bag-';
+	var defaultExpiration = 5000;
+	var inBasket = [];
 
+	var addLocalStorage = function (key, storeObj) {
+		try {
+			localStorage.setItem(storagePrefix + key, JSON.stringify(storeObj));
+			return true;
+		} catch (e) {
+			if (e.name.toUpperCase().indexOf('QUOTA') >= 0) {
+				var item;
+				var tempScripts = [];
 
-	var _scriptsLoaded = 0;
-	var _scriptsTotal = 0;
-	var doc = document;
-
-	// a simple event handler wrapper
-	function on(el, ev, callback) {
-		if (el.addEventListener) {
-			el.addEventListener(ev, callback, false);
-		} else if (el.attachEvent) {
-			el.attachEvent("on" + ev, callback);
-		}
-	}
-
-	for (var k in toLoad) {
-
-		if (toLoad.hasOwnProperty(k)) {
-			switch (k) {
-				case 'js' :
-
-					for (var js in toLoad[k]) {
-						if (toLoad[k].hasOwnProperty(js)) {
-
-							injectScript(toLoad[k][js])
-
-						}
+				for (item in localStorage) {
+					if (item.indexOf(storagePrefix) === 0) {
+						tempScripts.push(JSON.parse(localStorage[item]));
 					}
+				}
 
-					break;
-				case 'css' :
+				if (tempScripts.length) {
+					tempScripts.sort(function (a, b) {
+						return a.stamp - b.stamp;
+					});
 
-					for (var css in toLoad[k]) {
-						if (toLoad[k].hasOwnProperty(css)) {
-							on(window, "load", injectStyleSheet(toLoad[k][css]));
-						}
-					}
-					break;
+					loader.remove(tempScripts[0].key);
 
-				case 'callback' :
-					break;
+					return addLocalStorage(key, storeObj);
 
-				default :
-					throw new Error('You are declaring variable out of the scope of possible variations. See documentation at https://github.com/nulllogic/16Girls');
-					break;
+				} else {
+					// no files to remove. Larger than available quota
+					return;
+				}
+
+			} else {
+				// some other error
+				return;
 			}
 		}
 
-	}
+	};
 
-	function injectStyleSheet(cssObj) {
+	var getUrl = function (url) {
+		var promise = new RSVP.Promise(function (resolve, reject) {
 
-		var stylesheet = doc.createElement('link');
-		stylesheet.href = cssObj[0];
-		stylesheet.rel = 'stylesheet';
-		stylesheet.type = 'text/css';
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
 
-		doc.getElementsByTagName('head')[0].appendChild(stylesheet);
-
-	}
-
-
-	function injectScript(jsObj) {
-
-		var callback;
-
-		var script = document.createElement("script");
-		script.type = "text/javascript";
-
-		console.log(typeof jsObj[1] !== 'undefined' && typeof jsObj[1] === "function" || typeof jsObj[1] === "object");
-		if(typeof jsObj[1] !== 'undefined' && typeof jsObj[1] === "function" || typeof jsObj[1] === "object") {
-			callback = jsObj[1];
-		} else {
-			callback = function() {};
-		}
-
-		if (typeof jsObj[2] !== 'undefined' && jsObj[2] !== 'cache') {
-
-			if (script.readyState) {  //IE
-				script.onreadystatechange = function () {
-					if (script.readyState == "loaded" ||
-						script.readyState == "complete") {
-						script.onreadystatechange = null;
-						callback.call();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (( xhr.status === 200 ) ||
+						( ( xhr.status === 0 ) && xhr.responseText )) {
+						resolve({
+							content: xhr.responseText,
+							type: xhr.getResponseHeader('content-type')
+						});
+					} else {
+						reject(new Error(xhr.statusText));
 					}
-				};
-			} else {  //Others
-				console.log(jsObj[0]);
-				script.onload = function () {
-					callback.call();
-				};
-			}
-
-		} else {
-			console.log('good');
-
-			script.onload = function () {
-				callback.call();
+				}
 			};
 
+			// By default XHRs never timeout, and even Chrome doesn't implement the
+			// spec for xhr.timeout. So we do it ourselves.
+			setTimeout(function () {
+				if (xhr.readyState < 4) {
+					xhr.abort();
+				}
+			}, loader.timeout);
+
+			xhr.send();
+		});
+
+		return promise;
+	};
+
+	var saveUrl = function (obj) {
+		return getUrl(obj.url).then(function (result) {
+			var storeObj = wrapStoreData(obj, result);
+
+			if (!obj.skipCache) {
+				addLocalStorage(obj.key, storeObj);
+			}
+
+			return storeObj;
+		});
+	};
+
+	var wrapStoreData = function (obj, data) {
+		var now = +new Date();
+		obj.data = data.content;
+		obj.originalType = data.type;
+		obj.type = obj.type || data.type;
+		obj.skipCache = obj.skipCache || false;
+		obj.stamp = now;
+		obj.expire = now + ( ( obj.expire || defaultExpiration ) * 60 * 60 * 1000 );
+
+		return obj;
+	};
+
+	var isCacheValid = function (source, obj) {
+		return !source ||
+			source.expire - +new Date() < 0 ||
+			obj.unique !== source.unique ||
+			(loader.isValidItem && !loader.isValidItem(source, obj));
+	};
+
+	var handleStackObject = function (obj) {
+		var source, promise, shouldFetch;
+
+		if (!obj.url) {
+			return;
 		}
-		script.src = jsObj[0];
-		document.getElementsByTagName("head")[0].appendChild(script);
 
-	}
+		obj.key = ( obj.key || obj.url );
+		source = loader.get(obj.key);
 
-})();
+		obj.execute = obj.execute !== false;
 
+		shouldFetch = isCacheValid(source, obj);
+
+		if (obj.live || shouldFetch) {
+			if (obj.unique) {
+				// set parameter to prevent browser cache
+				obj.url += ( ( obj.url.indexOf('?') > 0 ) ? '&' : '?' ) + 'bag-unique=' + obj.unique;
+			}
+			promise = saveUrl(obj);
+
+			if (obj.live && !shouldFetch) {
+				promise = promise
+					.then(function (result) {
+						// If we succeed, just return the value
+						// RSVP doesn't have a .fail convenience method
+						return result;
+					}, function () {
+						return source;
+					});
+			}
+		} else {
+			source.type = obj.type || source.originalType;
+			source.execute = obj.execute;
+			promise = new RSVP.Promise(function (resolve) {
+				resolve(source);
+			});
+		}
+
+		return promise;
+	};
+
+	var injectScript = function (obj) {
+		var script = document.createElement('script');
+		script.defer = true;
+		// Have to use .text, since we support IE8,
+		// which won't allow appending to a script
+		script.text = obj.data;
+		head.appendChild(script);
+	};
+
+	var handlers = {
+		'default': injectScript
+	};
+
+	var execute = function (obj) {
+		if (obj.type && handlers[obj.type]) {
+			return handlers[obj.type](obj);
+		}
+
+		return handlers['default'](obj); // 'default' is a reserved word
+	};
+
+	var performActions = function (resources) {
+		return resources.map(function (obj) {
+			if (obj.execute) {
+				execute(obj);
+			}
+
+			return obj;
+		});
+	};
+
+	var fetch = function () {
+		var i, l, promises = [];
+
+		for (i = 0, l = arguments.length; i < l; i++) {
+			promises.push(handleStackObject(arguments[i]));
+		}
+
+		return RSVP.all(promises);
+	};
+
+	var thenRequire = function () {
+		var resources = fetch.apply(null, arguments);
+		var promise = this.then(function () {
+			return resources;
+		}).then(performActions);
+		promise.thenRequire = thenRequire;
+		return promise;
+	};
+
+	window.loader = {
+		require: function () {
+			for (var a = 0, l = arguments.length; a < l; a++) {
+				arguments[a].execute = arguments[a].execute !== false;
+
+				if (arguments[a].once && inBasket.indexOf(arguments[a].url) >= 0) {
+					arguments[a].execute = false;
+				} else if (arguments[a].execute !== false && inBasket.indexOf(arguments[a].url) < 0) {
+					inBasket.push(arguments[a].url);
+				}
+			}
+
+			var promise = fetch.apply(null, arguments).then(performActions);
+
+			promise.thenRequire = thenRequire;
+			return promise;
+		},
+
+		remove: function (key) {
+			localStorage.removeItem(storagePrefix + key);
+			return this;
+		},
+
+		get: function (key) {
+			var item = localStorage.getItem(storagePrefix + key);
+			try {
+				return JSON.parse(item || 'false');
+			} catch (e) {
+				return false;
+			}
+		},
+
+		clear: function (expired) {
+			var item, key;
+			var now = +new Date();
+
+			for (item in localStorage) {
+				key = item.split(storagePrefix)[1];
+				if (key && ( !expired || this.get(key).expire <= now )) {
+					this.remove(key);
+				}
+			}
+
+			return this;
+		},
+
+		isValidItem: null,
+
+		timeout: 5000,
+
+		addHandler: function (types, handler) {
+			if (!Array.isArray(types)) {
+				types = [types];
+			}
+			types.forEach(function (type) {
+				handlers[type] = handler;
+			});
+		},
+
+		removeHandler: function (types) {
+			loader.addHandler(types, undefined);
+		}
+	};
+
+	// delete expired keys
+	loader.clear(true);
+
+})(this, document);
