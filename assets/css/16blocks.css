@@ -34,7 +34,6 @@ body {
 	font-size: 14px;
 	line-height: 1;
 	color: #222222;
-	position: relative;
 
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
@@ -456,9 +455,12 @@ img, object, embed {
 	*zoom: 1;
 }
 
+.row.fluid {
+	width: 100%;
+}
+
 .row .row {
 	width: auto;
-	*width: 100%;
 	max-width: none;
 	min-width: 0;
 	margin: 0 0;
