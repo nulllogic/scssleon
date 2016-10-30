@@ -497,7 +497,7 @@ img, object, embed {
 	min-height: 1px;
 }
 
-.xs1, .xs2, .xs3, .xs4, .xs5, .xs6, .xs7, .xs8, .xs9, .xs10, .xs11, .xs12, .xs13, .xs14, .xs15, .xs16 .xs-one-third {
+.xs1, .xs2, .xs3, .xs4, .xs5, .xs6, .xs7, .xs8, .xs9, .xs10, .xs11, .xs12, .xs13, .xs14, .xs15, .xs16 .xs1of3 {
 	float: left;
 }
 
@@ -565,13 +565,13 @@ img, object, embed {
 	width: 100%;
 }
 
-.row .xs-one-third {
+.row .xs1of3 {
 	width: 33.33333%;
 }
 
 /* Small devices */
 @media (min-width: 544px) {
-	.sm1, .sm2, .sm3, .sm4, .sm5, .sm6, .sm7, .sm8, .sm9, .sm10, .sm11, .sm12, .sm13, .sm14, .sm15, .sm16, .sm-one-third {
+	.sm1, .sm2, .sm3, .sm4, .sm5, .sm6, .sm7, .sm8, .sm9, .sm10, .sm11, .sm12, .sm13, .sm14, .sm15, .sm16, .sm1of3 {
 		float: left;
 	}
 
@@ -639,14 +639,14 @@ img, object, embed {
 		width: 100%;
 	}
 
-	.row .sm-one-third {
+	.row .sm1of3 {
 		width: 33.33334%;
 	}
 }
 
 /* Medium devices */
 @media (min-width: 768px) {
-	.md1, .md2, .md3, .md4, .md5, .md6, .md7, .md8, .md9, .md10, .md11, .md12, .md13, .md14, .md15, .md16, .md-one-third {
+	.md1, .md2, .md3, .md4, .md5, .md6, .md7, .md8, .md9, .md10, .md11, .md12, .md13, .md14, .md15, .md16, .md1of3 {
 		float: left;
 	}
 
@@ -714,14 +714,14 @@ img, object, embed {
 		width: 100%;
 	}
 
-	.row .md-one-third {
+	.row .md1of3 {
 		width: 33.33334%;
 	}
 }
 
 /* Large devices */
 @media (min-width: 992px) {
-	.lg1, .lg2, .lg3, .lg4, .lg5, .lg6, .lg7, .lg8, .lg9, .lg10, .lg11, .lg12, .lg13, .lg14, .lg15, .lg16, .lg-one-third {
+	.lg1, .lg2, .lg3, .lg4, .lg5, .lg6, .lg7, .lg8, .lg9, .lg10, .lg11, .lg12, .lg13, .lg14, .lg15, .lg16, .lg1of3 {
 		float: left;
 	}
 
@@ -789,14 +789,14 @@ img, object, embed {
 		width: 100%;
 	}
 
-	.row .lg-one-third {
+	.row .lg1of3 {
 		width: 33.33334%;
 	}
 }
 
 /* Extra large devices */
 @media (min-width: 1200px) {
-	.xl1, .xl2, .xl3, .xl4, .xl5, .xl6, .xl7, .xl8, .xl9, .xl10, .xl11, .xl12, .xl13, .xl14, .xl15, .xl16, .xl-one-third {
+	.xl1, .xl2, .xl3, .xl4, .xl5, .xl6, .xl7, .xl8, .xl9, .xl10, .xl11, .xl12, .xl13, .xl14, .xl15, .xl16, .xl1of3 {
 		float: left;
 	}
 
@@ -864,7 +864,7 @@ img, object, embed {
 		width: 100%;
 	}
 
-	.row .xl-one-third {
+	.row .xl1of3 {
 		width: 33.33334%;
 	}
 }
