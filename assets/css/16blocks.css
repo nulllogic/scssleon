@@ -711,7 +711,7 @@ img, object, embed {
 		max-width: 50%;
 	}
 
-	.sm9 {
+	.sm-9 {
 		-webkit-box-flex: 0;
 		-webkit-flex: 0 0 56.25%;
 		-ms-flex: 0 0 56.25%;
