@@ -105,8 +105,8 @@ p {
     font-family: inherit;
     font-weight: normal;
     font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 17px;
+    line-height: 1.4;
+    margin-bottom: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -490,11 +490,9 @@ img, object, embed {
 .col {
     margin-bottom: 15px;
     -webkit-flex-basis: 0;
-    -ms-flex-preferred-size: 0;
     flex-basis: 0;
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 100%;
 }
@@ -1821,7 +1819,7 @@ option {
     display: block;
     white-space: pre;
     min-height: 1.2em;
-    padding: 0px 2px 1px;
+    padding: 0 2px 1px;
 }
 
 /* INLINE FORM */
@@ -2355,6 +2353,7 @@ option {
     display: inline-block;
     font-size: 16px;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .nav .nav-logo {
@@ -2464,14 +2463,15 @@ option {
 
     position: absolute;
     min-width: 150px;
+    padding: 10px 0;
     background: #ffffff;
     opacity: 0;
     visibility: hidden;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
+    border: 1px solid #eaeaea;
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .175);
     z-index: 10;
 
     transition: all 0.3s ease-in-out;
@@ -2536,40 +2536,33 @@ option {
 
 .has-dropdown .dropdown a {
     width: 100%;
-    padding: 8px 17px 8px 15px;
-    font-size: 14px;
+    padding: 8px 25px;
+    font-size: 13px;
     line-height: 1;
     white-space: nowrap;
 }
 
 .has-dropdown .divider {
     width: 100%;
-    margin: 5px 0;
+    margin: 15px 0 10px;
     height: 1px;
-    background-color: #e5e5e5;
+    background-color: #f1f1f1;
     overflow: hidden;
 }
 
 .has-dropdown .divider:hover {
-    background-color: #e5e5e5;
-}
-
-.nav .menu-heading {
-    margin-top: 5px;
-    font-weight: bold;
+    background-color: #f1f1f1;
 }
 
 .nav .menu-heading:hover {
     background-color: inherit;
 }
 
-.nav .menu-heading a {
-    padding: 5px 0 5px 10px;
+.nav .menu-heading {
+    padding: 5px 17px;
     width: 100%;
     color: #23527c;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 16px;
     text-decoration: none;
     white-space: nowrap;
     pointer-events: none;
@@ -3186,7 +3179,6 @@ fieldset[disabled] .form-control {
     transition: background-color 5.5s linear;
 
     -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
 
     will-change: opacity;
