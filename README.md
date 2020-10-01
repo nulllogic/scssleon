@@ -1,13 +1,11 @@
 <p align="left">
-  <img src="https://github.com/nulllogic/16blocks/blob/master/.imgs/header.png?raw=true" alt="16blocks" width="100%">
+  <img src="./.imgs/header.png" alt="16blocks" width="100%">
 </p>
 
 > Welcome to 16Blocks CSS framework, that will give you most of development needs, that can boost development of websites. It was built in love and with love of many technologies from the internet. 
 
 <p align="center">
-
-– [ [Demo](http://nulllogic.github.io/16blocks/) ] — [ [Documentation](http://nulllogic.github.io/16blocks/docs) ] — [ [Bugs/Issues](https://github.com/nulllogic/16blocks/issues) ] — [ [StackOverflow](http://stackoverflow.com/questions/tagged/16blocks) ]
-
+– [ <a href="https://nulllogic.github.io/16blocks/">Demo</a> ] — [ <a href="http://nulllogic.github.io/16blocks/docs">Documentation</a> ] — [ <a href="https://github.com/nulllogic/16blocks/issues">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/16blocks">StackOverflow</a> ] –
 </p>
 
 <p align="center">
