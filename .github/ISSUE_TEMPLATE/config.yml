@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation Issue
+    url: https://github.com/nulllogic/16Blocks/docs
+    about: 'For documentation issues, suggest changes on our documentation repository.'
