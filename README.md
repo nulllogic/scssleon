@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://github.com/nulllogic/16blocks/blob/master/.imgs/header.jpg?raw=true" alt="16blocks" width="100%">
+  <img src="https://github.com/nulllogic/16blocks/blob/master/.imgs/header.png?raw=true" alt="16blocks" width="100%">
 </p>
 
 > Welcome to 16Blocks CSS framework, that will give you most of development needs, that can boost development of websites. It was built in love and with love of many technologies from the internet. 
