@@ -5,11 +5,13 @@
 > Welcome to 16Blocks CSS framework, that will give you most of development needs, that can boost development of websites. It was built in love and with love of many technologies from the internet. 
 
 <p align="center">
+
 – [ [Demo](http://nulllogic.github.io/16blocks/) ] — [ [Documentation](http://nulllogic.github.io/16blocks/docs) ] — [ [Bugs/Issues](https://github.com/nulllogic/16blocks/issues) ] — [ [StackOverflow](http://stackoverflow.com/questions/tagged/16blocks) ]
+
 </p>
 
 <p align="center">
-  <a href="https://nulllogic.net/"><img src="./.img/logo.gif" alt="NullLogic logo"></a>
+  <a href="https://nulllogic.net/"><img src="./.imgs/logo.gif" alt="NullLogic logo"></a>
 </p>
 
 #✝ Quickstart
