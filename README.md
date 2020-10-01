@@ -1,3 +1,10 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+
 [![16Girls](https://raw.github.com/nulllogic/16girls/gh-pages/_tmp/16girls_underlogo.gif)](http://nulllogic.github.io/16girls/) 
 
 #✝ Welcome [![Build Status](https://api.travis-ci.org/nulllogic/16Girls.svg)](https://travis-ci.org/nulllogic/16Girls) [![Code Climate](https://codeclimate.com/github/nulllogic/12Blocks/badges/gpa.svg)](https://codeclimate.com/github/nulllogic/12Blocks)
