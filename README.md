@@ -2,7 +2,7 @@
   <img src="./.imgs/header.png" alt="16blocks" width="100%">
 </p>
 
-Welcome to 16Blocks CSS framework, that will give you most of development needs, that can boost development of websites. It was built in love and with love of many technologies from the internet. 
+Welcome to 16Blocks CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
 
 <p align="center">
 – [ <a href="https://nulllogic.github.io/16blocks/">Demo</a> ] — [ <a href="http://nulllogic.github.io/16blocks/docs">Documentation</a> ] — [ <a href="https://github.com/nulllogic/16blocks/issues">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/16blocks">StackOverflow</a> ] –
@@ -26,7 +26,7 @@ Welcome to 16Blocks CSS framework, that will give you most of development needs,
 
 
 ## License
-[the MIT license](LICENSE).
+[MIT license](LICENSE)
 
 ### Tested With
 <a href="https://www.browserstack.com"><img src="./.imgs/browserstack.png" alt="browserstack"></a>
