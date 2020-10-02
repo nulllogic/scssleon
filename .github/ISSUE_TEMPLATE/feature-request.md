@@ -1,5 +1,5 @@
 ---
-name: "✨ &nbsp;Feature Request"
+name: "✨  Feature Request"
 about: Something is missing or could be improved
 
 ---
