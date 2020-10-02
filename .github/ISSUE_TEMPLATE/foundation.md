@@ -1,5 +1,5 @@
 ---
-name: "\U0001F4D6 Documentation"
+name: "\U0001F4D6 &nbsp;Documentation"
 about: Typo mistakes, gaps or inconsistencies in docs or website
 
 ---

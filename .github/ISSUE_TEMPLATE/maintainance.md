@@ -1,5 +1,5 @@
 ---
-name: "\U0001F4BB Maintainance"
+name: "\U0001F4BB &nbsp;Maintainance"
 about: Tests, dependencies, workflow...
 
 ---
