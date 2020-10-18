@@ -1,0 +1,16 @@
+{
+  "name": "16blocks",
+  "description": "Most advanced responsive front-end CSS framework",
+  "version": "1.0.0",
+  "version_short": "1.0",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "homepage": "https://nulllogic.github.io/16blocks/"
+}
