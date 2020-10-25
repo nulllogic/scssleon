@@ -14,11 +14,14 @@
   ],
 
   "scripts": {
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/css/"
+    "css": "npm run css-compile",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/css/",
+    "dist": "npm run css"
   },
-  
+
   "devDependencies": {
     "node-sass": "^4.14.1"
   },
+
   "homepage": "https://nulllogic.github.io/16blocks/"
 }
