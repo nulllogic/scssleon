@@ -13,9 +13,4 @@
 @import "utilities";
 
 // Layout & components
-@import "root";
-@import "reboot";
-@import "type";
-@import "images";
-@import "containers";
-@import "grid";
+@import "components/grid/index";
