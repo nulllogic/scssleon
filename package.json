@@ -20,8 +20,18 @@
   "devDependencies": {
     "node-sass": "^4.14.1"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+  "homepage": "https://nulllogic.github.io/16blocks/",
+  "main": ".babelrc.js",
+  "style": "dist/16blocks.css",
+  "sass": "scss/16blocks.scss",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulllogic/16Blocks.git"
   },
-  "homepage": "https://nulllogic.github.io/16blocks/"
+  "author": "Vladimir Lukyanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nulllogic/16Blocks/issues"
+  }
 }
