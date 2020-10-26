@@ -1,5 +1,5 @@
 {
-  "name": "16blocks",
+  "name": "@nulllogic/16blocks",
   "description": "Most advanced responsive front-end CSS framework",
   "version": "1.0.0",
   "version_short": "1.0",
@@ -12,16 +12,16 @@
     "framework",
     "web"
   ],
-
   "scripts": {
     "css": "npm run css-compile",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/css/",
     "dist": "npm run css"
   },
-
   "devDependencies": {
     "node-sass": "^4.14.1"
   },
-
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "homepage": "https://nulllogic.github.io/16blocks/"
 }
