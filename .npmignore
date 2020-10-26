@@ -1,0 +1,7 @@
+*.log
+.github/
+.imgs/
+.idea/
+assets/
+node_modules/
+scss/
