@@ -20,8 +20,6 @@ Welcome to 16Blocks CSS framework ! It's the most advanced responsive front-end 
 
 ## Optional
 
-### └  test
-
 ### └  Contributing
 
 > For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
