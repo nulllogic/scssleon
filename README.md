@@ -11,7 +11,7 @@ Welcome to 16Blocks CSS framework ! It's the most advanced responsive front-end 
 </p>
 
 <p align="center">
-  <a href="https://nulllogic.net/"><img src="./.imgs/logo.gif" alt="NullLogic logo"></a>
+  <a href="https://nulllogic.net/"><img src="./.imgs/logo.png" alt="NullLogic logo"></a>
 </p>
 
 ## Quickstart
