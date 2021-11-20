@@ -1,13 +1,13 @@
 <p align="left">
-  <img src="./.imgs/header.png" alt="16blocks" width="100%">
+  <img src="./.imgs/header.png" alt="16grid" width="100%">
 </p>
 
-Welcome to 16Blocks CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
+Welcome to 16grid CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
 
 <hr />
 
 <p align="center">
-– [ <a href="https://nulllogic.github.io/16blocks/">Demo</a> ] — [ <a href="http://nulllogic.github.io/16blocks/docs">Documentation</a> ] — [ <a href="https://github.com/nulllogic/16blocks/issues">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/16blocks">StackOverflow</a> ] –
+– [ <a href="https://nulllogic.github.io/16grid/">Demo</a> ] — [ <a href="http://nulllogic.github.io/16blocks/docs">Documentation</a> ] — [ <a href="https://github.com/nulllogic/16blocks/issues">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/16blocks">StackOverflow</a> ] –
 </p>
 
 <p align="center">

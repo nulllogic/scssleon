@@ -9,7 +9,7 @@ about: Tests, dependencies, workflow...
 │           For more information, see the CONTRIBUTING.md document
 │
 │       ⚠ Only submit maintainance issues here. For help or questions to
-│       the community, see the forum: https://nulllogic.github.io/16blocks
+│       the community, see the forum: https://nulllogic.github.io/16grid
 └------------------------------------------------------------------------------>
 
 ## Description

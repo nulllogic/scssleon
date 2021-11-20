@@ -1,5 +1,5 @@
 {
-  "name": "@nulllogic/16blocks",
+  "name": "@nulllogic/16grid",
   "description": "Most advanced responsive front-end CSS framework",
   "version": "1.0.1",
   "version_short": "1.0",
@@ -19,20 +19,20 @@
     "dist": "npm run css"
   },
   "devDependencies": {
-    "sass": "^1.43.2"
+    "sass": "^1.43.4"
   },
-  "homepage": "https://nulllogic.github.io/16blocks/",
+  "homepage": "https://nulllogic.github.io/16grid",
   "main": ".babelrc.js",
-  "style": "dist/16blocks.css",
-  "sass": "scss/16blocks.scss",
+  "style": "dist/16grid.css",
+  "sass": "scss/16grid.scss",
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nulllogic/16Blocks.git"
+    "url": "git+https://github.com/nulllogic/16grid.git"
   },
   "author": "Vladimir Lukyanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nulllogic/16Blocks/issues"
+    "url": "https://github.com/nulllogic/16grid/issues"
   }
 }
