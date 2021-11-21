@@ -24,10 +24,10 @@ Welcome to 16grid CSS framework ! It's the most advanced responsive front-end fr
 
 > For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
 
+## Thanks
+<a href="https://www.browserstack.com"><img src="./.imgs/browserstack.png" alt="browserstack"></a><br />
+Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
 ## License
 [MIT license](LICENSE)
-
-### Tested With
-<a href="https://www.browserstack.com"><img src="./.imgs/browserstack.png" alt="browserstack"></a>
 
