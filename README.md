@@ -30,3 +30,7 @@ Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infras
 
 ## License
 [MIT license](LICENSE)
+<<<<<<< .merge_file_wrBDra
+=======
+
+>>>>>>> .merge_file_wgF1H3
