@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="./.imgs/header.png" alt="16grid" width="100%">
+  <img src="./.imgs/header.jgp" alt="16grid" width="100%">
 </p>
 
 Welcome to 16grid CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
@@ -30,4 +30,3 @@ Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infras
 
 ## License
 [MIT license](LICENSE)
-
