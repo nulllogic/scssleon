@@ -15,12 +15,15 @@
   ],
   "scripts": {
     "css": "npm run css-compile",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/css/",
-    "dist": "npm run css"
+    "css-compile": "sass --style expanded --source-map --embed-sources scss/:dist/css/",
+    "dist": "npm run css && npm run minify",
+    "minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\""
   },
+
   "devDependencies": {
     "node-sass": "^6.0.1",
-    "sass": "^1.44.0"
+    "sass": "^1.44.0",
+    "clean-css-cli" : "^5.4.2"
   },
   "homepage": "https://nulllogic.github.io/16grid",
   "main": ".babelrc.js",
