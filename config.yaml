@@ -1,0 +1,58 @@
+# HUGO configuration
+
+languageCode:           "en"
+title:                  "16grid"
+baseURL:                "https://nulllogic.github.io/16grid"
+enableInlineShortcodes: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe:           true
+  highlight:
+    noClasses:          false
+  tableOfContents:
+    startLevel:         2
+    endLevel:           6
+
+buildDrafts:            true
+buildFuture:            true
+
+enableRobotsTXT:        true
+metaDataFormat:         "yaml"
+disableKinds:           ["404", "taxonomy", "term", "RSS"]
+
+publishDir:             "_site"
+
+module:
+  mounts:
+    - source:           dist
+      target:           static/docs/1.0/dist
+    - source:           docs/assets
+      target:           assets
+    - source:           docs/content
+      target:           content
+    - source:           docs/data
+      target:           data
+    - source:           docs/layouts
+      target:           layouts
+    - source:           docs/static
+      target:           static
+    - source:           docs/static/docs/1.0/assets/img/favicons/apple-touch-icon.png
+      target:           static/apple-touch-icon.png
+    - source:           docs/static/docs/1.0/assets/img/favicons/favicon.ico
+      target:           static/favicon.ico
+
+params:
+  description:          "An advanced responsive front-end framework"
+  authors:              "Vladimir Lukyanov, and 16grid contributors"
+
+  current_version:      "1.0"
+  docs_version:         "1.0"
+  github_org:           "https://github.com/nulllogic"
+  repo:                 "https://github.com/nulllogic/16grid"
+  twitter:              "nulllogic"
+  opencollective:       "https://opencollective.com/nulllogic"
+  blog:                 "https://blog.getbootstrap.com/"
+  themes:               "https://themes.getbootstrap.com/"
+  icons:                "https://icons.getbootstrap.com/"

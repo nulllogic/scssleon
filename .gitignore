@@ -15,3 +15,6 @@ Thumbs.db
 
 # Node modules
 node_modules
+
+# Hugo
+.hugo_build.lock
