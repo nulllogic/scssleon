@@ -4,6 +4,7 @@
  * Licensed under MIT (https://nulllogic.github.io/16grid//blob/main/LICENSE)
  */
 
+@import "root";
 @import "normalize";
 
 // Configuration
@@ -13,4 +14,4 @@
 @import "utilities";
 
 // Layout & components
-@import "components/grid/index";
+@import "components/grid";

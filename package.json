@@ -19,13 +19,13 @@
     "dist": "npm run css"
   },
   "devDependencies": {
+    "node-sass": "^6.0.1",
     "sass": "^1.44.0"
   },
   "homepage": "https://nulllogic.github.io/16grid",
   "main": ".babelrc.js",
   "style": "dist/16grid.css",
   "sass": "scss/16grid.scss",
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nulllogic/16grid.git"
