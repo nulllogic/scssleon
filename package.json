@@ -23,7 +23,7 @@
   },
 
   "devDependencies": {
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "sass": "^1.44.0",
     "clean-css-cli" : "^5.4.2"
   },
