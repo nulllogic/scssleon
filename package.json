@@ -24,7 +24,7 @@
 
   "devDependencies": {
     "node-sass": "^7.0.0",
-    "sass": "^1.44.0",
+    "sass": "^1.45.0",
     "clean-css-cli" : "^5.4.2"
   },
   "homepage": "https://nulllogic.github.io/16grid",
