@@ -6,7 +6,8 @@ help:
 	@echo "[ENV SETUP]"
 
 dist:
-	@echo "npm run css && npm run minify"
+	@echo "[Compiling SCSS files and minifying]"
+	npm run css && npm run minify
 
 docs-build:
 	@echo "Generating docs"
