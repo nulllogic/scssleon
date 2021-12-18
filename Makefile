@@ -1,9 +1,12 @@
-.PHONY: help docs-build docs-serve
+.PHONY: help docs-build docs-serve dist
 
 CURRENT_DIR := $(shell pwd)
 
 help:
 	@echo "[ENV SETUP]"
+
+dist:
+	@echo "npm run css && npm run minify"
 
 docs-build:
 	@echo "Generating docs"
