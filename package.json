@@ -18,8 +18,8 @@
     "css-compile": "sass --style expanded --source-map --embed-sources scss/:dist/css/",
     "dist": "npm run css && npm run minify",
     "minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
-    "docs-build": "docker run --rm -it -v $(pwd):/src klakegg/hugo:ext-alpine",
-    "docs-serve": "docker run --rm -it -v $(pwd):/src -p 8000:1313 klakegg/hugo:ext-alpine server"
+    "docs-build": "docker run --rm -it -v $(pwd):/src klakegg/hugo:alpine",
+    "docs-serve": "docker run --rm -it -v $(pwd):/src -p 8000:1313 klakegg/hugo:alpine server"
   },
   "devDependencies": {
     "clean-css-cli": "^5.5.0",
