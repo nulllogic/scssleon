@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "clean-css-cli": "^5.5.0",
-    "sass": "^1.45.2"
+    "sass": "^1.47.0"
   },
   "homepage": "https://nulllogic.github.io/16grid",
   "main": ".babelrc.js",
