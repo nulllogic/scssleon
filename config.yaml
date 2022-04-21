@@ -1,8 +1,8 @@
 # HUGO configuration
 
 languageCode:           "en"
-title:                  "16grid"
-baseURL:                "https://nulllogic.github.io/16grid"
+title:                  "24grid"
+baseURL:                "https://nulllogic.github.io/24grid"
 enableInlineShortcodes: true
 
 markup:
@@ -45,12 +45,12 @@ module:
 
 params:
   description:          "An advanced responsive front-end framework"
-  authors:              "Vladimir Lukyanov, and 16grid contributors"
+  authors:              "Vladimir Lukyanov, and 24grid contributors"
 
   current_version:      "1.0"
   docs_version:         "1.0"
   github_org:           "https://github.com/nulllogic"
-  repo:                 "https://github.com/nulllogic/16grid"
+  repo:                 "https://github.com/nulllogic/24grid"
   twitter:              "nulllogic"
   opencollective:       "https://opencollective.com/nulllogic"
   blog:                 "https://blog.getbootstrap.com/"

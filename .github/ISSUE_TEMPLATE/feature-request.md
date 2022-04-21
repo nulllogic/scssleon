@@ -9,7 +9,7 @@ about: Something is missing or could be improved
 │           For more information, see the CONTRIBUTING.md document
 │            
 │       ⚠ Only submit feature requests here. For help or questions to
-│       the community, see the forum: https://nulllogic.github.io/16grid
+│       the community, see the forum: https://nulllogic.github.io/24grid
 └------------------------------------------------------------------------------>
 
 ## What is missing?

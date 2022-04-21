@@ -1,5 +1,5 @@
 {
-  "name": "@nulllogic/16grid",
+  "name": "@nulllogic/24grid",
   "description": "Most advanced responsive front-end CSS framework",
   "version": "1.0.1",
   "version_short": "1.0",
@@ -22,20 +22,20 @@
     "docs-serve": "docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:alpine server"
   },
   "devDependencies": {
-    "sass": "^1.49.11"
-    "clean-css-cli": "^5.6.0",
+    "sass": "^1.50.1",
+    "clean-css-cli": "^5.6.0"
   },
-  "homepage": "https://nulllogic.github.io/16grid",
+  "homepage": "https://nulllogic.github.io/24grid",
   "main": ".babelrc.js",
-  "style": "dist/16grid.css",
-  "sass": "scss/16grid.scss",
+  "style": "dist/24grid.css",
+  "sass": "scss/24grid.scss",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nulllogic/16grid.git"
+    "url": "git+https://github.com/nulllogic/24grid.git"
   },
   "author": "Vladimir Lukyanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nulllogic/16grid/issues"
+    "url": "https://github.com/nulllogic/24grid/issues"
   }
 }
