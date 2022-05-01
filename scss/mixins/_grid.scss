@@ -1,0 +1,12 @@
+// Grid system
+
+@mixin generate_rows() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin prepare_row_columns() {
+  width: 100%;
+  max-width: 100%;
+  flex-shrink: 0;
+}
