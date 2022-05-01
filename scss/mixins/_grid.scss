@@ -5,8 +5,13 @@
   flex-wrap: wrap;
 }
 
-@mixin prepare_row_columns() {
+@mixin prepare_columns() {
   width: 100%;
   max-width: 100%;
   flex-shrink: 0;
+}
+
+@mixin prepare_auto_columns() {
+  flex: 0 0 auto;
+  width: auto;
 }

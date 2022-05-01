@@ -1,4 +1,4 @@
-// Breakpoints
+// Grid breakpoints
 $grid-breakpoints: (
         xs: 0,
         sm: 576px,
@@ -7,3 +7,6 @@ $grid-breakpoints: (
         xl: 1200px,
         xxl: 1400px
 ) !default;
+
+// Grid columns
+$grid-columns: 24 !default;
