@@ -1,0 +1,7 @@
+// Container mixins
+
+@mixin generate_container() {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}

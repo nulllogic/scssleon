@@ -14,5 +14,5 @@ docs-build:
 	docker run --rm -it -v $(CURRENT_DIR):/src klakegg/hugo:ext-alpine
 
 docs-serve:
-	@echo "Running docs at 8000"
+	@echo "Running docs at http://localhost:8000/24grid/"
 	docker run --rm -it -v $(CURRENT_DIR):/src -p 8000:1313 klakegg/hugo:ext-alpine server

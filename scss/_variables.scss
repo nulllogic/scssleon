@@ -8,13 +8,31 @@ $grid-breakpoints: (
         xxl: 1400px
 ) !default;
 
+
+
 // Grid columns
 $grid-columns: 24 !default;
+
+
 
 // Options
 $enable-grid-classes:       true !default;
 $enable-container-classes:  true !default;
 $enable-cssgrid:            false !default;
 
+
+
 // Prefix for :root CSS variables
 $prefix:                    base- !default;
+
+
+// Grid containers
+// scss-docs-start container-max-widths
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px
+) !default;
+// scss-docs-end container-max-widths
