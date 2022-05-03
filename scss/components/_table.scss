@@ -1,0 +1,11 @@
+// Table
+.table {
+
+  > tbody {
+    vertical-align: inherit;
+  }
+
+  > thead {
+    vertical-align: bottom;
+  }
+}
