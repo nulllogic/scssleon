@@ -13,7 +13,7 @@
     }
 
     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
-      %responsive-container-#{$breakpoint} {
+      _responsive-container-#{$breakpoint} {
         max-width: $container-max-width;
       }
 
@@ -23,7 +23,7 @@
         @if ($extend-breakpoint) {
 
           .container#{breakpoint-infix($name, $grid-breakpoints)} {
-            @extend %responsive-container-#{$breakpoint};
+            @extend _responsive-container-#{$breakpoint};
           }
 
           @if ($breakpoint == $name) {
