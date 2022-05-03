@@ -1,8 +1,12 @@
 /* Rows */
 .row {
-  @include generate_rows();
+  @include prepare_rows();
 
   > * {
-    @include prepare_row_columns();
+    @include prepare_columns();
   }
+}
+// Columns
+@if $enable-grid-classes {
+  @include generate_grid_columns();
 }
