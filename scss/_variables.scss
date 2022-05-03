@@ -12,6 +12,9 @@ $grid-breakpoints: (
 $grid-columns: 24 !default;
 
 // Options
-$enable-grid-classes: true !default;
-$enable-container-classes: true !default;
-$enable-cssgrid: false !default;
+$enable-grid-classes:       true !default;
+$enable-container-classes:  true !default;
+$enable-cssgrid:            false !default;
+
+// Prefix for :root CSS variables
+$prefix:                    base- !default;

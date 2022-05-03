@@ -4,9 +4,6 @@
  * Licensed under MIT (https://nulllogic.github.io/24grid//blob/main/LICENSE)
  */
 
-@import "root";
-@import "normalize";
-
 // Configuration
 @import "functions";
 @import "variables";
@@ -14,4 +11,7 @@
 @import "utilities";
 
 // Layout & components
+@import "root";
+@import "normalize";
 @import "components/grid";
+@import "components/containers";
