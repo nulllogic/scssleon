@@ -53,6 +53,3 @@ params:
   repo:                 "https://github.com/nulllogic/24grid"
   twitter:              "nulllogic"
   opencollective:       "https://opencollective.com/nulllogic"
-  blog:                 "https://blog.getbootstrap.com/"
-  themes:               "https://themes.getbootstrap.com/"
-  icons:                "https://icons.getbootstrap.com/"
