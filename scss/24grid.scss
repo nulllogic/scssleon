@@ -1,16 +1,16 @@
 /*!
-
-██████╗ ██╗  ██╗    ██████╗ ██████╗ ██╗██████╗
-╚════██╗██║  ██║   ██╔════╝ ██╔══██╗██║██╔══██╗
- █████╔╝███████║   ██║  ███╗██████╔╝██║██║  ██║
-██╔═══╝ ╚════██║   ██║   ██║██╔══██╗██║██║  ██║
-███████╗     ██║   ╚██████╔╝██║  ██║██║██████╔╝
-╚══════╝     ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
-
- * 24grid v1.0.0 (https://nulllogic.github.io/24grid/)
- * Copyright 2011-2022 NullLogic
- * Licensed under MIT (https://nulllogic.github.io/24grid//blob/main/LICENSE)
- */
+*
+* ██████╗ ██╗  ██╗    ██████╗ ██████╗ ██╗██████╗
+* ╚════██╗██║  ██║   ██╔════╝ ██╔══██╗██║██╔══██╗
+* ██████╔╝███████║   ██║  ███╗██████╔╝██║██║  ██║
+* ██╔═══╝ ╚════██║   ██║   ██║██╔══██╗██║██║  ██║
+* ███████╗     ██║   ╚██████╔╝██║  ██║██║██████╔╝
+* ╚══════╝     ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
+*
+* 24grid v1.0.0 (https://nulllogic.github.io/24grid/)
+* Copyright 2011-2022 NullLogic
+* Licensed under MIT (https://nulllogic.github.io/24grid//blob/main/LICENSE)
+*/
 
 // Configuration
 @import "functions";
@@ -20,7 +20,7 @@
 
 // Layout & components
 @import "root";
-@import "normalize";
+@import "reset";
 @import "components/grid";
 @import "components/container";
 @import "components/table";
