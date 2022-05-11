@@ -1,0 +1,35 @@
+/*
+*
+┌┐ ┬ ┬┌┬┐┌┬┐┌─┐┌┐┌┌─┐
+├┴┐│ │ │  │ │ ││││└─┐
+└─┘└─┘ ┴  ┴ └─┘┘└┘└─┘
+*
+*/
+
+
+.btn {
+
+
+  &:hover {
+
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active,
+  &.show {
+
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+
+  }
+}
