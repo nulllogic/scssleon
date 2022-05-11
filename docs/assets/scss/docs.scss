@@ -3,5 +3,9 @@
 
 @import "layout";
 @import "navbar";
+@import "snippets";
 @import "sidebar";
 @import "footer";
+
+// Load docs dependencies
+@import "syntax";
