@@ -1,34 +1,40 @@
 {{ define "main" }}
 <div class="container">
-    <aside class="sidebar">
-        <div class="offcanvas-body">
-            {{ partial "sidebar" . }}
+    <div class="row">
+        <div class="col-lg-4">
+            <aside class="sidebar">
+                <div class="offcanvas-body">
+                    {{ partial "sidebar" . }}
+                </div>
+            </aside>
         </div>
-    </aside>
 
-    <main class="content">
+        <div class="col-lg-16 col-md-24">
+            <main class="content">
+                <div class="bd-content ps-lg-2">
+                    {{ if .Page.Params.sections }}
+                    <div class="row g-3">
+                        {{ range .Page.Params.sections }}
+                        <a href="../{{ urlize .title }}/">
+                            <strong class="d-block h5 mb-0">{{ .title }}</strong>
+                            <span class="text-secondary">{{ .description }}</span>
+                        </a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
 
-        {{ if (eq .Page.Params.toc true) }}
-        <div>
-            {{ .TableOfContents }}
+                    {{ .Content }}
+                </div>
+            </main>
         </div>
-        {{ end }}
-
-        <div class="bd-content ps-lg-2">
-            {{ if .Page.Params.sections }}
-            <div class="row g-3">
-                {{ range .Page.Params.sections }}
-                <a href="../{{ urlize .title }}/">
-                    <strong class="d-block h5 mb-0">{{ .title }}</strong>
-                    <span class="text-secondary">{{ .description }}</span>
-                </a>
-                {{ end }}
+        <div class="col-lg-4">
+            {{ if (eq .Page.Params.toc true) }}
+            <div>
+                {{ .TableOfContents }}
             </div>
             {{ end }}
-
-            {{ .Content }}
         </div>
-    </main>
+    </div>
 </div>
 {{ end }}
 {{ define "footer" }}
