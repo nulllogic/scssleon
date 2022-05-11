@@ -1,5 +1,20 @@
 // Code snippets
 
+.layout-example {
+
+}
+
+.code-example {
+  position: relative;
+
+  .clipboard {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+  }
+}
+
 .highlight {
   position: relative;
   padding: .75rem (5 * .5)rem;
@@ -17,6 +32,7 @@
     white-space: pre;
     background-color: transparent;
     border: 0;
+    overflow: auto;
 
     // Undo tabindex that's automatically added by Hugo
     &:focus {
