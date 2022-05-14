@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: Breadcrumbs
-description: Breadcrumbs
+title: Badges
+description: Badges
 group: components
 toc: true
 ---
 
 ## Examples
 
-Breadcrumbs
+Badges
