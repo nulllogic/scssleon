@@ -5,32 +5,25 @@
 */
 
 .breadcrumbs {
-  list-style: none;
+  list-style-type: none;
 
-  > {
+  > li {
+    display: inline-block;
 
-    li {
-      display: inline-block;
-
-      + {
-
-        li:before {
-          color: #aeaeae;
-          content: "/";
-          padding: 0 5px;
-          font-size: 16px;
-          font-weight: 300;
-        }
-
-        .active:before {
-          padding-right: 8px;
-        }
-      }
+    + li:before {
+      color: #aeaeae;
+      content: "/";
+      padding: 0 5px;
+      font-size: 16px;
+      font-weight: 300;
     }
 
-    .active {
-      color: #555555;
+    .active:before {
+      padding-right: 8px;
     }
   }
 
+  &.active {
+    color: #555555;
+  }
 }
