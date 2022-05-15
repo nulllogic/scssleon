@@ -5,6 +5,10 @@
   pages:
     - title: Introduction
 
+- title: Layout
+  pages:
+    - title: Grid
+
 - title: Components
   pages:
     - title: Alerts
@@ -14,3 +18,7 @@
     - title: Button group
     - title: Pagination
     - title: Tables
+
+- title: Helpers
+  pages:
+    - title: Clearfix
