@@ -8,4 +8,54 @@
 
 .navbar {
 
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+
+  %container-flex-properties {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  > .container,
+  > .container-fluid {
+    @extend %container-flex-properties;
+  }
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
+      @extend %container-flex-properties;
+    }
+  }
+
+  // Navbar brand
+
+  .brand {
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+
+    }
+  }
+
+  // Navbar nav
+  .nav {
+
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    .dropdown-menu {
+      position: static;
+    }
+
+  }
+
 }

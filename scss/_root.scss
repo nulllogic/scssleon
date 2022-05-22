@@ -1,13 +1,18 @@
 :root {
-  --#{$prefix}-font-family:
-          /* Safari for OS X and iOS (San Francisco) */
-          -apple-system,
-            /* Chrome < 56 for OS X (San Francisco) */
-          BlinkMacSystemFont,
-            /* Windows */
-          'Segoe UI',
-            /* Android */
-          'Roboto',
-            /* Basic web fallback */
-          'Helvetica Neue', Arial, sans-serif;
+  // Fonts
+  --#{$prefix}font-sans-serif: #{inspect($font-family-sans-serif)};
+  --#{$prefix}font-monospace: #{inspect($font-family-monospace)};
+
+  // Root and body
+  // scss-docs-start root-body-variables
+  @if $font-size-root != null {
+    --#{$prefix}root-font-size: #{$font-size-root};
+  }
+
+  --#{$prefix}body-font-family: #{$font-family-base};
+  --#{$prefix}body-font-size: #{$font-size-base};
+  --#{$prefix}body-font-weight: #{$font-weight-base};
+  --#{$prefix}body-line-height: #{$line-height-base};
+
+  // scss-docs-end root-body-variables
 }
