@@ -1,6 +1,13 @@
 // Helpers
 @import "mixins/breakpoints";
 
+// Deprecate
+@import "mixins/deprecate";
+
+@import "mixins/border-radius";
+@import "mixins/transition";
+@import "mixins/buttons";
+
 // Layout
 @import "mixins/grid";
 @import "mixins/container";
