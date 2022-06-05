@@ -8,6 +8,7 @@
 - title: Layout
   pages:
     - title: Grid
+    - title: Breakpoints
 
 - title: Components
   pages:
@@ -16,7 +17,9 @@
     - title: Breadcrumb
     - title: Buttons
     - title: Button group
+    - title: Loader
     - title: Pagination
+    - title: Placeholder
     - title: Tables
 
 - title: Helpers
