@@ -10,17 +10,26 @@
     - title: Grid
     - title: Breakpoints
 
+- title: Customize
+  pages:
+    - title: Options
+
 - title: Components
   pages:
-    - title: Alerts
-    - title: Badges
+    - title: Alert
+    - title: Badge
     - title: Breadcrumb
-    - title: Buttons
+    - title: Button
     - title: Button group
     - title: Loader
     - title: Pagination
     - title: Placeholder
-    - title: Tables
+    - title: Table
+
+- title: Forms
+  pages:
+    - title: Select
+    - title: Layout
 
 - title: Helpers
   pages:
