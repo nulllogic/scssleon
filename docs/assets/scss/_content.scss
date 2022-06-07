@@ -1,7 +1,22 @@
 .content {
   //background: radial-gradient(94.32% 94.6% at 4.04% -44.6%, rgba(47, 138, 245, .4) 0%, rgba(0, 43, 94, 0) 100%), linear-gradient(0deg, #06070A, #06070A);;
 
-  h1, h2, h3, h4, h5, h6, p, ul, ol, div {
+  .heading {
+    .title {
+      margin: 0;
+    }
+
+    .description {
+      font-size: calc(1.275rem + .3vw);
+      font-weight: 300;
+
+      @include media-breakpoint-up(xl) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ul, ol {
     margin-bottom: 1rem;
   }
 
