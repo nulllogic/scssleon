@@ -1,9 +1,5 @@
 // Code snippets
 
-.layout-example {
-
-}
-
 .code-example {
   position: relative;
 
@@ -44,5 +40,19 @@
     font-size: .875em;
     color: #212529;
     word-wrap: normal;
+  }
+}
+
+.btn-clipboard {
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+
+  font-size: .875em;
+  padding: .25rem;
+
+  > svg {
+    margin-right: 5px;
   }
 }
