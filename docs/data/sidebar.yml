@@ -9,6 +9,7 @@
   pages:
     - title: Grid
     - title: Breakpoints
+    - title: Z-index
 
 - title: Customize
   pages:
@@ -28,9 +29,15 @@
 
 - title: Forms
   pages:
+    - title: Form control
     - title: Select
     - title: Layout
 
 - title: Helpers
   pages:
     - title: Clearfix
+
+- title: About
+  pages:
+    - title: Overview
+    - title: Brand
