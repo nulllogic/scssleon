@@ -1,9 +1,15 @@
 ---
 layout: docs
 title: Options
-description: Options
+description: 24Grid framework SCSS variables
 group: customize
 toc: true
 ---
 
-## Example
+### Root variables
+
+{{< scss-docs name="root-variables" file="scss/_variables.scss" >}}
+
+### Option variables
+
+{{< scss-docs name="option-variables" file="scss/_variables.scss" >}}
