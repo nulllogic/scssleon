@@ -8,12 +8,18 @@
   .example-preview {
     padding: var(--#{$prefix}-example-padding);
     border-bottom: var(--#{$prefix}-example-border);
+
     @include clearfix();
 
     .container .row > div {
       background: var(--#{$prefix}-example-background);
       border-bottom: var(--#{$prefix}-example-border);
     }
+
+    ul, ol {
+      padding-left: 0;
+    }
+
   }
 
   .clipboard {
