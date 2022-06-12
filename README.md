@@ -41,11 +41,25 @@ Learn more about using Hugo by reading its [documentation](https://gohugo.io/doc
 
 ## ┌ Contributing ┐
 
+<p align="left">
+  <img src="./.imgs/contributing.jpg" width="100%" alt="24grid contributing">
+</p>
+
 > For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
 
 ## ┌ Thanks ┐
+
+<p align="left">
+  <img src="./.imgs/thankyou.jpg" width="100%" alt="24grid sponsors">
+</p>
+
 <a href="https://www.browserstack.com"><img src="./.imgs/browserstack.jpg" alt="browserstack"></a><br />
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
 ## ┌ License ┐
+
+<p align="left">
+  <img src="./.imgs/license.jpg" width="100%" alt="24grid licence">
+</p>
+
 [MIT license](LICENSE)
