@@ -4,6 +4,7 @@
   --#{$prefix}font-monospace: #{inspect($font-family-monospace)};
 
   // Root and body
+
   // scss-docs-start root-body-variables
   @if $font-size-root != null {
     --#{$prefix}root-font-size: #{$font-size-root};
