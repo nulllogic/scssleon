@@ -20,6 +20,10 @@ Welcome to 24grid CSS framework ! It's the most advanced responsive front-end fr
 
 ## ┌ Documentation ┐
 
+<p align="left">
+  <img src="./.imgs/documentation.jpg" width="100%" alt="24grid documentation">
+</p>
+
 24grid's documentation, included in this repo in the root directory, is built with [Hugo](https://gohugo.io/) and publicly hosted on GitHub Pages at <https://nulllogic.github.io/24grid//>. The docs may also be run locally.
 
 Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/). Working on our search? Be sure to set `debug: true` in `site/assets/js/search.js`.
