@@ -1,6 +1,8 @@
 .content {
   //background: radial-gradient(94.32% 94.6% at 4.04% -44.6%, rgba(47, 138, 245, .4) 0%, rgba(0, 43, 94, 0) 100%), linear-gradient(0deg, #06070A, #06070A);;
 
+  padding: 0 0.25em;
+
   .heading {
     .title {
       margin: 0;
@@ -16,8 +18,13 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, p, ul, ol {
+  h1, h2, h3, h4, h5, h6, p, table {
     margin-bottom: 1rem;
+  }
+
+  ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
   }
 
   code {

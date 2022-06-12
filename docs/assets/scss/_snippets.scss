@@ -3,12 +3,53 @@
 .code-example {
   position: relative;
 
+  .example-preview {
+    padding: var(--#{$prefix}-example-padding);
+    @include clearfix();
+
+    .container .row > div {
+      background: var(--#{$prefix}-example-background);
+      border: var(--#{$prefix}-example-border);
+    }
+  }
+
   .clipboard {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 10;
+
   }
+
+  .toolbar {
+    margin: 0;
+    padding: 0 1.25rem 0.5rem 1.25rem ;
+    border-bottom: 1px solid #ccc;
+
+    .language {
+      background: #d9d7e0;
+      padding: 0 0.5rem;
+      margin: 0 0 0.5rem 0;
+      font-size: 0.75rem;
+    }
+
+    .btn-clipboard {
+      margin: 0.5rem 0 0 0;
+      background: transparent;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+
+      font-size: .875em;
+      padding: .25rem;
+
+      > svg {
+        margin-right: 5px;
+      }
+    }
+
+  }
+
 }
 
 .highlight {
@@ -40,19 +81,5 @@
     font-size: .875em;
     color: #212529;
     word-wrap: normal;
-  }
-}
-
-.btn-clipboard {
-  background: transparent;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-
-  font-size: .875em;
-  padding: .25rem;
-
-  > svg {
-    margin-right: 5px;
   }
 }

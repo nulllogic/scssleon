@@ -5,7 +5,17 @@
  ┴ ┴ ┴└─┘┴─┘└─┘
 *
 */
+
 .table {
+  width: 100%;
+  color: inherit;
+  vertical-align: middle;
+  border-color: inherit;
+
+  > :not(caption) > * > * {
+    padding: 5px;
+    border-bottom-width: 1px;
+  }
 
   > tbody {
     vertical-align: inherit;
@@ -13,5 +23,50 @@
 
   > thead {
     vertical-align: bottom;
+  }
+}
+
+.table-group-divider {
+  border-top: 1px solid #ccc;
+}
+
+// Border versions
+.table-bordered {
+  > :not(caption) > * {
+    border-width: 1px;
+
+    > * {
+      border-width: 1px;
+    }
+  }
+}
+
+.table-borderless {
+  > :not(caption) > * > * {
+    border-bottom-width: 0;
+  }
+
+  > :not(:first-child) {
+    border-top-width: 0;
+  }
+}
+
+// Zebra-striping
+.table-striped {
+  > tbody > tr:nth-of-type(#{$table-striped-order}) > * {
+    color: inherit;
+  }
+}
+
+// For columns
+.table-striped-columns {
+  > :not(caption) > tr > :nth-child(#{$table-striped-columns-order}) {
+    color: inherit;
+  }
+}
+
+.table-hover {
+  > tbody > tr:hover > * {
+    color: inherit;
   }
 }

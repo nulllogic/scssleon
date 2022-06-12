@@ -4,9 +4,13 @@
 // Deprecate
 @import "mixins/deprecate";
 
+// Utilities
+@import "mixins/utilities";
+
 @import "mixins/border-radius";
 @import "mixins/transition";
 @import "mixins/buttons";
+@import "mixins/gradients";
 
 // Layout
 @import "mixins/grid";

@@ -46,7 +46,7 @@
             <div class="col-lg-4">
                 {{ if (eq .Page.Params.toc true) }}
                 <div class="toc">
-                    {{ .TableOfContents }}
+                    {{ partial "toc" . }}
                 </div>
                 {{ end }}
             </div>

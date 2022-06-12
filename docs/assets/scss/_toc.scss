@@ -1,4 +1,8 @@
 .toc {
   position: sticky;
   top: 0;
+
+  .list {
+    list-style-type: none;
+  }
 }
