@@ -2,14 +2,17 @@
 
 .code-example {
   position: relative;
+  border: var(--#{$prefix}-example-border);
+  margin-bottom: 1rem;
 
   .example-preview {
     padding: var(--#{$prefix}-example-padding);
+    border-bottom: var(--#{$prefix}-example-border);
     @include clearfix();
 
     .container .row > div {
       background: var(--#{$prefix}-example-background);
-      border: var(--#{$prefix}-example-border);
+      border-bottom: var(--#{$prefix}-example-border);
     }
   }
 
@@ -50,6 +53,10 @@
 
   }
 
+  .highlight {
+    margin-bottom: 0;
+  }
+
 }
 
 .highlight {
@@ -82,4 +89,13 @@
     color: #212529;
     word-wrap: normal;
   }
+}
+
+// Information
+
+.information {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--#{$prefix}-information-bg, var(--bs-gray-100));
+  border-left: 0.25rem solid var(--#{$prefix}-information-border, var(--bs-gray-300));
 }

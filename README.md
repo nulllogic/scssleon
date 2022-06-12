@@ -14,19 +14,34 @@ Welcome to 24grid CSS framework ! It's the most advanced responsive front-end fr
   <a href="https://nulllogic.net/"><img src="./.imgs/logo.png" alt="NullLogic logo"></a>
 </p>
 
-## Quickstart
+## ┌ Quickstart ┐
 
 [![IMAGE ALT TEXT HERE](http://www.sergiuko.com/wp-content/uploads/2012/04/vimeo-preview-627x351.jpg)](https://vimeo.com/83573522)
 
-## Optional
+## ┌ Documentation ┐
 
-### └  Contributing
+24grid's documentation, included in this repo in the root directory, is built with [Hugo](https://gohugo.io/) and publicly hosted on GitHub Pages at <https://nulllogic.github.io/24grid//>. The docs may also be run locally.
+
+Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/). Working on our search? Be sure to set `debug: true` in `site/assets/js/search.js`.
+
+### ─ Running documentation locally
+
+1. From the root `/` directory, run `make docs-serve` in the command line.
+2. Open `http://localhost:8000/24grid/` in your browser.
+3. Enjoy the documentation locally
+
+
+
+Learn more about using Hugo by reading its [documentation](https://gohugo.io/documentation/).
+
+
+## ┌ Contributing ┐
 
 > For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
 
-## Thanks
+## ┌ Thanks ┐
 <a href="https://www.browserstack.com"><img src="./.imgs/browserstack.jpg" alt="browserstack"></a><br />
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
-## License
+## ┌ License ┐
 [MIT license](LICENSE)
