@@ -1,9 +1,16 @@
+/*
+╦  ╦┌─┐┬─┐┬┌─┐┌┐ ┬  ┌─┐┌─┐
+╚╗╔╝├─┤├┬┘│├─┤├┴┐│  ├┤ └─┐
+ ╚╝ ┴ ┴┴└─┴┴ ┴└─┘┴─┘└─┘└─┘
+ */
+
 // Root
 // scss-docs-start root-variables
 $prefix:              tfg- !default;
 $min-contrast-ratio:   4.5 !default;
 $grid-columns:          24 !default;
 // scss-docs-end root-variables
+
 
 // Options
 // scss-docs-start option-variables
@@ -52,6 +59,7 @@ $theme-colors: (
 ) !default;
 // scss-docs-end theme-colors-map
 
+
 // Grid breakpoints
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -63,6 +71,20 @@ $grid-breakpoints: (
         xxl: 1400px
 ) !default;
 // scss-docs-end grid-breakpoints
+
+
+// Grid containers
+// scss-docs-start container-max-widths
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px
+) !default;
+// scss-docs-end container-max-widths
+
+
 
 // Spacing
 // scss-docs-start spacer-variables-maps
@@ -102,7 +124,7 @@ $transition-collapse-width:   width .35s ease !default;
 
 // Links
 $link-color:                              $primary !default;
-$link-decoration:                         none !default;
+$link-decoration:                         underline !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;
@@ -111,19 +133,7 @@ $stretched-link-pseudo-element:           after !default;
 $stretched-link-z-index:                  1 !default;
 
 
-// Grid containers
-// scss-docs-start container-max-widths
-$container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
-        xl: 1140px,
-        xxl: 1320px
-) !default;
-// scss-docs-end container-max-widths
-
 // Tables
-
 // scss-docs-start table-variables
 $table-cell-padding-y:        .5rem !default;
 $table-cell-padding-x:        .5rem !default;
@@ -170,6 +180,8 @@ $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
 // scss-docs-end headings-variables
+
+
 
 // scss-docs-start font-variables
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
@@ -314,6 +326,21 @@ $badge-padding-x:                   .65em !default;
 $badge-border-radius:               $border-radius !default;
 // scss-docs-end badge-variables
 
+// Breadcrumb
+// scss-docs-start breadcrumb-variables
+$breadcrumb-font-size:              null !default;
+$breadcrumb-padding-y:              0 !default;
+$breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding-x:         .5rem !default;
+$breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-bg:                     null !default;
+$breadcrumb-divider-color:          #6c757d !default;
+$breadcrumb-active-color:           #6c757d !default;
+$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-divider-flipped:        $breadcrumb-divider !default;
+$breadcrumb-border-radius:          null !default;
+// scss-docs-end breadcrumb-variables
+
 // Paragraphs
 $paragraph-margin-bottom:           0 !default;
 
@@ -342,3 +369,12 @@ $zindex-popover:                    1070 !default;
 $zindex-tooltip:                    1080 !default;
 $zindex-toast:                      1090 !default;
 // scss-docs-end zindex-stack
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29"),
+) !default;

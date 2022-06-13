@@ -4,15 +4,17 @@ $utilities: () !default;
 
 $utilities: map-merge((
 
-// Display
-// scss-docs-start utils-display
+////////// Display
+////////// scss-docs-start utils-display
         "display": (
                 print: true,
                 property: display,
                 class: d,
-                values: inline inline-block block grid table table-row table-cell flex inline-flex
+                values: inline inline-block block grid table table-row table-cell flex inline-flex none
         ),
-// scss-docs-end utils-display
+////////// scss-docs-end utils-display
+
+
 
 // Flex
 // scss-docs-start utils-flex
