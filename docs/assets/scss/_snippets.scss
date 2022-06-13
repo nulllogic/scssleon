@@ -20,6 +20,15 @@
       padding-left: 0;
     }
 
+    .btn,
+    .btn-group {
+      margin: .25rem .125rem;
+    }
+
+    .btn-group > .btn {
+      margin: 0;
+    }
+
   }
 
   .clipboard {

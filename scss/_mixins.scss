@@ -7,6 +7,10 @@
 // Utilities
 @import "mixins/utilities";
 
+// Components
+@import "mixins/forms";
+
+@import "mixins/box-shadow";
 @import "mixins/border-radius";
 @import "mixins/transition";
 @import "mixins/buttons";
