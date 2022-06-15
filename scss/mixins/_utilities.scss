@@ -41,6 +41,7 @@
       }
 
       @if $is-css-var {
+
         .#{$property-class + $infix + $property-class-modifier} {
           --#{$prefix}#{$css-variable-name}: #{$value};
         }
@@ -50,7 +51,9 @@
             --#{$prefix}#{$css-variable-name}: #{$value};
           }
         }
+
       } @else {
+
         .#{$property-class + $infix + $property-class-modifier} {
           @each $property in $properties {
             @if $is-local-vars {
