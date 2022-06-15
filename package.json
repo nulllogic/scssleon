@@ -22,7 +22,7 @@
     "docs-serve": "docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:alpine server"
   },
   "devDependencies": {
-    "sass": "^1.52.2",
+    "sass": "^1.52.3",
     "clean-css-cli": "^5.6.0"
   },
   "homepage": "https://nulllogic.github.io/24grid",
