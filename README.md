@@ -30,7 +30,7 @@ Documentation search is powered by [Algolia's DocSearch](https://community.algol
 
 ### ─ Running documentation locally
 
-1. From the root `/` directory, run `make docs-serve` in the command line.
+1. From the root `/` directory, run `make docs` in the command line.
 2. Open `http://localhost:8000/24grid/` in your browser.
 3. Enjoy the documentation locally
 
