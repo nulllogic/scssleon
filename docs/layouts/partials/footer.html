@@ -2,10 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-8">
-                24grid
-                Designed and built with all the love in the world by the NullLogic team with the help of our
-                contributors.
-                Currently v{{ .Site.Params.current_version }}
+                <div class="d-inline-flex align-items-center">
+                    {{ partial "logo_with_text" . }}
+                </div>
+                <p>
+                    Designed and built with all the love in the world by the NullLogic team with the help of our
+                    contributors.
+                </p>
+                <p>
+                    Currently v{{ .Site.Params.current_version }}
+                </p>
             </div>
             <div class="col-4">
                 <h5>Links</h5>

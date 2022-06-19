@@ -1,4 +1,4 @@
-.PHONY: help docs-build docs-serve dist
+.PHONY: help docs-build docs dist
 
 CURRENT_DIR := $(shell pwd)
 
@@ -9,10 +9,10 @@ dist:
 	@echo "[Compiling SCSS files and minifying]"
 	npm run css && npm run minify
 
+docs:
+	@echo "Running docs at http://localhost:8000/24grid/"
+	docker run --rm -it -v $(CURRENT_DIR):/src -p 8000:1313 klakegg/hugo:ext-alpine server
+
 docs-build:
 	@echo "Generating docs"
 	docker run --rm -it -v $(CURRENT_DIR):/src klakegg/hugo:ext-alpine
-
-docs-serve:
-	@echo "Running docs at http://localhost:8000/24grid/"
-	docker run --rm -it -v $(CURRENT_DIR):/src -p 8000:1313 klakegg/hugo:ext-alpine server
