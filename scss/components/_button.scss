@@ -100,8 +100,39 @@
     opacity: var(--#{$prefix}btn-disabled-opacity);
     @include box-shadow(none);
   }
-}
 
+  // Make a button look and behave like a link
+  &.btn-link {
+
+    --#{$prefix}btn-font-weight: #{$font-weight-normal};
+    --#{$prefix}btn-color: #{$btn-link-color};
+    --#{$prefix}btn-bg: transparent;
+    --#{$prefix}btn-border-color: transparent;
+    --#{$prefix}btn-hover-color: #{$btn-link-hover-color};
+    --#{$prefix}btn-hover-border-color: transparent;
+    --#{$prefix}btn-active-border-color: transparent;
+    --#{$prefix}btn-disabled-border-color: transparent;
+    --#{$prefix}btn-box-shadow: none;
+
+    text-decoration: $link-decoration;
+
+    &:hover {
+      color: $btn-link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+
+    &:focus {
+      text-decoration: $link-hover-decoration;
+    }
+
+    &:disabled,
+    &.disabled {
+      //color: $btn-link-disabled-color;
+    }
+
+    // No need for an active state here
+  }
+}
 
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {
@@ -116,30 +147,6 @@
   }
 }
 // scss-docs-end btn-variant-loops
-
-
-// Make a button look and behave like a link
-.btn-link {
-  font-weight: $font-weight-normal;
-  color: $btn-link-color;
-  text-decoration: $link-decoration;
-
-  &:hover {
-    color: $btn-link-hover-color;
-    text-decoration: $link-hover-decoration;
-  }
-
-  &:focus {
-    text-decoration: $link-hover-decoration;
-  }
-
-  &:disabled,
-  &.disabled {
-    //color: $btn-link-disabled-color;
-  }
-
-  // No need for an active state here
-}
 
 
 // Button Sizes
