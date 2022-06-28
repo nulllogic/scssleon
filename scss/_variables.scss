@@ -135,7 +135,7 @@ $transition-collapse-width:   width .35s ease !default;
 
 // Links
 $link-color:                              $primary !default;
-$link-decoration:                         none !default;
+$link-decoration:                         underline !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   underline !default;
@@ -642,13 +642,6 @@ $form-validation-states: (
         )
 ) !default;
 // scss-docs-end form-validation-states
-
-// Placeholders
-
-// scss-docs-start placeholders
-$placeholder-opacity-max:           .45 !default;
-$placeholder-opacity-min:           .15 !default;
-// scss-docs-end placeholders
 
 // Z-index
 // scss-docs-start zindex-stack
