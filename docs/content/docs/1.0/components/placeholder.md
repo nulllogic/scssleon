@@ -16,7 +16,11 @@ In the example below, we take a typical card component and recreate it with plac
 
 {{< example >}}
 <div class="placeholder" aria-hidden="true">
-    <span class="title"></span>
+    <div class="row">
+        <div class="col-4">
+            <span class="el lg"></span>
+        </div>
+    </div>
     <span class="el"></span>
     <span class="el"></span>
     <span class="el"></span>
@@ -40,14 +44,13 @@ You can change the `width` through grid column classes, width utilities, or inli
 
 ### Sizing
 
-The size of `.placeholder`s are based on the typographic style of the parent element. Customize them with sizing modifiers: `.placeholder-lg`, `.placeholder-sm`, or `.placeholder-xs`.
+The size of `.placeholder`s are based on the typographic style of the parent element. Customize them with sizing modifiers: `.lg` or `.sm`
 
 {{< example >}}
 <div class="placeholder" aria-hidden="true">
     <span class="el lg"></span>
     <span class="el"></span>
     <span class="el sm"></span>
-    <span class="el xs"></span>
 </div>
 {{< /example >}}
 
@@ -56,6 +59,7 @@ The size of `.placeholder`s are based on the typographic style of the parent ele
 Animate placeholders with `.glow` or `.wave` to better convey the perception of something being _actively_ loaded.
 
 {{< example >}}
+
 <p class="placeholder glow">
     <span class="el"></span>
     <span class="el"></span>
@@ -70,7 +74,3 @@ Animate placeholders with `.glow` or `.wave` to better convey the perception of 
 {{< /example >}}
 
 ## Sass
-
-### Variables
-
-{{< scss-docs name="placeholders" file="scss/_variables.scss" >}}

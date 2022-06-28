@@ -1,17 +1,11 @@
 .placeholder {
 
-  --#{$prefix}placeholder-title-max-width: 10rem;
-  --#{$prefix}placeholder-title-height: 2rem;
-  --#{$prefix}placeholder-title-spacing: .85rem;
-
+  --#{$prefix}placeholder-height-lg: 2rem;
   --#{$prefix}placeholder-height: 0.55rem;
-  --#{$prefix}placeholder-height-xs: 0.35rem;
-  --#{$prefix}placeholder-height-sm: 0.4rem;
-  --#{$prefix}placeholder-height-lg: 0.85rem;
+  --#{$prefix}placeholder-height-sm: 0.35rem;
+
   --#{$prefix}placeholder-bg: rgba(228, 229, 231, 1);
   --#{$prefix}placeholder-border-radius: .1875rem;
-  --#{$prefix}placeholder-opacity-min: $placeholder-opacity-min;
-  --#{$prefix}placeholder-opacity-max: $placeholder-opacity-max;
   --#{$prefix}placeholder-spacing: .6rem;
   --#{$prefix}placeholder-last-line-width: 80%;
 
@@ -22,19 +16,9 @@
     min-height: var(--#{$prefix}placeholder-height);
 
     background-color: var(--#{$prefix}placeholder-bg);
-    opacity: var(--#{$prefix}placeholder-opacity-min);
-
     margin-bottom: var(--#{$prefix}placeholder-spacing);
 
     @include border-radius(var(--#{$prefix}placeholder-border-radius));
-  }
-
-  .title {
-    @extend %placeholder;
-
-    max-width: var(--#{$prefix}placeholder-title-max-width);
-    min-height: var(--#{$prefix}placeholder-title-height);
-    margin-bottom: var(--#{$prefix}placeholder-title-spacing);
   }
 
   .el {
@@ -47,10 +31,6 @@
     }
 
     // Sizing
-    &.xs {
-      min-height: var(--#{$prefix}placeholder-height-xs);
-    }
-
     &.sm {
       min-height: var(--#{$prefix}placeholder-height-sm);
     }
@@ -69,7 +49,7 @@
 
   &.wave {
     .el {
-      mask-image: linear-gradient(130deg, rgb(0, 0, 0) 55%, rgba(0, 0, 0, (1 - $placeholder-opacity-min)) 75%, rgb(0, 0, 0) 95%);
+      mask-image: linear-gradient(90deg, #0000, #fff, #0000);
       mask-size: 200% 100%;
       animation: placeholder-wave 2s linear infinite;
     }
@@ -78,7 +58,7 @@
 
 @keyframes placeholder-glow {
   50% {
-    opacity: $placeholder-opacity-min;
+    opacity: .5
   }
 }
 
