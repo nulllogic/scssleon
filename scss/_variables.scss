@@ -643,6 +643,12 @@ $form-validation-states: (
 ) !default;
 // scss-docs-end form-validation-states
 
+// Placeholders
+
+// scss-docs-start placeholders
+$placeholder-opacity-max:           .45 !default;
+$placeholder-opacity-min:           .15 !default;
+// scss-docs-end placeholders
 
 // Z-index
 // scss-docs-start zindex-stack
