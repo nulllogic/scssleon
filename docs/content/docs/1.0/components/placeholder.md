@@ -15,14 +15,14 @@ Placeholders can be used to enhance the experience of your application. They're 
 In the example below, we take a typical card component and recreate it with placeholders applied to create a "loading card". Size and proportions are the same between the two.
 
 {{< example >}}
-<p class="placeholder" aria-hidden="true">
+<div class="placeholder" aria-hidden="true">
     <span class="title"></span>
     <span class="el"></span>
     <span class="el"></span>
     <span class="el"></span>
     <span class="el"></span>
     <span class="el"></span>
-</p>
+</div>
 {{< /example >}}
 
 ### Width
@@ -30,11 +30,11 @@ In the example below, we take a typical card component and recreate it with plac
 You can change the `width` through grid column classes, width utilities, or inline styles.
 
 {{< example >}}
-<p class="placeholder" aria-hidden="true">
+<div class="placeholder" aria-hidden="true">
     <span class="el"></span>
     <span class="el"></span>
     <span class="el" style="width: 25%;"></span>
-</p>
+</div>
 {{< /example >}}
 
 
@@ -43,25 +43,29 @@ You can change the `width` through grid column classes, width utilities, or inli
 The size of `.placeholder`s are based on the typographic style of the parent element. Customize them with sizing modifiers: `.placeholder-lg`, `.placeholder-sm`, or `.placeholder-xs`.
 
 {{< example >}}
-<p class="placeholder" aria-hidden="true">
+<div class="placeholder" aria-hidden="true">
     <span class="el lg"></span>
     <span class="el"></span>
     <span class="el sm"></span>
     <span class="el xs"></span>
-</p>
+</div>
 {{< /example >}}
 
 ### Animation
 
-Animate placeholders with `.placeholder-glow` or `.placeholder-wave` to better convey the perception of something being _actively_ loaded.
+Animate placeholders with `.glow` or `.wave` to better convey the perception of something being _actively_ loaded.
 
 {{< example >}}
 <p class="placeholder glow">
-  <span class="el"></span>
+    <span class="el"></span>
+    <span class="el"></span>
+    <span class="el"></span>
 </p>
 
 <p class="placeholder wave">
-  <span class="el"></span>
+    <span class="el"></span>
+    <span class="el"></span>
+    <span class="el"></span>
 </p>
 {{< /example >}}
 
