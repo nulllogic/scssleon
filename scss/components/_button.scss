@@ -22,6 +22,9 @@
   --#{$prefix}btn-box-shadow: #{$btn-box-shadow};
   --#{$prefix}btn-disabled-opacity: #{$btn-disabled-opacity};
   --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), .5);
+
+  --#{$prefix}btn-close-padding-x: 0.5rem;
+  --#{$prefix}btn-close-padding-y: 0.5rem;
   // scss-docs-end btn-css-vars
 
   display: inline-block;
@@ -131,6 +134,19 @@
     }
 
     // No need for an active state here
+  }
+
+  &.btn-close {
+    padding: var(--#{$prefix}btn-close-padding-x) var(--#{$prefix}btn-close-padding-y);
+
+    .icon {
+      display: block;
+      height: 1.25rem;
+      width: 1.25rem;
+      max-height: 100%;
+      max-width: 100%;
+      margin: auto;
+    }
   }
 }
 

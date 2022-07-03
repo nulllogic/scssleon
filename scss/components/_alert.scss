@@ -16,9 +16,18 @@
   --#{$prefix}alert-icon-size: 1.25rem;
   --#{$prefix}alert-icon-padding: 1rem;
   --#{$prefix}alert-padding-dismissable: 2rem;
-  --#{$prefix}alert-dismiss-btn-position-top: 1rem;
-  --#{$prefix}alert-dismiss-btn-position-right: 1rem;
+
+  --#{$prefix}alert-dismiss-btn-position-top: .875rem;
+  --#{$prefix}alert-dismiss-btn-position-right: .4rem;
+
   --#{$prefix}alert-box-shadow: inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1);
+  --#{$prefix}alert-close-button-color: rgba(92, 95, 98, 1);
+  --#{$prefix}alert-close-button-color-hover: rgba(26, 28, 29, 1);
+
+  // Success alert
+  --#{$prefix}alert-icon-success-fill: rgba(0, 127, 95, 1);
+  --#{$prefix}alert-success-bg: rgba(214, 244, 225, 1);
+  --#{$prefix}alert-success-shadow: inset 0 0.0625rem 0 0 rgba(149, 201, 180, 1), inset 0 0 0 0.0625rem rgba(149, 201, 180, 1);
 
   @include border-radius(var(--#{$prefix}alert-border-radius));
   @include box-shadow(var(--#{$prefix}alert-box-shadow));
@@ -37,39 +46,61 @@
       max-height: 100%;
       max-width: 100%;
       margin: auto;
-
     }
   }
 
-  .wrapper {
+  .content-wrapper {
     flex: 1 1 auto;
 
     .title {
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .content {
-
+      font-weight: 300;
+      font-size: 0.825rem;
     }
   }
 
-  &.dismissable {
+  &.dismissible {
     padding-right: calc(var(--#{$prefix}alert-icon-size) + var(--#{$prefix}alert-padding-dismissable));
 
-    .dismiss {
+    .dismiss-wrapper {
       top: var(--#{$prefix}alert-dismiss-btn-position-top);
       right: var(--#{$prefix}alert-dismiss-btn-position-right);
       position: absolute;
+
+      .btn-close {
+        box-shadow: none;
+        border: none;
+        color: var(--#{$prefix}alert-close-button-color);
+
+        &:hover {
+          box-shadow: none;
+          color: var(--#{$prefix}alert-close-button-color-hover);
+        }
+      }
+    }
+  }
+
+  &.success {
+    background: var(--#{$prefix}alert-success-bg);
+    box-shadow: var(--#{$prefix}alert-success-shadow);
+
+    .icon-wrapper {
+      .icon {
+        color: var(--#{$prefix}alert-icon-success-fill);
+      }
     }
   }
 
 }
 
-.alert-success {
-  color: #3c763d;
-  background-color: #cff2ca;
-  border-color: #d6e9c6;
-}
+//.alert-success {
+//  color: #3c763d;
+//  background-color: #cff2ca;
+//  border-color: #d6e9c6;
+//}
 
 .alert-info {
   color: #31708f;
