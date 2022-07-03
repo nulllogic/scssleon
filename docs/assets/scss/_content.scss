@@ -18,8 +18,15 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6, p, table {
+  h1, h2, h3, h4, h5, h6, p, table, .alert {
     margin-bottom: 1rem;
+  }
+
+  .alert .title,
+  .alert .content,
+  .alert .content p {
+    margin-bottom: 0;
+    padding: 0;
   }
 
   ul, ol {
