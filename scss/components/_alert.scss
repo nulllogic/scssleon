@@ -19,7 +19,7 @@
   --#{$prefix}alert-icon-padding: 1rem;
   --#{$prefix}alert-padding-dismissable: 2rem;
 
-  --#{$prefix}alert-dismiss-btn-position-top: .875rem;
+  --#{$prefix}alert-dismiss-btn-position-top: .5rem;
   --#{$prefix}alert-dismiss-btn-position-right: .4rem;
 
   --#{$prefix}alert-close-button-color: rgba(92, 95, 98, 1);
@@ -69,10 +69,14 @@
       width: var(--#{$prefix}alert-icon-size);
       color: var(--#{$prefix}alert-icon-fill);
 
-      display: inline-block;
+      display: block;
       max-height: 100%;
       max-width: 100%;
       margin: auto;
+
+      > svg {
+        display: block;
+      }
     }
   }
 
@@ -81,6 +85,7 @@
 
     .title {
       font-weight: 500;
+      margin-top: -0.225rem;
     }
 
     .content {
@@ -90,6 +95,10 @@
 
       font-weight: 300;
       font-size: 0.825rem;
+
+      & + .actions {
+        padding-top: 1rem;
+      }
     }
   }
 

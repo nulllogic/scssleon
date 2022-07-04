@@ -6,16 +6,34 @@ group: components
 toc: true
 ---
 
-## Alerts
+## Default alert
 
-<div class="alert dismissible" role="alert">
+{{< example >}}
+<div class="alert" role="alert">
     <div class="icon-wrapper">
         <span class="icon">
-            <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M0 10a10 10 0 1 0 20 0 10 10 0 0 0-20 0zm15.2-1.8a1 1 0 0 0-1.4-1.4l-4.8 4.8-2.3-2.3a1 1 0 0 0-1.4 1.4l3 3c.4.4 1 .4 1.4 0l5.5-5.5z"></path></svg>
+            <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M10 20c5.514 0 10-4.486 10-10s-4.486-10-10-10-10 4.486-10 10 4.486 10 10 10zm1-6a1 1 0 1 1-2 0v-4a1 1 0 1 1 2 0v4zm-1-9a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path></svg>
         </span>
     </div>
     <div class="content-wrapper">
         <p class="title">Your order is ready to ship.</p>
+        <div class="content">
+            <p>This order is ready to ship on March 7, 2017 at 3:12pm EDT.</p>
+        </div>
+    </div>
+</div>
+{{< /example >}}
+
+## Dismissible alert
+
+{{< example >}}
+<div class="alert dismissible" role="alert">
+    <div class="icon-wrapper">
+        <span class="icon">
+            <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M10 20c5.514 0 10-4.486 10-10s-4.486-10-10-10-10 4.486-10 10 4.486 10 10 10zm1-6a1 1 0 1 1-2 0v-4a1 1 0 1 1 2 0v4zm-1-9a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path></svg>
+        </span>
+    </div>
+    <div class="content-wrapper">
         <div class="content">
             <p>This order is ready to ship on March 7, 2017 at 3:12pm EDT.</p>
         </div>
@@ -28,7 +46,11 @@ toc: true
         </button>
     </div>
 </div>
+{{< /example >}}
 
+## Alerts variations
+
+{{< example >}}
 <div class="alert success dismissible" role="alert">
     <div class="icon-wrapper">
         <span class="icon">
@@ -112,19 +134,27 @@ toc: true
         </button>
     </div>
 </div>
+{{< /example >}}
 
-```html
-<div class="alert success dismissible" role="alert">
+## Alert with call-to-action buttons
+
+{{< example >}}
+
+<div class="alert warning dismissible" role="alert">
     <div class="icon-wrapper">
         <span class="icon">
-            <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path fill-rule="evenodd" d="M0 10a10 10 0 1 0 20 0 10 10 0 0 0-20 0zm15.2-1.8a1 1 0 0 0-1.4-1.4l-4.8 4.8-2.3-2.3a1 1 0 0 0-1.4 1.4l3 3c.4.4 1 .4 1.4 0l5.5-5.5z"></path></svg>
+            <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M10 20c5.514 0 10-4.486 10-10s-4.486-10-10-10-10 4.486-10 10 4.486 10 10 10zm1-6a1 1 0 1 1-2 0v-4a1 1 0 1 1 2 0v4zm-1-9a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path></svg>
         </span>
     </div>
     <div class="content-wrapper">
-        <p class="title">Well done!</p>
+        <p class="title">Your order is ready to ship.</p>
         <div class="content">
-            <p>test</p>
+            <p>This order is ready to ship on March 7, 2017 at 3:12pm EDT.</p>
         </div>
+        <div class="actions">
+            <button class="btn">Edit variant weights</button>
+            <button class="btn btn-link">Learn more</button>
+        </div> 
     </div>
     <div class="dismiss-wrapper">
         <button class="btn btn-close" aria-label="Dismiss notification" type="button">
@@ -134,4 +164,5 @@ toc: true
         </button>
     </div>
 </div>
-```
+
+{{< /example >}}
