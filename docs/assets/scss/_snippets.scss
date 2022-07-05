@@ -4,10 +4,13 @@
   position: relative;
   border: var(--#{$prefix}-example-border);
   margin-bottom: 1rem;
+  background: #f8f9fa;
 
   .example-preview {
     padding: var(--#{$prefix}-example-padding);
     position: relative;
+    transition: 0.75s background-color;
+    background: #fff;
 
     &:after {
       width: 1px;
