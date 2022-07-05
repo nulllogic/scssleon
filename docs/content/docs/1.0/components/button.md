@@ -14,7 +14,9 @@ toc: true
 {{< example >}}
 {{< buttons.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<button type="button" class="btn btn-{{ .name }}">{{ .name | title }}</button>
+    <button type="button" class="btn btn-{{ .name }}">
+        <span class="text">{{ .name | title }}</span>
+    </button>
 {{- end -}}
 {{< /buttons.inline >}}
 

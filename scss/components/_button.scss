@@ -27,12 +27,12 @@
   --#{$prefix}btn-close-padding-y: 0.5rem;
   // scss-docs-end btn-css-vars
 
-  display: inline-block;
   padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
 
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
+
   color: #000;
   text-align: center;
   text-decoration: if($link-decoration == none, null, none);
@@ -41,7 +41,10 @@
   cursor: if($enable-button-pointers, pointer, null);
   user-select: none;
   background-color: transparent;
-  border: $btn-border-width solid transparent;
+  border: 1px solid rgba(186, 191, 195, 1);
+
+  display: inline-flex;
+  align-items: center;
 
   @include border-radius(var(--#{$prefix}btn-border-radius));
   @include gradient-bg(var(--#{$prefix}btn-bg));
