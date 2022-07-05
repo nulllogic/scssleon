@@ -1,3 +1,9 @@
+.dragging,
+.dragging * {
+  cursor: ew-resize;
+  user-select: none;
+}
+
 .main {
   margin: 1.5rem 0;
 }

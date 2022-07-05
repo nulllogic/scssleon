@@ -17,7 +17,7 @@ Usage: `example args`
 
 <div class="code-example">
     {{- if eq $show_preview true -}}
-    <div{{ with $id }} id="{{ . }}"{{ end }} class="example-preview{{ with $class }} {{ . }}{{ end }}">
+    <div{{ with $id }} id="{{ . }}"{{ end }} class="example-preview{{ with $class }} {{ . }}{{ end }}" style="margin-right: 0">
     {{- $input -}}
     {{- end -}}
     <div class="resizer">
