@@ -8,6 +8,35 @@
   .example-preview {
     padding: var(--#{$prefix}-example-padding);
     border-bottom: var(--#{$prefix}-example-border);
+    position: relative;
+
+    .resizer {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      user-select: none;
+
+      .drag {
+        padding: .5rem;
+        touch-action: pan-y;
+        cursor: ew-resize;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: .75rem;
+        transform: translate(-50%, -50%);
+        user-select: none;
+
+        .el {
+          background: rgba(100, 116, 139, .6);
+          border-radius: 10px;
+          width: .375rem;
+          height: 2rem;
+          display: block;
+        }
+      }
+    }
 
     @include clearfix();
 
@@ -41,7 +70,7 @@
 
   .toolbar {
     margin: 0;
-    padding: 0 1.25rem 0.5rem 1.25rem ;
+    padding: 0 1.25rem 0.5rem 1.25rem;
     border-bottom: 1px solid #ccc;
 
     .language {
@@ -76,7 +105,7 @@
 
 .highlight {
   position: relative;
-  padding: .75rem (5 * .5)rem;
+  padding: .75rem (5 * .5) rem;
   margin-bottom: 1rem;
   background-color: rgb(248, 249, 250);
 

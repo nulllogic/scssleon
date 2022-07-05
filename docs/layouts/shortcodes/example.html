@@ -19,8 +19,13 @@ Usage: `example args`
     {{- if eq $show_preview true -}}
     <div{{ with $id }} id="{{ . }}"{{ end }} class="example-preview{{ with $class }} {{ . }}{{ end }}">
     {{- $input -}}
+    {{- end -}}
+    <div class="resizer">
+        <span class="drag">
+            <span class="el"></span>
+        </span>
+    </div>
 </div>
-{{- end -}}
 
 {{- if eq $show_markup true -}}
 {{- if eq $show_preview true -}}

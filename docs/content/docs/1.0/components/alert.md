@@ -166,3 +166,9 @@ toc: true
 </div>
 
 {{< /example >}}
+
+### Variables
+
+As part of 24grid's evolving CSS variables approach, breadcrumbs now use local CSS variables on `.alert` for enhanced real-time customization. Values for the CSS variables are set via SCSS, so SCSS customization is still supported, too.
+
+{{< scss-docs name="alert-css-vars" file="scss/components/_alert.scss" >}}
