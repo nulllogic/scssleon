@@ -17,8 +17,8 @@
 ) {
   color: $color;
   @include gradient-bg($background);
-  border-color: $border;
-  //@include box-shadow($btn-box-shadow);
+  //border-color: $border;
+  @include box-shadow($btn-box-shadow);
 
   &:hover {
     color: $hover-color;

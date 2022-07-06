@@ -58,7 +58,7 @@
                     let resizer = element.querySelector('.example-preview .resizer .drag');
 
                     if (resizer) {
-                        let container_limit = preview.clientWidth / 2;
+                        let container_limit = Math.round(preview.clientWidth / 1.5);
                         // console.log(preview.style, container_limit);
                         resizer.onmousedown = (event) => {
                             return initDragHandle(event, resizer, preview, container_limit)
