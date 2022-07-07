@@ -23,29 +23,25 @@
   --#{$prefix}btn-disabled-opacity: #{$btn-disabled-opacity};
   --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), .5);
 
-  --#{$prefix}btn-close-padding-x: 0.5rem;
-  --#{$prefix}btn-close-padding-y: 0.5rem;
+  --#{$prefix}btn-spinner-size: 1.25rem;
   // scss-docs-end btn-css-vars
-
-  padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
 
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
 
+  padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
   color: var(--#{$prefix}btn-color);
 
   text-align: center;
   text-decoration: if($link-decoration == none, null, none);
-  white-space: $btn-white-space;
-  vertical-align: middle;
-  cursor: if($enable-button-pointers, pointer, null);
-  user-select: none;
-  background-color: transparent;
   border: 1px solid rgba(186, 191, 195, 1);
 
   display: inline-flex;
   align-items: center;
+  white-space: $btn-white-space;
+  cursor: if($enable-button-pointers, pointer, null);
+  user-select: none;
 
   @include border-radius(var(--#{$prefix}btn-border-radius));
   @include gradient-bg(var(--#{$prefix}btn-bg));
@@ -139,26 +135,23 @@
     // No need for an active state here
   }
 
-  &.btn-close {
-    padding: var(--#{$prefix}btn-close-padding-x) var(--#{$prefix}btn-close-padding-y);
-
-    .icon {
-      display: block;
-      height: 1.25rem;
-      width: 1.25rem;
-      max-height: 100%;
-      max-width: 100%;
-      margin: auto;
-    }
+  // Button Sizes
+  &.btn-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
   }
+
+  &.btn-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+  }
+
 }
 
 // scss-docs-start btn-variant-loops
-//@each $color, $value in $theme-colors {
-//  .btn-#{$color} {
-//    @include button-variant($value, $value);
-//  }
-//}
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, tint-color($value, 50));
+  }
+}
 //
 //@each $color, $value in $theme-colors {
 //  .btn-outline-#{$color} {
@@ -167,12 +160,3 @@
 //}
 // scss-docs-end btn-variant-loops
 
-
-// Button Sizes
-//.btn-lg {
-//  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
-//}
-//
-//.btn-sm {
-//  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-//}

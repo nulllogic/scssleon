@@ -1,8 +1,8 @@
 :root {
-  --#{$prefix}-example-padding : 1.25rem;
-  --#{$prefix}-example-background : rgba(25,117,152,0.15);
-  --#{$prefix}-example-border : 1px solid rgba(25,117,152,0.15);
+  --#{$prefix}example-padding : 1.25rem;
+  --#{$prefix}example-background : rgba(25,117,152,0.15);
+  --#{$prefix}example-border : 1px solid rgba(25,117,152,0.15);
 
-  --#{$prefix}-information-bg: rgba(255, 193, 7, .075);
-  --#{$prefix}-information-border: rgba(255, 193, 7, .5);
+  --#{$prefix}information-bg: rgba(255, 193, 7, .075);
+  --#{$prefix}information-border: rgba(255, 193, 7, .5);
 }

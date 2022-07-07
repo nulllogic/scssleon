@@ -6,11 +6,10 @@
 
 // Root
 // scss-docs-start root-variables
-$prefix:              tfg- !default;
-$min-contrast-ratio:   4.5 !default;
-$grid-columns:          24 !default;
+$prefix:                tfg- !default;
+$min-contrast-ratio:     4.5 !default;
+$grid-columns:            24 !default;
 // scss-docs-end root-variables
-
 
 // Options
 // scss-docs-start option-variables
@@ -30,32 +29,20 @@ $enable-validation-icons:     true  !default;
 
 // scss-docs-end option-variables
 
-// scss-docs-start color-variables
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-// scss-docs-end color-variables
-
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      #000 !default;
 $color-contrast-light:     #fff !default;
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     tint-color(#000, 60) !default;
-$success:       $green !default;
-$danger:        $red !default;
+$primary:       rgba(255, 255, 255, 1) !default;
+$secondary:     tint-color(rgb(177, 177, 177), 30) !default;
+$success:       rgba(0, 110, 82, 1) !default;
+$danger:        rgba(188, 34, 0, 1) !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-        "primary":    rgba(246, 246, 247, 1),
+        "primary":    $primary,
         "secondary":  $secondary,
         "success":    $success,
         "danger":     $danger,
@@ -63,9 +50,6 @@ $theme-colors: (
 // scss-docs-end theme-colors-map
 
 // Body
-//
-// Settings for the `<body>` element.
-
 $body-bg:                   #fff !default;
 $body-color:                #ccc !default;
 $body-text-align:           null !default;
@@ -248,7 +232,7 @@ $hr-border-width:             $border-width !default;
 $hr-opacity:                  .25 !default;
 
 $mark-padding:                .1875em !default;
-$mark-bg:                     tint-color($yellow, 60) !default;
+$mark-bg:                     tint-color(rgba(255,240,0, 1), 60) !default;
 
 $legend-margin-bottom:        .5rem !default;
 $legend-font-size:            $font-size-base * 1.25 !default;
@@ -357,7 +341,7 @@ $paragraph-margin-bottom:           0 !default;
 
 // Code
 $code-font-size:                    $small-font-size !default;
-$code-color:                        $pink !default;
+$code-color:                        rgba(255, 0, 240, 1) !default;
 
 $kbd-padding-y:                     .1875rem !default;
 $kbd-padding-x:                     .375rem !default;
