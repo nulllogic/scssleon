@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Introduction
-description: Get started with 24grid
+title: Get started with xiigrid
+description: xiigrid is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
 group: getting-started
 aliases:
 - "/docs/5.1/getting-started/"

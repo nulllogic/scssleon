@@ -9,7 +9,7 @@ about: Something is broken or doesn't work as expected
 │           For more information, see the CONTRIBUTING.md document
 │            
 │       ⚠ Only submit bug reports here. For help or questions to the
-│       community, see the forum: https://nulllogic.github.io/24grid
+│       community, see the forum: https://nulllogic.github.io/xiigrid
 └------------------------------------------------------------------------------>
 
 ## What should happen?

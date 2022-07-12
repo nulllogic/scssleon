@@ -1,5 +1,5 @@
 {
-  "name": "@nulllogic/24grid",
+  "name": "@nulllogic/xiigrid",
   "description": "Most advanced responsive front-end CSS framework",
   "version": "1.0.1",
   "version_short": "1.0",
@@ -25,17 +25,17 @@
     "sass": "^1.53.0",
     "clean-css-cli": "^5.6.0"
   },
-  "homepage": "https://nulllogic.github.io/24grid",
+  "homepage": "https://nulllogic.github.io/xiigrid",
   "main": ".babelrc.js",
-  "style": "dist/24grid.css",
-  "sass": "scss/24grid.scss",
+  "style": "dist/xiigrid.css",
+  "sass": "scss/xiigrid.scss",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nulllogic/24grid.git"
+    "url": "git+https://github.com/nulllogic/xiigrid.git"
   },
   "author": "Vladimir Lukyanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nulllogic/24grid/issues"
+    "url": "https://github.com/nulllogic/xiigrid/issues"
   }
 }

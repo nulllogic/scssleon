@@ -10,7 +10,7 @@ dist:
 	npm run css && npm run minify
 
 docs:
-	@echo "Running docs at http://localhost:8000/24grid/"
+	@echo "Running docs at http://localhost:8000/xiigrid/"
 	docker run --rm -it -v $(CURRENT_DIR):/src -p 8000:1313 klakegg/hugo:ext-alpine server
 
 docs-build:

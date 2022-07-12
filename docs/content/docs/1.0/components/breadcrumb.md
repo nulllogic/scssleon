@@ -100,7 +100,7 @@ For more information, see the [ARIA Authoring Practices Guide breadcrumb pattern
 
 ### Variables
 
-As part of 24grid's evolving CSS variables approach, breadcrumbs now use local CSS variables on `.breadcrumb` for enhanced real-time customization. Values for the CSS variables are set via SCSS, so SCSS customization is still supported, too.
+As part of xiigrid's evolving CSS variables approach, breadcrumbs now use local CSS variables on `.breadcrumb` for enhanced real-time customization. Values for the CSS variables are set via SCSS, so SCSS customization is still supported, too.
 
 {{< scss-docs name="breadcrumb-css-vars" file="scss/components/_breadcrumb.scss" >}}
 

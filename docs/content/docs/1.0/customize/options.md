@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Options
-description: 24Grid framework SCSS variables
+description: xiigrid framework SCSS variables
 group: customize
 toc: true
 ---

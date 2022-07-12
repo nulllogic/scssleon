@@ -9,7 +9,7 @@ toc: true
 
 ## Examples
 
-24grid includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
+xiigrid includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
 
 {{< example >}}
 {{< buttons.inline >}}
@@ -114,7 +114,7 @@ To cover cases where you have to keep the `href` attribute on a disabled link, t
 
 ## Block buttons
 
-Create responsive stacks of full-width, "block buttons" like those in 24grid 4 with a mix of our display and gap utilities. By using utilities instead of button specific classes, we have much greater control over spacing, alignment, and responsive behaviors.
+Create responsive stacks of full-width, "block buttons" like those in xiigrid 4 with a mix of our display and gap utilities. By using utilities instead of button specific classes, we have much greater control over spacing, alignment, and responsive behaviors.
 
 {{< example >}}
 <div class="d-grid gap-2">
@@ -178,11 +178,11 @@ Add `data-bs-toggle="button"` to toggle a button's `active` state. If you're pre
 
 ### Variables
 
-As part of 24grid's evolving CSS variables approach, buttons now use local CSS variables on `.btn` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+As part of xiigrid's evolving CSS variables approach, buttons now use local CSS variables on `.btn` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
 
 Each `.btn-*` modifier class updates the appropriate CSS variables to minimize additional CSS rules with our `button-variant()`, `button-outline-variant()`, and `button-size()` mixins.
 
-Here's an example of building a custom `.btn-*` modifier class like we do for the buttons unique to our docs by reassigning 24grid's CSS variables with a mixture of our own CSS and Sass variables.
+Here's an example of building a custom `.btn-*` modifier class like we do for the buttons unique to our docs by reassigning xiigrid's CSS variables with a mixture of our own CSS and Sass variables.
 
 <div class="bd-example">
   <button type="button" class="btn btn-bd-primary">Custom button</button>
