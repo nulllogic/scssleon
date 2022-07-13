@@ -26,16 +26,16 @@ $enable-deprecation-messages: true  !default;
 $enable-gradients:            false !default;
 $enable-important-utilities:  false !default;
 $enable-validation-icons:     true  !default;
-
 // scss-docs-end option-variables
 
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      #000 !default;
 $color-contrast-light:     #fff !default;
 
+// Main theme colors
 // scss-docs-start theme-color-variables
 $primary:       rgba(255, 255, 255, 1) !default;
-$secondary:     tint-color(rgb(177, 177, 177), 30) !default;
+$secondary:     rgba(199, 199, 199, 1) !default;
 $success:       rgba(0, 110, 82, 1) !default;
 $danger:        rgba(188, 34, 0, 1) !default;
 // scss-docs-end theme-color-variables
@@ -54,6 +54,7 @@ $body-bg:                   #fff !default;
 $body-color:                #ccc !default;
 $body-text-align:           null !default;
 
+
 // Grid breakpoints
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -67,6 +68,7 @@ $grid-breakpoints: (
 // scss-docs-end grid-breakpoints
 
 
+
 // Grid containers
 // scss-docs-start container-max-widths
 $container-max-widths: (
@@ -77,6 +79,7 @@ $container-max-widths: (
         xxl: 1320px
 ) !default;
 // scss-docs-end container-max-widths
+
 
 
 
@@ -361,8 +364,8 @@ $tooltip-color:                     #fff !default;
 $tooltip-bg:                        #000 !default;
 $tooltip-border-radius:             $border-radius !default;
 $tooltip-opacity:                   .9 !default;
-$tooltip-padding-y:                 $spacer * .25 !default;
-$tooltip-padding-x:                 $spacer * .5 !default;
+$tooltip-padding-y:                 .25rem !default;
+$tooltip-padding-x:                 .5rem !default;
 $tooltip-margin:                    null !default; // TODO: remove this in v6
 
 $tooltip-arrow-width:               .8rem !default;
@@ -628,16 +631,16 @@ $form-validation-states: (
 
 // Z-index
 // scss-docs-start zindex-stack
-$zindex-dropdown:                   1000 !default;
-$zindex-sticky:                     1020 !default;
-$zindex-fixed:                      1030 !default;
-$zindex-offcanvas-backdrop:         1040 !default;
-$zindex-offcanvas:                  1045 !default;
-$zindex-modal-backdrop:             1050 !default;
-$zindex-modal:                      1055 !default;
-$zindex-popover:                    1070 !default;
-$zindex-tooltip:                    1080 !default;
-$zindex-toast:                      1090 !default;
+$z-index-dropdown:                   1000 !default;
+$z-index-sticky:                     1020 !default;
+$z-index-fixed:                      1030 !default;
+$z-index-offcanvas-backdrop:         1040 !default;
+$z-index-offcanvas:                  1045 !default;
+$z-index-modal-backdrop:             1050 !default;
+$z-index-modal:                      1055 !default;
+$z-index-popover:                    1070 !default;
+$z-index-tooltip:                    1080 !default;
+$z-index-toast:                      1090 !default;
 // scss-docs-end zindex-stack
 
 // Characters which are escaped by the escape-svg function

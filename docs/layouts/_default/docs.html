@@ -2,7 +2,7 @@
 <div class="main">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 <aside class="sidebar">
                     <div class="offcanvas-body">
                         {{ partial "sidebar" . }}
@@ -10,7 +10,7 @@
                 </aside>
             </div>
 
-            <div class="col-lg-16 col-md-24">
+            <div class="col-lg-8 col-md-24">
                 <main class="content">
 
                     <div class="heading">
@@ -43,7 +43,7 @@
 
                 </main>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 {{ if (eq .Page.Params.toc true) }}
                 <div class="toc">
                     {{ partial "toc" . }}
