@@ -10,6 +10,9 @@
     --#{$prefix}root-font-size: #{$font-size-root};
   }
 
+  --#{$prefix}body-color: #{$body-color};
+  --#{$prefix}body-bg: #{$body-bg};
+
   --#{$prefix}body-font-family: #{$font-family-base};
   --#{$prefix}body-font-size: #{$font-size-base};
   --#{$prefix}body-font-weight: #{$font-weight-base};
