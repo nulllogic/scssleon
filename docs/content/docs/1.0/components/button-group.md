@@ -12,8 +12,8 @@ Wrap a series of buttons with `.btn` in `.btn-group`.
 
 {{< example >}}
 <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-primary">Left</button>
-  <button type="button" class="btn btn-primary">Middle</button>
-  <button type="button" class="btn btn-primary">Right</button>
+  <button type="button" class="btn btn-default">Left</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
 </div>
 {{< /example >}}

@@ -13,4 +13,34 @@ Due to the widespread use of `<table>` elements across third-party widgets like 
 
 Using the most basic table markup, here's how `.table`-based tables look in xiigrid.
 
-{{< table class="table" simplified="false" >}}
+{{< example >}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Twitter</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>T</td>
+        <td>B</td>
+        <td>@tbd</td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>A</td>
+        <td>B</td>
+        <td>@abc</td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Void</td>
+        <td>@nulllogic</td>
+    </tr>
+    </tbody>
+</table>
+{{< /example >}}

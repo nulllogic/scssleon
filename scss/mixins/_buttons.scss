@@ -44,7 +44,7 @@
   }
 
   @if($focus-shadow != null) {
-    --#{$prefix}btn-focus-box-shadow: #{$focus-shadow};
+    --#{$prefix}btn-focus-shadow-rgb: #{$focus-shadow};
   }
 
   // Active state

@@ -32,7 +32,7 @@ The `.btn` classes are designed to be used with the `<button>` element. However,
 When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
 
 {{< example >}}
-<a class="btn btn-primary" href="#" role="button">Link</a>
+<a class="btn btn-primary" href="" role="button">Link</a>
 <button class="btn btn-primary" type="submit">Button</button>
 <input class="btn btn-primary" type="button" value="Input">
 <input class="btn btn-primary" type="submit" value="Submit">
@@ -106,8 +106,8 @@ Disabled buttons using the `<a>` element behave a bit different:
 To cover cases where you have to keep the `href` attribute on a disabled link, the `.disabled` class uses `pointer-events: none` to try to disable the link functionality of `<a>`s. Note that this CSS property is not yet standardized for HTML, but all modern browsers support it. In addition, even in browsers that do support `pointer-events: none`, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, in addition to `aria-disabled="true"`, also include a `tabindex="-1"` attribute on these links to prevent them from receiving keyboard focus, and use custom JavaScript to disable their functionality altogether.
 
 {{< example >}}
-<a href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
-<a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+<a href="" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+<a href="" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
 {{< /example >}}
 
 ## Block buttons
@@ -167,8 +167,8 @@ Add `data-bs-toggle="button"` to toggle a button's `active` state. If you're pre
 {{< /example >}}
 
 {{< example >}}
-<a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Toggle link</a>
-<a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle link</a>
+<a href="" class="btn btn-primary" role="button" data-bs-toggle="button">Toggle link</a>
+<a href="" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle link</a>
 <a class="btn btn-primary disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
 {{< /example >}}
 

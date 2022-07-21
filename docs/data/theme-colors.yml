@@ -3,7 +3,7 @@
 - name: primary
   hex: "#337ab7"
 - name: secondary
-  hex: "#c9c9c9"
+  hex: "#828282"
 - name: success
   hex: "#006e52"
 - name: danger

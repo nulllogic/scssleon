@@ -15,6 +15,7 @@
   --#{$prefix}btn-font-family: #{$btn-font-family};
   --#{$prefix}btn-font-weight: #{$btn-font-weight};
   --#{$prefix}btn-line-height: #{$btn-line-height};
+  --#{$prefix}btn-font-size: #{$btn-font-size};
 
   --#{$prefix}btn-color: #{$btn-text-color};
   --#{$prefix}btn-bg: transparent;
@@ -30,20 +31,22 @@
   --#{$prefix}btn-spinner-size: 1.25rem;
   // scss-docs-end btn-css-vars
 
+  font-size:   var(--#{$prefix}btn-font-size);
   font-family: var(--#{$prefix}btn-font-family);
   font-weight: var(--#{$prefix}btn-font-weight);
   line-height: var(--#{$prefix}btn-line-height);
 
-  padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
-  color: var(--#{$prefix}btn-color);
+  padding:     var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
+  color:       var(--#{$prefix}btn-color);
 
-  border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
+  border:      var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
 
   text-align: center;
   text-decoration: if($link-decoration == none, null, none);
 
   display: inline-flex;
   align-items: center;
+  align-content: center;
   white-space: $btn-white-space;
   cursor: if($enable-button-pointers, pointer, null);
   user-select: none;
@@ -136,7 +139,7 @@
         $border: rgba(186, 191, 195, 1),
         $hover-background: rgba(239, 239, 239, 1),
         $hover-border: rgba(186, 191, 195, 1),
-        $focus-shadow: #{mix($color, $border, 15%)},
+        $focus-shadow: #{to-rgb(mix($color, $border, 10%))},
         $active-background: shade-color($value, $btn-active-bg-shade-amount),
         $active-border: shade-color($value, $btn-active-border-shade-amount),
         $disabled-background: $disabled-background,
@@ -153,7 +156,7 @@
         $hover-background: $hover-background,
         $hover-border: $hover-background,
         $hover-color: $hover-color,
-        $focus-shadow: #{(mix($color, $border, 15%))},
+        $focus-shadow: #{to-rgb(mix($color, $border, 15%))},
         $active-background: $active-background,
         $active-border: $active-border,
         $active-color: $active-color,
