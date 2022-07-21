@@ -7,4 +7,4 @@ group: layout
 
 We don't encourage customization of these individual values; should you change one, you highly likely need to change them all.
 
-{{< scss-docs name="zindex-stack" file="scss/_variables.scss" >}}
+{{< scss-docs name="z-index-stack" file="scss/_variables.scss" >}}

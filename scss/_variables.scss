@@ -11,49 +11,6 @@ $min-contrast-ratio:     4.5 !default;
 $grid-columns:            12 !default;
 // scss-docs-end root-variables
 
-// Options
-// scss-docs-start option-variables
-$enable-shadows:              true  !default;
-$enable-transitions:          true  !default;
-$enable-reduced-motion:       true  !default;
-$enable-rounded:              true  !default;
-$enable-grid-classes:         true  !default;
-$enable-container-classes:    true  !default;
-$enable-cssgrid:              false !default;
-$enable-smooth-scroll:        true  !default;
-$enable-button-pointers:      true  !default;
-$enable-deprecation-messages: true  !default;
-$enable-gradients:            false !default;
-$enable-important-utilities:  false !default;
-$enable-validation-icons:     true  !default;
-// scss-docs-end option-variables
-
-// Customize the light and dark text colors for use in our color contrast function.
-$color-contrast-dark:      #000 !default;
-$color-contrast-light:     #fff !default;
-
-// Main theme colors
-// scss-docs-start theme-color-variables
-$primary:       rgba(255, 255, 255, 1) !default;
-$secondary:     rgba(199, 199, 199, 1) !default;
-$success:       rgba(0, 110, 82, 1) !default;
-$danger:        rgba(188, 34, 0, 1) !default;
-// scss-docs-end theme-color-variables
-
-// scss-docs-start theme-colors-map
-$theme-colors: (
-        "primary":    $primary,
-        "secondary":  $secondary,
-        "success":    $success,
-        "danger":     $danger,
-) !default;
-// scss-docs-end theme-colors-map
-
-// Body
-$body-bg:                   #fff !default;
-$body-color:                #111 !default;
-$body-text-align:           null !default;
-
 // Grid breakpoints
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -77,6 +34,51 @@ $container-max-widths: (
 ) !default;
 // scss-docs-end container-max-widths
 
+// Options
+// scss-docs-start option-variables
+$enable-shadows:              true  !default;
+$enable-transitions:          true  !default;
+$enable-reduced-motion:       true  !default;
+$enable-rounded:              true  !default;
+$enable-grid-classes:         true  !default;
+$enable-container-classes:    true  !default;
+$enable-cssgrid:              false !default;
+$enable-smooth-scroll:        true  !default;
+$enable-button-pointers:      true  !default;
+$enable-deprecation-messages: true  !default;
+$enable-gradients:            false !default;
+$enable-important-utilities:  false !default;
+$enable-validation-icons:     true  !default;
+// scss-docs-end option-variables
+
+// Main theme colors
+// scss-docs-start theme-color-variables
+$default:       rgba(255, 255, 255, 1) !default;
+$primary:       rgba(25, 117, 152, 1)  !default;
+$secondary:     rgba(201, 201, 201, 1) !default;
+$success:       rgba(0, 110, 82, 1)    !default;
+$danger:        rgba(188, 34, 0, 1)    !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+        'default':    $default,
+        'primary':    $primary,
+        'secondary':  $secondary,
+        'success':    $success,
+        'danger':     $danger,
+) !default;
+// scss-docs-end theme-colors-map
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark:         #111 !default;
+$color-contrast-light:        #fff !default;
+
+// Body
+$body-bg:                   #fff    !default;
+$body-color:                #3b3b3b !default;
+$body-text-align:           null    !default;
+
 // Spacing
 // scss-docs-start spacer-variables-maps
 $spacer: 1rem !default;
@@ -94,8 +96,6 @@ $spacers: (
 $border-radius:               .375rem !default;
 $border-radius-sm:            .25rem !default;
 $border-radius-lg:            .5rem !default;
-$border-radius-xl:            1rem !default;
-$border-radius-2xl:           2rem !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
 
@@ -136,8 +136,8 @@ $headings-color:              null !default;
 
 
 // scss-docs-start font-variables
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-sans-serif:      system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
 $font-family-code:            var(--#{$prefix}font-monospace) !default;
 
@@ -243,8 +243,9 @@ $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity:        .65 !default;
 $btn-active-box-shadow:       inset 0 3px 5px rgba(0,0,0, .125) !default;
 
-$btn-link-color:              var(--#{$prefix}link-color) !default;
-$btn-link-hover-color:        var(--#{$prefix}link-hover-color) !default;
+$btn-text-color:              rgba(32, 34, 35, 1) !default;
+$btn-link-color:              null !default;
+$btn-link-hover-color:        null !default;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius:           $border-radius !default;
@@ -568,13 +569,13 @@ $form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://w
 
 // scss-docs-start form-validation-states
 $form-validation-states: (
-        "valid": (
-                "color": $form-feedback-valid-color,
-                "icon": $form-feedback-icon-valid
+        'valid': (
+                'color': $form-feedback-valid-color,
+                'icon': $form-feedback-icon-valid
         ),
-        "invalid": (
-                "color": $form-feedback-invalid-color,
-                "icon": $form-feedback-icon-invalid
+        'invalid': (
+                'color': $form-feedback-invalid-color,
+                'icon': $form-feedback-icon-invalid
         )
 ) !default;
 // scss-docs-end form-validation-states
@@ -618,7 +619,7 @@ $table-bg-scale:              -80% !default;
 // scss-docs-end table-variables
 
 // Z-index
-// scss-docs-start zindex-stack
+// scss-docs-start z-index-stack
 $z-index-dropdown:                   1000 !default;
 $z-index-sticky:                     1020 !default;
 $z-index-fixed:                      1030 !default;
@@ -629,13 +630,13 @@ $z-index-modal:                      1055 !default;
 $z-index-popover:                    1070 !default;
 $z-index-tooltip:                    1080 !default;
 $z-index-toast:                      1090 !default;
-// scss-docs-end zindex-stack
+// scss-docs-end z-index-stack
 
 // Characters which are escaped by the escape-svg function
 $escaped-characters: (
-  ("<", "%3c"),
-  (">", "%3e"),
-  ("#", "%23"),
-  ("(", "%28"),
-  (")", "%29"),
+  ('<', '%3c'),
+  ('>', '%3e'),
+  ('#', '%23'),
+  ('(', '%28'),
+  (')', '%29'),
 ) !default;

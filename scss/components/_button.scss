@@ -16,7 +16,7 @@
   --#{$prefix}btn-font-weight: #{$btn-font-weight};
   --#{$prefix}btn-line-height: #{$btn-line-height};
 
-  --#{$prefix}btn-color: #{$body-color};
+  --#{$prefix}btn-color: #{$btn-text-color};
   --#{$prefix}btn-bg: transparent;
 
   --#{$prefix}btn-border-width: #{$btn-border-width};
@@ -35,7 +35,7 @@
   line-height: var(--#{$prefix}btn-line-height);
 
   padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
-  color: var(--#{$prefix}btn-color);
+  color: var(--#{$prefix}btn-link-color);
 
   border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
 
@@ -60,67 +60,81 @@
     border-color: var(--#{$prefix}btn-hover-border-color);
   }
 
-  //.btn-check:focus + &,
-  //&:focus {
-  //  color: var(--#{$prefix}btn-hover-color);
-  //  @include gradient-bg(var(--#{$prefix}btn-hover-bg));
-  //  border-color: var(--#{$prefix}btn-hover-border-color);
-  //  outline: 0;
-  //  // Avoid using mixin so we can pass custom focus shadow properly
-  //  @if $enable-shadows {
-  //    box-shadow: var(--#{$prefix}btn-box-shadow), var(--#{$prefix}btn-focus-box-shadow);
-  //  } @else {
-  //    box-shadow: var(--#{$prefix}btn-focus-box-shadow);
-  //  }
-  //}
-  //
-  //.btn-check:checked + &,
-  //.btn-check:active + &,
-  //&:active,
-  //&.active,
-  //&.show {
-  //  color: var(--#{$prefix}btn-active-color);
-  //  background-color: var(--#{$prefix}btn-active-bg);
-  //  // Remove CSS gradients if they're enabled
-  //  background-image: if($enable-gradients, none, null);
-  //  border-color: var(--#{$prefix}btn-active-border-color);
-  //  @include box-shadow(var(--#{$prefix}btn-active-shadow));
-  //
-  //  &:focus {
-  //    // Avoid using mixin so we can pass custom focus shadow properly
-  //    @if $enable-shadows {
-  //      box-shadow: var(--#{$prefix}btn-active-shadow), var(--#{$prefix}btn-focus-box-shadow);
-  //    } @else {
-  //      box-shadow: var(--#{$prefix}btn-focus-box-shadow);
-  //    }
-  //  }
-  //}
-  //
-  //&:disabled,
-  //&.disabled,
-  //fieldset:disabled & {
-  //  color: var(--#{$prefix}btn-disabled-color);
-  //  pointer-events: none;
-  //  background-color: var(--#{$prefix}btn-disabled-bg);
-  //  background-image: if($enable-gradients, none, null);
-  //  border-color: var(--#{$prefix}btn-disabled-border-color);
-  //  opacity: var(--#{$prefix}btn-disabled-opacity);
-  //  @include box-shadow(none);
-  //}
+  .btn-check:focus + &,
+  &:focus {
+    color: var(--#{$prefix}btn-hover-color);
+    @include gradient-bg(var(--#{$prefix}btn-hover-bg));
+    border-color: var(--#{$prefix}btn-hover-border-color);
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: var(--#{$prefix}btn-box-shadow), var(--#{$prefix}btn-focus-box-shadow);
+    } @else {
+      box-shadow: var(--#{$prefix}btn-focus-box-shadow);
+    }
+  }
 
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active,
+  &.show {
+    color: var(--#{$prefix}btn-active-color);
+    background-color: var(--#{$prefix}btn-active-bg);
+    // Remove CSS gradients if they're enabled
+    background-image: if($enable-gradients, none, null);
+    border-color: var(--#{$prefix}btn-active-border-color);
+    @include box-shadow(var(--#{$prefix}btn-active-shadow));
+
+    &:focus {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-shadows {
+        box-shadow: var(--#{$prefix}btn-active-shadow), var(--#{$prefix}btn-focus-box-shadow);
+      } @else {
+        box-shadow: var(--#{$prefix}btn-focus-box-shadow);
+      }
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    color: var(--#{$prefix}btn-disabled-color);
+    pointer-events: none;
+    background-color: var(--#{$prefix}btn-disabled-bg);
+    background-image: if($enable-gradients, none, null);
+    border-color: var(--#{$prefix}btn-disabled-border-color);
+    opacity: var(--#{$prefix}btn-disabled-opacity);
+    @include box-shadow(none);
+  }
 }
 
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
-    @include button-variant(
-      $value,
-      $value,
-      $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
-      $hover-border: shade-color($value, $btn-hover-border-shade-amount),
-      $active-background: shade-color($value, $btn-active-bg-shade-amount),
-      $active-border: shade-color($value, $btn-active-border-shade-amount)
-    );
+    @if($color == 'default') {
+
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
+        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
+        $active-background: shade-color($value, $btn-active-bg-shade-amount),
+        $active-border: shade-color($value, $btn-active-border-shade-amount)
+      );
+
+    } @else {
+
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
+        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
+        $active-background: shade-color($value, $btn-active-bg-shade-amount),
+        $active-border: shade-color($value, $btn-active-border-shade-amount)
+      );
+    }
+
   }
 }
 
