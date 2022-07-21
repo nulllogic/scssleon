@@ -66,8 +66,6 @@ $grid-breakpoints: (
 ) !default;
 // scss-docs-end grid-breakpoints
 
-
-
 // Grid containers
 // scss-docs-start container-max-widths
 $container-max-widths: (
@@ -78,9 +76,6 @@ $container-max-widths: (
         xxl: 1320px
 ) !default;
 // scss-docs-end container-max-widths
-
-
-
 
 // Spacing
 // scss-docs-start spacer-variables-maps
@@ -128,44 +123,6 @@ $link-hover-decoration:                   underline !default;
 $stretched-link-pseudo-element:           after !default;
 $stretched-link-z-index:                  1 !default;
 
-// Tables
-// scss-docs-start table-variables
-$table-cell-padding-y:        .5rem !default;
-$table-cell-padding-x:        .5rem !default;
-
-$table-cell-vertical-align:   middle !default;
-
-$table-color:                 var(--#{$prefix}body-color) !default;
-$table-bg:                    transparent !default;
-$table-accent-bg:             transparent !default;
-
-$table-th-font-weight:        null !default;
-
-$table-striped-color:         $table-color !default;
-$table-striped-bg-factor:     .05 !default;
-$table-striped-bg:            rgba(0,0,0, $table-striped-bg-factor) !default;
-
-$table-active-color:          $table-color !default;
-$table-active-bg-factor:      .1 !default;
-$table-active-bg:             rgba(0,0,0, $table-active-bg-factor) !default;
-
-$table-hover-color:           $table-color !default;
-$table-hover-bg-factor:       .075 !default;
-$table-hover-bg:              rgba(0,0,0, $table-hover-bg-factor) !default;
-
-$table-border-factor:         .1 !default;
-$table-border-width:          1px !default;
-$table-border-color:          var(--#{$prefix}border-color) !default;
-
-$table-striped-order:         odd !default;
-$table-striped-columns-order: even !default;
-
-$table-group-separator-color: currentcolor !default;
-
-$table-caption-color:         inherit !default;
-$table-bg-scale:              -80% !default;
-// scss-docs-end table-variables
-
 // Typography
 // scss-docs-start headings-variables
 $headings-margin-bottom:      0 !default;
@@ -189,14 +146,7 @@ $font-size-base:              1rem !default;
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 
-$font-weight-lighter:         lighter !default;
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-semibold:        600 !default;
-$font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
-
-$font-weight-base:            $font-weight-normal !default;
+$font-weight-base:            400 !default;
 
 $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
@@ -286,7 +236,7 @@ $btn-font-size-lg:            $input-btn-font-size-lg !default;
 
 $btn-border-width:            $input-btn-border-width !default;
 
-$btn-font-weight:             $font-weight-normal !default;
+$btn-font-weight:             $font-weight-base !default;
 $btn-box-shadow:              0 0.0625rem 0 rgba(0, 0, 0, 0.05) !default;
 $btn-focus-width:             $input-btn-focus-width !default;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
@@ -316,7 +266,7 @@ $btn-active-border-tint-amount:   10% !default;
 // Badges
 // scss-docs-start badge-variables
 $badge-font-size:                   .75em !default;
-$badge-font-weight:                 $font-weight-bold !default;
+$badge-font-weight:                 400 !default;
 $badge-color:                       rgba(255,255,255,0) !default;
 $badge-padding-y:                   .35em !default;
 $badge-padding-x:                   .65em !default;
@@ -627,6 +577,44 @@ $form-validation-states: (
         )
 ) !default;
 // scss-docs-end form-validation-states
+
+// Tables
+// scss-docs-start table-variables
+$table-cell-padding-y:        .5rem !default;
+$table-cell-padding-x:        .5rem !default;
+
+$table-cell-vertical-align:   middle !default;
+
+$table-color:                 var(--#{$prefix}body-color) !default;
+$table-bg:                    transparent !default;
+$table-accent-bg:             transparent !default;
+
+$table-th-font-weight:        null !default;
+
+$table-striped-color:         $table-color !default;
+$table-striped-bg-factor:     .05 !default;
+$table-striped-bg:            rgba(0,0,0, $table-striped-bg-factor) !default;
+
+$table-active-color:          $table-color !default;
+$table-active-bg-factor:      .1 !default;
+$table-active-bg:             rgba(0,0,0, $table-active-bg-factor) !default;
+
+$table-hover-color:           $table-color !default;
+$table-hover-bg-factor:       .075 !default;
+$table-hover-bg:              rgba(0,0,0, $table-hover-bg-factor) !default;
+
+$table-border-factor:         .1 !default;
+$table-border-width:          1px !default;
+$table-border-color:          var(--#{$prefix}border-color) !default;
+
+$table-striped-order:         odd !default;
+$table-striped-columns-order: even !default;
+
+$table-group-separator-color: currentcolor !default;
+
+$table-caption-color:         inherit !default;
+$table-bg-scale:              -80% !default;
+// scss-docs-end table-variables
 
 // Z-index
 // scss-docs-start zindex-stack

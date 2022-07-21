@@ -11,14 +11,18 @@
   // scss-docs-start btn-css-vars
   --#{$prefix}btn-padding-x: #{$btn-padding-x};
   --#{$prefix}btn-padding-y: #{$btn-padding-y};
+
   --#{$prefix}btn-font-family: #{$btn-font-family};
   --#{$prefix}btn-font-weight: #{$btn-font-weight};
   --#{$prefix}btn-line-height: #{$btn-line-height};
+
   --#{$prefix}btn-color: #{$body-color};
   --#{$prefix}btn-bg: transparent;
+
   --#{$prefix}btn-border-width: #{$btn-border-width};
   --#{$prefix}btn-border-color: transparent;
   --#{$prefix}btn-border-radius: #{$btn-border-radius};
+
   --#{$prefix}btn-box-shadow: #{$btn-box-shadow};
   --#{$prefix}btn-disabled-opacity: #{$btn-disabled-opacity};
   --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), .5);
@@ -26,9 +30,9 @@
   --#{$prefix}btn-spinner-size: 1.25rem;
   // scss-docs-end btn-css-vars
 
-  font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
-  line-height: $btn-line-height;
+  font-family: var(--#{$prefix}btn-font-family);
+  font-weight: var(--#{$prefix}btn-font-weight);
+  line-height: var(--#{$prefix}btn-line-height);
 
   padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
   color: var(--#{$prefix}btn-color);
@@ -106,7 +110,7 @@
   // Make a button look and behave like a link
   &.btn-link {
 
-    --#{$prefix}btn-font-weight: #{$font-weight-normal};
+    --#{$prefix}btn-font-weight: #{$btn-font-weight};
     --#{$prefix}btn-color: #{$btn-link-color};
     --#{$prefix}btn-bg: transparent;
     --#{$prefix}btn-border-color: transparent;
@@ -145,14 +149,13 @@
   }
 
 }
-
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     @include button-variant($value, tint-color($value, 50));
   }
 }
-//
+
 //@each $color, $value in $theme-colors {
 //  .btn-outline-#{$color} {
 //    @include button-outline-variant($value);
