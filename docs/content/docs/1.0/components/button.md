@@ -14,9 +14,7 @@ xiigrid includes several predefined button styles, each serving its own semantic
 {{< example >}}
 {{< buttons.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-    <button type="button" class="btn btn-{{ .name }}">
-        <span class="text">{{ .name | title }}</span>
-    </button>
+<button type="button" class="btn btn-{{ .name }}">{{ .name | title }}</button>
 {{- end -}}
 {{< /buttons.inline >}}
 

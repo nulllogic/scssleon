@@ -164,8 +164,7 @@ $h6-font-size:                $font-size-base !default;
 // scss-docs-start border-variables
 $border-width:                1px !default;
 $border-style:                solid !default;
-$border-color:                tint-color(#000, 30) !default;
-$border-color-translucent:    rgba(0,0,0, .175) !default;
+$border-color:                rgba(186, 191, 195, 1) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start type-variables
@@ -214,6 +213,7 @@ $input-btn-padding-x-lg:      1rem !default;
 $input-btn-font-size-lg:      $font-size-lg !default;
 
 $input-btn-border-width:      $border-width !default;
+$input-btn-border-color:      $border-color !default;
 // scss-docs-end input-btn-variables
 
 
@@ -250,6 +250,7 @@ $btn-link-hover-color:        var(--#{$prefix}link-hover-color) !default;
 $btn-border-radius:           $border-radius !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
+$btn-border-color:             $border-color !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
