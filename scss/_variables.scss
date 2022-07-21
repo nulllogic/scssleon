@@ -54,7 +54,7 @@ $enable-validation-icons:     true  !default;
 // Main theme colors
 // scss-docs-start theme-color-variables
 $default:       rgba(255, 255, 255, 1) !default;
-$primary:       rgba(25, 117, 152, 1)  !default;
+$primary:       rgba(51, 122, 183, 1)  !default;
 $secondary:     rgba(201, 201, 201, 1) !default;
 $success:       rgba(0, 110, 82, 1)    !default;
 $danger:        rgba(188, 34, 0, 1)    !default;
@@ -62,21 +62,21 @@ $danger:        rgba(188, 34, 0, 1)    !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-        'default':    $default,
-        'primary':    $primary,
-        'secondary':  $secondary,
-        'success':    $success,
-        'danger':     $danger,
+        "default":    $default,
+        "primary":    $primary,
+        "secondary":  $secondary,
+        "success":    $success,
+        "danger":     $danger,
 ) !default;
 // scss-docs-end theme-colors-map
 
 // Customize the light and dark text colors for use in our color contrast function.
-$color-contrast-dark:         #111 !default;
+$color-contrast-dark:         #000 !default;
 $color-contrast-light:        #fff !default;
 
 // Body
 $body-bg:                   #fff    !default;
-$body-color:                #3b3b3b !default;
+$body-color:                #212529 !default;
 $body-text-align:           null    !default;
 
 // Spacing
@@ -251,7 +251,7 @@ $btn-link-hover-color:        null !default;
 $btn-border-radius:           $border-radius !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
-$btn-border-color:             $border-color !default;
+$btn-border-color:            $border-color !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -259,8 +259,8 @@ $btn-hover-bg-shade-amount:       15% !default;
 $btn-hover-bg-tint-amount:        15% !default;
 $btn-hover-border-shade-amount:   20% !default;
 $btn-hover-border-tint-amount:    10% !default;
-$btn-active-bg-shade-amount:      20% !default;
-$btn-active-bg-tint-amount:       20% !default;
+$btn-active-bg-shade-amount:      15% !default;
+$btn-active-bg-tint-amount:       15% !default;
 $btn-active-border-shade-amount:  25% !default;
 $btn-active-border-tint-amount:   10% !default;
 // scss-docs-end btn-variables

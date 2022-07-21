@@ -2,71 +2,79 @@
 
 // scss-docs-start btn-variant-mixin
 @mixin button-variant(
-  $background,
-  $border,
-  $color: color-contrast($background),
-  $hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
-  $hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)),
-  $hover-color: color-contrast($hover-background),
-  $active-background: if($color == $color-contrast-light, shade-color($background,$btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
-  $active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)),
-  $active-color: color-contrast($active-background),
-  $disabled-background: $background,
-  $disabled-border: $border,
-  $disabled-color: color-contrast($disabled-background)
+  $background : null,
+  $border : null,
+  $color : null,
+  $hover-background : null,
+  $hover-border : null,
+  $hover-color : null,
+  $focus-shadow: null,
+  $active-background : null,
+  $active-border : null,
+  $active-color : null,
+  $disabled-background : null,
+  $disabled-border : null,
+  $disabled-color : null,
 ) {
-  color: $color;
-  @include gradient-bg($background);
-  border-color: $border;
-  @include box-shadow($btn-box-shadow);
 
-  &:hover {
-    color: $hover-color;
-    @include gradient-bg($hover-background);
-    border-color: $hover-border;
+  // Default state
+  @if($background != null) {
+    --#{$prefix}btn-bg: #{$background};
   }
 
-  .btn-check:focus + &,
-  &:focus {
-    color: $hover-color;
-    @include gradient-bg($hover-background);
-    border-color: $hover-border;
-    @if $enable-shadows {
-      @include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5));
-    } @else {
-      // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5);
-    }
+  @if($border != null) {
+    --#{$prefix}btn-border-color: #{$border};
   }
 
-  .btn-check:checked + &,
-  .btn-check:active + &,
-  &:active,
-  &.active,
-  .show > &.dropdown-toggle {
-    color: $active-color;
-    background-color: $active-background;
-    // Remove CSS gradients if they're enabled
-    //background-image: if($enable-gradients, none, null);
-    border-color: $active-border;
-
-    &:focus {
-      //@if $enable-shadows {
-      //  @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5));
-      //} @else {
-      //  // Avoid using mixin so we can pass custom focus shadow properly
-      //  box-shadow: 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5);
-      //}
-    }
+  @if($color != null) {
+    --#{$prefix}btn-color: #{$color};
   }
 
-  &:disabled,
-  &.disabled {
-    color: $disabled-color;
-    background-color: $disabled-background;
-    // Remove CSS gradients if they're enabled
-    //background-image: if($enable-gradients, none, null);
-    border-color: $disabled-border;
+  // Hover state
+  @if($hover-background != null) {
+    --#{$prefix}btn-hover-bg: #{$hover-background};
+  }
+
+  @if($hover-border != null) {
+    --#{$prefix}btn-hover-border-color: #{$hover-border};
+  }
+
+  @if($hover-color != null) {
+    --#{$prefix}btn-hover-color: #{$hover-color};
+  }
+
+  @if($focus-shadow != null) {
+    --#{$prefix}btn-focus-box-shadow: #{$focus-shadow};
+  }
+
+  // Active state
+  @if($active-background != null) {
+    --#{$prefix}btn-active-bg: #{$active-background};
+  }
+
+  @if($active-border != null) {
+    --#{$prefix}btn-active-border-color: #{$active-border};
+  }
+
+  @if($active-color != null) {
+    --#{$prefix}btn-active-color: #{$active-color};
+  }
+
+  @if($btn-active-box-shadow != null) {
+    --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+  }
+
+  // Disabled state
+  @if($disabled-border != null) {
+    --#{$prefix}btn-disabled-border-color: #{$disabled-border};
+  }
+
+  @if($disabled-background != null) {
+    --#{$prefix}btn-disabled-bg: #{$disabled-background};
+  }
+
+  @if($disabled-color != null) {
+    --#{$prefix}btn-disabled-color: #{$disabled-color};
   }
 }
 // scss-docs-end btn-variant-mixin
@@ -84,7 +92,7 @@
   --#{$prefix}btn-hover-color: #{$color-hover};
   --#{$prefix}btn-hover-bg: #{$active-background};
   --#{$prefix}btn-hover-border-color: #{$active-border};
-  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+  //--#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
   --#{$prefix}btn-active-color: #{$active-color};
   --#{$prefix}btn-active-bg: #{$active-background};
   --#{$prefix}btn-active-border-color: #{$active-border};

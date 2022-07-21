@@ -29,7 +29,7 @@ The following example shows how the clearfix can be used. Without the clearfix t
 
 {{< example >}}
 <div class="bg-info clearfix">
-  <button type="button" class="btn btn-secondary float-left">Example Button floated left</button>
-  <button type="button" class="btn btn-secondary float-right">Example Button floated right</button>
+  <button type="button" class="btn btn-default float-left">Example Button floated left</button>
+  <button type="button" class="btn btn-default float-right">Example Button floated right</button>
 </div>
 {{< /example >}}

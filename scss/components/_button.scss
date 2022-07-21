@@ -35,7 +35,7 @@
   line-height: var(--#{$prefix}btn-line-height);
 
   padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
-  color: var(--#{$prefix}btn-link-color);
+  color: var(--#{$prefix}btn-color);
 
   border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
 
@@ -110,28 +110,56 @@
 }
 
 // scss-docs-start btn-variant-loops
-@each $color, $value in $theme-colors {
-  .btn-#{$color} {
-    @if($color == 'default') {
+@each $theme-color, $value in $theme-colors {
+  .btn-#{$theme-color} {
+
+    $background: $value;
+    $border : $value;
+    $color: color-contrast($value);
+
+    $hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount));
+    $hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount));
+    $hover-color: color-contrast($hover-background);
+
+    $active-background: if($color == $color-contrast-light, shade-color($background,$btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount));
+    $active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount));
+    $active-color: color-contrast($active-background);
+
+    $disabled-background: $background;
+    $disabled-border: $border;
+    $disabled-color: color-contrast($disabled-background);
+
+    @if($theme-color == 'default') {
 
       @include button-variant(
-        $value,
-        $value,
-        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
-        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
+        $background: $value,
+        $border: rgba(186, 191, 195, 1),
+        $hover-background: rgba(239, 239, 239, 1),
+        $hover-border: rgba(186, 191, 195, 1),
+        $focus-shadow: #{mix($color, $border, 15%)},
         $active-background: shade-color($value, $btn-active-bg-shade-amount),
-        $active-border: shade-color($value, $btn-active-border-shade-amount)
+        $active-border: shade-color($value, $btn-active-border-shade-amount),
+        $disabled-background: $disabled-background,
+        $disabled-border: $disabled-border,
+        $disabled-color: $disabled-color
       );
 
     } @else {
 
       @include button-variant(
-        $value,
-        $value,
-        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
-        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
-        $active-background: shade-color($value, $btn-active-bg-shade-amount),
-        $active-border: shade-color($value, $btn-active-border-shade-amount)
+        $background: $value,
+        $border: $border,
+        $color: $color,
+        $hover-background: $hover-background,
+        $hover-border: $hover-background,
+        $hover-color: $hover-color,
+        $focus-shadow: #{(mix($color, $border, 15%))},
+        $active-background: $active-background,
+        $active-border: $active-border,
+        $active-color: $active-color,
+        $disabled-background: $disabled-background,
+        $disabled-border: $disabled-border,
+        $disabled-color: $disabled-color
       );
     }
 
