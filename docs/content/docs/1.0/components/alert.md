@@ -152,7 +152,7 @@ toc: true
             <p>This order is ready to ship on March 7, 2017 at 3:12pm EDT.</p>
         </div>
         <div class="actions">
-            <button class="btn">Edit variant weights</button>
+            <button class="btn btn-default">Edit variant weights</button>
             <button class="btn btn-link">Learn more</button>
         </div> 
     </div>

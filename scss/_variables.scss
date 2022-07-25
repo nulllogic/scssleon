@@ -6,9 +6,9 @@
 
 // Root
 // scss-docs-start root-variables
-$prefix:                xii- !default;
-$min-contrast-ratio:     4.5 !default;
-$grid-columns:            12 !default;
+$prefix:                                xii- !default;
+$min-contrast-ratio:                    4.5 !default;
+$grid-columns:                          12 !default;
 // scss-docs-end root-variables
 
 // Grid breakpoints
@@ -36,28 +36,28 @@ $container-max-widths: (
 
 // Options
 // scss-docs-start option-variables
-$enable-shadows:              true  !default;
-$enable-transitions:          true  !default;
-$enable-reduced-motion:       true  !default;
-$enable-rounded:              true  !default;
-$enable-grid-classes:         true  !default;
-$enable-container-classes:    true  !default;
-$enable-cssgrid:              false !default;
-$enable-smooth-scroll:        true  !default;
-$enable-button-pointers:      true  !default;
-$enable-deprecation-messages: true  !default;
-$enable-gradients:            false !default;
-$enable-important-utilities:  false !default;
-$enable-validation-icons:     true  !default;
+$enable-shadows:                        true  !default;
+$enable-transitions:                    true  !default;
+$enable-reduced-motion:                 true  !default;
+$enable-rounded:                        true  !default;
+$enable-grid-classes:                   true  !default;
+$enable-container-classes:              true  !default;
+$enable-cssgrid:                        false !default;
+$enable-smooth-scroll:                  true  !default;
+$enable-button-pointers:                true  !default;
+$enable-deprecation-messages:           true  !default;
+$enable-gradients:                      false !default;
+$enable-important-utilities:            false !default;
+$enable-validation-icons:               true  !default;
 // scss-docs-end option-variables
 
 // Main theme colors
 // scss-docs-start theme-color-variables
-$default:       rgba(255, 255, 255, 1) !default;
-$primary:       rgba(51, 122, 183, 1)  !default;
-$secondary:     rgba(130, 130, 130, 1) !default;
-$success:       rgba(0, 110, 82, 1)    !default;
-$danger:        rgba(188, 34, 0, 1)    !default;
+$default:                               rgba(255, 255, 255, 1) !default;
+$primary:                               rgba(51, 122, 183, 1)  !default;
+$secondary:                             rgba(130, 130, 130, 1) !default;
+$success:                               rgba(0, 110, 44, 1)    !default;
+$danger:                                rgba(188, 34, 0, 1)    !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -255,10 +255,10 @@ $btn-border-color:            $border-color !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-$btn-hover-bg-shade-amount:       15% !default;
-$btn-hover-bg-tint-amount:        15% !default;
-$btn-hover-border-shade-amount:   20% !default;
-$btn-hover-border-tint-amount:    10% !default;
+$btn-hover-bg-shade-amount:       20% !default;
+$btn-hover-bg-tint-amount:        20% !default;
+$btn-hover-border-shade-amount:   40% !default;
+$btn-hover-border-tint-amount:    40% !default;
 $btn-active-bg-shade-amount:      15% !default;
 $btn-active-bg-tint-amount:       15% !default;
 $btn-active-border-shade-amount:  25% !default;

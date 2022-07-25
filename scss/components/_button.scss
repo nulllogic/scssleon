@@ -110,6 +110,12 @@
     opacity: var(--#{$prefix}btn-disabled-opacity);
     @include box-shadow(none);
   }
+
+  &.btn-link {
+    &:focus {
+      box-shadow: var(--#{$prefix}btn-focus-box-shadow);
+    }
+  }
 }
 
 // scss-docs-start btn-variant-loops
@@ -139,7 +145,7 @@
         $border: rgba(186, 191, 195, 1),
         $hover-background: rgba(239, 239, 239, 1),
         $hover-border: rgba(186, 191, 195, 1),
-        $focus-shadow: #{to-rgb(mix($color, $border, 10%))},
+        $focus-shadow: #{to-rgb(#a7b5c2)},
         $active-background: shade-color($value, $btn-active-bg-shade-amount),
         $active-border: shade-color($value, $btn-active-border-shade-amount),
         $disabled-background: $disabled-background,
@@ -154,7 +160,7 @@
         $border: $border,
         $color: $color,
         $hover-background: $hover-background,
-        $hover-border: $hover-background,
+        $hover-border: $hover-border,
         $hover-color: $hover-color,
         $focus-shadow: #{to-rgb(mix($color, $border, 15%))},
         $active-background: $active-background,
@@ -187,25 +193,23 @@
   --#{$prefix}btn-hover-border-color: transparent;
   --#{$prefix}btn-active-border-color: transparent;
   --#{$prefix}btn-disabled-border-color: transparent;
+  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb(#a7b5c2)};
   --#{$prefix}btn-box-shadow: none;
 
   text-decoration: $link-decoration;
 
-  &:hover {
-    color: $btn-link-hover-color;
-    text-decoration: $link-hover-decoration;
-  }
-
+  &:hover,
   &:focus {
     text-decoration: $link-hover-decoration;
   }
 
-  &:disabled,
-  &.disabled {
-    //color: $btn-link-disabled-color;
+  &:focus {
+    color: var(--#{$prefix}btn-color);
   }
 
-  // No need for an active state here
+  &:hover {
+    color: var(--#{$prefix}btn-hover-color);
+  }
 }
 
 // Button Sizes
