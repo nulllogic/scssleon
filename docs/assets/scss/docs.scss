@@ -1,16 +1,16 @@
 // Load xiigrid
-@import "../../../scss/xiigrid";
+@use "../../../scss/xiigrid";
 
-@import "variables";
-@import "root";
-@import "promo";
-@import "layout";
-@import "navbar";
-@import "snippets";
-@import "sidebar";
-@import "toc";
-@import "content";
-@import "footer";
+@use "config";
+@use "root";
+@use "promo";
+@use "layout";
+@use "navbar";
+@use "snippets";
+@use "sidebar";
+@use "toc";
+@use "content";
+@use "footer";
 
 // Load docs dependencies
-@import "syntax";
+@use "syntax";

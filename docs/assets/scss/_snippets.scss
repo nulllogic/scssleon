@@ -1,13 +1,15 @@
-// Code snippets
+@use 'config';
+@use '../../../scss/mixins' as mixins;
 
+// Code snippets
 .code-example {
   position: relative;
-  border: var(--#{$prefix}example-border);
+  border: var(--#{config.$prefix}example-border);
   margin-bottom: 1rem;
   background: #f8f9fa;
 
   .example-preview {
-    padding: var(--#{$prefix}example-padding);
+    padding: var(--#{config.$prefix}example-padding);
     position: relative;
     transition: 0.75s background-color;
     background: #fff;
@@ -51,31 +53,25 @@
       }
     }
 
-    @include clearfix();
+    //@include mixins.clearfix;
 
-    .container .row > div {
-      background: var(--#{$prefix}-example-background);
-      border-bottom: var(--#{$prefix}example-border);
+    %margin {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin: 0;
+      }
     }
 
-    ul, ol {
-      padding-left: 0;
-      margin: 0;
-    }
+    .preview {
+      nav, ul, ol, .alert, .placeholder {
+        @extend %margin;
+      }
 
-    .alert {
-      margin: 0;
+      ul, li {
+        padding: 0;
+      }
     }
-
-    .btn,
-    .btn-group {
-      margin: .25rem .125rem;
-    }
-
-    .btn-group > .btn {
-      margin: 0;
-    }
-
   }
 
   .clipboard {
@@ -90,7 +86,7 @@
     margin: 0;
     padding: 0 1.25rem 0.5rem 1.25rem;
     border-bottom: 1px solid #ccc;
-    border-top: var(--#{$prefix}example-border);
+    border-top: var(--#{config.$prefix}example-border);
 
     .language {
       background: #d9d7e0;
@@ -124,11 +120,11 @@
 
 .highlight {
   position: relative;
-  padding: .75rem (5 * .5) rem;
+  padding: .75rem (5 * .5)rem;
   margin-bottom: 1rem;
   background-color: rgb(248, 249, 250);
 
-  @include media-breakpoint-up(md) {
+  @include mixins.media-breakpoint-up(md) {
     padding: .75rem 1.25rem;
   }
 
@@ -159,6 +155,6 @@
 .docs-information {
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: var(--#{$prefix}information-bg, var(--bs-gray-100));
-  border-left: 0.25rem solid var(--#{$prefix}-information-border, var(--bs-gray-300));
+  background-color: var(--#{config.$prefix}information-bg, var(--bs-gray-100));
+  border-left: 0.25rem solid var(--#{config.$prefix}-information-border, var(--bs-gray-300));
 }

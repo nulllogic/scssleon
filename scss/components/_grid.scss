@@ -1,12 +1,16 @@
+@use '../config';
+@use '../mixins';
+
 /* Rows */
 .row {
-  @include prepare_rows();
+  @include mixins.prepare_rows();
 
   > * {
-    @include prepare_columns();
+    @include mixins.prepare_columns();
   }
 }
+
 // Columns
-@if $enable-grid-classes {
-  @include generate_grid_columns();
+@if config.$enable-grid-classes {
+  @include mixins.generate_grid_columns();
 }

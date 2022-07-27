@@ -4,6 +4,8 @@
 ┴└─└─┘└─┘└─┘ ┴
 */
 
+@use 'config';
+
 *,
 *::before,
 *::after {
@@ -11,11 +13,11 @@
 }
 
 :root {
-  @if $font-size-root != null {
-    font-size: var(--#{$prefix}root-font-size);
+  @if config.$font-size-root != null {
+    font-size: var(--#{config.$prefix}root-font-size);
   }
 
-  @if $enable-smooth-scroll {
+  @if config.$enable-smooth-scroll {
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
     }
@@ -27,74 +29,62 @@
 // scss-docs-start reboot-body-rules
 body {
   margin: 0;
-  font-family: var(--#{$prefix}body-font-family);
-  font-size: var(--#{$prefix}body-font-size);
-  font-weight: var(--#{$prefix}body-font-weight);
-  line-height: var(--#{$prefix}body-line-height);
-  color: var(--#{$prefix}body-color);
-  text-align: var(--#{$prefix}body-text-align);
-  background-color: var(--#{$prefix}body-bg);
+  font-family: var(--#{config.$prefix}body-font-family);
+  font-size: var(--#{config.$prefix}body-font-size);
+  font-weight: var(--#{config.$prefix}body-font-weight);
+  line-height: var(--#{config.$prefix}body-line-height);
+  color: var(--#{config.$prefix}body-color);
+  text-align: var(--#{config.$prefix}body-text-align);
+  background-color: var(--#{config.$prefix}body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0,0,0, 0);
 }
 // scss-docs-end reboot-body-rules
 
-
-// HR
-hr {
-  margin: $hr-margin-y 0;
-  color: $hr-color; // 1
-  border: 0;
-  border-top: $hr-border-width solid $hr-border-color;
-  opacity: $hr-opacity;
-}
-
-
 // Typography
 %heading {
   margin-top: 0;
-  margin-bottom: $headings-margin-bottom;
-  font-family: $headings-font-family;
-  font-style: $headings-font-style;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: var(--#{$prefix}heading-color);
+  margin-bottom: config.$headings-margin-bottom;
+  font-family: config.$headings-font-family;
+  font-style: config.$headings-font-style;
+  font-weight: config.$headings-font-weight;
+  line-height: config.$headings-line-height;
 }
 
 h1 {
   @extend %heading;
-  font-size: $h1-font-size;
+  font-size: config.$h1-font-size;
 }
 
 h2 {
   @extend %heading;
-  font-size: $h2-font-size;
+  font-size: config.$h2-font-size;
 }
 
 h3 {
   @extend %heading;
-  font-size: $h3-font-size;
+  font-size: config.$h3-font-size;
 }
 
 h4 {
   @extend %heading;
-  font-size: $h4-font-size;
+  font-size: config.$h4-font-size;
 }
 
 h5 {
   @extend %heading;
-  font-size: $h5-font-size;
+  font-size: config.$h5-font-size;
 }
 
 h6 {
   @extend %heading;
-  font-size: $h6-font-size;
+  font-size: config.$h6-font-size;
 }
 
 // Paragraphs
 p {
   margin-top: 0;
-  margin-bottom: $paragraph-margin-bottom;
+  margin-bottom: config.$paragraph-margin-bottom;
 }
 
 
@@ -147,14 +137,14 @@ strong {
 
 // Small
 small {
-  font-size: $small-font-size;
+  font-size: config.$small-font-size;
 }
 
 
 // Mark
 mark {
-  padding: $mark-padding;
-  background-color: var(--#{$prefix}highlight-bg);
+  padding: config.$mark-padding;
+  background-color: var(--#{config.$prefix}highlight-bg);
 }
 
 
@@ -162,7 +152,7 @@ mark {
 sub,
 sup {
   position: relative;
-  font-size: $sub-sup-font-size;
+  font-size: config.$sub-sup-font-size;
   line-height: 0;
   vertical-align: baseline;
 }
@@ -178,12 +168,12 @@ sup {
 
 // Links
 a {
-  color: var(--#{$prefix}link-color);
-  text-decoration: $link-decoration;
+  color: var(--#{config.$prefix}link-color);
+  text-decoration: config.$link-decoration;
 
   &:hover {
-    color: var(--#{$prefix}link-hover-color);
-    text-decoration: $link-hover-decoration;
+    color: var(--#{config.$prefix}link-hover-color);
+    text-decoration: config.$link-hover-decoration;
   }
 }
 
@@ -202,7 +192,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: $font-family-code;
+  font-family: config.$font-family-code;
   font-size: 1em
 }
 
@@ -211,8 +201,8 @@ pre {
   margin-top: 0; // 1
   margin-bottom: 1rem; // 2
   overflow: auto; // 3
-  font-size: $code-font-size;
-  color: $pre-color;
+  font-size: config.$code-font-size;
+  color: config.$pre-color;
 
   // Account for some code outputs that place code tags in pre tags
   code {
@@ -223,8 +213,8 @@ pre {
 }
 
 code {
-  font-size: $code-font-size;
-  color: var(--#{$prefix}code-color);
+  font-size: config.$code-font-size;
+  color: var(--#{config.$prefix}code-color);
   word-wrap: break-word;
 
   // Streamline the style when inside anchors to avoid broken underline and more
@@ -234,10 +224,10 @@ code {
 }
 
 kbd {
-  padding: $kbd-padding-y $kbd-padding-x;
-  font-size: $kbd-font-size;
-  color: $kbd-color;
-  background-color: $kbd-bg;
+  padding: config.$kbd-padding-y config.$kbd-padding-x;
+  font-size: config.$kbd-font-size;
+  color: config.$kbd-color;
+  background-color: config.$kbd-bg;
 
   kbd {
     padding: 0;
@@ -266,14 +256,14 @@ table {
 }
 
 caption {
-  padding-top: $table-cell-padding-y;
-  padding-bottom: $table-cell-padding-y;
-  color: $table-caption-color;
+  padding-top: config.$table-cell-padding-y;
+  padding-bottom: config.$table-cell-padding-y;
+  color: config.$table-caption-color;
   text-align: left;
 }
 
 th {
-  font-weight: $table-th-font-weight;
+  font-weight: config.$table-th-font-weight;
   text-align: inherit;
   text-align: -webkit-match-parent;
 }
@@ -340,7 +330,7 @@ button,
 [type="submit"] {
   -webkit-appearance: button; // 2
 
-  @if $enable-button-pointers {
+  @if config.$enable-button-pointers {
     &:not(:disabled) {
       cursor: pointer; // 3
     }
@@ -370,9 +360,9 @@ legend {
   float: left; // 1
   width: 100%;
   padding: 0;
-  margin-bottom: $legend-margin-bottom;
-  font-size: $legend-font-size;
-  font-weight: $legend-font-weight;
+  margin-bottom: config.$legend-margin-bottom;
+  font-size: config.$legend-font-size;
+  font-weight: config.$legend-font-weight;
   line-height: inherit;
 
   + * {
@@ -420,6 +410,14 @@ output {
 // iFrame
 iframe {
   border: 0;
+}
+
+// HR
+hr {
+  margin: 0;
+  border: 0;
+  color: transparent;
+  border-top: config.$hr-border-width solid config.$hr-border-color;
 }
 
 // Summary

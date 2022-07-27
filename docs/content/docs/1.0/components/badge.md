@@ -11,19 +11,19 @@ toc: true
 Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units. As of v5, badges no longer have focus or hover styles for links.
 
 {{< example >}}
-<h1>Example heading <span class="badge bg-secondary">New</span></h1>
-<h2>Example heading <span class="badge bg-secondary">New</span></h2>
-<h3>Example heading <span class="badge bg-secondary">New</span></h3>
-<h4>Example heading <span class="badge bg-secondary">New</span></h4>
-<h5>Example heading <span class="badge bg-secondary">New</span></h5>
-<h6>Example heading <span class="badge bg-secondary">New</span></h6>
+<h1>Example heading <span class="badge">New</span></h1>
+<h2>Example heading <span class="badge">New</span></h2>
+<h3>Example heading <span class="badge">New</span></h3>
+<h4>Example heading <span class="badge">New</span></h4>
+<h5>Example heading <span class="badge">New</span></h5>
+<h6>Example heading <span class="badge">New</span></h6>
 {{< /example >}}
 
 Badges can be used as part of links or buttons to provide a counter.
 
 {{< example >}}
 <button type="button" class="btn btn-primary">
-Notifications <span class="badge bg-secondary">4</span>
+Notifications <span class="badge">4</span>
 </button>
 {{< /example >}}
 
@@ -33,7 +33,7 @@ Unless the context is clear (as with the "Notifications" example, where it is un
 
 {{< example >}}
 <button type="button" class="btn btn-primary">
-Profile <span class="badge bg-secondary">9</span>
+Profile <span class="badge">9</span>
 <span class="visually-hidden">unread messages</span>
 </button>
 {{< /example >}}
@@ -64,4 +64,4 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 
 ### Variables
 
-{{< scss-docs name="badge-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="badge-variables" file="scss/_config.scss" >}}

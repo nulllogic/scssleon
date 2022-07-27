@@ -1,5 +1,7 @@
+@use '../config';
+
 @mixin box-shadow($shadow...) {
-  @if $enable-shadows {
+  @if config.$enable-shadows {
     $result: ();
 
     @each $value in $shadow {

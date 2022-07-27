@@ -1,3 +1,5 @@
+@use "config";
+
 // Utilities
 
 $utilities: () !default;
@@ -168,14 +170,14 @@ $utilities: map-merge((
         "border": (
                 property: border,
                 values: (
-                        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+                        null: var(--#{config.$prefix}border-width) var(--#{config.$prefix}border-style) var(--#{config.$prefix}border-color),
                         0: 0,
                 )
         ),
         "border-top": (
                 property: border-top,
                 values: (
-                        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+                        null: var(--#{config.$prefix}border-width) var(--#{config.$prefix}border-style) var(--#{config.$prefix}border-color),
                         0: 0,
                 )
         ),
@@ -183,14 +185,14 @@ $utilities: map-merge((
                 property: border-right,
                 class: border-end,
                 values: (
-                        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+                        null: var(--#{config.$prefix}border-width) var(--#{config.$prefix}border-style) var(--#{config.$prefix}border-color),
                         0: 0,
                 )
         ),
         "border-bottom": (
                 property: border-bottom,
                 values: (
-                        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+                        null: var(--#{config.$prefix}border-width) var(--#{config.$prefix}border-style) var(--#{config.$prefix}border-color),
                         0: 0,
                 )
         ),
@@ -198,7 +200,7 @@ $utilities: map-merge((
                 property: border-left,
                 class: border-start,
                 values: (
-                        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+                        null: var(--#{config.$prefix}border-width) var(--#{config.$prefix}border-style) var(--#{config.$prefix}border-color),
                         0: 0,
                 )
         ),
@@ -287,41 +289,41 @@ $utilities: map-merge((
 
 // Margin utilities
         // scss-docs-start utils-spacing
-        "margin": (
-                property: margin,
-                class: m,
-                values: map-merge($spacers, (auto: auto))
-        ),
-        "margin-x": (
-                property: margin-right margin-left,
-                class: mx,
-                values: map-merge($spacers, (auto: auto))
-        ),
-        "margin-y": (
-                property: margin-top margin-bottom,
-                class: my,
-                values: map-merge($spacers, (auto: auto))
-        ),
-        "margin-top": (
-                property: margin-top,
-                class: mt,
-                values: map-merge($spacers, (auto: auto))
-        ),
-        "margin-end": (
-                property: margin-right,
-                class: me,
-                values: map-merge($spacers, (auto: auto))
-        ),
-        "margin-bottom": (
-                property: margin-bottom,
-                class: mb,
-                values: map-merge($spacers, (auto: auto))
-        ),
-        "margin-start": (
-                property: margin-left,
-                class: ms,
-                values: map-merge($spacers, (auto: auto))
-        ),
+        //"margin": (
+        //        property: margin,
+        //        class: m,
+        //        values: map-merge($spacers, (auto: auto))
+        //),
+        //"margin-x": (
+        //        property: margin-right margin-left,
+        //        class: mx,
+        //        values: map-merge($spacers, (auto: auto))
+        //),
+        //"margin-y": (
+        //        property: margin-top margin-bottom,
+        //        class: my,
+        //        values: map-merge($spacers, (auto: auto))
+        //),
+        //"margin-top": (
+        //        property: margin-top,
+        //        class: mt,
+        //        values: map-merge($spacers, (auto: auto))
+        //),
+        //"margin-end": (
+        //        property: margin-right,
+        //        class: me,
+        //        values: map-merge($spacers, (auto: auto))
+        //),
+        //"margin-bottom": (
+        //        property: margin-bottom,
+        //        class: mb,
+        //        values: map-merge($spacers, (auto: auto))
+        //),
+        //"margin-start": (
+        //        property: margin-left,
+        //        class: ms,
+        //        values: map-merge($spacers, (auto: auto))
+        //),
         // scss-docs-end utils-spacing
 
 // Padding utilities
@@ -380,7 +382,7 @@ $utilities: map-merge((
         "font-family": (
                 property: font-family,
                 class: font,
-                values: (monospace: var(--#{$prefix}font-monospace))
+                values: (monospace: var(--#{config.$prefix}font-monospace))
         ),
         //"font-size": (
         //        rfs: true,
@@ -484,7 +486,7 @@ $utilities: map-merge((
         "gradient": (
                 property: background-image,
                 class: bg,
-                values: (gradient: var(--#{$prefix}gradient))
+                values: (gradient: var(--#{config.$prefix}gradient))
         ),
   // scss-docs-start utils-interaction
         "user-select": (
@@ -502,36 +504,36 @@ $utilities: map-merge((
                 property: border-radius,
                 class: rounded,
                 values: (
-                        null: var(--#{$prefix}border-radius),
+                        null: var(--#{config.$prefix}border-radius),
                         0: 0,
-                        1: var(--#{$prefix}border-radius-sm),
-                        2: var(--#{$prefix}border-radius),
-                        3: var(--#{$prefix}border-radius-lg),
-                        4: var(--#{$prefix}border-radius-xl),
-                        5: var(--#{$prefix}border-radius-2xl),
+                        1: var(--#{config.$prefix}border-radius-sm),
+                        2: var(--#{config.$prefix}border-radius),
+                        3: var(--#{config.$prefix}border-radius-lg),
+                        4: var(--#{config.$prefix}border-radius-xl),
+                        5: var(--#{config.$prefix}border-radius-2xl),
                         circle: 50%,
-                        pill: var(--#{$prefix}border-radius-pill)
+                        pill: var(--#{config.$prefix}border-radius-pill)
                 )
         ),
         "rounded-top": (
                 property: border-top-left-radius border-top-right-radius,
                 class: rounded-top,
-                values: (null: var(--#{$prefix}border-radius))
+                values: (null: var(--#{config.$prefix}border-radius))
         ),
         "rounded-end": (
                 property: border-top-right-radius border-bottom-right-radius,
                 class: rounded-end,
-                values: (null: var(--#{$prefix}border-radius))
+                values: (null: var(--#{config.$prefix}border-radius))
         ),
         "rounded-bottom": (
                 property: border-bottom-right-radius border-bottom-left-radius,
                 class: rounded-bottom,
-                values: (null: var(--#{$prefix}border-radius))
+                values: (null: var(--#{config.$prefix}border-radius))
         ),
         "rounded-start": (
                 property: border-bottom-left-radius border-top-left-radius,
                 class: rounded-start,
-                values: (null: var(--#{$prefix}border-radius))
+                values: (null: var(--#{config.$prefix}border-radius))
         ),
   // scss-docs-end utils-border-radius
   // scss-docs-start utils-visibility

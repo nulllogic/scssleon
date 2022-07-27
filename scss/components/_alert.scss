@@ -6,6 +6,9 @@
 *
 */
 
+@use '../config';
+@use '../mixins';
+
 .alert {
 
   position: relative;
@@ -13,61 +16,61 @@
 
   // scss-docs-start alert-css-vars
 
-  --#{$prefix}alert-border-radius: .25rem;
-  --#{$prefix}alert-padding: 1.25rem;
-  --#{$prefix}alert-icon-size: 1.25rem;
-  --#{$prefix}alert-icon-padding: 1rem;
-  --#{$prefix}alert-padding-dismissable: 2rem;
+  --#{config.$prefix}alert-border-radius: .25rem;
+  --#{config.$prefix}alert-padding: 1.25rem;
+  --#{config.$prefix}alert-icon-size: 1.25rem;
+  --#{config.$prefix}alert-icon-padding: 1rem;
+  --#{config.$prefix}alert-padding-dismissable: 2rem;
 
-  --#{$prefix}alert-dismiss-btn-position-top: .5rem;
-  --#{$prefix}alert-dismiss-btn-position-right: .4rem;
+  --#{config.$prefix}alert-dismiss-btn-position-top: .5rem;
+  --#{config.$prefix}alert-dismiss-btn-position-right: .4rem;
 
-  --#{$prefix}alert-close-button-color: rgba(92, 95, 98, 1);
-  --#{$prefix}alert-close-button-color-hover: rgba(26, 28, 29, 1);
+  --#{config.$prefix}alert-close-button-color: rgba(92, 95, 98, 1);
+  --#{config.$prefix}alert-close-button-color-hover: rgba(26, 28, 29, 1);
 
   // Default alert
-  --#{$prefix}alert-icon-fill: rgba(92, 95, 98, 1);
-  --#{$prefix}alert-bg: rgba(246, 246, 247, 1);
-  --#{$prefix}alert-box-shadow: inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1);
+  --#{config.$prefix}alert-icon-fill: rgba(92, 95, 98, 1);
+  --#{config.$prefix}alert-bg: rgba(246, 246, 247, 1);
+  --#{config.$prefix}alert-box-shadow: inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1);
 
 
   // Success alert
-  --#{$prefix}alert-icon-success-fill: rgba(0, 127, 95, 1);
-  --#{$prefix}alert-success-bg: rgba(214, 244, 225, 1);
-  --#{$prefix}alert-success-shadow: inset 0 0.0625rem 0 0 rgba(149, 201, 180, 1), inset 0 0 0 0.0625rem rgba(149, 201, 180, 1);
+  --#{config.$prefix}alert-icon-success-fill: rgba(0, 127, 95, 1);
+  --#{config.$prefix}alert-success-bg: rgba(214, 244, 225, 1);
+  --#{config.$prefix}alert-success-shadow: inset 0 0.0625rem 0 0 rgba(149, 201, 180, 1), inset 0 0 0 0.0625rem rgba(149, 201, 180, 1);
 
   // Information alert
-  --#{$prefix}alert-icon-information-fill: rgba(0, 160, 172, 1);
-  --#{$prefix}alert-information-bg: rgba(222, 241, 249, 1);
-  --#{$prefix}alert-information-shadow: inset 0 0.0625rem 0 0 rgba(152, 198, 205, 1), inset 0 0 0 0.0625rem rgba(152, 198, 205, 1);
+  --#{config.$prefix}alert-icon-information-fill: rgba(0, 160, 172, 1);
+  --#{config.$prefix}alert-information-bg: rgba(222, 241, 249, 1);
+  --#{config.$prefix}alert-information-shadow: inset 0 0.0625rem 0 0 rgba(152, 198, 205, 1), inset 0 0 0 0.0625rem rgba(152, 198, 205, 1);
 
   // Warning alert
-  --#{$prefix}alert-icon-warning-fill: rgba(193, 143, 0, 1);
-  --#{$prefix}alert-warning-bg: rgba(254, 238, 221, 1);
-  --#{$prefix}alert-warning-shadow: inset 0 0.0625rem 0 0 rgba(225, 184, 120, 1), inset 0 0 0 0.0625rem rgba(225, 184, 120, 1);
+  --#{config.$prefix}alert-icon-warning-fill: rgba(193, 143, 0, 1);
+  --#{config.$prefix}alert-warning-bg: rgba(254, 238, 221, 1);
+  --#{config.$prefix}alert-warning-shadow: inset 0 0.0625rem 0 0 rgba(225, 184, 120, 1), inset 0 0 0 0.0625rem rgba(225, 184, 120, 1);
 
   // Critical alert
-  --#{$prefix}alert-icon-critical-fill: rgba(215, 44, 13, 1);
-  --#{$prefix}alert-critical-bg: rgba(253, 232, 232, 1);
-  --#{$prefix}alert-critical-shadow: inset 0 0.0625rem 0 0 rgba(224, 179, 178, 1), inset 0 0 0 0.0625rem rgba(224, 179, 178, 1);
+  --#{config.$prefix}alert-icon-critical-fill: rgba(215, 44, 13, 1);
+  --#{config.$prefix}alert-critical-bg: rgba(253, 232, 232, 1);
+  --#{config.$prefix}alert-critical-shadow: inset 0 0.0625rem 0 0 rgba(224, 179, 178, 1), inset 0 0 0 0.0625rem rgba(224, 179, 178, 1);
 
   // scss-docs-end alert-css-vars
 
-  @include border-radius(var(--#{$prefix}alert-border-radius));
-  @include box-shadow(var(--#{$prefix}alert-box-shadow));
+  @include mixins.border-radius(var(--#{config.$prefix}alert-border-radius));
+  @include mixins.box-shadow(var(--#{config.$prefix}alert-box-shadow));
 
-  padding: var(--#{$prefix}alert-padding);
+  padding: var(--#{config.$prefix}alert-padding);
   outline: 1px solid transparent;
 
-  background: var(--#{$prefix}alert-bg);
+  background: var(--#{config.$prefix}alert-bg);
 
   .icon-wrapper {
-    padding-right: var(--#{$prefix}alert-icon-padding);
+    padding-right: var(--#{config.$prefix}alert-icon-padding);
 
     .icon {
-      height: var(--#{$prefix}alert-icon-size);
-      width: var(--#{$prefix}alert-icon-size);
-      color: var(--#{$prefix}alert-icon-fill);
+      height: var(--#{config.$prefix}alert-icon-size);
+      width: var(--#{config.$prefix}alert-icon-size);
+      color: var(--#{config.$prefix}alert-icon-fill);
 
       display: block;
       max-height: 100%;
@@ -103,66 +106,66 @@
   }
 
   &.dismissible {
-    padding-right: calc(var(--#{$prefix}alert-icon-size) + var(--#{$prefix}alert-padding-dismissable));
+    padding-right: calc(var(--#{config.$prefix}alert-icon-size) + var(--#{config.$prefix}alert-padding-dismissable));
 
     .dismiss-wrapper {
-      top: var(--#{$prefix}alert-dismiss-btn-position-top);
-      right: var(--#{$prefix}alert-dismiss-btn-position-right);
+      top: var(--#{config.$prefix}alert-dismiss-btn-position-top);
+      right: var(--#{config.$prefix}alert-dismiss-btn-position-right);
       position: absolute;
 
       .btn-close {
         box-shadow: none;
         border: none;
-        color: var(--#{$prefix}alert-close-button-color);
+        color: var(--#{config.$prefix}alert-close-button-color);
 
         &:hover {
           box-shadow: none;
-          color: var(--#{$prefix}alert-close-button-color-hover);
+          color: var(--#{config.$prefix}alert-close-button-color-hover);
         }
       }
     }
   }
 
   &.success {
-    background: var(--#{$prefix}alert-success-bg);
-    box-shadow: var(--#{$prefix}alert-success-shadow);
+    background: var(--#{config.$prefix}alert-success-bg);
+    box-shadow: var(--#{config.$prefix}alert-success-shadow);
 
     .icon-wrapper {
       .icon {
-        color: var(--#{$prefix}alert-icon-success-fill);
+        color: var(--#{config.$prefix}alert-icon-success-fill);
       }
     }
   }
 
   &.information {
-    background: var(--#{$prefix}alert-information-bg);
-    box-shadow: var(--#{$prefix}alert-information-shadow);
+    background: var(--#{config.$prefix}alert-information-bg);
+    box-shadow: var(--#{config.$prefix}alert-information-shadow);
 
     .icon-wrapper {
       .icon {
-        color: var(--#{$prefix}alert-icon-information-fill);
+        color: var(--#{config.$prefix}alert-icon-information-fill);
       }
     }
   }
 
   &.warning {
-    background: var(--#{$prefix}alert-warning-bg);
-    box-shadow: var(--#{$prefix}alert-warning-shadow);
+    background: var(--#{config.$prefix}alert-warning-bg);
+    box-shadow: var(--#{config.$prefix}alert-warning-shadow);
 
     .icon-wrapper {
       .icon {
-        color: var(--#{$prefix}alert-icon-warning-fill);
+        color: var(--#{config.$prefix}alert-icon-warning-fill);
       }
     }
   }
 
   &.critical {
-    background: var(--#{$prefix}alert-critical-bg);
-    box-shadow: var(--#{$prefix}alert-critical-shadow);
+    background: var(--#{config.$prefix}alert-critical-bg);
+    box-shadow: var(--#{config.$prefix}alert-critical-shadow);
 
     .icon-wrapper {
       .icon {
-        color: var(--#{$prefix}alert-icon-critical-fill);
+        color: var(--#{config.$prefix}alert-icon-critical-fill);
       }
     }
   }

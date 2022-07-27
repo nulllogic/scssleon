@@ -1,3 +1,5 @@
+@use '../config';
+
 @function valid-radius($radius) {
   $return: ();
   @each $value in $radius {
@@ -11,8 +13,8 @@
 }
 
 // scss-docs-start border-radius-mixins
-@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
-  @if $enable-rounded {
+@mixin border-radius($radius: config.$border-radius, $fallback-border-radius: false) {
+  @if config.$enable-rounded {
     border-radius: valid-radius($radius);
   }
   @else if $fallback-border-radius != false {
@@ -20,54 +22,54 @@
   }
 }
 
-@mixin border-top-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-top-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-top-left-radius: valid-radius($radius);
     border-top-right-radius: valid-radius($radius);
   }
 }
 
-@mixin border-end-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-end-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-top-right-radius: valid-radius($radius);
     border-bottom-right-radius: valid-radius($radius);
   }
 }
 
-@mixin border-bottom-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-bottom-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-bottom-right-radius: valid-radius($radius);
     border-bottom-left-radius: valid-radius($radius);
   }
 }
 
-@mixin border-start-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-start-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-top-left-radius: valid-radius($radius);
     border-bottom-left-radius: valid-radius($radius);
   }
 }
 
-@mixin border-top-start-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-top-start-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-top-left-radius: valid-radius($radius);
   }
 }
 
-@mixin border-top-end-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-top-end-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-top-right-radius: valid-radius($radius);
   }
 }
 
-@mixin border-bottom-end-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-bottom-end-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-bottom-right-radius: valid-radius($radius);
   }
 }
 
-@mixin border-bottom-start-radius($radius: $border-radius) {
-  @if $enable-rounded {
+@mixin border-bottom-start-radius($radius: config.$border-radius) {
+  @if config.$enable-rounded {
     border-bottom-left-radius: valid-radius($radius);
   }
 }

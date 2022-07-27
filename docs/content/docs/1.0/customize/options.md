@@ -8,8 +8,8 @@ toc: true
 
 ### Root variables
 
-{{< scss-docs name="root-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="root-variables" file="scss/_config.scss" >}}
 
 ### Option variables
 
-{{< scss-docs name="option-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="option-variables" file="scss/_config.scss" >}}

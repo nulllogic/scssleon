@@ -1,28 +1,31 @@
-// Container
+@use '../config';
+@use '../mixins/container' as container;
+@use '../mixins/breakpoints' as breakpoints;
 
-@if $enable-container-classes {
+// Container
+@if config.$enable-container-classes {
 
   .container,
   .container-fluid {
-    @include generate_container();
+    @include container.generate_container();
   }
 
-  @each $breakpoint, $container-max-width in $container-max-widths {
+  @each $breakpoint, $container-max-width in config.$container-max-widths {
     .container-#{$breakpoint} {
       @extend .container-fluid;
     }
 
-    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    @include breakpoints.media-breakpoint-up($breakpoint, config.$grid-breakpoints) {
       _responsive-container-#{$breakpoint} {
         max-width: $container-max-width;
       }
 
       $extend-breakpoint: true;
 
-      @each $name, $width in $grid-breakpoints {
+      @each $name, $width in config.$grid-breakpoints {
         @if ($extend-breakpoint) {
 
-          .container#{breakpoint-infix($name, $grid-breakpoints)} {
+          .container#{breakpoints.breakpoint-infix($name, config.$grid-breakpoints)} {
             @extend _responsive-container-#{$breakpoint};
           }
 

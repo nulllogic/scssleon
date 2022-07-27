@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
                 <div class="d-inline-flex align-items-center">
                     {{ partial "logo_with_text" . }}
                 </div>
@@ -13,14 +13,14 @@
                     Currently v{{ .Site.Params.current_version }}
                 </p>
             </div>
-            <div class="col-4">
+            <div class="col-md-2">
                 <h5>Links</h5>
                 <ul class="list-unstyled">
                     <li><a href="/">Home</a></li>
                     <li><a href="/docs/1.0/">Docs</a></li>
                 </ul>
             </div>
-            <div class="col-4">
+            <div class="col-md-2">
                 <h5>Community</h5>
                 <ul class="list-unstyled">
                     <li><a href="{{ .Site.Params.github_org }}/xiigrid/issues">Issues</a></li>

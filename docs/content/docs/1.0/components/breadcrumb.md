@@ -106,4 +106,4 @@ As part of xiigrid's evolving CSS variables approach, breadcrumbs now use local 
 
 ### Sass variables
 
-{{< scss-docs name="breadcrumb-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="breadcrumb-variables" file="scss/_config.scss" >}}

@@ -1,5 +1,7 @@
-// Grid system
+@use '../config';
+@use './breakpoints' as mixins;
 
+// Grid system
 @mixin prepare_rows() {
   display: flex;
   flex-wrap: wrap;
@@ -51,7 +53,7 @@
   @return $result;
 }
 
-@mixin generate_columns($size: false, $columns: $grid-columns) {
+@mixin generate_columns($size: false, $columns: config.$grid-columns) {
   @if $size {
     flex: 0 0 auto;
     width: percentage(divide($size, $columns));
@@ -64,13 +66,13 @@
 
 // Framework grid generation
 
-@mixin generate_grid_columns($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+@mixin generate_grid_columns($columns: config.$grid-columns, $breakpoints: config.$grid-breakpoints) {
 
   @each $breakpoint in map-keys($breakpoints) {
 
-    $infix: breakpoint-infix($breakpoint, $breakpoints);
+    $infix: mixins.breakpoint-infix($breakpoint, $breakpoints);
 
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
+    @include mixins.media-breakpoint-up($breakpoint, $breakpoints) {
 
       .col#{$infix} {
         flex: 1 0 0;

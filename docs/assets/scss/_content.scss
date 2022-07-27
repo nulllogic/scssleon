@@ -12,9 +12,9 @@
       font-size: calc(1.275rem + .3vw);
       font-weight: 300;
 
-      @include media-breakpoint-up(xl) {
-        font-size: 1.5rem;
-      }
+      //@include media-breakpoint-up(xl) {
+      //  font-size: 1.5rem;
+      //}
     }
   }
 

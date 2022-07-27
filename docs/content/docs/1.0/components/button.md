@@ -189,7 +189,7 @@ Here's an example of building a custom `.btn-*` modifier class like we do for th
 
 ### Sass variables
 
-{{< scss-docs name="btn-variables" file="scss/_variables.scss" >}}
+{{< scss-docs name="btn-variables" file="scss/_config.scss" >}}
 
 ### Sass mixins
 

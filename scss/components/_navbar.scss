@@ -6,6 +6,9 @@
 *
 */
 
+@use '../config';
+@use '../mixins';
+
 .navbar {
 
   position: relative;
@@ -26,8 +29,8 @@
     @extend %container-flex-properties;
   }
 
-  @each $breakpoint, $container-max-width in $container-max-widths {
-    > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
+  @each $breakpoint, $container-max-width in config.$container-max-widths {
+    > .container#{mixins.breakpoint-infix($breakpoint, config.$container-max-widths)} {
       @extend %container-flex-properties;
     }
   }
@@ -51,10 +54,6 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-
-    .dropdown-menu {
-      position: static;
-    }
 
   }
 

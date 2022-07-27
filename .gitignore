@@ -19,3 +19,4 @@ node_modules
 # Hugo
 .hugo_build.lock
 resources
+_site

@@ -1,6 +1,8 @@
+@use '../config';
+
 @mixin transition($transition...) {
   @if length($transition) == 0 {
-    $transition: $transition-base;
+    $transition: config.$transition-base;
   }
 
   @if length($transition) > 1 {
@@ -11,12 +13,12 @@
     }
   }
 
-  @if $enable-transitions {
+  @if config.$enable-transitions {
     @if nth($transition, 1) != null {
       transition: $transition;
     }
 
-    @if $enable-reduced-motion and nth($transition, 1) != null and nth($transition, 1) != none {
+    @if config.$enable-reduced-motion and nth($transition, 1) != null and nth($transition, 1) != none {
       @media (prefers-reduced-motion: reduce) {
         transition: none;
       }

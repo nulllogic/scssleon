@@ -1,22 +1,22 @@
 // Helpers
-@import "mixins/breakpoints";
+@forward "mixins/breakpoints";
 
 // Deprecate
-@import "mixins/deprecate";
+@forward "mixins/deprecate";
 
 // Utilities
-@import "mixins/utilities";
+@forward "mixins/utilities";
 
 // Components
-@import "mixins/forms";
+@forward "mixins/forms";
 
-@import "mixins/box-shadow";
-@import "mixins/border-radius";
-@import "mixins/transition";
-@import "mixins/buttons";
-@import "mixins/gradients";
+@forward "mixins/box-shadow";
+@forward "mixins/border-radius";
+@forward "mixins/transition";
+@forward "mixins/buttons";
+@forward "mixins/gradients";
 
 // Layout
-@import "mixins/grid";
-@import "mixins/container";
-@import "mixins/clearfix";
+@forward "mixins/grid";
+@forward "mixins/container";
+@forward "mixins/clearfix";
