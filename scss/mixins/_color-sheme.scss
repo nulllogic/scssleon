@@ -1,0 +1,12 @@
+// Media that spans multiple breakpoint widths.
+@mixin color-scheme($schema) {
+  @if $schema == 'light' {
+    @media (prefers-color-scheme: light) {
+      @content
+    }
+  } @else if $schema == 'dark' {
+    @media (prefers-color-scheme: dark) {
+      @content
+    }
+  }
+}

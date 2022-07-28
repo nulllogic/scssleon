@@ -15,17 +15,13 @@
 
   // scss-docs-start btn-css-vars
   --#{config.$prefix}btn-padding: #{config.$btn-padding};
-
-  --#{config.$prefix}btn-color: #{config.$btn-text-color};
-  --#{config.$prefix}btn-bg: transparent;
-
   --#{config.$prefix}btn-spinner-size: 1.25rem;
   // scss-docs-end btn-css-vars
 
-  padding:     var(--#{config.$prefix}btn-padding) var(--#{config.$prefix}btn-padding);
-  color:       var(--#{config.$prefix}btn-color);
+  padding: var(--#{config.$prefix}btn-padding) var(--#{config.$prefix}btn-padding);
+  color: var(--#{config.$prefix}btn-color);
 
-  border:      var(--#{config.$prefix}btn-border-width) solid var(--#{config.$prefix}btn-border-color);
+  border: #{config.$btn-border-width} solid var(--#{config.$prefix}btn-border-color);
 
   text-align: center;
   text-decoration: if(config.$link-decoration == none, null, none);
@@ -36,9 +32,10 @@
   white-space: config.$btn-white-space;
   cursor: if(config.$enable-button-pointers, pointer, null);
   user-select: none;
+  background-color: var(--#{config.$prefix}btn-bg);
 
-  @include mixins.border-radius(var(--#{config.$prefix}btn-border-radius));
-  @include mixins.box-shadow(var(--#{config.$prefix}btn-box-shadow));
+  @include mixins.border-radius(config.$btn-border-radius);
+  @include mixins.box-shadow(config.$btn-box-shadow);
   @include mixins.transition(config.$btn-transition);
 
   &:hover {
@@ -100,66 +97,16 @@
 }
 
 // scss-docs-start btn-variant-loops
-@each $theme-color, $theme-value in theme.$button-colors {
-  @debug $theme-color, $theme-value;
-
-  @each $color, $value in $theme-value {
-    @debug $color, $value;
+@each $color-scheme, $theme-value in theme.$button-colors {
+  @include mixins.color-scheme($color-scheme) {
+    @each $variant, $variant-options in $theme-value {
+      .btn-#{$variant} {
+        @each $state, $values in $variant-options {
+          @include mixins.button-variant($state, $values);
+        }
+      }
+    }
   }
-
-  //.btn-#{$theme-color} {
-  //
-  //  $background: $value;
-  //  $border : $value;
-  //  $color: color-contrast($value);
-  //
-  //  $hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount));
-  //  $hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount));
-  //  $hover-color: color-contrast($hover-background);
-  //
-  //  $active-background: if($color == $color-contrast-light, shade-color($background,$btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount));
-  //  $active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount));
-  //  $active-color: color-contrast($active-background);
-  //
-  //  $disabled-background: $background;
-  //  $disabled-border: $border;
-  //  $disabled-color: color-contrast($disabled-background);
-  //
-  //  @if($theme-color == 'default') {
-  //
-  //    @include button-variant(
-  //      $background: $value,
-  //      $border: rgba(186, 191, 195, 1),
-  //      $hover-background: rgba(239, 239, 239, 1),
-  //      $hover-border: rgba(186, 191, 195, 1),
-  //      $focus-shadow: #{to-rgb(#a7b5c2)},
-  //      $active-background: shade-color($value, $btn-active-bg-shade-amount),
-  //      $active-border: shade-color($value, $btn-active-border-shade-amount),
-  //      $disabled-background: $disabled-background,
-  //      $disabled-border: $disabled-border,
-  //      $disabled-color: $disabled-color
-  //    );
-  //
-  //  } @else {
-  //
-  //    @include button-variant(
-  //      $background: $value,
-  //      $border: $border,
-  //      $color: $color,
-  //      $hover-background: $hover-background,
-  //      $hover-border: $hover-border,
-  //      $hover-color: $hover-color,
-  //      $focus-shadow: #{to-rgb(mix($color, $border, 15%))},
-  //      $active-background: $active-background,
-  //      $active-border: $active-border,
-  //      $active-color: $active-color,
-  //      $disabled-background: $disabled-background,
-  //      $disabled-border: $disabled-border,
-  //      $disabled-color: $disabled-color
-  //    );
-  //  }
-  //
-  //}
 }
 
 //@each $color, $value in theme.$button-colors {

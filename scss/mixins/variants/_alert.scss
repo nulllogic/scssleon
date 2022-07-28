@@ -1,0 +1,24 @@
+@use '../../config';
+
+// Button variants
+// scss-docs-start alert-variant-mixin
+@mixin alert($name, $value) {
+
+  @if ($name == 'background') {
+    --#{config.$prefix}alert-bg: #{$value};
+  }
+
+  @if ($name == 'shadow') {
+    --#{config.$prefix}alert-box-shadow: #{$value};
+  }
+
+
+  @if ($name == 'icon') {
+    .icon-wrapper {
+      .icon {
+        --#{config.$prefix}alert-icon-fill: #{$value};
+      }
+    }
+  }
+
+}
