@@ -12,7 +12,6 @@
     --#{config.$prefix}alert-box-shadow: #{$value};
   }
 
-
   @if ($name == 'icon') {
     .icon-wrapper {
       .icon {
@@ -22,3 +21,4 @@
   }
 
 }
+// scss-docs-end alert-variant-mixin

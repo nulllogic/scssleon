@@ -9,7 +9,8 @@
 @use '../config';
 @use '../themes/default' as theme;
 
-@use '../mixins';
+@use '../mixins' as mixins;
+@use '../mixins/variants/button' as variant;
 
 .btn {
 
@@ -102,7 +103,7 @@
     @each $variant, $variant-options in $theme-value {
       .btn-#{$variant} {
         @each $state, $values in $variant-options {
-          @include mixins.button-variant($state, $values);
+          @include variant.button($state, $values);
         }
       }
     }
