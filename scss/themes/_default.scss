@@ -94,8 +94,8 @@ $button-colors: (
                         ),
                         'hover' : (
                                 'color' : rgba(255, 255, 255, 1),
-                                'background' : rgba(17, 84, 192, 1),
-                                'border' : rgba(7, 71, 136, 1),
+                                'background' : rgba(23, 84, 182, 1),
+                                'border' : rgba(4, 69, 134, 1)
                         ),
                         'focus' : (
                                 'color' : rgba(255, 255, 255, 1),
@@ -121,7 +121,7 @@ $button-colors: (
                         ),
                         'hover' : (
                                 'color' : rgba(255, 255, 255, 1),
-                                'background' : rgba(36, 36, 36, 1),
+                                'background' : rgba(33, 33, 33, 1),
                                 'border' : rgba(11, 11, 11, 1),
                         ),
                         'focus' : (
@@ -143,13 +143,13 @@ $button-colors: (
                 'success': (
                         'origin' : (
                                 'color' : rgba(255, 255, 255, 1),
-                                'background' : rgba(20, 100, 60, 1),
+                                'background' : rgba(20, 100, 24, 1),
                                 'border' : rgba(14, 53, 33, 1),
                         ),
                         'hover' : (
                                 'color' : rgba(255, 255, 255, 1),
-                                'background' : rgba(13, 77, 45, 1),
-                                'border' : rgba(14, 53, 33, 1),
+                                'background' : rgba(21, 77, 14, 1),
+                                'border' : rgba(11, 48, 12, 1),
                         ),
                         'focus' : (
                                 'color' : rgba(255, 255, 255, 1),
@@ -176,7 +176,284 @@ $button-colors: (
                         'hover' : (
                                 'color' : rgba(255, 255, 255, 1),
                                 'background' : rgba(155, 33, 3, 1),
-                                'border' : rgba(115, 19, 19, 1)
+                                'border' : rgb(103, 16, 16, 1)
+                        ),
+                        'focus' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(194, 31, 7, 1),
+                                'border' : #ccc
+                        ),
+                        'active' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(194, 31, 7, 1),
+                                'border' : #ccc
+                        ),
+                        'disabled' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+        ),
+        'light' : (
+                'default': (
+                        'origin' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'hover' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'focus' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'active' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'disabled' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+                'primary': (
+                        'origin' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'hover' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'focus' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'active' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'disabled' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+                'secondary': (
+                        'origin' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'hover' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'focus' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'active' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'disabled' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+                'danger': (
+                        'origin' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'hover' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'focus' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'active' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'disabled' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+                'success': (
+                        'origin' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'hover' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'focus' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'active' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        ),
+                        'disabled' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+        )
+) !default;
+
+$button-colors-outline: (
+        'dark' : (
+                'default': (
+                        'origin' : (
+                                'color' : rgba(32, 34, 35, 1),
+                                'background' : rgb(255, 255, 255),
+                                'border' : rgba(186, 191, 195, 1)
+                        ),
+                        'hover' : (
+                                'color' : rgba(32, 34, 35, 1),
+                                'background' : rgba(240, 241, 242, 1),
+                                'border' : rgba(186, 191, 195, 1)
+                        ),
+                        'focus' : (
+                                'color' : rgba(32, 34, 35, 1),
+                                'background' : rgba(240, 241, 242, 1),
+                                'border' : rgba(186, 191, 195, 1)
+                        ),
+                        'active' : (
+                                'color' : rgba(32, 34, 35, 1),
+                                'background' : rgba(240, 241, 242, 1),
+                                'border' : rgba(186, 191, 195, 1)
+                        ),
+                        'disabled' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+                'primary': (
+                        'origin' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(0, 110, 220, 1),
+                                'border' : rgba(10, 85, 160, 1),
+                        ),
+                        'hover' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(23, 84, 182, 1),
+                                'border' : rgba(4, 69, 134, 1)
+                        ),
+                        'focus' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(0, 110, 220, 1),
+                                'border' : rgba(0, 110, 220, 1)
+                        ),
+                        'active' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(0, 110, 220, 1),
+                                'border' : rgba(0, 110, 220, 1)
+                        ),
+                        'disabled' : (
+                                'color' : #fff,
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+                'secondary': (
+                        'origin' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(58, 58, 59, 1),
+                                'border' : rgba(23, 23, 23, 1),
+                        ),
+                        'hover' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(33, 33, 33, 1),
+                                'border' : rgba(11, 11, 11, 1),
+                        ),
+                        'focus' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(58, 58, 59, 1),
+                                'border' : #ccc
+                        ),
+                        'active' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(58, 58, 59, 1),
+                                'border' : #ccc
+                        ),
+                        'disabled' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(58, 58, 59, 1),
+                                'border' : #ccc
+                        )
+                ),
+                'success': (
+                        'origin' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(20, 100, 24, 1),
+                                'border' : rgba(14, 53, 33, 1),
+                        ),
+                        'hover' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(21, 77, 14, 1),
+                                'border' : rgba(11, 48, 12, 1),
+                        ),
+                        'focus' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(20, 100, 60, 1),
+                                'border' : rgba(20, 100, 60, 1),
+                        ),
+                        'active' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(20, 100, 60, 1),
+                                'border' : rgba(20, 100, 60, 1),
+                        ),
+                        'disabled' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : #fff,
+                                'border' : #ccc
+                        )
+                ),
+                'danger': (
+                        'origin' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(200, 30, 15, 1),
+                                'border' : rgba(142, 39, 39, 1)
+                        ),
+                        'hover' : (
+                                'color' : rgba(255, 255, 255, 1),
+                                'background' : rgba(155, 33, 3, 1),
+                                'border' : rgb(103, 16, 16, 1)
                         ),
                         'focus' : (
                                 'color' : rgba(255, 255, 255, 1),

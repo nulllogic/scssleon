@@ -110,11 +110,17 @@
   }
 }
 
-//@each $color, $value in theme.$button-colors {
-//  .btn-outline-#{$color} {
-//    @include button-outline-variant($value);
-//  }
-//}
+@each $color-scheme, $theme-value in theme.$button-colors-outline {
+  @include mixins.color-scheme($color-scheme) {
+    @each $variant, $variant-options in $theme-value {
+      .btn-outline-#{$variant} {
+        @each $state, $values in $variant-options {
+          @include variant.button($state, $values);
+        }
+      }
+    }
+  }
+}
 
 // scss-docs-end btn-variant-loops
 
@@ -130,9 +136,9 @@
   --#{config.$prefix}btn-active-border-color: transparent;
   --#{config.$prefix}btn-disabled-border-color: transparent;
   --#{config.$prefix}btn-focus-shadow-rgb: #{to-rgb(#a7b5c2)};
-  --#{config.$prefix}btn-box-shadow: none;
 
   text-decoration: config.$link-decoration;
+  box-shadow: none;
 
   &:hover,
   &:focus {
