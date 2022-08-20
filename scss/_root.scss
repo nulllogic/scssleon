@@ -1,15 +1,15 @@
 /* - ૮₍ ˃ ⤙ ˂ ₎ა – root  */
 @use 'sass:list';
 @use 'functions' as functions;
-$config : nil !default;
 
-$prefix : functions.get-config($config, 'prefix');
-$font-family : functions.get-config($config, 'body', 'fonts', 'default');
-$font-monospace : functions.get-config($config, 'body', 'fonts', 'monospace');
-$font-size : functions.get-config($config, 'body', 'fonts', 'size');
+$config: nil !default;
+$prefix: functions.get-config($config, 'prefix');
+
+$font-family: functions.get-config($config, 'html', 'body', 'fonts', 'default');
+$font-monospace: functions.get-config($config, 'html', 'body', 'fonts', 'monospace');
+$font-size: functions.get-config($config, 'html', 'body', 'fonts', 'size');
+
 $color-scheme: functions.get-config($config, 'color-scheme');
-
-@debug functions.get-config($config, 'color-scheme');
 
 :root {
 

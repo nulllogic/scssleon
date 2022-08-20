@@ -3,7 +3,16 @@
 ├┬┘├┤ └─┐├┤  │
 ┴└─└─┘└─┘└─┘ ┴
 */
+@use 'sass:map';
+@use 'functions' as functions;
 
+$config: nil !default;
+$theme: nil !default;
+
+$prefix: functions.get-config($config, 'prefix');
+$smooth-scroll: functions.get-config($config, 'enable', 'smooth-scroll');
+$body-font-family: functions.get-config($config, 'html', 'body', 'fonts', 'default');
+$body-font-size: functions.get-config($config, 'html', 'body', 'fonts', 'size');
 
 *,
 *::before,
@@ -12,11 +21,7 @@
 }
 
 :root {
-  @if config.$font-size-root != null {
-    font-size: var(--#{config.$prefix}root-font-size);
-  }
-
-  @if config.$enable-smooth-scroll {
+  @if $smooth-scroll {
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
     }
@@ -28,22 +33,23 @@
 // scss-docs-start reboot-body-rules
 body {
   margin: 0;
-  font-family: var(--#{config.$prefix}body-font-family);
-  font-size: var(--#{config.$prefix}body-font-size);
+  font-family: $body-font-family;
+  font-size: $body-font-size;
   font-weight: var(--#{config.$prefix}body-font-weight);
   line-height: var(--#{config.$prefix}body-line-height);
   color: var(--#{config.$prefix}body-color);
   text-align: var(--#{config.$prefix}body-text-align);
   background-color: var(--#{config.$prefix}body-bg);
+
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0,0,0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 // scss-docs-end reboot-body-rules
 
 // Typography
 %heading {
-  margin-top: 0;
-  margin-bottom: config.$headings-margin-bottom;
+  margin: 0;
   font-family: config.$headings-font-family;
   font-style: config.$headings-font-style;
   font-weight: config.$headings-font-weight;
@@ -117,7 +123,7 @@ dt {
 }
 
 dd {
-  margin:0;
+  margin: 0;
 }
 
 
@@ -314,6 +320,7 @@ select {
 
 select {
   word-wrap: normal;
+
   &:disabled {
     opacity: 1;
   }

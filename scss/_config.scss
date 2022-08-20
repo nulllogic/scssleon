@@ -14,36 +14,43 @@
 // Deep merged with the default config. This means that this will override existing keys and append new key value pairs.
 $custom: nil !default;
 
-$default-config : (
-
+$default-config: (
   // scss-docs-start root-variables
   prefix : 'xii',
   min-contrast-ratio : 4.5,
   grid-columns : 12,
   // scss-docs-end root-variables
-
   // Grid breakpoints
   // scss-docs-start grid-breakpoints
   grid-breakpoints: (
-      xs: 0,
-      sm: 576px,
-      md: 768px,
-      lg: 992px,
-      xl: 1200px,
-      xxl: 1400px
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
   ),
   // scss-docs-end grid-breakpoints
-
   color-scheme : 'light dark',
-
-  body : (
-    fonts : (
-      default : "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
-      monospace : "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-      size : '1rem'
+  enable : (
+    shadows : true,
+    transitions: true,
+    reduced-motion : true,
+    smooth-scroll : true,
+    dark-theme: true
+  ),
+  html : (
+    body : (
+      fonts : (
+        family: (
+          default : "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+          monospace : "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        ),
+        size : '1rem',
+        weight: 'normal',
+      )
     )
-  )
-
+  ),
 ) !default;
 
 $updated: map.deep-merge($default-config, $custom);
