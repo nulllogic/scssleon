@@ -1,26 +1,21 @@
-@use "config";
 /* - ૮₍ ˃ ⤙ ˂ ₎ა – root  */
+@use 'sass:list';
+@use 'functions' as functions;
+$config : nil !default;
+
+$prefix : functions.get-config($config, 'prefix');
+$font-family : functions.get-config($config, 'body', 'fonts', 'default');
+$font-monospace : functions.get-config($config, 'body', 'fonts', 'monospace');
+$font-size : functions.get-config($config, 'body', 'fonts', 'size');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+@debug functions.get-config($config, 'color-scheme');
 
 :root {
 
   // Fonts
-  --#{config.$prefix}font-sans-serif: #{inspect(config.$font-family-sans-serif)};
-  --#{config.$prefix}font-monospace: #{inspect(config.$font-family-monospace)};
+  --#{$prefix}font-family: #{inspect($font-family)};
+  --#{$prefix}font-monospace: #{inspect($font-monospace)};
 
-  // Root and body
-  // scss-docs-start root-body-variables
-  @if config.$font-size-root != null {
-    --#{config.$prefix}root-font-size: #{config.$font-size-root};
-  }
-
-  --#{config.$prefix}body-color: #{config.$body-color};
-  --#{config.$prefix}body-bg: #{config.$body-bg};
-
-  --#{config.$prefix}body-font-family: #{config.$font-family-base};
-  --#{config.$prefix}body-font-size: #{config.$font-size-base};
-  --#{config.$prefix}body-font-weight: #{config.$font-weight-base};
-  --#{config.$prefix}body-line-height: #{config.$line-height-base};
-  // scss-docs-end root-body-variables
-
-  color-scheme: light dark;
+  color-scheme: $color-scheme;
 }

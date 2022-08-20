@@ -13,28 +13,56 @@
 * Licensed under MIT (https://nulllogic.github.io/xiigrid//blob/main/LICENSE)
 */
 
-// Layout & components
-@use 'root';
-@use 'reset';
+// Config
+@use "config" as config with (
+  $custom : (
 
-// Components
-@use "components/grid";
-@use "components/container";
-//@use "components/form";
-//@use "components/badge";
-//@use "components/icon";
-@use "components/button";
-//@use "components/button-group";
-@use "components/navbar";
-@use "components/breadcrumb";
-//@use "components/modal";
-@use "components/alert";
-//@use "components/table";
-@use "components/pagination";
-@use "components/placeholder";
+  )
+);
 
-// Helpers
-@use "helpers/clearfix";
+// Theme
+@use "themes/default" as theme with (
+  $custom : (
+    body : (
+      light : (
+        background : #fff
+      ),
+      dark : (
+        background : #ccc
+      )
+    )
+  )
+);
 
-// Utilities
-@use "utilities/api";
+@use 'root' with (
+  $config : config.$updated
+);
+
+//@use 'reset' with (
+//  $theme : theme.$updated
+//);
+//
+//// Components
+//@use 'components/grid' with (
+//  $theme : theme.$updated
+//);
+
+//@use "components/container";}
+////@use "components/form";
+////@use "components/badge";
+////@use "components/icon";
+//@use "components/button";
+////@use "components/button-group";
+//@use "components/navbar";
+//@use "components/breadcrumb";
+////@use "components/modal";
+//@use "components/alert";
+////@use "components/table";
+//@use "components/pagination";
+//@use "components/placeholder";
+//
+//// Helpers
+//@use "helpers/clearfix";
+//
+//// Utilities
+//@use "utilities/api";
