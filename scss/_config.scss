@@ -37,7 +37,9 @@ $default-config: (
     transitions: true,
     reduced-motion : true,
     smooth-scroll : true,
-    dark-theme: true
+    dark-theme: true,
+    spacing : false,
+    rtl : false
   ),
   html : (
     body : (
@@ -46,11 +48,47 @@ $default-config: (
           default : "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
           monospace : "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
         ),
-        size : '1rem',
-        weight: 'normal',
+        size : 1rem,
+        weight: normal,
       )
+    ),
+    form : (
+      input : (
+
+      ),
+      select : (
+
+      ),
+
+    ),
+    table : (
+
     )
   ),
+  components : (
+    alerts : (
+      height : 0.55rem,
+      spacing : .6rem,
+      border-radius : .1875rem,
+      last-line-width : 80%,
+      cursor: wait
+    )
+  ),
+  // Z-index
+  // scss-docs-start z-index-stack
+  z-index : (
+    dropdown: 1000,
+    sticky: 1020,
+    fixed: 1030,
+    offcanvas-backdrop: 1040,
+    offcanvas: 1045,
+    modal-backdrop: 1050,
+    modal: 1055,
+    popover: 1070,
+    tooltip: 1080,
+    toast: 1090
+  )
+  // scss-docs-end z-index-stack
 ) !default;
 
 $updated: map.deep-merge($default-config, $custom);
@@ -640,21 +678,7 @@ $updated: map.deep-merge($default-config, $custom);
 //$table-caption-color:         inherit !default;
 //$table-bg-scale:              -80% !default;
 //// scss-docs-end table-variables
-//
-//// Z-index
-//// scss-docs-start z-index-stack
-//$z-index-dropdown:                   1000 !default;
-//$z-index-sticky:                     1020 !default;
-//$z-index-fixed:                      1030 !default;
-//$z-index-offcanvas-backdrop:         1040 !default;
-//$z-index-offcanvas:                  1045 !default;
-//$z-index-modal-backdrop:             1050 !default;
-//$z-index-modal:                      1055 !default;
-//$z-index-popover:                    1070 !default;
-//$z-index-tooltip:                    1080 !default;
-//$z-index-toast:                      1090 !default;
-//// scss-docs-end z-index-stack
-//
+
 //// Characters which are escaped by the escape-svg function
 //$escaped-characters: (
 //                ('<', '%3c'),

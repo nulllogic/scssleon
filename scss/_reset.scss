@@ -11,8 +11,10 @@ $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
 $smooth-scroll: functions.get-config($config, 'enable', 'smooth-scroll');
+
 $body-font-family: functions.get-config($config, 'html', 'body', 'fonts', 'default');
 $body-font-size: functions.get-config($config, 'html', 'body', 'fonts', 'size');
+$body-color : functions.get-theme($theme, 'body', 'fonts', 'size');
 
 *,
 *::before,
@@ -35,6 +37,7 @@ body {
   margin: 0;
   font-family: $body-font-family;
   font-size: $body-font-size;
+
   font-weight: var(--#{config.$prefix}body-font-weight);
   line-height: var(--#{config.$prefix}body-line-height);
   color: var(--#{config.$prefix}body-color);
