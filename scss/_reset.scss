@@ -14,7 +14,23 @@ $smooth-scroll: functions.get-config($config, 'enable', 'smooth-scroll');
 
 $body-font-family: functions.get-config($config, 'html', 'body', 'fonts', 'default');
 $body-font-size: functions.get-config($config, 'html', 'body', 'fonts', 'size');
-$body-color : functions.get-theme($theme, 'body', 'fonts', 'size');
+$body-color: functions.get-theme($theme, 'body', 'fonts', 'size');
+
+$headings-font-family: functions.get-theme($theme, 'typography', 'headings', 'font', 'family');
+$headings-font-style: functions.get-theme($theme, 'typography', 'headings', 'font', 'style');
+$headings-font-weight: functions.get-theme($theme, 'typography', 'headings', 'font', 'family');
+$headings-line-height: functions.get-theme($theme, 'typography', 'headings', 'font', 'line-height');
+
+$h1-font-size: functions.get-theme($theme, 'html', 'h1', 'font', 'size');
+$h2-font-size: functions.get-theme($theme, 'html', 'h2', 'font', 'size');
+$h3-font-size: functions.get-theme($theme, 'html', 'h3', 'font', 'size');
+$h4-font-size: functions.get-theme($theme, 'html', 'h4', 'font', 'size');
+$h5-font-size: functions.get-theme($theme, 'html', 'h5', 'font', 'size');
+$h6-font-size: functions.get-theme($theme, 'html', 'h6', 'font', 'size');
+
+$paragraph-margin: functions.get-theme($theme, 'html', 'p', 'margin');
+
+$abbr-text-decoration: functions.get-theme($theme, 'html', 'p', 'margin');
 
 *,
 *::before,
@@ -34,15 +50,16 @@ $body-color : functions.get-theme($theme, 'body', 'fonts', 'size');
 // Body
 // scss-docs-start reboot-body-rules
 body {
+  padding: 0;
   margin: 0;
   font-family: $body-font-family;
   font-size: $body-font-size;
 
-  font-weight: var(--#{config.$prefix}body-font-weight);
-  line-height: var(--#{config.$prefix}body-line-height);
-  color: var(--#{config.$prefix}body-color);
-  text-align: var(--#{config.$prefix}body-text-align);
-  background-color: var(--#{config.$prefix}body-bg);
+  font-weight: var(--#{$prefix}body-font-weight);
+  line-height: var(--#{$prefix}body-line-height);
+  color: var(--#{$prefix}body-color);
+  text-align: var(--#{$prefix}body-text-align);
+  background-color: var(--#{$prefix}body-bg);
 
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -53,46 +70,45 @@ body {
 // Typography
 %heading {
   margin: 0;
-  font-family: config.$headings-font-family;
-  font-style: config.$headings-font-style;
-  font-weight: config.$headings-font-weight;
-  line-height: config.$headings-line-height;
+  font-family: $headings-font-family;
+  font-style: $headings-font-style;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
 }
 
 h1 {
   @extend %heading;
-  font-size: config.$h1-font-size;
+  font-size: $h1-font-size;
 }
 
 h2 {
   @extend %heading;
-  font-size: config.$h2-font-size;
+  font-size: $h2-font-size;
 }
 
 h3 {
   @extend %heading;
-  font-size: config.$h3-font-size;
+  font-size: $h3-font-size;
 }
 
 h4 {
   @extend %heading;
-  font-size: config.$h4-font-size;
+  font-size: $h4-font-size;
 }
 
 h5 {
   @extend %heading;
-  font-size: config.$h5-font-size;
+  font-size: $h5-font-size;
 }
 
 h6 {
   @extend %heading;
-  font-size: config.$h6-font-size;
+  font-size: $h6-font-size;
 }
 
 // Paragraphs
 p {
-  margin-top: 0;
-  margin-bottom: config.$paragraph-margin-bottom;
+  margin: $paragraph-margin;
 }
 
 
@@ -103,15 +119,12 @@ abbr[title] {
   text-decoration-skip-ink: none;
 }
 
-
 // Address
-
 address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
 }
-
 
 // Lists
 ol,

@@ -34,6 +34,7 @@
   )
 );
 
+// Root
 @use 'root' with (
   $config : config.$updated
 );
@@ -43,8 +44,8 @@
   $theme : theme.$updated
 );
 
-//
-//// Components
+
+// Components
 //@use 'components/grid' with (
 //  $theme : theme.$updated
 //);

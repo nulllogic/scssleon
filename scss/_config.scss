@@ -20,8 +20,11 @@ $default-config: (
   min-contrast-ratio : 4.5,
   grid-columns : 12,
   // scss-docs-end root-variables
-  // Grid breakpoints
-  // scss-docs-start grid-breakpoints
+);
+
+// Grid breakpoints
+// scss-docs-start grid-breakpoints
+$grid-breakpoints-config: (
   grid-breakpoints: (
     xs: 0,
     sm: 576px,
@@ -29,9 +32,19 @@ $default-config: (
     lg: 992px,
     xl: 1200px,
     xxl: 1400px
-  ),
-  // scss-docs-end grid-breakpoints
+  )
+);
+// scss-docs-end grid-breakpoints
+
+$default-config: map.deep-merge($default-config, $grid-breakpoints-config);
+
+$color-scheme-config: (
   color-scheme : 'light dark',
+);
+
+$default-config: map.deep-merge($default-config, $color-scheme-config);
+
+$enable-rules-config: (
   enable : (
     shadows : true,
     transitions: true,
@@ -40,31 +53,197 @@ $default-config: (
     dark-theme: true,
     spacing : false,
     rtl : false
-  ),
+  )
+);
+
+$default-config: map.deep-merge($default-config, $enable-rules-config);
+
+$html-config: (
   html : (
     body : (
-      fonts : (
+      font : (
         family: (
           default : "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
           monospace : "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
         ),
         size : 1rem,
         weight: normal,
+        line-height : 1rem
       )
     ),
+    h1 : (
+      font : (
+        size : 1rem,
+        family : '',
+        style : '',
+        weight: '',
+        line-height : ''
+      ),
+      margin: ''
+    ),
+    h2 : (
+      font : (
+        size : 1rem,
+        family : '',
+        style : '',
+        weight: '',
+        line-height : ''
+      ),
+      margin: ''
+    ),
+    h3 : (
+      font : (
+        size : 1rem,
+        family : '',
+        style : '',
+        weight: '',
+        line-height : ''
+      ),
+      margin: ''
+    ),
+    h4 : (
+      font : (
+        size : 1rem,
+        family : '',
+        style : '',
+        weight: '',
+        line-height : ''
+      ),
+      margin: ''
+    ),
+    h5 : (
+      font : (
+        size : 1rem,
+        family : '',
+        style : '',
+        weight: '',
+        line-height : ''
+      ),
+      margin: ''
+    ),
+    h6 : (
+      font : (
+        size : 1rem,
+        family : '',
+        style : '',
+        weight: '',
+        line-height : ''
+      ),
+      margin: ''
+    ),
+    p : (
+      margin: 0
+    ),
+    abbr: (
+      text-decoration: underline dotted,
+      cursor: help,
+      text-decoration-skip-ink: none,
+    ),
+    address: (
+      margin: 0,
+      font: (
+        style: '',
+        line-height: ''
+      )
+    ),
+    ol: (
+    ),
+    ul: (
+    ),
+    dl: (
+    ),
+    dt: (
+    ),
+    dd: (
+    ),
+    blockquote: (
+    ),
+    b : (
+    ),
+    strong: (
+    ),
+    small: (
+    ),
+    mark: (
+    ),
+    sub: (
+    ),
+    sup : (
+    ),
+    a: (
+    ),
+    pre: (
+    ),
+    code: (
+    ),
+    kbd: (
+    ),
+    figure: (
+    ),
+    img : (
+    ),
+    svg : (
+    ),
+    output: (
+    ),
+    iframe: (
+    ),
+    summary: (
+    ),
+    progress: (
+    ),
     form : (
+      label: (
+      ),
       input : (
-
       ),
       select : (
-
       ),
-
+      fieldset: (
+      ),
+      legend: (
+      )
     ),
     table : (
+    )
+  )
+);
+
+$default-config: map.deep-merge($default-config, $html-config);
+
+$pseudo-elements-config: (
+  pseudo : (
+    datetime-edit-fields-wrapper : (
+    ),
+    datetime-edit-text : (
+    ),
+    datetime-edit-minute: (
+    ),
+    datetime-edit-hour-field: (
+    ),
+    datetime-edit-day-field: (
+    ),
+    datetime-edit-month-field: (
+    ),
+    datetime-edit-year-field: (
+    ),
+    inner-spin-button: (
+    ),
+    type-search: (
+    ),
+    search-decoration: (
+    ),
+    color-swatch-wrapper : (
+    ),
+    file-selector-button: (
 
     )
-  ),
+  )
+);
+
+$default-config: map.deep-merge($default-config, $pseudo-elements-config);
+
+$components-config: (
   components : (
     alerts : (
       height : 0.55rem,
@@ -73,9 +252,14 @@ $default-config: (
       last-line-width : 80%,
       cursor: wait
     )
-  ),
-  // Z-index
-  // scss-docs-start z-index-stack
+  )
+);
+
+$default-config: map.deep-merge($default-config, $components-config);
+
+// Z-index
+// scss-docs-start z-index-stack
+$z-index-config: (
   z-index : (
     dropdown: 1000,
     sticky: 1020,
@@ -88,8 +272,10 @@ $default-config: (
     tooltip: 1080,
     toast: 1090
   )
-  // scss-docs-end z-index-stack
 ) !default;
+// scss-docs-end z-index-stack
+
+$default-config: map.deep-merge($default-config, $z-index-config);
 
 $updated: map.deep-merge($default-config, $custom);
 
