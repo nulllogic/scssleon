@@ -20,6 +20,15 @@
   )
 );
 
+// Root
+@use 'root' with (
+  $config : config.$updated
+);
+
+@use 'reset' with (
+  $config : config.$updated
+);
+
 // Theme
 @use "themes/default" as theme with (
   $custom : (
@@ -33,17 +42,6 @@
     )
   )
 );
-
-// Root
-@use 'root' with (
-  $config : config.$updated
-);
-
-@use 'reset' with (
-  $config : config.$updated,
-  $theme : theme.$updated
-);
-
 
 // Components
 //@use 'components/grid' with (
