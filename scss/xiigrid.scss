@@ -16,16 +16,49 @@
 // Config
 @use "config" as config with (
   $custom : (
+    prefix : 'xii',
+    grid-columns : 12,
 
+    grid-breakpoints: (
+      xs: 0,
+      sm: 576px,
+      md: 768px,
+      lg: 992px,
+      xl: 1200px,
+      xxl: 1400px
+    ),
+
+    color-scheme : 'light dark',
+
+    enable: (
+      shadows : true,
+      transitions: true,
+      reduced-motion : true,
+      smooth-scroll : true,
+      dark-theme: true,
+      spacing : false,
+      reset: true,
+      content: true,
+      rtl : false
+    ),
+
+    z-index : (
+      dropdown: 1000,
+      sticky: 1020,
+      fixed: 1030,
+      offcanvas-backdrop: 1040,
+      offcanvas: 1045,
+      modal-backdrop: 1050,
+      modal: 1055,
+      popover: 1070,
+      tooltip: 1080,
+      toast: 1090
+    )
   )
 );
 
 // Root
 @use 'root' with (
-  $config : config.$updated
-);
-
-@use 'reset' with (
   $config : config.$updated
 );
 
@@ -41,6 +74,16 @@
       )
     )
   )
+);
+
+@use 'reset' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
+@use 'content' with (
+  $config : config.$updated,
+  $theme: theme.$updated
 );
 
 // Components

@@ -1,0 +1,12 @@
+/*
+┌─┐┌─┐┌┐┌┌┬┐┌─┐┌┐┌┌┬┐
+│  │ ││││ │ ├┤ │││ │
+└─┘└─┘┘└┘ ┴ └─┘┘└┘ ┴
+*/
+
+@use 'sass:map';
+@use 'functions' as functions;
+
+$content-enabled: functions.get-config($config, 'enable', 'content');
+
+
