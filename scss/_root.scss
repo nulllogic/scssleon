@@ -13,6 +13,12 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
 :root {
 
+  @if $smooth-scroll {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+
   // Fonts
   --#{$prefix}font-family: #{inspect($font-family)};
   --#{$prefix}font-monospace: #{inspect($font-monospace)};
