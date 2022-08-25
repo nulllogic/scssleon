@@ -7,6 +7,6 @@
 @use 'sass:map';
 @use 'functions' as functions;
 
+$config: nil !default;
+
 $content-enabled: functions.get-config($config, 'enable', 'content');
-
-
