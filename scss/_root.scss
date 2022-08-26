@@ -9,6 +9,8 @@ $font-family: functions.get-config($config, 'html', 'body', 'font', 'default');
 $font-monospace: functions.get-config($config, 'html', 'body', 'font', 'monospace');
 $font-size: functions.get-config($config, 'html', 'body', 'font', 'size');
 
+$smooth-scroll: functions.get-config($config, 'enable', 'smooth-scroll');
+
 $color-scheme: functions.get-config($config, 'color-scheme');
 
 :root {
