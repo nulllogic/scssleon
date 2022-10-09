@@ -7,8 +7,9 @@
 @forward 'mixins/transition';
 @forward 'mixins/gradients';
 
-// Color scheme
-@forward 'mixins/color-sheme';
+// Generators
+@forward 'mixins/generators/color-sheme';
+@forward 'mixins/generators/properties';
 
 // Deprecate
 @forward 'mixins/deprecate';

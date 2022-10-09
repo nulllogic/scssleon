@@ -22,9 +22,7 @@ $html-config: (
         weight: normal,
         line-height : 1rem
       ),
-
       line-height : 1rem,
-
       colors: (
         light : (
           background: '#fff',
@@ -46,63 +44,43 @@ $html-config: (
     ),
     h1 : (
       font : (
-        size : 1rem,
-        family : null,
-        style : null,
-        weight: null,
-        line-height : null
+        size : 1rem
       ),
-      margin: null
+      line-height : inherit,
+      margin: 0
     ),
     h2 : (
       font : (
-        size : 1rem,
-        family : null,
-        style : null,
-        weight: null,
-        line-height : null
+        size : 1rem
       ),
-      margin: null
+      line-height : inherit,
+      margin: 0
     ),
     h3 : (
       font : (
-        size : 1rem,
-        family : null,
-        style : null,
-        weight: null,
-        line-height : null
+        size : 1rem
       ),
-      margin: null
+      margin: 0
     ),
     h4 : (
       font : (
-        size : 1rem,
-        family : null,
-        style : null,
-        weight: null,
-        line-height : null
+        size : 1rem
       ),
-      margin: null
+      margin: 0
     ),
     h5 : (
       font : (
         size : 1rem,
-        family : null,
-        style : null,
-        weight: null,
-        line-height : null
       ),
-      margin: null
+      line-height : inherit,
+      margin: 0
     ),
     h6 : (
       font : (
         size : 1rem,
-        family : null,
-        style : null,
-        weight: null,
-        line-height : null
       ),
-      margin: null
+      line-height : inherit,
+      margin: 0
     ),
     p : (
       margin: 0
@@ -119,48 +97,45 @@ $html-config: (
     address: (
       margin: 0,
       font: (
-        style: null,
-        line-height: null
-      )
+        style: normal,
+      ),
+      line-height: inherit,
     ),
     ol: (
+      padding-left: 2rem
     ),
     ul: (
+      padding-left: 2rem
     ),
     dl: (
     ),
     dt: (
+      font : (
+        weight : normal
+      )
     ),
     dd: (
+      margin: 0 0 .5rem 0
     ),
     blockquote: (
+      margin: 0 0 1rem
     ),
     b : (
     ),
     strong: (
     ),
     small: (
-      font-size: .825rem
+      font: (
+        size: .825rem
+      )
     ),
     mark: (
-      padding: 0
+      padding: .1875em
     ),
     sub: (
-      position: relative,
-      font: (
-        size: .825rem,
-        line-height: 0
-      ),
-      vertical-align: baseline,
       bottom: .25em
     ),
     sup : (
-      position: relative,
-      font: (
-        size: .825rem,
-        line-height: 0
-      ),
-      vertical-align: baseline,
       top: -.5em
     ),
     pre: (
@@ -169,8 +144,12 @@ $html-config: (
       overflow: auto
     ),
     code: (
+      word-wrap: break-word
     ),
     kbd: (
+      padding: .1875rem .375rem,
+      font-size: .875em,
+      border-radius: .25rem
     ),
     figure: (
       margin: 0,
@@ -184,79 +163,77 @@ $html-config: (
     output: (
     ),
     iframe: (
+      border: 0
     ),
     summary: (
+      display: list-item,
+      cursor: pointer
     ),
     progress: (
+      vertical-align: baseline
     ),
     form : (
       label: (
+        display: inline-block
       ),
       input : (
       ),
       select : (
+        word-wrap: normal
       ),
       checkbox: (
       ),
       textarea : (
+        resize: vertical
       ),
       fieldset: (
+        min-width: 0,
+        padding: 0,
+        margin: 0,
+        border: 0
       ),
       legend: (
+        float: left,
+        width: 100%,
+        padding: 0,
+        margin: 0,
+        line-height: inherit
       )
+    ),
+    caption: (
+
     ),
     table : (
       caption-side: bottom,
       border-collapse: collapse,
-      thead : (
-        border: (
-          color: inherit,
-          style: solid,
-          width: 0
-        )
-      ),
-      tbody : (
-        border: (
-          color: inherit,
-          style: solid,
-          width: 0
-        )
-      ),
-      tfoot : (
-        border: (
-          color: inherit,
-          style: solid,
-          width: 0
-        )
-      ),
-      tr : (
-        border: (
-          color: inherit,
-          style: solid,
-          width: 0
-        )
-      ),
-      td : (
-        border: (
-          color: inherit,
-          style: solid,
-          width: 0
-        )
-      ),
-      th : (
-        border: (
-          color: inherit,
-          style: solid,
-          width: 0
-        )
-      )
+    ),
+    thead : (
+
+    ),
+    tbody : (
+
+    ),
+    tfoot : (
+
+    ),
+    tr : (
+
+    ),
+    td : (
+
+    ),
+    th : (
+      text-align: inherit
     ),
     hr : (
-      margin: '15px 0 0 0',
+      margin: 15px 0 0 0,
       border: 0,
       border-top-width: 1px,
       border-top-style: solid,
       color: inherit
+    ),
+    button: (
+      border-radius: 0
     )
   )
 );

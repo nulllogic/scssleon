@@ -8,12 +8,10 @@ $theme: () !default;
 
 $prefix: functions.get-config($config, 'prefix');
 
-$is-smooth-scroll-enabled: functions.get-config($config, 'enable','smooth-scroll');
+$is-smooth-scroll-enabled: functions.get-config($config, 'enable.smooth-scroll');
 $color-scheme: functions.get-config($config, 'color-scheme');
 
-$root-variables: functions.get-theme($theme, 'root', 'variables');
-
-@debug $root-variables;
+$root-variables: functions.get-theme($theme, 'root.variables');
 
 :root {
 

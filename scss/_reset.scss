@@ -14,10 +14,10 @@ $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
 
-$is-reset-enabled: functions.get-config($config, 'enable', 'reset');
-$is-button-pointers-enabled: functions.get-config($config, 'enable', 'button-pointers');
-$is-spacing-enabled: functions.get-config($config, 'enable', 'spacing');
-$is-color-scheme-enabled: functions.get-config($config, 'enable', 'spacing');
+$is-reset-enabled: functions.get-config($config, 'enable.reset');
+$is-button-pointers-enabled: functions.get-config($config, 'enable.button-pointers');
+$is-spacing-enabled: functions.get-config($config, 'enable.spacing');
+$is-color-scheme-enabled: functions.get-config($config, 'enable.spacing');
 
 $color-scheme: functions.get-config($config, 'color-scheme');
 
@@ -42,7 +42,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
     @each $name, $value in functions.str-split($color-scheme, ' ') {
       @include mixins.color-scheme($name) {
-        @each $variable, $value in functions.get-theme($theme, 'html', 'body', 'colors', $name) {
+        @each $variable, $value in functions.get-theme($theme, 'html.body.colors.' + $name) {
           --#{$prefix}-body-#{$variable}: #{meta.inspect($value)};
         }
       }
@@ -64,110 +64,88 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
 
   // Content grouping
-  // 1. Reset Firefox's gray color
+  // 1. Color property reset Firefox's gray color
   hr {
-    margin: $hr-margin-y 0;
-    color: $hr-color; // 1
-    border: 0;
-    border-top: $hr-border-width solid $hr-border-color;
-    opacity: $hr-opacity;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.hr'));
   }
 
   // Typography
   // 1. Remove top margins from headings
   //    By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
   //    margin for easier control within type scales as it avoids margin collapsing.
-  %heading {
-    margin-top: 0; // 1
-    margin-bottom: $headings-margin-bottom;
-    font-family: $headings-font-family;
-    font-style: $headings-font-style;
-    font-weight: $headings-font-weight;
-    line-height: $headings-line-height;
-    color: $headings-color;
-  }
 
   h1 {
-    @extend %heading;
-    font-size: '';
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.h1'));
   }
 
   h2 {
-    @extend %heading;
-    font-size: '';
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.h2'));
   }
 
   h3 {
-    @extend %heading;
-    font-size: '';
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.h3'));
   }
 
   h4 {
-    @extend %heading;
-    font-size: '';
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.h4'));
   }
 
   h5 {
-    @extend %heading;
-    font-size: '';
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.h5'));
   }
 
   h6 {
-    @extend %heading;
-    font-size: '';
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.h6'));
   }
 
 
   // Reset margins on paragraphs
   // Similarly, the top margin on `<p>`s get reset. However, we also reset the
   // bottom margin to use `rem` units instead of `em`.
-  p {
-    margin-top: 0;
-    margin-bottom: $paragraph-margin-bottom;
-  }
 
+  p {
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.p'));
+  }
 
   // Abbreviations
-  // 1. Add the correct text decoration in Chrome, Edge, Opera, and Safari.
-  // 2. Add explicit cursor to indicate changed behavior.
-  // 3. Prevent the text-decoration to be skipped.
+  // 1. "text-decoration" correct text decoration in Chrome, Edge, Opera, and Safari.
+  // 2. "cursor" explicit cursor to indicate changed behavior.
+  // 3. "text-decoration-skip-ink" prevent the text-decoration to be skipped.
   abbr[title] {
-    text-decoration: underline dotted; // 1
-    cursor: help; // 2
-    text-decoration-skip-ink: none; // 3
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.abbr.attributes.title'));
   }
-
-
+  //
+  //
   // Address
   address {
-    margin-bottom: 1rem;
-    font-style: normal;
-    line-height: inherit;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.address'));
   }
 
 
   // Lists
-  ol,
+  ol {
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.ol'));
+  }
+
   ul {
-    padding-left: 2rem;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.ul'));
   }
 
   ol,
   ul,
   dl {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin: 0
   }
 
   ol ol,
   ul ul,
   ol ul,
   ul ol {
-    margin-bottom: 0;
+    margin: 0
   }
 
   dt {
-    font-weight: $dt-font-weight;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.dt'));
   }
 
   // 1. Undo browser default
@@ -179,7 +157,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // Blockquote
   blockquote {
-    margin: 0 0 1rem;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.blockquote'));
   }
 
 
@@ -187,21 +165,19 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Add the correct font weight in Chrome, Edge, and Safari
   b,
   strong {
-    font-weight: $font-weight-bolder;
+    font-weight: bold;
   }
-
 
   // Small
   // Add the correct font size in all browsers
   small {
-    font-size: 1rem;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.small'));
   }
 
 
   // Mark
   mark {
-    padding: $mark-padding;
-    background-color: var(--#{$prefix}highlight-bg);
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.mark'));
   }
 
 
@@ -211,27 +187,26 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   sub,
   sup {
     position: relative;
-    font-size: 1rem;
     line-height: 0;
     vertical-align: baseline;
   }
 
   sub {
-    bottom: -.25em;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.sub'));
   }
   sup {
-    top: -.5em;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.sup'));
   }
 
 
   // Links
   a {
     color: var(--#{$prefix}link-color);
-    text-decoration: $link-decoration;
+    //text-decoration: $link-decoration;
 
     &:hover {
       color: var(--#{$prefix}link-hover-color);
-      text-decoration: $link-hover-decoration;
+      //text-decoration: $link-hover-decoration;
     }
   }
 
@@ -252,22 +227,14 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   code,
   kbd,
   samp {
-    font-family: $font-family-code;
     font-size: 1em; // Correct the odd `em` font sizing in all browsers.
   }
 
-  // 1. Remove browser default top margin
-  // 2. Reset browser default of `1em` to use `rem`s
-  // 3. Don't allow content to break outside
+  // 1. "margin" remove browser default top margin
+  // 2. "overflow" don't allow content to break outside
 
   pre {
-    display: block;
-    margin-top: 0; // 1
-    margin-bottom: 1rem; // 2
-    overflow: auto; // 3
-    font-size: '';
-    color: $pre-color;
-
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.pre'));
     // Account for some code outputs that place code tags in pre tags
     code {
       font-size: inherit;
@@ -277,8 +244,8 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   code {
-    font-size: '';
-    color: var(--#{$prefix}code-color);
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.code'));
+    //color: var(--#{$prefix}code-color);
     word-wrap: break-word;
 
     // Streamline the style when inside anchors to avoid broken underline and more
@@ -288,16 +255,10 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   kbd {
-    padding: $kbd-padding-y $kbd-padding-x;
-    font-size: '';
-    color: $kbd-color;
-    background-color: $kbd-bg;
-    @include border-radius($border-radius-sm);
-
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.code'));
     kbd {
       padding: 0;
-      font-size: 1em;
-      font-weight: $nested-kbd-font-weight;
+      font-size: inherit;
     }
   }
 
@@ -305,7 +266,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Figures
   // Apply a consistent margin strategy (matches our type styles).
   figure {
-    margin: 0 0 1rem;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.figure'));
   }
 
 
@@ -318,26 +279,24 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // Tables
   // Prevent double borders
-
   table {
     caption-side: bottom;
     border-collapse: collapse;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.table'));
   }
 
   caption {
-    padding-top: $table-cell-padding-y;
-    padding-bottom: $table-cell-padding-y;
-    color: $table-caption-color;
-    text-align: left;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.caption'));
   }
 
-  // 1. Removes font-weight bold by inheriting
-  // 2. Matches default `<td>` alignment by inheriting `text-align`.
-  // 3. Fix alignment for Safari
+  // 1. "font-weight" removes font-weight bold by inheriting
+  // 2. "text-align" matches default `<td>` alignment by inheriting `text-align`.
+  // 3. "text-align" fix alignment for Safari
   th {
-    font-weight: $table-th-font-weight; // 1
-    text-align: inherit; // 2
-    text-align: -webkit-match-parent; // 3
+    text-align: -webkit-match-parent;
+    @media not -webkit-device-pixel-ratio {
+      @include mixins.generate-properties(functions.get-theme($theme, 'html.th'));
+    }
   }
 
   thead,
@@ -353,14 +312,14 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
 
   // Forms
-  // 1. Allow labels to use `margin` for spacing.
+  // 1. "display" allow labels to use `margin` for spacing.
   label {
-    display: inline-block; // 1
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.label'));
   }
 
   // Remove the default `border-radius` that macOS Chrome adds.
   button {
-    border-radius: 0;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.button'));
   }
 
   // Explicitly remove focus outline in Chromium when it shouldn't be
@@ -371,15 +330,13 @@ $color-scheme: functions.get-config($config, 'color-scheme');
     outline: 0;
   }
 
-  // 1. Remove the margin in Firefox and Safari
+  // 1. "margin" remove the margin in Firefox and Safari
   input,
   button,
   select,
   optgroup,
   textarea {
-    margin: 0; // 1
-    font-family: inherit;
-    font-size: '';
+    margin: 0;
     line-height: inherit;
   }
 
@@ -395,7 +352,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   select {
     // Remove the inheritance of word-wrap in Safari.
-    word-wrap: normal;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.select'));
 
     // Undo the opacity change from Chrome
     &:disabled {
@@ -433,35 +390,26 @@ $color-scheme: functions.get-config($config, 'color-scheme');
     border-style: none;
   }
 
-  // 1. Textareas should really only resize vertically so they don't break their (horizontal) containers.
+  // 1. "resize" textareas should really only resize vertically so they don't break their (horizontal) containers.
   textarea {
-    resize: vertical; // 1
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.textarea'));
   }
 
-  // 1. Browsers set a default `min-width: min-content;` on fieldsets,
+  // 1. "min-width" browsers set a default `min-width: min-content;` on fieldsets,
   //    unlike e.g. `<div>`s, which have `min-width: 0;` by default.
   //    So we reset that to ensure fieldsets behave more like a standard block element.
   //    See https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
-  // 2. Reset the default outline behavior of fieldsets so they don't affect page layout.
+  // 2. "border" reset the default outline behavior of fieldsets so they don't affect page layout.
 
   fieldset {
-    min-width: 0; // 1
-    padding: 0; // 2
-    margin: 0; // 2
-    border: 0; // 2
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.fieldset'));
   }
 
   // 1. By using `float: left`, the legend will behave like a block element.
   //    This way the border of a fieldset wraps around the legend if present.
-  // 2. Fix wrapping bug.
+  // 2. "clear" fix wrapping bug.
   legend {
-    float: left; // 1
-    width: 100%;
-    padding: 0;
-    margin-bottom: $legend-margin-bottom;
-    font-size: '';
-    font-weight: $legend-font-weight;
-    line-height: inherit;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.legend'));
 
     + * {
       clear: left; // 2
@@ -529,20 +477,19 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // Remove border from iframe
   iframe {
-    border: 0;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.iframe'));
   }
 
   // Summary
-  // 1. Add the correct display in all browsers
+  // 1. "display" add the correct display in all browsers
   summary {
-    display: list-item; // 1
-    cursor: pointer;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.summary'));
   }
 
 
   // Progress
   progress {
-    vertical-align: baseline;
+    @include mixins.generate-properties(functions.get-theme($theme, 'html.progress'));;
   }
 
 

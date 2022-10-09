@@ -20,22 +20,39 @@
   @return $split-arr;
 }
 
-@function get-config($config, $setting, $args...) {
-  $value: map-get($config, $setting, $args...);
-  @if ($value != null) {
-    @return $value;
+@function get-config($config, $value) {
+  $val: null;
+
+  @if (str-index($value, '.')) {
+    $path: str-split($value, '.');
+    $val: map-get($config, $path...);
   } @else {
-    @return '';
+    $val: map-get($config, $value);
+  }
+
+  @if ($val != null) {
+    @return $val;
+  } @else {
+    @return nil;
   }
 }
 
-@function get-theme($config, $setting, $args...) {
-  $value: map-get($config, $setting, $args...);
-  @if ($value != null) {
-    @return $value;
+@function get-theme($theme, $value) {
+  $val: null;
+
+  @if (str-index($value, '.')) {
+    $path: str-split($value, '.');
+    $val: map-get($theme, $path...);
   } @else {
-    @return '';
+    $val: map-get($theme, $value);
   }
+
+  @if ($val != null) {
+    @return $val;
+  } @else {
+    @return nil;
+  }
+
 }
 
 // See https://codepen.io/kevinweber/pen/dXWoRw
