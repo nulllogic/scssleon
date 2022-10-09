@@ -895,7 +895,7 @@ $html-config: (
   )
 );
 
-$default-config: map.deep-merge($default-config, $html-config);
+$updated: map.deep-merge($html-config, $updated);
 
 // scss-docs-start button-colors-map
 // scss-docs-end button-colors-map
