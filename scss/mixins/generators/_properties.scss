@@ -1,10 +1,35 @@
 @use "sass:meta";
 @use '../../functions' as functions;
+@use '../../mixins/generators/color-sheme' as mixin;
 
-@mixin generate-properties($properties) {
+@mixin generate-properties($tag, $properties, $prefix, $color-scheme) {
   @each $property, $value in $properties {
-    @if (meta.inspect($value) != '') {
+
+    // Adding font property
+    @if $property == 'font' {
+      @each $font-property, $font-value in $value {
+        font-#{meta.inspect($font-property)}: #{meta.inspect($font-value)};
+      }
+    }
+
+    @if (type-of($value) == string and meta.inspect($value) != '') {
       #{$property} : #{meta.inspect($value)};
+    }
+
+    // Adding CSS variables, based on the color
+    @if $property == 'colors' {
+      // scss-docs-start btn-variant-loops
+      @each $color, $color-properties in $value {
+        @each $scheme in functions.str-split($color-scheme, ' ') {
+          @if $scheme == $color {
+            @include mixin.color-scheme($color) {
+              @each $color-property, $color-value in $color-properties {
+                --#{$prefix}-#{$tag}-#{$color-property}: #{meta.inspect($color-value)};
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

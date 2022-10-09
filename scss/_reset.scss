@@ -17,7 +17,6 @@ $prefix: functions.get-config($config, 'prefix');
 $is-reset-enabled: functions.get-config($config, 'enable.reset');
 $is-button-pointers-enabled: functions.get-config($config, 'enable.button-pointers');
 $is-spacing-enabled: functions.get-config($config, 'enable.spacing');
-$is-color-scheme-enabled: functions.get-config($config, 'enable.spacing');
 
 $color-scheme: functions.get-config($config, 'color-scheme');
 
@@ -40,14 +39,6 @@ $color-scheme: functions.get-config($config, 'color-scheme');
     margin: 0; // 1
     font-size: 1rem;
 
-    @each $name, $value in functions.str-split($color-scheme, ' ') {
-      @include mixins.color-scheme($name) {
-        @each $variable, $value in functions.get-theme($theme, 'html.body.colors.' + $name) {
-          --#{$prefix}-body-#{$variable}: #{meta.inspect($value)};
-        }
-      }
-    }
-
     font-family: var(--#{$prefix}-font-family-default);
     font-weight: var(--#{$prefix}body-font-weight);
 
@@ -66,7 +57,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Content grouping
   // 1. Color property reset Firefox's gray color
   hr {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.hr'));
+    @include mixins.generate-properties('hr', functions.get-theme($theme, 'html.hr'), $prefix, $color-scheme);
   }
 
   // Typography
@@ -75,27 +66,27 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   //    margin for easier control within type scales as it avoids margin collapsing.
 
   h1 {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.h1'));
+    @include mixins.generate-properties('h1', functions.get-theme($theme, 'html.h1'), $prefix, $color-scheme);
   }
 
   h2 {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.h2'));
+    @include mixins.generate-properties('h2', functions.get-theme($theme, 'html.h2'), $prefix, $color-scheme);
   }
 
   h3 {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.h3'));
+    @include mixins.generate-properties('h3', functions.get-theme($theme, 'html.h3'), $prefix, $color-scheme);
   }
 
   h4 {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.h4'));
+    @include mixins.generate-properties('h4', functions.get-theme($theme, 'html.h4'), $prefix, $color-scheme);
   }
 
   h5 {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.h5'));
+    @include mixins.generate-properties('h5', functions.get-theme($theme, 'html.h5'), $prefix, $color-scheme);
   }
 
   h6 {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.h6'));
+    @include mixins.generate-properties('h6',functions.get-theme($theme, 'html.h6'), $prefix, $color-scheme);
   }
 
 
@@ -104,7 +95,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // bottom margin to use `rem` units instead of `em`.
 
   p {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.p'));
+    @include mixins.generate-properties('p', functions.get-theme($theme, 'html.p'), $prefix, $color-scheme);
   }
 
   // Abbreviations
@@ -112,23 +103,23 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // 2. "cursor" explicit cursor to indicate changed behavior.
   // 3. "text-decoration-skip-ink" prevent the text-decoration to be skipped.
   abbr[title] {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.abbr.attributes.title'));
+    @include mixins.generate-properties('abbr', functions.get-theme( $theme, 'html.abbr.attributes.title'), $prefix, $color-scheme);
   }
   //
   //
   // Address
   address {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.address'));
+    @include mixins.generate-properties('address', functions.get-theme($theme, 'html.address'), $prefix, $color-scheme);
   }
 
 
   // Lists
   ol {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.ol'));
+    @include mixins.generate-properties('ol', functions.get-theme($theme, 'html.ol'), $prefix, $color-scheme);
   }
 
   ul {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.ul'));
+    @include mixins.generate-properties('ul', functions.get-theme($theme, 'html.ul'), $prefix, $color-scheme);
   }
 
   ol,
@@ -145,7 +136,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   dt {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.dt'));
+    @include mixins.generate-properties('dt', functions.get-theme($theme, 'html.dt'), $prefix, $color-scheme);
   }
 
   // 1. Undo browser default
@@ -157,7 +148,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // Blockquote
   blockquote {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.blockquote'));
+    @include mixins.generate-properties('blockqoute', functions.get-theme($theme, 'html.blockquote'), $prefix, $color-scheme);
   }
 
 
@@ -171,13 +162,13 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Small
   // Add the correct font size in all browsers
   small {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.small'));
+    @include mixins.generate-properties('small', functions.get-theme($theme, 'html.small'), $prefix, $color-scheme);
   }
 
 
   // Mark
   mark {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.mark'));
+    @include mixins.generate-properties('mark', functions.get-theme($theme, 'html.mark'), $prefix, $color-scheme);
   }
 
 
@@ -192,10 +183,10 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   sub {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.sub'));
+    @include mixins.generate-properties('sub', functions.get-theme($theme, 'html.sub'), $prefix, $color-scheme);
   }
   sup {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.sup'));
+    @include mixins.generate-properties('sup', functions.get-theme($theme, 'html.sup'), $prefix, $color-scheme);
   }
 
 
@@ -234,7 +225,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // 2. "overflow" don't allow content to break outside
 
   pre {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.pre'));
+    @include mixins.generate-properties('pre', functions.get-theme($theme, 'html.pre'), $prefix, $color-scheme);
     // Account for some code outputs that place code tags in pre tags
     code {
       font-size: inherit;
@@ -244,10 +235,8 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   code {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.code'));
+    @include mixins.generate-properties('code', functions.get-theme($theme, 'html.code'), $prefix, $color-scheme);
     //color: var(--#{$prefix}code-color);
-    word-wrap: break-word;
-
     // Streamline the style when inside anchors to avoid broken underline and more
     a > & {
       color: inherit;
@@ -255,7 +244,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   kbd {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.code'));
+    @include mixins.generate-properties('kbd', functions.get-theme($theme, 'html.code'), $prefix, $color-scheme);
     kbd {
       padding: 0;
       font-size: inherit;
@@ -266,7 +255,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Figures
   // Apply a consistent margin strategy (matches our type styles).
   figure {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.figure'));
+    @include mixins.generate-properties('figure', functions.get-theme($theme, 'html.figure'), $prefix, $color-scheme);
   }
 
 
@@ -280,13 +269,11 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Tables
   // Prevent double borders
   table {
-    caption-side: bottom;
-    border-collapse: collapse;
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.table'));
+    @include mixins.generate-properties('table', functions.get-theme($theme, 'html.table'), $prefix, $color-scheme);
   }
 
   caption {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.caption'));
+    @include mixins.generate-properties('caption', functions.get-theme($theme, 'html.caption'), $prefix, $color-scheme);
   }
 
   // 1. "font-weight" removes font-weight bold by inheriting
@@ -295,7 +282,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   th {
     text-align: -webkit-match-parent;
     @media not -webkit-device-pixel-ratio {
-      @include mixins.generate-properties(functions.get-theme($theme, 'html.th'));
+      @include mixins.generate-properties('th', functions.get-theme($theme, 'html.th'), $prefix, $color-scheme);
     }
   }
 
@@ -314,12 +301,12 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Forms
   // 1. "display" allow labels to use `margin` for spacing.
   label {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.label'));
+    @include mixins.generate-properties('label', functions.get-theme($theme, 'html.form.label'), $prefix, $color-scheme);
   }
 
   // Remove the default `border-radius` that macOS Chrome adds.
   button {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.button'));
+    @include mixins.generate-properties('button', functions.get-theme($theme, 'html.button'), $prefix, $color-scheme);
   }
 
   // Explicitly remove focus outline in Chromium when it shouldn't be
@@ -352,7 +339,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   select {
     // Remove the inheritance of word-wrap in Safari.
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.select'));
+    @include mixins.generate-properties('select', functions.get-theme($theme, 'html.form.select'), $prefix, $color-scheme);
 
     // Undo the opacity change from Chrome
     &:disabled {
@@ -392,7 +379,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // 1. "resize" textareas should really only resize vertically so they don't break their (horizontal) containers.
   textarea {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.textarea'));
+    @include mixins.generate-properties('textarea', functions.get-theme($theme, 'html.form.textarea'), $prefix, $color-scheme);
   }
 
   // 1. "min-width" browsers set a default `min-width: min-content;` on fieldsets,
@@ -402,14 +389,14 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // 2. "border" reset the default outline behavior of fieldsets so they don't affect page layout.
 
   fieldset {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.fieldset'));
+    @include mixins.generate-properties('fieldset', functions.get-theme($theme, 'html.form.fieldset'), $prefix, $color-scheme);
   }
 
   // 1. By using `float: left`, the legend will behave like a block element.
   //    This way the border of a fieldset wraps around the legend if present.
   // 2. "clear" fix wrapping bug.
   legend {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.form.legend'));
+    @include mixins.generate-properties('legend', functions.get-theme($theme, 'html.form.legend'), $prefix, $color-scheme);
 
     + * {
       clear: left; // 2
@@ -477,19 +464,19 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // Remove border from iframe
   iframe {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.iframe'));
+    @include mixins.generate-properties('iframe', functions.get-theme($theme, 'html.iframe'), $prefix, $color-scheme);
   }
 
   // Summary
   // 1. "display" add the correct display in all browsers
   summary {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.summary'));
+    @include mixins.generate-properties('summary', functions.get-theme($theme, 'html.summary'), $prefix, $color-scheme);
   }
 
 
   // Progress
   progress {
-    @include mixins.generate-properties(functions.get-theme($theme, 'html.progress'));;
+    @include mixins.generate-properties('progress', functions.get-theme($theme, 'html.progress'), $prefix, $color-scheme);
   }
 
 

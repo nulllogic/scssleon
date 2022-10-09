@@ -40,6 +40,16 @@ $html-config: (
         hover : (
           text-decoration : 'none'
         )
+      ),
+      colors: (
+        light : (
+          background: '#fff',
+          color: '#ccc',
+        ),
+        dark : (
+          background : '#ccc',
+          color: '#ccc'
+        )
       )
     ),
     h1 : (
@@ -230,7 +240,14 @@ $html-config: (
       border: 0,
       border-top-width: 1px,
       border-top-style: solid,
-      color: inherit
+      colors: (
+        light: (
+          border-top-color: #ccc
+        ),
+        dark: (
+          border-top-color: #555
+        )
+      )
     ),
     button: (
       border-radius: 0
