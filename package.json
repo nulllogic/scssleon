@@ -17,6 +17,7 @@
     "css": "npm run css-compile",
     "css-compile": "sass --style expanded --source-map --embed-sources scss/:dist/css/",
     "dist": "npm run css && npm run minify",
+    "watch" : "sass --watch ./scss:./dist/css",
     "minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
     "docs-build": "docker run --rm -it -v $(pwd):/src klakegg/hugo:alpine",
     "docs-serve": "docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:alpine server"

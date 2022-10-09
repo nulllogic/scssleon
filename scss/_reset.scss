@@ -11,9 +11,10 @@ $config: nil !default;
 $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
-$reset-enabled: functions.get-config($config, 'enable', 'reset');
 
-$spacing-enabled: functions.get-config($config, 'enable', 'spacing');
+$is-reset-enabled: functions.get-config($config, 'enable', 'reset');
+$is-button-pointers-enabled: functions.get-config($config, 'enable', 'button-pointers');
+$is-spacing-enabled: functions.get-config($config, 'enable', 'spacing');
 
 *,
 *::before,
@@ -21,7 +22,7 @@ $spacing-enabled: functions.get-config($config, 'enable', 'spacing');
   box-sizing: border-box;
 }
 
-@if $reset-enabled {
+@if $is-reset-enabled {
   // Body
   // 1. Remove the margin in all browsers.
   // 2. As a best practice, apply a default `background-color`.
@@ -30,15 +31,17 @@ $spacing-enabled: functions.get-config($config, 'enable', 'spacing');
   // scss-docs-start reboot-body-rules
   body {
     margin: 0; // 1
-    font-family: var(--#{$prefix}body-font-family);
-    font-size: '';
+    font-size: 1rem;
+
+    font-family: var(--#{$prefix}font-family);
     font-weight: var(--#{$prefix}body-font-weight);
     line-height: var(--#{$prefix}body-line-height);
     color: var(--#{$prefix}body-color);
     text-align: var(--#{$prefix}body-text-align);
     background-color: var(--#{$prefix}body-bg); // 2
+
     -webkit-text-size-adjust: 100%; // 3
-    -webkit-tap-highlight-color: rgba($black, 0); // 4
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 4
   }
   // scss-docs-end reboot-body-rules
 
@@ -197,8 +200,12 @@ $spacing-enabled: functions.get-config($config, 'enable', 'spacing');
     vertical-align: baseline;
   }
 
-  sub { bottom: -.25em; }
-  sup { top: -.5em; }
+  sub {
+    bottom: -.25em;
+  }
+  sup {
+    top: -.5em;
+  }
 
 
   // Links
@@ -397,7 +404,7 @@ $spacing-enabled: functions.get-config($config, 'enable', 'spacing');
   [type="submit"] {
     -webkit-appearance: button; // 2
 
-    @if $enable-button-pointers {
+    @if $is-button-pointers-enabled {
       &:not(:disabled) {
         cursor: pointer; // 3
       }

@@ -3,27 +3,27 @@
 @use 'functions' as functions;
 
 $config: nil !default;
+$theme: nil !default;
 $prefix: functions.get-config($config, 'prefix');
 
-$font-family: functions.get-config($config, 'html', 'body', 'font', 'default');
-$font-monospace: functions.get-config($config, 'html', 'body', 'font', 'monospace');
-$font-size: functions.get-config($config, 'html', 'body', 'font', 'size');
-
-$smooth-scroll: functions.get-config($config, 'enable', 'smooth-scroll');
-
+$is-smooth-scroll-enabled: functions.get-config($config, 'enable', 'smooth-scroll');
 $color-scheme: functions.get-config($config, 'color-scheme');
+
+$variables: functions.get-config($theme, 'root', 'variables');
 
 :root {
 
-  @if $smooth-scroll {
+  @if $is-smooth-scroll-enabled {
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
     }
   }
 
-  // Fonts
-  --#{$prefix}font-family: #{inspect($font-family)};
-  --#{$prefix}font-monospace: #{inspect($font-monospace)};
+  // Variables
+  @each $variable, $value in $variables {
+    @debug $variable, $value;
+    --#{$prefix}-#{$variable}: #{inspect($value)};
+  }
 
   color-scheme: $color-scheme;
 }

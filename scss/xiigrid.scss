@@ -14,6 +14,7 @@
 */
 
 // Config
+// Override default config | example
 @use "config" as config with (
   $custom : (
     prefix : 'xii',
@@ -57,12 +58,8 @@
   )
 );
 
-// Root
-@use 'root' with (
-  $config : config.$updated
-);
-
 // Theme
+// Override default settings in the theme | example
 @use "themes/default" as theme with (
   $custom : (
     body : (
@@ -76,15 +73,21 @@
   )
 );
 
+// Root
+@use 'root' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
 @use 'reset' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
-@use 'content' with (
-  $config : config.$updated,
-  $theme: theme.$updated
-);
+//@use 'content' with (
+//  $config : config.$updated,
+//  $theme: theme.$updated
+//);
 
 // Components
 //@use 'components/grid' with (
