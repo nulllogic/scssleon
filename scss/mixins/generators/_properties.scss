@@ -7,18 +7,13 @@
 
     // Adding font property
     @if $property == 'font' {
+
       @each $font-property, $font-value in $value {
         font-#{meta.inspect($font-property)}: #{meta.inspect($font-value)};
       }
-    }
 
-    @if (type-of($value) == string and meta.inspect($value) != '') {
-      #{$property} : #{meta.inspect($value)};
-    }
+    } @else if ($property == 'colors') {
 
-    // Adding CSS variables, based on the color
-    @if $property == 'colors' {
-      // scss-docs-start btn-variant-loops
       @each $color, $color-properties in $value {
         @each $scheme in functions.str-split($color-scheme, ' ') {
           @if $scheme == $color {
@@ -30,6 +25,15 @@
           }
         }
       }
+
+    } @else if($property == 'psedo') {
+
+    } @else {
+
+      @if (type-of($value) == string and meta.inspect($value) != '') {
+        #{$property} : #{meta.inspect($value)};
+      }
+
     }
   }
 }
