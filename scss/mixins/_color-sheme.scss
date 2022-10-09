@@ -1,4 +1,8 @@
-// Media that spans multiple breakpoint widths.
+@use 'sass:map';
+@use '../functions' as functions;
+
+// Media that add color variables
+
 @mixin color-scheme($schema) {
   @if $schema == 'light' {
     @media (prefers-color-scheme: light) {

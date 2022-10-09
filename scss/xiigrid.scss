@@ -1,20 +1,5 @@
-/*
-*
-* ██╗  ██╗██╗██╗     ██████╗ ██████╗ ██╗██████╗
-* ╚██╗██╔╝██║██║    ██╔════╝ ██╔══██╗██║██╔══██╗
-*  ╚███╔╝ ██║██║    ██║  ███╗██████╔╝██║██║  ██║
-*  ██╔██╗ ██║██║    ██║   ██║██╔══██╗██║██║  ██║
-* ██╔╝ ██╗██║██║    ╚██████╔╝██║  ██║██║██████╔╝
-* ╚═╝  ╚═╝╚═╝╚═╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
-*
-*
-* XII/Grid v1.0.0 (https://nulllogic.github.io/xiigrid/)
-* Copyright 2011-2022 NullLogic
-* Licensed under MIT (https://nulllogic.github.io/xiigrid//blob/main/LICENSE)
-*/
-
 // Config
-// Override default config | example
+// Override default config | @example
 @use "config" as config with (
   $custom : (
     prefix : 'xii',
@@ -59,15 +44,17 @@
 );
 
 // Theme
-// Override default settings in the theme | example
+// Override default settings in the theme | @example
 @use "themes/default" as theme with (
   $custom : (
-    body : (
-      light : (
-        background : #fff
-      ),
-      dark : (
-        background : #ccc
+    html: (
+      body : (
+        light : (
+          background : #fff
+        ),
+        dark : (
+          background : #ccc
+        )
       )
     )
   )

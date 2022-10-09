@@ -1,15 +1,19 @@
 /* - ૮₍ ˃ ⤙ ˂ ₎ა – root  */
 @use 'sass:list';
+@use "sass:meta";
 @use 'functions' as functions;
 
-$config: nil !default;
-$theme: nil !default;
+$config: () !default;
+$theme: () !default;
+
 $prefix: functions.get-config($config, 'prefix');
 
-$is-smooth-scroll-enabled: functions.get-config($config, 'enable', 'smooth-scroll');
+$is-smooth-scroll-enabled: functions.get-config($config, 'enable','smooth-scroll');
 $color-scheme: functions.get-config($config, 'color-scheme');
 
-$variables: functions.get-config($theme, 'root', 'variables');
+$root-variables: functions.get-theme($theme, 'root', 'variables');
+
+@debug $root-variables;
 
 :root {
 
@@ -20,9 +24,8 @@ $variables: functions.get-config($theme, 'root', 'variables');
   }
 
   // Variables
-  @each $variable, $value in $variables {
-    @debug $variable, $value;
-    --#{$prefix}-#{$variable}: #{inspect($value)};
+  @each $variable, $value in $root-variables {
+    --#{$prefix}-#{$variable}: #{meta.inspect($value)};
   }
 
   color-scheme: $color-scheme;
