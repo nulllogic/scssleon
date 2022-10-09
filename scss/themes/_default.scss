@@ -252,13 +252,16 @@ $html-config: (
       )
     ),
     hr : (
-
+      margin: '15px 0 0 0',
+      border: 0,
+      border-top-width: 1px,
+      border-top-style: solid,
+      color: inherit
     )
   )
 );
 
 $theme: map.deep-merge($html-config, $theme);
-
 
 $updated: map.deep-merge($theme, $custom);
 
