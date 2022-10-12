@@ -8,5 +8,10 @@
 @use 'functions' as functions;
 
 $config: nil !default;
+$theme: nil !default;
 
-$content-enabled: functions.get-config($config, 'enable', 'content');
+$is-content-enabled: functions.get-config($config, 'enable.content');
+
+@if($is-content-enabled) {
+
+}

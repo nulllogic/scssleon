@@ -71,10 +71,10 @@
   $theme: theme.$updated
 );
 
-//@use 'content' with (
-//  $config : config.$updated,
-//  $theme: theme.$updated
-//);
+@use 'content' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 
 // Components
 //@use 'components/grid' with (
