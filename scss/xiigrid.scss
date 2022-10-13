@@ -77,9 +77,10 @@
 );
 
 // Components
-//@use 'components/grid' with (
-//  $theme : theme.$updated
-//);
+@use 'components/grid' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 
 //@use "components/container";}
 ////@use "components/form";

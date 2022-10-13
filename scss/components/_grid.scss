@@ -1,6 +1,12 @@
 @use '../config';
 @use '../mixins';
 
+@use 'sass:map';
+@use '../functions' as functions;
+
+$config: nil !default;
+$theme: nil !default;
+
 /* Rows */
 .row {
   @include mixins.prepare_rows();

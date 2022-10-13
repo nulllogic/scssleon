@@ -11,7 +11,18 @@ $config: nil !default;
 $theme: nil !default;
 
 $is-content-enabled: functions.get-config($config, 'enable.content');
+$content-elements-margin: functions.get-config($config, 'content.elements.margin');
 
-@if($is-content-enabled) {
-
+@if ($is-content-enabled) {
+  .content {
+    p,
+    dl,
+    ol,
+    ul,
+    blockquote,
+    pre,
+    table:not(:last-child) {
+        margin-bottom: $content-elements-margin
+    }
+  }
 }

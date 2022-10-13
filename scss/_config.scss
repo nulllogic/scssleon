@@ -76,6 +76,19 @@ $enable-rules-config: (
 
 $default-config: map.deep-merge($default-config, $enable-rules-config);
 
+// Content
+
+$content-default-config: (
+  content : (
+    elements: (
+      margin : 0 0 1em 0
+    )
+  )
+) !default;
+
+$default-config: map.deep-merge($default-config, $content-default-config);
+
+
 // Z-index
 // scss-docs-start z-index-stack
 $z-index-config: (
