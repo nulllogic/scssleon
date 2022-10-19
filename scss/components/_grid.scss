@@ -11,14 +11,17 @@ $is-grid-classes-enabled: functions.get-config($config, 'enable.grid-classes');
 
 /* Rows */
 .row {
-  @include mixins.prepare_rows();
+  display: flex;
+  flex-wrap: wrap;
 
   > * {
-    @include mixins.prepare_columns();
+    width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
   }
 }
 
 // Columns
-@if config.$enable-grid-classes {
+@if $is-grid-classes-enabled {
   @include mixins.generate_grid_columns();
 }

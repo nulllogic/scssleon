@@ -111,7 +111,7 @@
 }
 
 @each $color-scheme, $theme-value in theme.$button-colors-outline {
-  @include mixins.color-scheme($color-scheme) {
+  @include mixins.generate-color-scheme($color-scheme) {
     @each $variant, $variant-options in $theme-value {
       .btn-outline-#{$variant} {
         @each $state, $values in $variant-options {

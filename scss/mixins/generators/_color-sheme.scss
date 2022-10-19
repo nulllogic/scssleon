@@ -3,7 +3,7 @@
 
 // Media that add color variables
 
-@mixin color-scheme($schema) {
+@mixin generate-color-scheme($schema) {
   @if $schema == 'light' {
     @media (prefers-color-scheme: light) {
       @content

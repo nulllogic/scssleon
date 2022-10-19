@@ -5,19 +5,22 @@
 @mixin generate-properties($tag, $properties, $prefix, $color-scheme) {
   @each $property, $value in $properties {
 
-    // Adding font property
+    // Font properties
     @if $property == 'font' {
 
       @each $font-property, $font-value in $value {
         font-#{meta.inspect($font-property)}: #{meta.inspect($font-value)};
       }
 
-    } @else if ($property == 'colors') {
+    }
+
+    // Colors properties
+    @else if ($property == 'colors') {
 
       @each $color, $color-properties in $value {
         @each $scheme in functions.str-split($color-scheme, ' ') {
           @if $scheme == $color {
-            @include mixin.color-scheme($color) {
+            @include mixin.generate-color-scheme($color) {
               @each $color-property, $color-value in $color-properties {
                 --#{$prefix}-#{$tag}-#{$color-property}: #{meta.inspect($color-value)};
               }
@@ -26,9 +29,15 @@
         }
       }
 
-    } @else if ($property == 'psedo') {
+    }
 
-    } @else {
+    // Pseudo elements properties
+    @else if ($property == 'psedo') {
+
+    }
+
+    // Other properties
+    @else {
 
       @if (type-of($value) == string and meta.inspect($value) != '') {
         #{$property} : #{meta.inspect($value)};

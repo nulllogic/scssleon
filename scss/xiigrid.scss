@@ -2,6 +2,7 @@
 // Override default config | @example
 @use "config" as config with (
   $custom : (
+
     prefix : 'xii',
     grid-columns : 12,
 
