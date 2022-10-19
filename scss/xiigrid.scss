@@ -25,7 +25,7 @@
       dark-theme: true,
       spacing : false,
       reset: true,
-      content: true,
+      content: false,
       rtl : false
     ),
 
@@ -67,24 +67,29 @@
   $theme: theme.$updated
 );
 
+// Great reset
 @use 'reset' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
+// Amazing content
 @use 'content' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
-// Components
-@use 'components/grid' with (
-  $config : config.$updated,
-  $theme: theme.$updated
+// Container
+@use 'components/container' with (
+  $config : config.$updated
 );
 
-//@use "components/container";}
-////@use "components/form";
+// Grid
+@use 'components/grid' with (
+  $config : config.$updated
+);
+
+//@use "components/form";
 ////@use "components/badge";
 ////@use "components/icon";
 //@use "components/button";
@@ -95,10 +100,10 @@
 //@use "components/alert";
 ////@use "components/table";
 //@use "components/pagination";
-//@use "components/placeholder";
-//
-//// Helpers
-//@use "helpers/clearfix";
-//
+@use "components/placeholder";
+
+// Helpers
+@use "helpers/clearfix";
+
 //// Utilities
 //@use "utilities/api";

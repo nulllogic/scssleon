@@ -1,56 +1,11 @@
 @use '../config';
 @use './breakpoints' as mixins;
+@use '../functions' as functions;
 
-// Grid system
-@mixin prepare_columns() {
-  width: 100%;
-  max-width: 100%;
-  flex-shrink: 0;
-}
-
-@mixin prepare_auto_columns() {
-  flex: 0 0 auto;
-  width: auto;
-}
-
-// Row columns
-@function divide($dividend, $divisor, $precision: 10) {
-  $sign: if($dividend > 0 and $divisor > 0 or $dividend < 0 and $divisor < 0, 1, -1);
-  $dividend: abs($dividend);
-  $divisor: abs($divisor);
-
-  @if $dividend == 0 {
-    @return 0;
-  }
-  @if $divisor == 0 {
-    @error "Cannot divide by 0";
-  }
-  $remainder: $dividend;
-  $result: 0;
-  $factor: 10;
-
-  @while ($remainder > 0 and $precision >= 0) {
-    $quotient: 0;
-    @while ($remainder >= $divisor) {
-      $remainder: $remainder - $divisor;
-      $quotient: $quotient + 1;
-    }
-    $result: $result * 10 + $quotient;
-    $factor: $factor * .1;
-    $remainder: $remainder * 10;
-    $precision: $precision - 1;
-    @if ($precision < 0 and $remainder >= $divisor * 5) {
-      $result: $result + 1;
-    }
-  }
-  $result: $result * $factor * $sign;
-  @return $result;
-}
-
-@mixin generate_columns($size: false, $columns: config.$grid-columns) {
+@mixin generate_columns($size: false, $columns) {
   @if $size {
     flex: 0 0 auto;
-    width: percentage(divide($size, $columns));
+    width: percentage(functions.divide($size, $columns));
 
   } @else {
     flex: 1 1 0;
@@ -59,10 +14,9 @@
 }
 
 // Framework grid generation
-@mixin generate_grid_columns($columns: config.$grid-columns, $breakpoints: config.$grid-breakpoints) {
+@mixin generate_grid_columns($columns, $breakpoints) {
 
   @each $breakpoint in map-keys($breakpoints) {
-
     $infix: mixins.breakpoint-infix($breakpoint, $breakpoints);
 
     @include mixins.media-breakpoint-up($breakpoint, $breakpoints) {
@@ -72,7 +26,8 @@
       }
 
       .col#{$infix}-auto {
-        @include prepare_auto_columns();
+        flex: 0 0 auto;
+        width: auto;
       }
 
       @if $columns > 0 {

@@ -18,8 +18,7 @@
 ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
 │  │ ││││├┤ ││ ┬
 └─┘└─┘┘└┘└  ┴└─┘
- */
-
+*/
 @use 'sass:map';
 
 // Root
@@ -36,6 +35,20 @@ $default-config: (
   grid-columns : 12,
   // scss-docs-end root-variables
 );
+
+// Container breakpoints
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  container-breakpoints: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+  )
+) !default;
+// scss-docs-end container-max-widths
+
 
 // Grid breakpoints
 // scss-docs-start grid-breakpoints

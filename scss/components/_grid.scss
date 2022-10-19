@@ -1,15 +1,19 @@
-@use '../config';
-@use '../mixins';
+/*
+┌─┐┬─┐┬┌┬┐
+│ ┬├┬┘│ ││
+└─┘┴└─┴─┴┘
+*/
 
+@use '../mixins';
 @use 'sass:map';
 @use '../functions' as functions;
 
 $config: nil !default;
-$theme: nil !default;
 
 $is-grid-classes-enabled: functions.get-config($config, 'enable.grid-classes');
+$grid-columns: functions.get-config($config, 'grid-columns');
+$breakpoints: functions.get-config($config, 'grid-breakpoints');
 
-/* Rows */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -23,5 +27,5 @@ $is-grid-classes-enabled: functions.get-config($config, 'enable.grid-classes');
 
 // Columns
 @if $is-grid-classes-enabled {
-  @include mixins.generate_grid_columns();
+  @include mixins.generate_grid_columns($grid-columns, $breakpoints);
 }

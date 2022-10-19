@@ -1,32 +1,44 @@
+/*
+┌─┐┌─┐┌┐┌┌┬┐┌─┐┬┌┐┌┌─┐┬─┐
+│  │ ││││ │ ├─┤││││├┤ ├┬┘
+└─┘└─┘┘└┘ ┴ ┴ ┴┴┘└┘└─┘┴└─
+*/
 @use '../config';
 @use '../mixins/container' as container;
 @use '../mixins/breakpoints' as breakpoints;
+@use '../functions' as functions;
+
+$config: nil !default;
+
+$is-container-classes-enabled: functions.get-config($config, 'enable.container-classes');
+$container-breakpoints: functions.get-config($config, 'grid-breakpoints');
+$grid-breakpoints: functions.get-config($config, 'grid-breakpoints');
 
 // Container
-@if config.$enable-container-classes {
+@if $is-container-classes-enabled {
 
   .container,
   .container-fluid {
     @include container.generate_container();
   }
 
-  @each $breakpoint, $container-max-width in config.$container-max-widths {
+  @each $breakpoint, $container-max-width in $container-breakpoints {
     .container-#{$breakpoint} {
       @extend .container-fluid;
     }
 
-    @include breakpoints.media-breakpoint-up($breakpoint, config.$grid-breakpoints) {
-      _responsive-container-#{$breakpoint} {
+    @include breakpoints.media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      %responsive-container-#{$breakpoint} {
         max-width: $container-max-width;
       }
 
       $extend-breakpoint: true;
 
-      @each $name, $width in config.$grid-breakpoints {
+      @each $name, $width in $grid-breakpoints {
         @if ($extend-breakpoint) {
 
-          .container#{breakpoints.breakpoint-infix($name, config.$grid-breakpoints)} {
-            @extend _responsive-container-#{$breakpoint};
+          .container#{breakpoints.breakpoint-infix($name, $grid-breakpoints)} {
+            @extend %responsive-container-#{$breakpoint};
           }
 
           @if ($breakpoint == $name) {
