@@ -7,6 +7,8 @@
 $config: nil !default;
 $theme: nil !default;
 
+$is-grid-classes-enabled: functions.get-config($config, 'enable.grid-classes');
+
 /* Rows */
 .row {
   @include mixins.prepare_rows();
