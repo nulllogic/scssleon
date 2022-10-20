@@ -2,6 +2,14 @@
 @use '../../functions' as functions;
 @use '../../mixins/generators/color-sheme' as mixin;
 
+@mixin generate-variables($prefix, $variables) {
+  @each $variable, $value in $variables {
+    @if (meta.inspect($value) != '') {
+      --#{$prefix}-#{$variable}: #{meta.inspect($value)};
+    }
+  }
+}
+
 @mixin generate-properties($tag, $properties, $prefix, $color-scheme) {
   @each $property, $value in $properties {
 
@@ -38,10 +46,8 @@
 
     // Variable properties
     @if ($property == 'variables') {
-      @if (type-of($value) == string and meta.inspect($value) != '') {
-        #{$property} : #{meta.inspect($value)};
-      }
-
+      // Generate variables
+      @include generate-variables($prefix, $value);
     }
   }
 }

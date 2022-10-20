@@ -80,13 +80,3 @@ $theme: nil !default;
 .form-control[disabled], fieldset[disabled] .form-control {
   cursor: not-allowed;
 }
-
-.pagination {
-  &.pagination-sm li a {
-    font-size: 9px;
-  }
-
-  &.pagination-lg li a {
-    font-size: 19px;
-  }
-}
