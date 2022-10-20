@@ -252,6 +252,7 @@ $theme: map.deep-merge($html-config, $theme);
 $components-config: (
   components: (
     placeholder : (
+      cursor: wait,
       variables: (
         placeholder-height: 0.55rem,
         placeholder-bg: rgba(228, 229, 231, 1),

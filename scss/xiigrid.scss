@@ -99,7 +99,14 @@
 ////@use "components/modal";
 //@use "components/alert";
 ////@use "components/table";
-//@use "components/pagination";
+
+// Pagination
+@use 'components/pagination' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
+// Placeholder
 @use 'components/placeholder' with (
   $config : config.$updated,
   $theme: theme.$updated

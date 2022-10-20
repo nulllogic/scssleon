@@ -1,9 +1,7 @@
 /*
-*
 ┌─┐┬  ┌─┐┌─┐┌─┐┬ ┬┌─┐┬  ┌┬┐┌─┐┬─┐┌─┐
 ├─┘│  ├─┤│  ├┤ ├─┤│ ││   ││├┤ ├┬┘└─┐
 ┴  ┴─┘┴ ┴└─┘└─┘┴ ┴└─┘┴─┘─┴┘└─┘┴└─└─┘
-*
 */
 @use '../mixins' as mixins;
 @use '../functions' as functions;
@@ -12,20 +10,12 @@ $config: nil !default;
 $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
 $placeholder : functions.get-theme($theme, 'components.placeholder');
 
 .placeholder {
 
-  --#{$prefix}placeholder-height: 0.55rem;
-
-  --#{$prefix}placeholder-bg: rgba(228, 229, 231, 1);
-  --#{$prefix}placeholder-border-radius: .1875rem;
-  --#{$prefix}placeholder-spacing: .6rem;
-  --#{$prefix}placeholder-last-line-width: 80%;
-
-  @include mixins.generate-properties('h1', functions.get-theme($theme, 'html.h1'), $prefix, $color-scheme);
-
-  cursor: wait;
+  @include mixins.generate-properties('placeholder', $placeholder, $prefix, $color-scheme);
 
   %placeholder {
     display: flex;
@@ -44,15 +34,6 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
     &:last-child:not(:first-child) {
       width: var(--#{$prefix}placeholder-last-line-width);
       margin-bottom: 0;
-    }
-
-    // Sizing
-    &.sm {
-      min-height: var(--#{$prefix}placeholder-height-sm);
-    }
-
-    &.lg {
-      min-height: var(--#{$prefix}placeholder-height-lg);
     }
   }
 

@@ -15,7 +15,7 @@
     }
 
     // Colors properties
-    @else if ($property == 'colors') {
+    @if ($property == 'colors') {
 
       @each $color, $color-properties in $value {
         @each $scheme in functions.str-split($color-scheme, ' ') {
@@ -32,13 +32,12 @@
     }
 
     // Pseudo elements properties
-    @else if ($property == 'psedo') {
+    @if ($property == 'psedo') {
 
     }
 
-    // Other properties
-    @else {
-
+    // Variable properties
+    @if ($property == 'variables') {
       @if (type-of($value) == string and meta.inspect($value) != '') {
         #{$property} : #{meta.inspect($value)};
       }
