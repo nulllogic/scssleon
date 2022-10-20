@@ -86,7 +86,7 @@
 
 // Grid
 @use 'components/grid' with (
-  $config : config.$updated
+  $config : config.$updated,
 );
 
 //@use "components/form";
@@ -100,7 +100,10 @@
 //@use "components/alert";
 ////@use "components/table";
 //@use "components/pagination";
-@use "components/placeholder";
+@use 'components/placeholder' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 
 // Helpers
 @use "helpers/clearfix";

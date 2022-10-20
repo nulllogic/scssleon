@@ -209,26 +209,20 @@ $html-config: (
       )
     ),
     caption: (
-
     ),
     table : (
       caption-side: bottom,
       border-collapse: collapse,
     ),
     thead : (
-
     ),
     tbody : (
-
     ),
     tfoot : (
-
     ),
     tr : (
-
     ),
     td : (
-
     ),
     th : (
       text-align: inherit
@@ -254,6 +248,22 @@ $html-config: (
 );
 
 $theme: map.deep-merge($html-config, $theme);
+
+$components-config: (
+  components: (
+    placeholder : (
+      variables: (
+        placeholder-height: 0.55rem,
+        placeholder-bg: rgba(228, 229, 231, 1),
+        placeholder-border-radius: .1875rem,
+        placeholder-spacing: .6rem,
+        placeholder-last-line-width: 80%
+      )
+    )
+  )
+);
+
+$theme: map.deep-merge($components-config, $theme);
 
 $updated: map.deep-merge($theme, $custom);
 

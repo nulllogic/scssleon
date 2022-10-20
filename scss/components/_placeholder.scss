@@ -5,32 +5,36 @@
 ┴  ┴─┘┴ ┴└─┘└─┘┴ ┴└─┘┴─┘─┴┘└─┘┴└─└─┘
 *
 */
+@use '../mixins' as mixins;
+@use '../functions' as functions;
 
+$config: nil !default;
+$theme: nil !default;
 
-@use '../config';
-@use '../mixins';
+$prefix: functions.get-config($config, 'prefix');
+$placeholder : functions.get-theme($theme, 'components.placeholder');
 
 .placeholder {
 
-  --#{config.$prefix}placeholder-height-lg: 2rem;
-  --#{config.$prefix}placeholder-height: 0.55rem;
-  --#{config.$prefix}placeholder-height-sm: 0.35rem;
+  --#{$prefix}placeholder-height: 0.55rem;
 
-  --#{config.$prefix}placeholder-bg: rgba(228, 229, 231, 1);
-  --#{config.$prefix}placeholder-border-radius: .1875rem;
-  --#{config.$prefix}placeholder-spacing: .6rem;
-  --#{config.$prefix}placeholder-last-line-width: 80%;
+  --#{$prefix}placeholder-bg: rgba(228, 229, 231, 1);
+  --#{$prefix}placeholder-border-radius: .1875rem;
+  --#{$prefix}placeholder-spacing: .6rem;
+  --#{$prefix}placeholder-last-line-width: 80%;
+
+  @include mixins.generate-properties('h1', functions.get-theme($theme, 'html.h1'), $prefix, $color-scheme);
 
   cursor: wait;
 
   %placeholder {
     display: flex;
-    min-height: var(--#{config.$prefix}placeholder-height);
+    min-height: var(--#{$prefix}placeholder-height);
 
-    background-color: var(--#{config.$prefix}placeholder-bg);
-    margin-bottom: var(--#{config.$prefix}placeholder-spacing);
+    background-color: var(--#{$prefix}placeholder-bg);
+    margin-bottom: var(--#{$prefix}placeholder-spacing);
 
-    @include mixins.border-radius(var(--#{config.$prefix}placeholder-border-radius));
+    @include mixins.border-radius(var(--#{$prefix}placeholder-border-radius));
   }
 
   .el {
@@ -38,17 +42,17 @@
     @extend %placeholder;
 
     &:last-child:not(:first-child) {
-      width: var(--#{config.$prefix}placeholder-last-line-width);
+      width: var(--#{$prefix}placeholder-last-line-width);
       margin-bottom: 0;
     }
 
     // Sizing
     &.sm {
-      min-height: var(--#{config.$prefix}placeholder-height-sm);
+      min-height: var(--#{$prefix}placeholder-height-sm);
     }
 
     &.lg {
-      min-height: var(--#{config.$prefix}placeholder-height-lg);
+      min-height: var(--#{$prefix}placeholder-height-lg);
     }
   }
 

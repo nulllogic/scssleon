@@ -3,7 +3,6 @@
 │  │ ││││ │ ├─┤││││├┤ ├┬┘
 └─┘└─┘┘└┘ ┴ ┴ ┴┴┘└┘└─┘┴└─
 */
-@use '../config';
 @use '../mixins/container' as container;
 @use '../mixins/breakpoints' as breakpoints;
 @use '../functions' as functions;
