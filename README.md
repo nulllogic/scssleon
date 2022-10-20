@@ -1,8 +1,10 @@
 <p align="left">
-  <img src="./.imgs/header.jpg" width="100%" alt="xiigrid css/js framework">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.imgs/header.jpg">
+      <img alt="XII/Grid CSS framework" src="./.imgs/header.jpg">
+    </picture>
 </p>
-
-Welcome to xiigrid CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
+Welcome to XII/Grid CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
 
 <hr />
 
