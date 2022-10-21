@@ -1,10 +1,13 @@
 /*
-*
 ┌┬┐┌─┐┌┐ ┬  ┌─┐
  │ ├─┤├┴┐│  ├┤
  ┴ ┴ ┴└─┘┴─┘└─┘
-*
 */
+@use '../mixins' as mixins;
+@use '../functions' as functions;
+
+$config: nil !default;
+$theme: nil !default;
 
 .table {
   width: 100%;
@@ -53,14 +56,14 @@
 
 // Zebra-striping
 .table-striped {
-  > tbody > tr:nth-of-type(#{$table-striped-order}) > * {
+  > tbody > tr:nth-of-type(odd) > * {
     color: inherit;
   }
 }
 
 // For columns
 .table-striped-columns {
-  > :not(caption) > tr > :nth-child(#{$table-striped-columns-order}) {
+  > :not(caption) > tr > :nth-child(even) {
     color: inherit;
   }
 }

@@ -35,6 +35,7 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
       width: var(--#{$prefix}placeholder-last-line-width);
       margin-bottom: 0;
     }
+
   }
 
   //Animation
@@ -51,6 +52,7 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
       animation: placeholder-wave 2s linear infinite;
     }
   }
+
 }
 
 @keyframes placeholder-glow {
@@ -61,6 +63,6 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
 
 @keyframes placeholder-wave {
   100% {
-    mask-position: -200% 0%;
+    mask-position: -200% 0;
   }
 }

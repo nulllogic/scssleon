@@ -19,6 +19,7 @@
 
     enable: (
       shadows : true,
+      border-radius: true,
       transitions: true,
       reduced-motion : true,
       smooth-scroll : true,
@@ -97,8 +98,17 @@
 //@use "components/navbar";
 //@use "components/breadcrumb";
 ////@use "components/modal";
-//@use "components/alert";
-////@use "components/table";
+
+@use 'components/alert' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
+// Pagination
+@use 'components/table' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 
 // Pagination
 @use 'components/pagination' with (
