@@ -74,7 +74,8 @@ $default-config: map.deep-merge($default-config, $color-scheme-config);
 
 $enable-rules-config: (
   enable : (
-    shadows : true,
+    shadow : true,
+    border-radius: true,
     transitions: true,
     reduced-motion : true,
     smooth-scroll : true,

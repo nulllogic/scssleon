@@ -18,6 +18,9 @@ $theme: nil !default;
 $prefix: functions.get-config($config, 'prefix');
 $color-scheme: functions.get-config($config, 'color-scheme');
 
+$is-shadow-enabled: functions.get-config($config, 'shadow');
+$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+
 .alert {
 
   position: relative;
@@ -43,8 +46,13 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // scss-docs-end alert-css-vars
 
-  @include mixins.border-radius(var(--#{$prefix}alert-border-radius));
-  @include mixins.box-shadow(var(--#{$prefix}alert-box-shadow));
+  @if($is-border-radius-enabled) {
+    @include mixins.border-radius(var(--#{$prefix}alert-border-radius));
+  }
+
+  @if($is-shadow-enabled) {
+    @include mixins.box-shadow(var(--#{$prefix}alert-box-shadow));
+  }
 
   padding: var(--#{$prefix}alert-padding);
   outline: 1px solid transparent;
