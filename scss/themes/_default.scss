@@ -11,15 +11,8 @@ $html-config: (
   ),
   html : (
     body : (
-      font : (
-        family: (
-          default : "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
-          monospace : "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-        ),
-        size : 1rem,
-        weight: normal,
-        line-height : 1rem
-      ),
+      font-size : 1rem,
+      font-weight: normal,
       line-height : 1rem,
       colors: (
         light : (
@@ -250,31 +243,31 @@ $theme: map.deep-merge($html-config, $theme);
 $components-config: (
   components: (
     alert: (
+
+      --border-radius: .25rem,
+      --padding: 1.25rem,
+      --icon-size: 1.25rem,
+      --icon-padding: 1rem,
+      --padding-dismissable: 2rem,
+      --dismiss-btn-position-top: .5rem,
+      --dismiss-btn-position-right: .4rem,
+
       colors: (
         light : (
           --close-button-color: rgba(92, 95, 98, 1),
           --close-button-color-hover: rgba(26, 28, 29, 1),
           --icon-fill: rgba(92, 95, 98, 1),
-          --bg: rgba(246, 246, 247, 1),
+          --background: rgba(246, 246, 247, 1),
           box-shadow: (inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1))
         ),
         dark : (
           --close-button-color: rgba(92, 95, 98, 1),
           --close-button-color-hover: rgba(26, 28, 29, 1),
           --icon-fill: rgba(92, 95, 98, 1),
-          --bg: rgba(246, 246, 247, 1),
+          --background: rgba(246, 246, 247, 1),
           box-shadow: (inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1))
         )
       ),
-      variables: (
-        border-radius: .25rem,
-        padding: 1.25rem,
-        icon-size: 1.25rem,
-        icon-padding: 1rem,
-        padding-dismissable: 2rem,
-        dismiss-btn-position-top: .5rem,
-        dismiss-btn-position-right: .4rem,
-      )
     ),
     table : (
       variables: (
@@ -282,14 +275,13 @@ $components-config: (
       )
     ),
     placeholder : (
+      --placeholder-height: 0.55rem,
+      --placeholder-bg: rgba(228, 229, 231, 1),
+      --placeholder-border-radius: .1875rem,
+      --placeholder-spacing: .6rem,
+      --placeholder-last-line-width: 80%,
+
       cursor: wait,
-      variables: (
-        placeholder-height: 0.55rem,
-        placeholder-bg: rgba(228, 229, 231, 1),
-        placeholder-border-radius: .1875rem,
-        placeholder-spacing: .6rem,
-        placeholder-last-line-width: 80%
-      )
     )
   )
 );
