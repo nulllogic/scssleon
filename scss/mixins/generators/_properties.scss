@@ -10,7 +10,7 @@
   }
 }
 
-@mixin generate-properties($tag, $properties, $prefix, $color-scheme) {
+@mixin generate-properties($tag, $properties, $config) {
   @each $property, $value in $properties {
 
     // Font properties

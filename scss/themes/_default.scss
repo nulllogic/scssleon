@@ -253,33 +253,40 @@ $components-config: (
       --dismiss-btn-position-right: .4rem,
 
       colors: (
+
         light : (
           --close-button-color: rgba(92, 95, 98, 1),
           --close-button-color-hover: rgba(26, 28, 29, 1),
           --icon-fill: rgba(92, 95, 98, 1),
           --background: rgba(246, 246, 247, 1),
+
           box-shadow: (inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1))
         ),
+
         dark : (
           --close-button-color: rgba(92, 95, 98, 1),
           --close-button-color-hover: rgba(26, 28, 29, 1),
           --icon-fill: rgba(92, 95, 98, 1),
           --background: rgba(246, 246, 247, 1),
+
           box-shadow: (inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1))
         )
       ),
     ),
+
     table : (
       variables: (
 
       )
     ),
+
     placeholder : (
-      --placeholder-height: 0.55rem,
-      --placeholder-bg: rgba(228, 229, 231, 1),
-      --placeholder-border-radius: .1875rem,
-      --placeholder-spacing: .6rem,
-      --placeholder-last-line-width: 80%,
+
+      --height: 0.55rem,
+      --background: rgba(228, 229, 231, 1),
+      --border-radius: .1875rem,
+      --spacing: .6rem,
+      --last-line-width: 80%,
 
       cursor: wait,
     )
