@@ -30,89 +30,30 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // Body
   // 1. Remove the margin in all browsers.
-  // 2. As a best practice, apply a default `background-color`.
-  // 3. Prevent adjustments of font size after orientation changes in iOS.
-  // 4. Change the default tap highlight to be completely transparent in iOS.
+  // 2. Prevent adjustments of font size after orientation changes in iOS.
+  // 3. Change the default tap highlight to be completely transparent in iOS.
   // scss-docs-start reboot-body-rules
   body {
 
     margin: 0; // 1
-    -webkit-text-size-adjust: 100%; // 3
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 4
+    -webkit-text-size-adjust: 100%; // 2
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 3
 
     @include mixins.generate-properties('body', functions.get-theme($theme, 'html.body'), $config)
   }
   // scss-docs-end reboot-body-rules
-
-
-  // Content grouping
-  // 1. Color property reset Firefox's gray color
-  hr {
-    @include mixins.generate-properties('hr', functions.get-theme($theme, 'html.hr'), $config);
-  }
-
-  // Typography
-  // 1. Remove top margins from headings
-  //    By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
-  //    margin for easier control within type scales as it avoids margin collapsing.
-
-  h1 {
-    @include mixins.generate-properties('h1', functions.get-theme($theme, 'html.h1'), $config);
-  }
-
-  h2 {
-    @include mixins.generate-properties('h2', functions.get-theme($theme, 'html.h2'), $config);
-  }
-
-  h3 {
-    @include mixins.generate-properties('h3', functions.get-theme($theme, 'html.h3'), $config);
-  }
-
-  h4 {
-    @include mixins.generate-properties('h4', functions.get-theme($theme, 'html.h4'), $config);
-  }
-
-  h5 {
-    @include mixins.generate-properties('h5', functions.get-theme($theme, 'html.h5'), $config);
-  }
-
-  h6 {
-    @include mixins.generate-properties('h6', functions.get-theme($theme, 'html.h6'), $config);
-  }
-
-
-  // Reset margins on paragraphs
-  // Similarly, the top margin on `<p>`s get reset. However, we also reset the
-  // bottom margin to use `rem` units instead of `em`.
-
-  p {
-    @include mixins.generate-properties('p', functions.get-theme($theme, 'html.p'), $config);
-  }
 
   // Abbreviations
   // 1. "text-decoration" correct text decoration in Chrome, Edge, Opera, and Safari.
   // 2. "cursor" explicit cursor to indicate changed behavior.
   // 3. "text-decoration-skip-ink" prevent the text-decoration to be skipped.
   abbr[title] {
-    @include mixins.generate-properties('abbr', functions.get-theme($theme, 'html.abbr.attributes.title'), $config);
+    text-decoration: underline dotted;
+    cursor: help;
+    text-decoration-skip-ink: none;
   }
-  //
-  //
-  // Address
-  address {
-    @include mixins.generate-properties('address', functions.get-theme($theme, 'html.address'), $config);
-  }
-
 
   // Lists
-  ol {
-    @include mixins.generate-properties('ol', functions.get-theme($theme, 'html.ol'), $config);
-  }
-
-  ul {
-    @include mixins.generate-properties('ul', functions.get-theme($theme, 'html.ul'), $config);
-  }
-
   ol,
   ul,
   dl {
@@ -126,22 +67,11 @@ $color-scheme: functions.get-config($config, 'color-scheme');
     margin: 0
   }
 
-  dt {
-    @include mixins.generate-properties('dt', functions.get-theme($theme, 'html.dt'), $config);
-  }
-
   // 1. Undo browser default
   dd {
     margin-bottom: .5rem;
     margin-left: 0; // 1
   }
-
-
-  // Blockquote
-  blockquote {
-    @include mixins.generate-properties('blockqoute', functions.get-theme($theme, 'html.blockquote'), $config);
-  }
-
 
   // Strong
   // Add the correct font weight in Chrome, Edge, and Safari
@@ -149,19 +79,6 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   strong {
     font-weight: bold;
   }
-
-  // Small
-  // Add the correct font size in all browsers
-  small {
-    @include mixins.generate-properties('small', functions.get-theme($theme, 'html.small'), $config);
-  }
-
-
-  // Mark
-  mark {
-    @include mixins.generate-properties('mark', functions.get-theme($theme, 'html.mark'), $config);
-  }
-
 
   // Sub and Sup
   // Prevent `sub` and `sup` elements from affecting the line height in
@@ -171,13 +88,6 @@ $color-scheme: functions.get-config($config, 'color-scheme');
     position: relative;
     line-height: 0;
     vertical-align: baseline;
-  }
-
-  sub {
-    @include mixins.generate-properties('sub', functions.get-theme($theme, 'html.sub'), $config);
-  }
-  sup {
-    @include mixins.generate-properties('sup', functions.get-theme($theme, 'html.sup'), $config);
   }
 
   // And undo these styles for placeholder links/named anchors (without href).
@@ -204,7 +114,10 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // 2. "overflow" don't allow content to break outside
 
   pre {
-    @include mixins.generate-properties('pre', functions.get-theme($theme, 'html.pre'), $config);
+    display: block;
+    margin: 0;
+    overflow: auto;
+
     // Account for some code outputs that place code tags in pre tags
     code {
       font-size: inherit;
@@ -214,8 +127,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   code {
-    @include mixins.generate-properties('code', functions.get-theme($theme, 'html.code'), $config);
-    //color: var(--#{$prefix}code-color);
+    word-wrap: break-word;
     // Streamline the style when inside anchors to avoid broken underline and more
     a > & {
       color: inherit;
@@ -223,7 +135,9 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   kbd {
-    @include mixins.generate-properties('kbd', functions.get-theme($theme, 'html.code'), $config);
+    padding: .1875rem .375rem;
+    font-size: .875em;
+    border-radius: .25rem;
 
     kbd {
       padding: 0;
@@ -235,7 +149,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Figures
   // Apply a consistent margin strategy (matches our type styles).
   figure {
-    @include mixins.generate-properties('figure', functions.get-theme($theme, 'html.figure'), $config);
+    margin: 0;
   }
 
 
@@ -249,21 +163,21 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Tables
   // Prevent double borders
   table {
-    @include mixins.generate-properties('table', functions.get-theme($theme, 'html.table'), $config);
+    caption-side: bottom;
+    border-collapse: collapse;
   }
 
   caption {
-    @include mixins.generate-properties('caption', functions.get-theme($theme, 'html.caption'), $config);
+    text-align: left;
   }
 
   // 1. "font-weight" removes font-weight bold by inheriting
   // 2. "text-align" matches default `<td>` alignment by inheriting `text-align`.
   // 3. "text-align" fix alignment for Safari
   th {
-    text-align: -webkit-match-parent;
-    @media not -webkit-device-pixel-ratio {
-      @include mixins.generate-properties('th', functions.get-theme($theme, 'html.th'), $config);
-    }
+    font-weight: inherit; // 1
+    text-align: inherit; // 2
+    text-align: -webkit-match-parent; // 3
   }
 
   thead,
@@ -281,12 +195,12 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Forms
   // 1. "display" allow labels to use `margin` for spacing.
   label {
-    @include mixins.generate-properties('label', functions.get-theme($theme, 'html.form.label'), $config);
+    display: inline-block;
   }
 
   // Remove the default `border-radius` that macOS Chrome adds.
   button {
-    @include mixins.generate-properties('button', functions.get-theme($theme, 'html.button'), $config);
+    border-radius: 0
   }
 
   // Explicitly remove focus outline in Chromium when it shouldn't be
@@ -319,7 +233,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   select {
     // Remove the inheritance of word-wrap in Safari.
-    @include mixins.generate-properties('select', functions.get-theme($theme, 'html.form.select'), $config);
+    word-wrap: normal;
 
     // Undo the opacity change from Chrome
     &:disabled {
@@ -359,7 +273,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // 1. "resize" textareas should really only resize vertically so they don't break their (horizontal) containers.
   textarea {
-    @include mixins.generate-properties('textarea', functions.get-theme($theme, 'html.form.textarea'), $config);
+    resize: vertical
   }
 
   // 1. "min-width" browsers set a default `min-width: min-content;` on fieldsets,
@@ -369,14 +283,21 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // 2. "border" reset the default outline behavior of fieldsets so they don't affect page layout.
 
   fieldset {
-    @include mixins.generate-properties('fieldset', functions.get-theme($theme, 'html.form.fieldset'), $config);
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
   }
 
   // 1. By using `float: left`, the legend will behave like a block element.
   //    This way the border of a fieldset wraps around the legend if present.
   // 2. "clear" fix wrapping bug.
   legend {
-    @include mixins.generate-properties('legend', functions.get-theme($theme, 'html.form.legend'), $config);
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
 
     + * {
       clear: left; // 2
@@ -444,19 +365,20 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   // Remove border from iframe
   iframe {
-    @include mixins.generate-properties('iframe', functions.get-theme($theme, 'html.iframe'), $config);
+    border: 0
   }
 
   // Summary
   // 1. "display" add the correct display in all browsers
   summary {
-    @include mixins.generate-properties('summary', functions.get-theme($theme, 'html.summary'), $config);
+    display: list-item;
+    cursor: pointer
   }
 
 
   // Progress
   progress {
-    @include mixins.generate-properties('progress', functions.get-theme($theme, 'html.progress'), $config);
+    vertical-align: baseline;
   }
 
 

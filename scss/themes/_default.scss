@@ -75,9 +75,7 @@ $html-config: (
     abbr: (
       attributes : (
         title : (
-          text-decoration: underline dotted,
-          cursor: help,
-          text-decoration-skip-ink: none,
+
         )
       )
     ),
@@ -120,20 +118,16 @@ $html-config: (
       top: -.5em
     ),
     pre: (
-      display: block,
-      margin: 0,
-      overflow: auto
+
     ),
     code: (
-      word-wrap: break-word
+
     ),
     kbd: (
-      padding: .1875rem .375rem,
-      font-size: .875em,
-      border-radius: .25rem
+
     ),
     figure: (
-      margin: 0,
+
     ),
     img : (
       vertical-align: middle
@@ -144,11 +138,10 @@ $html-config: (
     output: (
     ),
     iframe: (
-      border: 0
+
     ),
     summary: (
-      display: list-item,
-      cursor: pointer
+
     ),
     progress: (
       vertical-align: baseline
@@ -156,7 +149,7 @@ $html-config: (
     form : (
     ),
     label: (
-      display: inline-block
+
     ),
     input : (
     ),
@@ -166,26 +159,18 @@ $html-config: (
     checkbox: (
     ),
     textarea : (
-      resize: vertical
+
     ),
     fieldset: (
-      min-width: 0,
-      padding: 0,
-      margin: 0,
-      border: 0
+
     ),
     legend: (
-      float: left,
-      width: 100%,
-      padding: 0,
-      margin: 0,
-      line-height: inherit
+
     ),
     caption: (
     ),
     table : (
-      caption-side: bottom,
-      border-collapse: collapse,
+
     ),
     thead : (
     ),
@@ -198,7 +183,7 @@ $html-config: (
     td : (
     ),
     th : (
-      text-align: inherit
+
     ),
     hr : (
       margin: 15px 0 0 0,
@@ -215,7 +200,7 @@ $html-config: (
       )
     ),
     button: (
-      border-radius: 0
+
     )
   )
 );
