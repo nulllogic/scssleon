@@ -31,15 +31,11 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // Body
   // 1. Remove the margin in all browsers.
   // 2. Prevent adjustments of font size after orientation changes in iOS.
-  // 3. Change the default tap highlight to be completely transparent in iOS.
   // scss-docs-start reboot-body-rules
   body {
 
     margin: 0; // 1
     -webkit-text-size-adjust: 100%; // 2
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 3
-
-    @include mixins.generate-properties('body', functions.get-theme($theme, 'html.body'), $config)
   }
   // scss-docs-end reboot-body-rules
 

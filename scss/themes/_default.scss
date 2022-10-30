@@ -14,6 +14,10 @@ $html-config: (
       font-size : 1rem,
       font-weight: normal,
       line-height : 1rem,
+
+      color: var(--body-color),
+      background: var(--body-background),
+
       colors: (
         light : (
           background: '#fff',
@@ -27,6 +31,7 @@ $html-config: (
     ),
     a : (
       text-decoration : underline,
+      color: var(--a-color),
       pseudo : (
         hover : (
           text-decoration : 'none'

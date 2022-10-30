@@ -3,11 +3,13 @@
 @use '../../mixins/generators/color-sheme' as mixin;
 
 @mixin generate-properties($tag, $properties, $config) {
+  $prefix: functions.get-config($config, 'prefix');
+
   @each $property, $value in $properties {
 
     // Variables
     @if (str-index($property, '--') == 1) {
-      --#{functions.get-config($config, 'prefix')}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
+      --#{$prefix}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
     }
 
     // Colors properties
@@ -18,7 +20,7 @@
           @if $scheme == $color {
             @include mixin.generate-color-scheme($color) {
               @each $color-property, $color-value in $color-properties {
-                --#{functions.get-config($config, 'prefix')}-#{$tag}-#{$color-property}: #{meta.inspect($color-value)};
+                --#{$prefix}-#{$tag}-#{$color-property}: #{meta.inspect($color-value)};
               }
             }
           }
@@ -32,9 +34,19 @@
 
     }
 
+    // Pseudo elements properties
+    @if ($property == 'pseudo') {
+
+    }
+
     // All other elements
-    @if ($property != 'pseudo' and $property != 'colors' and str-index($property, '--') != 1 and $property != 'dark' and $property != 'light') {
-      #{$property} : #{meta.inspect($value)};
+    @if ($property != 'pseudo' and $property != 'colors' and $property != 'attributes' and str-index($property, '--') != 1 and $property != 'dark' and $property != 'light') {
+
+      @if (type-of($value) == 'string' and str-index($value, 'var(--') == 1) {
+        #{$property} : #{meta.inspect(functions.str-replace($value,'--','--' + $prefix + '-'))};
+      } @else {
+        #{$property} : #{meta.inspect($value)};
+      }
     }
 
   }
