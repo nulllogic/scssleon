@@ -28,21 +28,21 @@ $is-border-radius-enabled: functions.get-config($config, 'border-radius');
 
   // scss-docs-start alert-css-vars
 
-  --#{$prefix}alert-border-radius: .25rem;
-  --#{$prefix}alert-padding: 1.25rem;
-  --#{$prefix}alert-icon-size: 1.25rem;
-  --#{$prefix}alert-icon-padding: 1rem;
-  --#{$prefix}alert-padding-dismissable: 2rem;
+  --#{$prefix}-alert-border-radius: .25rem;
+  --#{$prefix}-alert-padding: 1.25rem;
+  --#{$prefix}-alert-icon-size: 1.25rem;
+  --#{$prefix}-alert-icon-padding: 1rem;
+  --#{$prefix}-alert-padding-dismissable: 2rem;
 
-  --#{$prefix}alert-dismiss-btn-position-top: .5rem;
-  --#{$prefix}alert-dismiss-btn-position-right: .4rem;
+  --#{$prefix}-alert-dismiss-btn-position-top: .5rem;
+  --#{$prefix}-alert-dismiss-btn-position-right: .4rem;
 
-  --#{$prefix}alert-close-button-color: rgba(92, 95, 98, 1);
-  --#{$prefix}alert-close-button-color-hover: rgba(26, 28, 29, 1);
+  --#{$prefix}-alert-close-button-color: rgba(92, 95, 98, 1);
+  --#{$prefix}-alert-close-button-color-hover: rgba(26, 28, 29, 1);
 
-  --#{$prefix}alert-icon-fill: rgba(92, 95, 98, 1);
-  --#{$prefix}alert-bg: rgba(246, 246, 247, 1);
-  --#{$prefix}alert-box-shadow: inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1);
+  --#{$prefix}-alert-icon-fill: rgba(92, 95, 98, 1);
+  --#{$prefix}-alert-bg: rgba(246, 246, 247, 1);
+  --#{$prefix}-alert-box-shadow: inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1);
 
   // scss-docs-end alert-css-vars
 
@@ -121,15 +121,15 @@ $is-border-radius-enabled: functions.get-config($config, 'border-radius');
     }
   }
 
-  @each $color-scheme, $theme-value in theme.$alert-colors {
-    @include mixins.color-scheme($color-scheme) {
-      @each $variant, $variant-options in $theme-value {
-        &.#{$variant} {
-          @each $state, $value in $variant-options {
-            @include variants.alert($state, $value);
-          }
-        }
-      }
-    }
-  }
+  //@each $color-scheme, $theme-value in theme.$alert-colors {
+  //  @include mixins.color-scheme($color-scheme) {
+  //    @each $variant, $variant-options in $theme-value {
+  //      &.#{$variant} {
+  //        @each $state, $value in $variant-options {
+  //          @include variants.alert($state, $value);
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
 }

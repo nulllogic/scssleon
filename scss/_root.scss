@@ -2,6 +2,7 @@
 @use 'sass:list';
 @use "sass:meta";
 @use 'functions' as functions;
+@use 'mixins' as mixins;
 
 $config: () !default;
 $theme: () !default;
@@ -21,10 +22,7 @@ $root-variables: functions.get-theme($theme, 'root.variables');
     }
   }
 
-  // Variables
-  @each $variable, $value in $root-variables {
-    --#{$prefix}-#{$variable}: #{meta.inspect($value)};
-  }
-
   color-scheme: $color-scheme;
+
+  @include mixins.generate-properties('root', functions.get-theme($theme, 'root'), $config);
 }

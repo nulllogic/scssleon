@@ -25,7 +25,7 @@
       smooth-scroll : true,
       dark-theme: true,
       spacing : false,
-      reset: true,
+      reset: false,
       content: false,
       rtl : false
     ),
@@ -70,6 +70,12 @@
 
 // Great reset
 @use 'reset' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
+// Big boot
+@use 'boot' with (
   $config : config.$updated,
   $theme: theme.$updated
 );

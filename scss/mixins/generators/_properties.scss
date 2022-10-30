@@ -2,35 +2,23 @@
 @use '../../functions' as functions;
 @use '../../mixins/generators/color-sheme' as mixin;
 
-@mixin generate-variables($prefix, $variables) {
-  @each $variable, $value in $variables {
-    @if (meta.inspect($value) != '') {
-      --#{$prefix}-#{$variable}: #{meta.inspect($value)};
-    }
-  }
-}
-
 @mixin generate-properties($tag, $properties, $config) {
   @each $property, $value in $properties {
 
-    // Font properties
-    @if $property == 'font' {
-
-      @each $font-property, $font-value in $value {
-        font-#{meta.inspect($font-property)}: #{meta.inspect($font-value)};
-      }
-
+    // Variables
+    @if (str-index($property, '--') == 1) {
+      --#{functions.get-config($config, 'prefix')}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
     }
 
     // Colors properties
     @if ($property == 'colors') {
 
       @each $color, $color-properties in $value {
-        @each $scheme in functions.str-split($color-scheme, ' ') {
+        @each $scheme in functions.str-split(functions.get-config($config, 'color-scheme'), ' ') {
           @if $scheme == $color {
             @include mixin.generate-color-scheme($color) {
               @each $color-property, $color-value in $color-properties {
-                --#{$prefix}-#{$tag}-#{$color-property}: #{meta.inspect($color-value)};
+                --#{functions.get-config($config, 'prefix')}-#{$tag}-#{$color-property}: #{meta.inspect($color-value)};
               }
             }
           }
@@ -40,14 +28,13 @@
     }
 
     // Pseudo elements properties
-    @if ($property == 'psedo') {
+    @if ($property == 'pseudo') {
 
     }
 
-    // Variable properties
-    @if ($property == 'variables') {
-      // Generate variables
-      @include generate-variables($prefix, $value);
+    @if ($property != 'pseudo' and $property != 'colors' and str-index($property, '--') != 1 and $property != 'dark' and $property != 'light') {
+      #{$property} : #{meta.inspect($value)};
     }
+
   }
 }

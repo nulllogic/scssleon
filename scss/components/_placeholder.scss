@@ -15,7 +15,7 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
 
 .placeholder {
 
-  @include mixins.generate-properties('placeholder', $placeholder, $prefix, $color-scheme);
+  //@include mixins.generate-properties('placeholder', $placeholder, $prefix, $color-scheme);
 
   %placeholder {
     display: flex;

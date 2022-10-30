@@ -37,19 +37,10 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   body {
 
     margin: 0; // 1
-    font-size: 1rem;
-
-    font-family: var(--#{$prefix}-font-family-default);
-    font-weight: var(--#{$prefix}body-font-weight);
-
-    //line-height: var(--#{$prefix}body-line-height);
-    //text-align: var(--#{$prefix}body-text-align);
-
-    color: var(--#{$prefix}-body-color);
-    background: var(--#{$prefix}-body-background); // 2
-
     -webkit-text-size-adjust: 100%; // 3
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 4
+
+    @include mixins.generate-properties('body', functions.get-theme($theme, 'html.body'), $config)
   }
   // scss-docs-end reboot-body-rules
 
@@ -86,7 +77,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   h6 {
-    @include mixins.generate-properties('h6',functions.get-theme($theme, 'html.h6'), $config);
+    @include mixins.generate-properties('h6', functions.get-theme($theme, 'html.h6'), $config);
   }
 
 
@@ -103,7 +94,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   // 2. "cursor" explicit cursor to indicate changed behavior.
   // 3. "text-decoration-skip-ink" prevent the text-decoration to be skipped.
   abbr[title] {
-    @include mixins.generate-properties('abbr', functions.get-theme( $theme, 'html.abbr.attributes.title'), $config);
+    @include mixins.generate-properties('abbr', functions.get-theme($theme, 'html.abbr.attributes.title'), $config);
   }
   //
   //
@@ -189,18 +180,6 @@ $color-scheme: functions.get-config($config, 'color-scheme');
     @include mixins.generate-properties('sup', functions.get-theme($theme, 'html.sup'), $config);
   }
 
-
-  // Links
-  a {
-    color: var(--#{$prefix}-link-color);
-    //text-decoration: $link-decoration;
-
-    &:hover {
-      color: var(--#{$prefix}-link-hover-color);
-      //text-decoration: $link-hover-decoration;
-    }
-  }
-
   // And undo these styles for placeholder links/named anchors (without href).
   // It would be more straightforward to just use a[href] in previous block, but that
   // causes specificity issues in many other styles that are too complex to fix.
@@ -245,6 +224,7 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
   kbd {
     @include mixins.generate-properties('kbd', functions.get-theme($theme, 'html.code'), $config);
+
     kbd {
       padding: 0;
       font-size: inherit;
