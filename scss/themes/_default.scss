@@ -42,42 +42,30 @@ $html-config: (
       )
     ),
     h1 : (
-      font : (
-        size : 1rem
-      ),
+      font-size: 1rem,
       line-height : inherit,
       margin: 0
     ),
     h2 : (
-      font : (
-        size : 1rem
-      ),
+      font-size: 1rem,
       line-height : inherit,
       margin: 0
     ),
     h3 : (
-      font : (
-        size : 1rem
-      ),
+      font-size: 1rem,
       margin: 0
     ),
     h4 : (
-      font : (
-        size : 1rem
-      ),
+      font-size: 1rem,
       margin: 0
     ),
     h5 : (
-      font : (
-        size : 1rem,
-      ),
+      font-size: 1rem,
       line-height : inherit,
       margin: 0
     ),
     h6 : (
-      font : (
-        size : 1rem,
-      ),
+      font-size: 1rem,
       line-height : inherit,
       margin: 0
     ),
@@ -95,9 +83,7 @@ $html-config: (
     ),
     address: (
       margin: 0,
-      font: (
-        style: normal,
-      ),
+      font-size: 1rem,
       line-height: inherit,
     ),
     ol: (
@@ -109,9 +95,7 @@ $html-config: (
     dl: (
     ),
     dt: (
-      font : (
-        weight : normal
-      )
+      font-weight: normal,
     ),
     dd: (
       margin: 0 0 .5rem 0
@@ -124,9 +108,7 @@ $html-config: (
     strong: (
     ),
     small: (
-      font: (
-        size: .825rem
-      )
+      font-size: .825rem,
     ),
     mark: (
       padding: .1875em
@@ -172,32 +154,32 @@ $html-config: (
       vertical-align: baseline
     ),
     form : (
-      label: (
-        display: inline-block
-      ),
-      input : (
-      ),
-      select : (
-        word-wrap: normal
-      ),
-      checkbox: (
-      ),
-      textarea : (
-        resize: vertical
-      ),
-      fieldset: (
-        min-width: 0,
-        padding: 0,
-        margin: 0,
-        border: 0
-      ),
-      legend: (
-        float: left,
-        width: 100%,
-        padding: 0,
-        margin: 0,
-        line-height: inherit
-      )
+    ),
+    label: (
+      display: inline-block
+    ),
+    input : (
+    ),
+    select : (
+      word-wrap: normal
+    ),
+    checkbox: (
+    ),
+    textarea : (
+      resize: vertical
+    ),
+    fieldset: (
+      min-width: 0,
+      padding: 0,
+      margin: 0,
+      border: 0
+    ),
+    legend: (
+      float: left,
+      width: 100%,
+      padding: 0,
+      margin: 0,
+      line-height: inherit
     ),
     caption: (
     ),
