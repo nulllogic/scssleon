@@ -31,26 +31,26 @@ $alert-component: functions.get-theme($theme, 'components.alert');
   @include mixins.generate-properties('alert', $alert-component, $config);
 
   @if($is-border-radius-enabled) {
-    @include mixins.border-radius(var(--#{$prefix}alert-border-radius));
+    @include mixins.border-radius(var(--#{$prefix}-alert-border-radius));
   }
 
   @if($is-shadow-enabled) {
-    @include mixins.box-shadow(var(--#{$prefix}alert-box-shadow));
+    @include mixins.box-shadow(var(--#{$prefix}-alert-box-shadow));
   }
   // scss-docs-end alert-css-vars
 
-  padding: var(--#{$prefix}alert-padding);
+  padding: var(--#{$prefix}-alert-padding);
   outline: 1px solid transparent;
 
-  background: var(--#{$prefix}alert-bg);
+  background: var(--#{$prefix}-alert-background);
 
   .icon-wrapper {
-    padding-right: var(--#{$prefix}alert-icon-padding);
+    padding-right: var(--#{$prefix}-alert-icon-padding);
 
     .icon {
-      height: var(--#{$prefix}alert-icon-size);
-      width: var(--#{$prefix}alert-icon-size);
-      color: var(--#{$prefix}alert-icon-fill);
+      height: var(--#{$prefix}-alert-icon-size);
+      width: var(--#{$prefix}-alert-icon-size);
+      color: var(--#{$prefix}-alert-icon-fill);
 
       display: block;
       max-height: 100%;
@@ -86,21 +86,21 @@ $alert-component: functions.get-theme($theme, 'components.alert');
   }
 
   &.dismissible {
-    padding-right: calc(var(--#{$prefix}alert-icon-size) + var(--#{$prefix}alert-padding-dismissable));
+    padding-right: calc(var(--#{$prefix}-alert-icon-size) + var(--#{$prefix}-alert-padding-dismissable));
 
     .dismiss-wrapper {
-      top: var(--#{$prefix}alert-dismiss-btn-position-top);
-      right: var(--#{$prefix}alert-dismiss-btn-position-right);
+      top: var(--#{$prefix}-alert-dismiss-btn-position-top);
+      right: var(--#{$prefix}-alert-dismiss-btn-position-right);
       position: absolute;
 
       .btn-close {
         box-shadow: none;
         border: none;
-        color: var(--#{$prefix}alert-close-button-color);
+        color: var(--#{$prefix}-alert-close-button-color);
 
         &:hover {
           box-shadow: none;
-          color: var(--#{$prefix}alert-close-button-color-hover);
+          color: var(--#{$prefix}-alert-close-button-color-hover);
         }
       }
     }

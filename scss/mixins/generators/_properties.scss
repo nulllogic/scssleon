@@ -9,7 +9,7 @@
 
     // Variables
     @if (str-index($property, '--') == 1) {
-      --#{$prefix}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
+      --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
     }
 
     // Colors properties
@@ -20,7 +20,7 @@
           @if $scheme == $color {
             @include mixin.generate-color-scheme($color) {
               @each $color-property, $color-value in $color-properties {
-                --#{$prefix}-#{$tag}-#{$color-property}: #{meta.inspect($color-value)};
+                --#{$prefix}-#{$tag}-#{functions.str-replace($color-property, '--', '')}: #{meta.inspect($color-value)};
               }
             }
           }
@@ -34,8 +34,8 @@
 
     }
 
-    // Pseudo elements properties
-    @if ($property == 'pseudo') {
+    // Attributes elements properties
+    @if ($property == 'attributes') {
 
     }
 
