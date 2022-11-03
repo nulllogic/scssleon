@@ -29,7 +29,6 @@ $alert-component: functions.get-theme($theme, 'components.alert');
 
   // scss-docs-start alert-css-vars
   @include mixins.generate-properties('alert', $alert-component, $config);
-  // scss-docs-end alert-css-vars
 
   @if($is-border-radius-enabled) {
     @include mixins.border-radius(var(--#{$prefix}alert-border-radius));
@@ -38,6 +37,7 @@ $alert-component: functions.get-theme($theme, 'components.alert');
   @if($is-shadow-enabled) {
     @include mixins.box-shadow(var(--#{$prefix}alert-box-shadow));
   }
+  // scss-docs-end alert-css-vars
 
   padding: var(--#{$prefix}alert-padding);
   outline: 1px solid transparent;
