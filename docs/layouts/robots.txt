@@ -1,6 +1,0 @@
-# www.robotstxt.org
-
-{{- $isProduction := eq hugo.Environment "production" -}}
-
-User-agent: *
-Sitemap: {{ "/sitemap.xml" | absURL }}

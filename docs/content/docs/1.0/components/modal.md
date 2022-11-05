@@ -1,9 +1,0 @@
----
-layout: docs
-title: Modal
-description: Modal
-group: components
-toc: true
----
-
-## Example

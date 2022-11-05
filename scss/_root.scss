@@ -1,6 +1,7 @@
 /* - ૮₍ ˃ ⤙ ˂ ₎ა – root  */
 @use 'sass:list';
 @use "sass:meta";
+@use "sass:string";
 @use 'functions' as functions;
 @use 'mixins' as mixins;
 
@@ -22,7 +23,7 @@ $root-variables: functions.get-theme($theme, 'root.variables');
     }
   }
 
-  color-scheme: $color-scheme;
+  color-scheme: string.unquote($color-scheme);
 
   @include mixins.generate-properties('root', functions.get-theme($theme, 'root'), $config);
 }
