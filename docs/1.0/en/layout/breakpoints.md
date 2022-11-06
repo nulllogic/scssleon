@@ -1,5 +1,5 @@
 ---
-layout: @layouts/docs
+layout: ~/layouts/docs.astro
 title: Breakpoints
 description: Breakpoints are customizable widths that determine how your responsive layout behaves across device or viewport sizes in xiigrid.
 group: layout

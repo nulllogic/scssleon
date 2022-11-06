@@ -1,5 +1,5 @@
 ---
-layout: @layouts/docs
+layout: ~/layouts/docs.astro
 title: Button group
 description: Group a series of buttons together on a single line or stack them in a vertical column.
 group: components

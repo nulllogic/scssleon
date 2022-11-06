@@ -1,5 +1,5 @@
 ---
-layout: @layouts/docs
+layout: ~/layouts/docs.astro
 title: Clearfix
 description: Quickly and easily clear floated content within a container by adding a clearfix utility.
 group: helpers

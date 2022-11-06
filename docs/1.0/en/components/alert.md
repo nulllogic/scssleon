@@ -1,5 +1,5 @@
 ---
-layout: @layouts/docs
+layout: ~/layouts/docs.astro
 title: Alerts
 description: Alerts
 group: components

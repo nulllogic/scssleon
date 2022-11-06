@@ -1,5 +1,5 @@
 ---
-layout: @layouts/docs
+layout: ~/layouts/docs.astro
 title: Badges
 description: Documentation and examples for badges, our small count and labeling component.
 group: components
@@ -8,7 +8,8 @@ toc: true
 
 ## Example
 
-Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units. As of v5, badges no longer have focus or hover styles for links.
+Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units. As of v5,
+badges no longer have focus or hover styles for links.
 
 {{< example >}}
 <h1>Example heading <span class="badge">New</span></h1>
@@ -27,9 +28,13 @@ Notifications <span class="badge">4</span>
 </button>
 {{< /example >}}
 
-Note that depending on how they are used, badges may be confusing for users of screen readers and similar assistive technologies. While the styling of badges provides a visual cue as to their purpose, these users will simply be presented with the content of the badge. Depending on the specific situation, these badges may seem like random additional words or numbers at the end of a sentence, link, or button.
+Note that depending on how they are used, badges may be confusing for users of screen readers and similar assistive
+technologies. While the styling of badges provides a visual cue as to their purpose, these users will simply be
+presented with the content of the badge. Depending on the specific situation, these badges may seem like random
+additional words or numbers at the end of a sentence, link, or button.
 
-Unless the context is clear (as with the "Notifications" example, where it is understood that the "4" is the number of notifications), consider including additional context with a visually hidden piece of additional text.
+Unless the context is clear (as with the "Notifications" example, where it is understood that the "4" is the number of
+notifications), consider including additional context with a visually hidden piece of additional text.
 
 {{< example >}}
 <button type="button" class="btn btn-primary">
@@ -40,7 +45,9 @@ Profile <span class="badge">9</span>
 
 ## Background colors
 
-Use our background utility classes to quickly change the appearance of a badge. Please note that when using xiigrid's default `.bg-light`, you'll likely need a text color utility like `.text-dark` for proper styling. This is because background utilities do not set anything but `background-color`.
+Use our background utility classes to quickly change the appearance of a badge. Please note that when using xiigrid's
+default `.bg-light`, you'll likely need a text color utility like `.text-dark` for proper styling. This is because
+background utilities do not set anything but `background-color`.
 
 {{< example >}}
 {{< badge.inline >}}
@@ -56,7 +63,8 @@ Use the `.rounded-pill` utility class to make badges more rounded with a larger 
 {{< example >}}
 {{< badge.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<span class="badge rounded-pill bg-{{ .name }}{{ with .contrast_color }} text-{{ . }}{{ end }}">{{ .name | title }}</span>{{- end -}}
+<span class="badge rounded-pill bg-{{ .name }}{{ with .contrast_color }} text-{{ . }}{{ end }}">{{ .name | title
+}}</span>{{- end -}}
 {{< /badge.inline >}}
 {{< /example >}}
 

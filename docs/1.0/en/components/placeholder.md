@@ -1,5 +1,5 @@
 ---
-layout: @layouts/docs
+layout: ~/layouts/docs.astro
 title: Placeholder
 description: Use loading placeholders for your components or pages to indicate something may still be loading.
 group: components

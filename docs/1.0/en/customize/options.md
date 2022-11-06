@@ -1,5 +1,5 @@
 ---
-layout: @layouts/docs
+layout: ~/layouts/docs.astro
 title: Options
 description: xiigrid framework SCSS variables
 group: customize
