@@ -106,15 +106,15 @@ $alert-component: functions.get-theme($theme, 'components.alert');
     }
   }
 
-  //@each $color-scheme, $theme-value in theme.$alert-colors {
-  //  @include mixins.color-scheme($color-scheme) {
-  //    @each $variant, $variant-options in $theme-value {
-  //      &.#{$variant} {
-  //        @each $state, $value in $variant-options {
-  //          @include variants.alert($state, $value);
-  //        }
-  //      }
-  //    }
-  //  }
-  //}
+  @each $color-scheme, $theme-value in theme.$alert-colors {
+    @include mixins.color-scheme($color-scheme) {
+      @each $variant, $variant-options in $theme-value {
+        &.#{$variant} {
+          @each $state, $value in $variant-options {
+            @include variants.alert($state, $value);
+          }
+        }
+      }
+    }
+  }
 }
