@@ -15,10 +15,11 @@ $theme: nil !default;
 .navbar {
 
   position: relative;
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between; // space out brand from logo
+  justify-content: space-between;
 
   %container-flex-properties {
     display: flex;
@@ -38,26 +39,18 @@ $theme: nil !default;
     }
   }
 
-  // Navbar brand
-
-  .brand {
-    white-space: nowrap;
-
-    &:hover,
-    &:focus {
-
-    }
-  }
-
-  // Navbar nav
+  // Navbar navigation items
   .nav {
-
     display: flex;
-    flex-direction: column;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
+    flex: 1 0 0;
 
+    &:last-child {
+      justify-content: flex-end;
+    }
+
+    &.center {
+      flex: 0 0 auto;
+    }
   }
 
 }
