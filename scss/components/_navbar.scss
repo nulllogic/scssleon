@@ -9,6 +9,9 @@
 @use '../config';
 @use '../mixins';
 
+$config: nil !default;
+$theme: nil !default;
+
 .navbar {
 
   position: relative;

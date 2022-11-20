@@ -618,6 +618,38 @@ hr {
 }
 /*
 *
+┌┐┌┌─┐┬  ┬┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
+│││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
+┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
+*
+*/
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar > .container-container-breakpoints, .navbar > .container,
+.navbar > .container-fluid {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .brand {
+  white-space: nowrap;
+}
+.navbar .nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/*
+*
 ┌─┐┬  ┌─┐┬─┐┌┬┐┌─┐
 ├─┤│  ├┤ ├┬┘ │ └─┐
 ┴ ┴┴─┘└─┘┴└─ ┴ └─┘

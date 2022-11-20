@@ -101,7 +101,11 @@
 ////@use "components/icon";
 //@use "components/button";
 ////@use "components/button-group";
-//@use "components/navbar";
+// Navbar
+@use 'components/navbar' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 //@use "components/breadcrumb";
 ////@use "components/modal";
 
