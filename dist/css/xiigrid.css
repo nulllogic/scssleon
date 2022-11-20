@@ -618,6 +618,17 @@ hr {
 }
 /*
 *
+┌┐ ┌─┐┌┬┐┌─┐┌─┐
+├┴┐├─┤ │││ ┬├┤
+└─┘┴ ┴─┴┘└─┘└─┘
+*
+*/
+.badge {
+  display: inline-block;
+}
+
+/*
+*
 ┌┐┌┌─┐┬  ┬┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
 │││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
 ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
@@ -637,17 +648,26 @@ hr {
   align-items: center;
   justify-content: space-between;
 }
-.navbar .brand {
-  white-space: nowrap;
-}
 .navbar .nav {
   display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
+  flex: 1 0 0;
+}
+.navbar .nav:last-child {
+  justify-content: flex-end;
+}
+.navbar .nav.center {
+  flex: 0 0 auto;
 }
 
+/*
+┌┐ ┬─┐┌─┐┌─┐┌┬┐┌─┐┬─┐┬ ┬┌┬┐┌┐ ┌─┐
+├┴┐├┬┘├┤ ├─┤ │││  ├┬┘│ ││││├┴┐└─┐
+└─┘┴└─└─┘┴ ┴─┴┘└─┘┴└─└─┘┴ ┴└─┘└─┘
+*/
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+}
 /*
 *
 ┌─┐┬  ┌─┐┬─┐┌┬┐┌─┐

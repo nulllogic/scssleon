@@ -7,7 +7,7 @@
 */
 
 @use '../config';
-@use '../mixins';
+@use '../mixins' as mixins;
 
 $config: nil !default;
 $theme: nil !default;

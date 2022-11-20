@@ -96,17 +96,28 @@
   $config : config.$updated,
 );
 
+// Badge
+@use 'components/badge' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
 //@use "components/form";
-////@use "components/badge";
 ////@use "components/icon";
 //@use "components/button";
 ////@use "components/button-group";
-// Navbar
+
+// Navigation bar
 @use 'components/navbar' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
-//@use "components/breadcrumb";
+
+// Breadcrumbs
+@use 'components/breadcrumb' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 ////@use "components/modal";
 
 @use 'components/alert' with (
@@ -114,7 +125,7 @@
   $theme: theme.$updated
 );
 
-// Pagination
+// Table
 @use 'components/table' with (
   $config : config.$updated,
   $theme: theme.$updated

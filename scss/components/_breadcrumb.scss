@@ -4,49 +4,53 @@
 └─┘┴└─└─┘┴ ┴─┴┘└─┘┴└─└─┘┴ ┴└─┘└─┘
 */
 
-@use '../config';
-@use '../functions';
-@use '../mixins';
+@use '../mixins' as mixins;
+@use '../functions' as functions;
+
+$config: nil !default;
+$theme: nil !default;
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
 
 .breadcrumb {
 
   // scss-docs-start breadcrumb-css-vars
-  --#{config.$prefix}breadcrumb-padding-x: #{config.$breadcrumb-padding-x};
-  --#{config.$prefix}breadcrumb-padding-y: #{config.$breadcrumb-padding-y};
-  --#{config.$prefix}breadcrumb-margin-bottom: #{config.$breadcrumb-margin-bottom};
-  --#{config.$prefix}breadcrumb-font-size: #{config.$breadcrumb-font-size};
-  --#{config.$prefix}breadcrumb-bg: #{config.$breadcrumb-bg};
-  --#{config.$prefix}breadcrumb-border-radius: #{config.$breadcrumb-border-radius};
-  --#{config.$prefix}breadcrumb-divider-color: #{config.$breadcrumb-divider-color};
-  --#{config.$prefix}breadcrumb-item-padding-x: #{config.$breadcrumb-item-padding-x};
-  --#{config.$prefix}breadcrumb-item-active-color: #{config.$breadcrumb-active-color};
+  //--#{$prefix}breadcrumb-padding-x: #{config.$breadcrumb-padding-x};
+  //--#{$prefix}breadcrumb-padding-y: #{config.$breadcrumb-padding-y};
+  //--#{$prefix}breadcrumb-margin-bottom: #{config.$breadcrumb-margin-bottom};
+  //--#{$prefix}breadcrumb-font-size: #{config.$breadcrumb-font-size};
+  //--#{$prefix}breadcrumb-bg: #{config.$breadcrumb-bg};
+  //--#{$prefix}breadcrumb-border-radius: #{config.$breadcrumb-border-radius};
+  //--#{$prefix}breadcrumb-divider-color: #{config.$breadcrumb-divider-color};
+  //--#{$prefix}breadcrumb-item-padding-x: #{config.$breadcrumb-item-padding-x};
+  //--#{$prefix}breadcrumb-item-active-color: #{config.$breadcrumb-active-color};
   // scss-docs-end breadcrumb-css-vars
 
   display: flex;
   flex-wrap: wrap;
-  padding: var(--#{config.$prefix}breadcrumb-padding-y) var(--#{config.$prefix}breadcrumb-padding-x);
-  margin-bottom: var(--#{config.$prefix}breadcrumb-margin-bottom);
-  font-size: (var(--#{config.$prefix}breadcrumb-font-size));
-  list-style: none;
-  background-color: var(--#{config.$prefix}breadcrumb-bg);
+  //padding: var(--#{$prefix}breadcrumb-padding-y) var(--#{$prefix}breadcrumb-padding-x);
+  //margin-bottom: var(--#{$prefix}breadcrumb-margin-bottom);
+  //font-size: (var(--#{$prefix}breadcrumb-font-size));
+  //list-style: none;
+  //background-color: var(--#{$prefix}breadcrumb-bg);
 
-  @include mixins.border-radius(var(--#{config.$prefix}breadcrumb-border-radius));
+  //@include mixins.border-radius(var(--#{$prefix}breadcrumb-border-radius));
 
   .item {
 
     // The separator between breadcrumbs (by default, a forward-slash: "/")
     + .item {
-      padding-left: var(--#{config.$prefix}breadcrumb-item-padding-x);
+      //padding-left: var(--#{$prefix}breadcrumb-item-padding-x);
 
       &::before {
-        padding-right: var(--#{config.$prefix}breadcrumb-item-padding-x);
-        color: var(--#{config.$prefix}breadcrumb-divider-color);
-        content: var(--#{config.$prefix}breadcrumb-divider, functions.escape-svg(config.$breadcrumb-divider)) #{"/* rtl:"} var(--#{config.$prefix}breadcrumb-divider, escape-svg(config.$breadcrumb-divider-flipped)) #{"*/"};
+        //padding-right: var(--#{$prefix}breadcrumb-item-padding-x);
+        //color: var(--#{$prefix}breadcrumb-divider-color);
+        //content: var(--#{$prefix}breadcrumb-divider, functions.escape-svg(config.$breadcrumb-divider)) #{"/* rtl:"} var(--#{$prefix}breadcrumb-divider, escape-svg(config.$breadcrumb-divider-flipped)) #{"*/"};
       }
     }
 
     &.active {
-      color: var(--#{config.$prefix}breadcrumb-item-active-color);
+      //color: var(--#{$prefix}breadcrumb-item-active-color);
     }
   }
 }
