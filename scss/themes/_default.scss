@@ -248,6 +248,10 @@ $components-config: (
     ),
 
     badge : (
+
+      --border-radius: .25rem,
+      --padding: 1.25rem,
+
       colors: (
 
         light : (
