@@ -9,12 +9,15 @@
 
 $config: nil !default;
 $theme: nil !default;
-$prefix: functions.get-config($config, 'prefix');
+
+$breadcrumb-component: functions.get-theme($theme, 'components.breadcrumb');
 $color-scheme: functions.get-config($config, 'color-scheme');
 
 .breadcrumb {
 
   // scss-docs-start breadcrumb-css-vars
+  @include mixins.generate-properties('breadcrumb', $breadcrumb-component, $config);
+
   //--#{$prefix}breadcrumb-padding-x: #{config.$breadcrumb-padding-x};
   //--#{$prefix}breadcrumb-padding-y: #{config.$breadcrumb-padding-y};
   //--#{$prefix}breadcrumb-margin-bottom: #{config.$breadcrumb-margin-bottom};
