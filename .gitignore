@@ -12,11 +12,7 @@
 nbproject
 Thumbs.db
 /.vscode/
+.package_lock.json
 
 # Node modules
 node_modules
-
-# Hugo
-.hugo_build.lock
-resources
-_site
