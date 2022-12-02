@@ -254,6 +254,10 @@ $components-config: (
 
       font-size : 1rem,
       font-weight: normal,
+      border-radius: 3px,
+      line-height: 1,
+      white-space: nowrap,
+      vertical-align: baseline,
 
       colors: (
 
@@ -267,7 +271,8 @@ $components-config: (
       )
     ),
 
-    breadcrumbs : (
+    breadcrumb : (
+      list-style: none,
 
     ),
 

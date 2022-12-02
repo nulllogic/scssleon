@@ -46,7 +46,7 @@
 );
 
 // Theme
-// Override default settings in the theme | @example
+/* Override default settings in the theme | @example */
 @use "themes/default" as theme with (
   $custom : (
     html: (
@@ -74,7 +74,8 @@
   $theme: theme.$updated
 );
 
-// Big boot
+// Boot
+/* Special utility to dynamically create css properties for html tags, specified in theme */
 @use 'boot' with (
   $config : config.$updated,
   $theme: theme.$updated
