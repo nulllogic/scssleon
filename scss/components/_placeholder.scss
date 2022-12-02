@@ -11,6 +11,10 @@ $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
 $color-scheme: functions.get-config($config, 'color-scheme');
+
+$is-shadow-enabled: functions.get-config($config, 'shadow');
+$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+
 $placeholder : functions.get-theme($theme, 'components.placeholder');
 
 .placeholder {
@@ -19,12 +23,12 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
 
   %placeholder {
     display: flex;
-    min-height: var(--#{$prefix}placeholder-height);
+    min-height: var(--#{$prefix}-placeholder-height);
 
-    background-color: var(--#{$prefix}placeholder-bg);
-    margin-bottom: var(--#{$prefix}placeholder-spacing);
+    background-color: var(--#{$prefix}-placeholder-background);
+    margin-bottom: var(--#{$prefix}-placeholder-spacing);
 
-    @include mixins.border-radius(var(--#{$prefix}placeholder-border-radius));
+    @include mixins.border-radius(var(--#{$prefix}-placeholder-border-radius));
   }
 
   .el {
@@ -32,7 +36,7 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
     @extend %placeholder;
 
     &:last-child:not(:first-child) {
-      width: var(--#{$prefix}placeholder-last-line-width);
+      width: var(--#{$prefix}-placeholder-last-line-width);
       margin-bottom: 0;
     }
 

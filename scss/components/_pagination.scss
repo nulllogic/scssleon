@@ -76,7 +76,3 @@ $theme: nil !default;
     }
   }
 }
-
-.form-control[disabled], fieldset[disabled] .form-control {
-  cursor: not-allowed;
-}

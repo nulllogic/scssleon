@@ -262,11 +262,13 @@ $components-config: (
       colors: (
 
         light : (
-
+          color: #ccc,
+          box-shadow: none
         ),
 
         dark : (
-
+          color: #ccc,
+          box-shadow: none
         )
       )
     ),
@@ -289,6 +291,17 @@ $components-config: (
       --last-line-width: 80%,
 
       cursor: wait,
+
+      colors: (
+
+        light : (
+          background: #ccc
+        ),
+
+        dark : (
+          background: #ccc
+        )
+      )
     )
   )
 );

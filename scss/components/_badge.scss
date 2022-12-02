@@ -12,33 +12,30 @@
 $config: nil !default;
 $theme: nil !default;
 
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$is-shadow-enabled: functions.get-config($config, 'shadow');
+$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+
 $badge-component: functions.get-theme($theme, 'components.badge');
 
 .badge {
 
+  // scss-docs-start badge-css-vars
   @include mixins.generate-properties('badge', $badge-component, $config);
 
-  // scss-docs-start badge-css-vars
-  //--#{$prefix}badge-padding-x: #{$badge-padding-x};
-  //--#{$prefix}badge-padding-y: #{$badge-padding-y};
-  //@include rfs($badge-font-size, --#{$prefix}badge-font-size);
-  //--#{$prefix}badge-font-weight: #{$badge-font-weight};
-  //--#{$prefix}badge-color: #{$badge-color};
-  //--#{$prefix}badge-border-radius: #{$badge-border-radius};
-  // scss-docs-end badge-css-vars
+  @if($is-border-radius-enabled) {
+    @include mixins.border-radius(var(--#{$prefix}-badge-border-radius));
+  }
+
+  @if($is-shadow-enabled) {
+    @include mixins.box-shadow(var(--#{$prefix}-badge-box-shadow));
+  }
 
   display: inline-block;
-  //padding: var(--#{$prefix}badge-padding-y) var(--#{$prefix}badge-padding-x);
-  //font-size:var(--#{$prefix}badge-font-size);
-  //font-weight: var(--#{$prefix}badge-font-weight);
-  //line-height: 1;
-  //color: var(--#{$prefix}badge-color);
-  //
-  //text-align: center;
-  //white-space: nowrap;
-  //vertical-align: baseline;
-  //border-radius: var(--#{$prefix}badge-border-radius, 0); // stylelint-disable-line property-disallowed-list
-  //@include gradient-bg();
+  padding: var(--#{$prefix}-badge-padding);
+  color: var(--#{$prefix}-badge-color);
 }
 
 //// Quick fix for badges in buttons
