@@ -11,6 +11,10 @@ $html-config: (
   ),
   html : (
     body : (
+
+      margin: 0,
+      -webkit-text-size-adjust: 100%,
+
       font-size : 1rem,
       font-weight: normal,
       line-height : 1rem,
@@ -91,25 +95,34 @@ $html-config: (
       line-height: inherit,
     ),
     ol: (
-      padding-left: 2rem
+      list-style: none,
+      margin: 0,
+      padding: 0
     ),
     ul: (
-      padding-left: 2rem
+      list-style: none,
+      margin: 0,
+      padding: 0
     ),
     dl: (
+      list-style: none,
+      margin: 0,
+      padding: 0
     ),
     dt: (
       font-weight: normal,
     ),
     dd: (
-      margin: 0 0 .5rem 0
+      margin: 0 0 .5rem 0,
     ),
     blockquote: (
       margin: 0 0 1rem
     ),
     b : (
+      font-weight: bold
     ),
     strong: (
+      font-weight: bold
     ),
     small: (
       font-size: .825rem,
@@ -155,7 +168,7 @@ $html-config: (
     form : (
     ),
     label: (
-
+      display: inline-block
     ),
     input : (
     ),

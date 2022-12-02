@@ -28,17 +28,6 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
 @if $is-reset-enabled {
 
-  // Body
-  // 1. Remove the margin in all browsers.
-  // 2. Prevent adjustments of font size after orientation changes in iOS.
-  // scss-docs-start reboot-body-rules
-  body {
-
-    margin: 0; // 1
-    -webkit-text-size-adjust: 100%; // 2
-  }
-  // scss-docs-end reboot-body-rules
-
   // Abbreviations
   // 1. "text-decoration" correct text decoration in Chrome, Edge, Opera, and Safari.
   // 2. "cursor" explicit cursor to indicate changed behavior.
@@ -50,32 +39,11 @@ $color-scheme: functions.get-config($config, 'color-scheme');
   }
 
   // Lists
-  ol,
-  ul,
-  dl {
-    list-style: none;
-    margin: 0;
-    padding:0
-  }
-
   ol ol,
   ul ul,
   ol ul,
   ul ol {
-    margin: 0
-  }
-
-  // 1. Undo browser default
-  dd {
-    margin-bottom: .5rem;
-    margin-left: 0; // 1
-  }
-
-  // Strong
-  // Add the correct font weight in Chrome, Edge, and Safari
-  b,
-  strong {
-    font-weight: bold;
+    margin: 0;
   }
 
   // Sub and Sup
@@ -191,11 +159,6 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 
 
   // Forms
-  // 1. "display" allow labels to use `margin` for spacing.
-  label {
-    display: inline-block;
-  }
-
   // Remove the default `border-radius` that macOS Chrome adds.
   button {
     border-radius: 0
