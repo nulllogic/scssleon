@@ -8,9 +8,12 @@
 
 @use '../config';
 @use '../mixins' as mixins;
+@use '../functions' as functions;
 
 $config: nil !default;
 $theme: nil !default;
+
+$container-breakpoints: functions.get-config($config, 'container-breakpoints');
 
 .navbar {
 
@@ -33,8 +36,8 @@ $theme: nil !default;
     @extend %container-flex-properties;
   }
 
-  @each $breakpoint, $container-max-width in config.$container-max-widths {
-    > .container#{mixins.breakpoint-infix($breakpoint, config.$container-max-widths)} {
+  @each $breakpoint, $container-max-width in config.$container-breakpoints-config {
+    > .container#{mixins.breakpoint-infix($breakpoint, config.$container-breakpoints-config)} {
       @extend %container-flex-properties;
     }
   }

@@ -3,14 +3,14 @@
 │  │ ││││ │ ├─┤││││├┤ ├┬┘
 └─┘└─┘┘└┘ ┴ ┴ ┴┴┘└┘└─┘┴└─
 */
-@use '../mixins/container' as container;
+@use '../mixins/container' as mixins;
 @use '../mixins/breakpoints' as breakpoints;
 @use '../functions' as functions;
 
 $config: nil !default;
 
 $is-container-classes-enabled: functions.get-config($config, 'enable.container-classes');
-$container-breakpoints: functions.get-config($config, 'grid-breakpoints');
+$container-breakpoints: functions.get-config($config, 'container-breakpoints');
 $grid-breakpoints: functions.get-config($config, 'grid-breakpoints');
 
 // Container
@@ -18,7 +18,7 @@ $grid-breakpoints: functions.get-config($config, 'grid-breakpoints');
 
   .container,
   .container-fluid {
-    @include container.generate_container();
+    @include mixins.generate_container();
   }
 
   @each $breakpoint, $container-max-width in $container-breakpoints {

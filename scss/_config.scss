@@ -38,7 +38,7 @@ $default-config: (
 
 // Container breakpoints
 // scss-docs-start container-max-widths
-$container-max-widths: (
+$container-breakpoints-config: (
   container-breakpoints: (
     sm: 540px,
     md: 720px,
@@ -49,6 +49,7 @@ $container-max-widths: (
 ) !default;
 // scss-docs-end container-max-widths
 
+$default-config: map.deep-merge($default-config, $container-breakpoints-config);
 
 // Grid breakpoints
 // scss-docs-start grid-breakpoints
@@ -92,7 +93,6 @@ $enable-rules-config: (
 $default-config: map.deep-merge($default-config, $enable-rules-config);
 
 // Content
-
 $content-default-config: (
   content : (
     elements: (
