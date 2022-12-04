@@ -82,6 +82,7 @@
 );
 
 // Amazing content
+/* Special class `.content` to allow formatting of the default html tags */
 @use 'content' with (
   $config : config.$updated,
   $theme: theme.$updated
