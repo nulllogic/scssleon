@@ -3,13 +3,20 @@
 ├─┘├─┤│ ┬││││├─┤ │ ││ ││││
 ┴  ┴ ┴└─┘┴┘└┘┴ ┴ ┴ ┴└─┘┘└┘
 */
+@use '../mixins' as mixins;
+@use '../functions' as functions;
 
 $config: nil !default;
 $theme: nil !default;
 
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$pagination : functions.get-theme($theme, 'components.pagination');
+
+
 .pagination {
-  display: inline-block;
-  vertical-align: middle;
+  @include mixins.generate-properties('placeholder', $pagination, $config);
 
   > {
 

@@ -295,6 +295,11 @@ $components-config: (
 
     ),
 
+    pagination : (
+      display: inline-block,
+      vertical-align: middle
+    ),
+
     placeholder : (
 
       --height: 0.55rem,
