@@ -297,7 +297,19 @@ $components-config: (
 
     pagination : (
       display: inline-block,
-      vertical-align: middle
+      vertical-align: middle,
+
+      colors: (
+
+        light : (
+          background: #ccc
+        ),
+
+        dark : (
+          background: #ccc
+        )
+      )
+
     ),
 
     placeholder : (
