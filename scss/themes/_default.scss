@@ -302,11 +302,13 @@ $components-config: (
       colors: (
 
         light : (
-          background: #ccc
+          background: #ccc,
+          box-shadow: none
         ),
 
         dark : (
-          background: #ccc
+          background: #ccc,
+          box-shadow: none
         )
       )
 
