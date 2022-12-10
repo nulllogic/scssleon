@@ -17,7 +17,6 @@ $is-border-radius-enabled: functions.get-config($config, 'border-radius');
 
 $pagination : functions.get-theme($theme, 'components.pagination');
 
-
 .pagination {
 
   @include mixins.generate-properties('placeholder', $pagination, $config);
