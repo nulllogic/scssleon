@@ -42,7 +42,7 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
 
   }
 
-  //Animation
+  // Animation
   &.glow {
     .el {
       animation: placeholder-glow 2s ease-in-out infinite;
