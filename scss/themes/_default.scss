@@ -17,7 +17,7 @@ $html-config: (
 
       font-size : 1rem,
       font-weight: normal,
-      line-height : 1rem,
+      line-height : 1,
       font-family: var(--root-font-family-default),
 
       color: var(--body-color),
@@ -52,30 +52,32 @@ $html-config: (
       )
     ),
     h1 : (
-      font-size: 1rem,
+      font-size: 3.5rem,
       line-height : inherit,
       margin: 0
     ),
     h2 : (
-      font-size: 1rem,
+      font-size: 2.8rem,
       line-height : inherit,
       margin: 0
     ),
     h3 : (
-      font-size: 1rem,
+      font-size: 2.4rem,
+      line-height : inherit,
       margin: 0
     ),
     h4 : (
-      font-size: 1rem,
+      font-size: 2rem,
+      line-height : inherit,
       margin: 0
     ),
     h5 : (
-      font-size: 1rem,
+      font-size: 1.8rem,
       line-height : inherit,
       margin: 0
     ),
     h6 : (
-      font-size: 1rem,
+      font-size: 1.625rem,
       line-height : inherit,
       margin: 0
     ),
