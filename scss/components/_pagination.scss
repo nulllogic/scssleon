@@ -45,9 +45,15 @@ $pagination: functions.get-theme($theme, 'components.pagination');
 
     .link {
       display: block;
-      padding: var(--xii-pagination-link-padding);
       text-decoration: none;
+      padding: var(--#{$prefix}-pagination-link-padding);
       border: var(--#{$prefix}-pagination-border);
+      background: var(--#{$prefix}-pagination-background);
+
+      &:hover {
+        border: var(--#{$prefix}-pagination-border-hover);
+        background: var(--#{$prefix}-pagination-background-hover);
+      }
 
       &.active {
 

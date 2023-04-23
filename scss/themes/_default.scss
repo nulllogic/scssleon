@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use "sass:string";
 
 // Main theme colors
 $custom: nil !default;
@@ -6,8 +7,8 @@ $theme: () !default;
 
 $html-config: (
   root: (
-    --font-family-default : "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
-    --font-family-monospace : "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+    --font-family-default : string.unquote("system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"),
+    --font-family-monospace : string.unquote("SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"),
   ),
   html : (
     body : (
@@ -307,15 +308,19 @@ $components-config: (
 
       colors: (
         light : (
-          background: #ccc,
           box-shadow: none,
-          border: 1px solid #caced3
+          --background: #f1f2f4,
+          --background-hover: #f1f2f4,
+          --border: 1px solid #caced3,
+          --border-hover: 1px solid #cacfff
         ),
 
         dark : (
-          background: #ccc,
           box-shadow: none,
-          border: 1px solid #caced3
+          --background: #f1f2f4,
+          --background-hover: #f1f2f4,
+          --border: 1px solid #caced3,
+          --border-hover: 1px solid #cacfff
         )
       )
 
