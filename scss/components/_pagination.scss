@@ -12,11 +12,10 @@ $theme: nil !default;
 $prefix: functions.get-config($config, 'prefix');
 $color-scheme: functions.get-config($config, 'color-scheme');
 
-$is-shadow-enabled: functions.get-config($config, 'shadow');
-$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+$is-shadow-enabled: functions.get-config($config, 'enable.shadow');
+$is-border-radius-enabled: functions.get-config($config, 'enable.border-radius');
 
 $pagination: functions.get-theme($theme, 'components.pagination');
-
 .pagination {
 
   @include mixins.generate-properties('pagination', $pagination, $config);
@@ -27,14 +26,32 @@ $pagination: functions.get-theme($theme, 'components.pagination');
 
   .item {
 
-    .link {
-      @if ($is-border-radius-enabled) {
-        @include mixins.border-radius(var(--#{$prefix}-pagination-border-radius));
-      }
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
 
+    &:first-child,
+    &:last-child {
+      .link {
+        @if ($is-border-radius-enabled) {
+          @include mixins.border-radius(var(--#{$prefix}-pagination-border-radius));
+        }
+      }
+    }
+
+    &.disabled {
+
+    }
+
+    .link {
       display: block;
-      padding: var(--xii-pagination-spacing);
+      padding: var(--xii-pagination-link-padding);
       text-decoration: none;
+      border: var(--#{$prefix}-pagination-border);
+
+      &.active {
+
+      }
     }
   }
 }

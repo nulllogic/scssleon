@@ -298,19 +298,24 @@ $components-config: (
     ),
 
     pagination : (
-      display: inline-block,
-      vertical-align: middle,
+
+      display: flex,
+      list-style: none,
+      --item-margin: 0,
+      --link-padding: .6rem,
+      --border-radius: .1875rem,
 
       colors: (
-
         light : (
           background: #ccc,
-          box-shadow: none
+          box-shadow: none,
+          border: 1px solid #caced3
         ),
 
         dark : (
           background: #ccc,
-          box-shadow: none
+          box-shadow: none,
+          border: 1px solid #caced3
         )
       )
 

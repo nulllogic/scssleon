@@ -1,76 +1,7 @@
 @use '../config';
 
-@function valid-radius($radius) {
-  $return: ();
-  @each $value in $radius {
-    @if type-of($value) == number {
-      $return: append($return, max($value, 0));
-    } @else {
-      $return: append($return, $value);
-    }
-  }
-  @return $return;
-}
-
 // scss-docs-start border-radius-mixins
-@mixin border-radius($radius, $fallback-border-radius: false, $is-enabled : false) {
-  @if $is-enabled {
-    border-radius: valid-radius($radius);
-  }
-  @else if $fallback-border-radius != false {
-    border-radius: $fallback-border-radius;
-  }
-}
-
-@mixin border-top-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-top-left-radius: valid-radius($radius);
-    border-top-right-radius: valid-radius($radius);
-  }
-}
-
-@mixin border-end-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-top-right-radius: valid-radius($radius);
-    border-bottom-right-radius: valid-radius($radius);
-  }
-}
-
-@mixin border-bottom-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-bottom-right-radius: valid-radius($radius);
-    border-bottom-left-radius: valid-radius($radius);
-  }
-}
-
-@mixin border-start-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-top-left-radius: valid-radius($radius);
-    border-bottom-left-radius: valid-radius($radius);
-  }
-}
-
-@mixin border-top-start-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-top-left-radius: valid-radius($radius);
-  }
-}
-
-@mixin border-top-end-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-top-right-radius: valid-radius($radius);
-  }
-}
-
-@mixin border-bottom-end-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-bottom-right-radius: valid-radius($radius);
-  }
-}
-
-@mixin border-bottom-start-radius($radius, $is-enabled : false) {
-  @if $is-enabled {
-    border-bottom-left-radius: valid-radius($radius);
-  }
+@mixin border-radius($radius) {
+  border-radius: $radius;
 }
 // scss-docs-end border-radius-mixins
