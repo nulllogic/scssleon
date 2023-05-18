@@ -46,25 +46,39 @@ $pagination: functions.get-theme($theme, 'components.pagination');
       }
     }
 
-    &.disabled {
+    &.active {
+      .link {
+        background: var(--#{$prefix}-pagination-active-background);
 
+        &:hover {
+          z-index: 3;
+          border: var(--#{$prefix}-pagination-active-border-hover);
+          background: var(--#{$prefix}-pagination-active-background-hover);
+        }
+      }
+    }
+
+    &.disabled {
+      .link {
+        pointer-events: none;
+        background: var(--#{$prefix}-pagination-disabled-background);
+      }
     }
 
     .link {
       display: block;
+      position: relative;
       text-decoration: none;
       padding: var(--#{$prefix}-pagination-link-padding);
       border: var(--#{$prefix}-pagination-border);
       background: var(--#{$prefix}-pagination-background);
 
       &:hover {
+        z-index: 2;
         border: var(--#{$prefix}-pagination-border-hover);
         background: var(--#{$prefix}-pagination-background-hover);
       }
 
-      &.active {
-
-      }
     }
   }
 }

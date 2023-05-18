@@ -8,9 +8,6 @@ toc: true
 
 ## Default pagination
 
-Pagination
-
-{{< example >}}
 <nav aria-label="Pagination">
     <ul class="pagination">
        <li class="item">
@@ -24,11 +21,9 @@ Pagination
        </li>
     </ul>
 </nav>
-{{< /example >}}
 
 ## Disabled and active states
 
-{{< example >}}
 <nav aria-label="Page navigation">
     <ul class="pagination">
        <li class="item disabled">
@@ -37,8 +32,8 @@ Pagination
        <li class="item">
             <a href="#" class="link">2</a>
        </li>
-       <li class="item">
-            <a href="#" class="link active">3</a>
+       <li class="item active">
+            <a href="#" class="link">3</a>
        </li>
        <li class="item">
             <a href="#" class="link">4</a>
@@ -48,4 +43,44 @@ Pagination
        </li>
     </ul>
 </nav>
-{{< /example >}}
+
+## SVG icons
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+       <li class="item">
+            <a href="#" class="link">
+                <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true" width="20" height="20">
+                    <g>
+                        <path d="m9.979802,16a0.997,0.997 0 0 1 -0.707,-0.293l-5,-5a0.999,0.999 0 0 1 0,-1.414l5,-5a0.999,0.999 0 1 1 1.414,1.414l-4.293,4.293l4.293,4.293a0.999,0.999 0 0 1 -0.707,1.707z"></path>
+                        <path d="m14.681362,16a0.997,0.997 0 0 1 -0.707,-0.293l-5,-5a0.999,0.999 0 0 1 0,-1.414l5,-5a0.999,0.999 0 1 1 1.414,1.414l-4.293,4.293l4.293,4.293a0.999,0.999 0 0 1 -0.707,1.707z"></path>
+                    </g>
+                </svg>
+            </a>
+       </li>
+       <li class="item">
+            <a href="#" class="link">
+                <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true" width="20" height="20">
+                    <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16z"></path>
+                </svg>
+            </a>
+       </li>
+       <li class="item">
+            <a href="#" class="link">
+                <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true" width="20" height="20">
+                    <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16z"></path>
+                </svg>
+            </a>
+       </li>
+       <li class="item">
+            <a href="#" class="link">
+                <svg viewBox="0 0 20 20" focusable="false" aria-hidden="true" width="20" height="20">
+                    <g>
+                        <path d="M9.7,4c0.3,0,0.5,0.1,0.7,0.3l5,5c0.4,0.4,0.4,1,0,1.4c0,0,0,0,0,0l-5,5c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4l4.3-4.3L9,5.7c-0.4-0.4-0.4-1,0-1.4C9.2,4.1,9.4,4,9.7,4z"></path>
+                        <path d="M5,4c0.3,0,0.5,0.1,0.7,0.3l5,5c0.4,0.4,0.4,1,0,1.4c0,0,0,0,0,0l-5,5c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4L8.6,10L4.3,5.7c-0.4-0.4-0.4-1,0-1.4C4.5,4.1,4.7,4,5,4z"></path>
+                    </g>
+                </svg>
+            </a>
+       </li>
+    </ul>
+</nav>
