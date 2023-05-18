@@ -30,11 +30,18 @@ $pagination: functions.get-theme($theme, 'components.pagination');
       margin-left: -1px;
     }
 
-    &:first-child,
+    &:first-child {
+      .link {
+        @if ($is-border-radius-enabled) {
+          @include mixins.border-radius(var(--#{$prefix}-pagination-border-radius) 0 0 var(--#{$prefix}-pagination-border-radius));
+        }
+      }
+    }
+
     &:last-child {
       .link {
         @if ($is-border-radius-enabled) {
-          @include mixins.border-radius(var(--#{$prefix}-pagination-border-radius));
+          @include mixins.border-radius(0 var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius) 0);
         }
       }
     }

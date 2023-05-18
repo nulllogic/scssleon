@@ -55,32 +55,38 @@ $html-config: (
     h1 : (
       font-size: 3.5rem,
       line-height : inherit,
-      margin: 0
+      margin: 0,
+      font-weight: 500
     ),
     h2 : (
       font-size: 2.8rem,
       line-height : inherit,
-      margin: 0
+      margin: 0,
+      font-weight: 500
     ),
     h3 : (
       font-size: 2.4rem,
       line-height : inherit,
-      margin: 0
+      margin: 0,
+      font-weight: 500
     ),
     h4 : (
       font-size: 2rem,
       line-height : inherit,
-      margin: 0
+      margin: 0,
+      font-weight: 500
     ),
     h5 : (
       font-size: 1.8rem,
       line-height : inherit,
-      margin: 0
+      margin: 0,
+      font-weight: 500
     ),
     h6 : (
       font-size: 1.625rem,
       line-height : inherit,
-      margin: 0
+      margin: 0,
+      font-weight: 500
     ),
     p : (
       margin: 0
@@ -317,9 +323,9 @@ $components-config: (
 
         dark : (
           box-shadow: none,
-          --background: #f1f2f4,
-          --background-hover: #f1f2f4,
-          --border: 1px solid #caced3,
+          --background: rgba(168, 168, 168, 0.1),
+          --background-hover: #343d46,
+          --border: 1px solid rgba(153, 153, 153, 0.46),
           --border-hover: 1px solid #cacfff
         )
       )
