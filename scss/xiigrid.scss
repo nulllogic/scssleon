@@ -125,7 +125,6 @@
   $config : config.$updated,
   $theme: theme.$updated
 );
-////@use "components/modal";
 
 @use 'components/alert' with (
   $config : config.$updated,
@@ -149,6 +148,9 @@
   $config : config.$updated,
   $theme: theme.$updated
 );
+
+// Modal
+////@use "components/modal";
 
 // Helpers
 @use "helpers/clearfix";
