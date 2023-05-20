@@ -1,5 +1,4 @@
 ---
-layout: ~/layouts/docs.astro
 title: Pagination
 description: Pagination
 group: components
