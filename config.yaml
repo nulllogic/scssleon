@@ -45,7 +45,7 @@ module:
 
 params:
   description:          "An advanced responsive front-end framework"
-  authors:              "Vladimir Lukyanov, and xiigrid contributors"
+  authors:              "Vladimir Lukyanov, and XII/Grid contributors"
 
   current_version:      "1.0"
   docs_version:         "1.0"

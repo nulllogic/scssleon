@@ -1,5 +1,4 @@
 ---
-layout: ~/layouts/docs.astro
 title: Breadcrumb
 description: Breadcrumb
 group: components
@@ -10,7 +9,6 @@ toc: true
 
 Use an ordered or unordered list with linked list items to create a minimally styled breadcrumb. Use our utilities to add additional styles as desired.
 
-{{< example >}}
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="item active" aria-current="page">Home</li>
@@ -31,20 +29,17 @@ Use an ordered or unordered list with linked list items to create a minimally st
     <li class="item active" aria-current="page">Data</li>
   </ol>
 </nav>
-{{< /example >}}
 
 ## Dividers
 
 Dividers are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). They can be changed by modifying a local CSS custom property `--xii-breadcrumb-divider`, or through the `$breadcrumb-divider` Sass variable — and `$breadcrumb-divider-flipped` for its RTL counterpart, if needed. We default to our Sass variable, which is set as a fallback to the custom property. This way, you get a global divider that you can override without recompiling CSS at any time.
 
-{{< example >}}
 <nav style="--xii-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="item"><a href="#">Home</a></li>
     <li class="item active" aria-current="page">Library</li>
   </ol>
 </nav>
-{{< /example >}}
 
 When modifying via Sass, the [quote](https://sass-lang.com/documentation/modules/string#quote) function is required to generate the quotes around a string. For example, using `>` as the divider, you can use this:
 
@@ -76,14 +71,12 @@ $breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/
 
 You can also remove the divider setting `--xii-breadcrumb-divider: '';` (empty strings in CSS custom properties counts as a value), or setting the Sass variable to `$breadcrumb-divider: none;`.
 
-{{< example >}}
 <nav style="--xii-breadcrumb-divider: '';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="item"><a href="#">Home</a></li>
     <li class="item active" aria-current="page">Library</li>
   </ol>
 </nav>
-{{< /example >}}
 
 
 ```scss
