@@ -96,7 +96,7 @@ $default-config: map.deep-merge($default-config, $enable-rules-config);
 $content-default-config: (
   content : (
     elements: (
-      margin : 0 0 1em 0
+      margin : 0 0 1rem 0
     )
   )
 ) !default;

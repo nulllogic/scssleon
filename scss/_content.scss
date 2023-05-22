@@ -14,6 +14,7 @@ $content-elements-margin: functions.get-config($config, 'content.elements.margin
 
 @if ($is-content-enabled) {
   .content {
+    h1, h2, h3, h4, h5, h6,
     p,
     dl,
     ol,
@@ -21,7 +22,7 @@ $content-elements-margin: functions.get-config($config, 'content.elements.margin
     blockquote,
     pre,
     table:not(:last-child) {
-        margin-bottom: $content-elements-margin
+      margin: $content-elements-margin
     }
   }
 }
