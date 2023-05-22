@@ -54,67 +54,44 @@ It's also possible to use an **embedded SVG icon**. Apply it via our CSS custom 
 
 Inlining SVG as data URI requires to URL escape a few characters, most notably `<`, `>` and `#`. That's why the `$breadcrumb-divider` variable is passed through our [`escape-svg()` Sass function](). When using the CSS custom property, you need to URL escape your SVG on your own. Read [Kevin Weber's explanations on CodePen](https://codepen.io/kevinweber/pen/dXWoRw ) for detailed information on what to escape.
 
-[//]: # ()
-[//]: # (<nav style="--xii-breadcrumb-divider: url&#40;&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;&#41;;" aria-label="breadcrumb">)
 
-[//]: # (  <ol class="breadcrumb">)
+<nav style="--xii-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="item"><a href="#">Home</a></li>
+    <li class="item active" aria-current="page">Library</li>
+  </ol>
+</nav>
 
-[//]: # (    <li class="item"><a href="#">Home</a></li>)
-
-[//]: # (    <li class="item active" aria-current="page">Library</li>)
-
-[//]: # (  </ol>)
-
-[//]: # (</nav>)
-
-[//]: # ()
 [//]: # (```scss)
 
 [//]: # ($breadcrumb-divider: url&#40;"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>"&#41;;)
 
 [//]: # (```)
 
-[//]: # ()
-[//]: # (You can also remove the divider setting `--xii-breadcrumb-divider: '';` &#40;empty strings in CSS custom properties counts as a value&#41;, or setting the Sass variable to `$breadcrumb-divider: none;`.)
+You can also remove the divider setting `--xii-breadcrumb-divider: '';` (empty strings in CSS custom properties counts as a value), or setting the Sass variable to `$breadcrumb-divider: none;`.
 
-[//]: # ()
-[//]: # (<nav style="--xii-breadcrumb-divider: '';" aria-label="breadcrumb">)
+<nav style="--xii-breadcrumb-divider: '';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="item"><a href="#">Home</a></li>
+    <li class="item active" aria-current="page">Library</li>
+  </ol>
+</nav>
 
-[//]: # (  <ol class="breadcrumb">)
 
-[//]: # (    <li class="item"><a href="#">Home</a></li>)
+```scss
+$breadcrumb-divider: none;
+```
 
-[//]: # (    <li class="item active" aria-current="page">Library</li>)
+## Accessibility
 
-[//]: # (  </ol>)
+Since breadcrumbs provide a navigation, it's a good idea to add a meaningful label such as `aria-label="breadcrumb"` to describe the type of navigation provided in the `<nav>` element, as well as applying an `aria-current="page"` to the last item of the set to indicate that it represents the current page.
 
-[//]: # (</nav>)
+For more information, see the [ARIA Authoring Practices Guide breadcrumb pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/).
 
-[//]: # ()
-[//]: # ()
-[//]: # (```scss)
+## CSS
 
-[//]: # ($breadcrumb-divider: none;)
+### Variables
 
-[//]: # (```)
+As part of xiigrid's evolving CSS variables approach, breadcrumbs now use local CSS variables on `.breadcrumb` for enhanced real-time customization. Values for the CSS variables are set via SCSS, so SCSS customization is still supported, too.
 
-[//]: # ()
-[//]: # (## Accessibility)
-
-[//]: # ()
-[//]: # (Since breadcrumbs provide a navigation, it's a good idea to add a meaningful label such as `aria-label="breadcrumb"` to describe the type of navigation provided in the `<nav>` element, as well as applying an `aria-current="page"` to the last item of the set to indicate that it represents the current page.)
-
-[//]: # ()
-[//]: # (For more information, see the [ARIA Authoring Practices Guide breadcrumb pattern]&#40;https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/&#41;.)
-
-[//]: # ()
-[//]: # (## CSS)
-
-[//]: # ()
-[//]: # (### Variables)
-
-[//]: # ()
-[//]: # (As part of xiigrid's evolving CSS variables approach, breadcrumbs now use local CSS variables on `.breadcrumb` for enhanced real-time customization. Values for the CSS variables are set via SCSS, so SCSS customization is still supported, too.)
-
-[//]: # ()
-[//]: # (### Sass variables)
+### Sass variables
