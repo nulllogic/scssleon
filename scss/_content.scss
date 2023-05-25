@@ -22,7 +22,11 @@ $content-elements-margin: functions.get-config($config, 'content.elements.margin
     blockquote,
     pre,
     table:not(:last-child) {
-      margin: $content-elements-margin
+      margin: $content-elements-margin;
+    }
+
+    p {
+      line-height: 1.5;
     }
   }
 }
