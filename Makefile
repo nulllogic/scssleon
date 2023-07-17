@@ -1,4 +1,4 @@
-.PHONY: help docs-build docs dist
+.PHONY: help build docs dist watch
 
 CURRENT_DIR := $(shell pwd)
 
@@ -13,10 +13,10 @@ watch:
 	@echo "[Watching SCSS files for changes]"
 	npm run watch
 
-docs:
-	@echo "Running docs at http://localhost:8000/xiigrid/"
-	docker run --rm -it -v $(CURRENT_DIR):/src -p 8000:3000 klakegg/hugo:ext-ubuntu server
+watch:
+	@echo "[Watching for changes]"
+	docker run --rm -it -v $(CURRENT_DIR)/:/app xiigrid
 
-docs-build:
-	@echo "Generating docs"
-	docker run --rm -it -v $(CURRENT_DIR):/src klakegg/hugo:ext-ubuntu
+build:
+	@echo "[Building Docker image]"
+	docker build -t xiigrid .
