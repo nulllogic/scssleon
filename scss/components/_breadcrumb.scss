@@ -16,25 +16,27 @@ $prefix: functions.get-config($config, 'prefix');
 
 .breadcrumb {
 
+  /*
+
+  -- Note --
+  In order to override the breadcrumb divider option, we will need to put
+  style inside .breadcrumb class
+
+  */
+
   @include mixins.generate-properties('breadcrumb', $breadcrumb-component, $config);
 
-  display: flex;
-  flex-wrap: wrap;
-
   .item {
+    display: inline-flex;
+    align-items: center;
 
     .link {
-
+      display: inline-flex;
+      align-items: center;
     }
 
     + .item {
-
       padding: var(--#{$prefix}-breadcrumb-padding);
-
-      &::before {
-        content: var(--#{$prefix}-breadcrumb-divider);
-        padding: var(--#{$prefix}-breadcrumb-padding);
-      }
     }
 
     &.active {

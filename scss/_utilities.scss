@@ -11,7 +11,7 @@ $utilities: map-merge((
         "display": (
                 print: true,
                 property: display,
-                class: d,
+                class: display,
                 values: inline inline-block block grid table table-row table-cell flex inline-flex none
         ),
 ////////// scss-docs-end utils-display

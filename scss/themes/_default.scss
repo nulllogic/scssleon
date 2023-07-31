@@ -297,9 +297,10 @@ $components-config: (
 
     breadcrumb : (
 
-      --divider : '>',
-      --padding: 0 8px 0 5px,
+      --padding: 0 0 0 5px,
       list-style: none,
+      align-items: center,
+
       display: flex,
       flex-wrap: wrap,
 
