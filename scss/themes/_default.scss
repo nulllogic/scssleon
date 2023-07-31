@@ -296,8 +296,22 @@ $components-config: (
     ),
 
     breadcrumb : (
-      list-style: none,
 
+      --divider : '>',
+      --padding: 0 8px 0 5px,
+      list-style: none,
+      display: flex,
+      flex-wrap: wrap,
+
+      colors: (
+        light : (
+
+        ),
+
+        dark : (
+
+        )
+      )
     ),
 
     table : (
