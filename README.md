@@ -65,3 +65,10 @@ Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infras
 </p>
 
 [MIT license](LICENSE)
+
+```mermaid
+graph LR
+  Frontend -->|API| Backend
+  Backend -->|Database| PostgreSQL
+  Backend -->|Payment| PaymentService
+```
