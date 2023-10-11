@@ -10,10 +10,6 @@ dist:
 	npm run css && npm run minify
 
 watch:
-	@echo "[Watching SCSS files for changes]"
-	npm run watch
-
-watch:
 	@echo "[Watching for changes]"
 	docker run --rm -it -v $(CURRENT_DIR)/:/app xiigrid
 
