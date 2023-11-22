@@ -1,9 +1,7 @@
 /* - ૮₍ ˃ ⤙ ˂ ₎ა – root  */
-@use 'sass:list';
-@use "sass:meta";
-@use "sass:string";
-@use 'functions' as functions;
-@use 'mixins' as mixins;
+@use 'sass:string';
+@use './mixins' as mixins;
+@use './functions' as functions;
 
 $config: () !default;
 $theme: () !default;
