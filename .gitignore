@@ -12,7 +12,7 @@
 nbproject
 Thumbs.db
 /.vscode/
-.package_lock.json
+package_lock.json
 
 # Node modules
 node_modules

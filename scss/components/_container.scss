@@ -3,8 +3,9 @@
 │  │ ││││ │ ├─┤││││├┤ ├┬┘
 └─┘└─┘┘└┘ ┴ ┴ ┴┴┘└┘└─┘┴└─
 */
-@use '../mixins/container' as mixins;
-@use '../mixins/breakpoints' as breakpoints;
+
+@use 'sass:map';
+@use '../mixins' as mixins;
 @use '../functions' as functions;
 
 $config: nil !default;
@@ -26,7 +27,7 @@ $grid-breakpoints: functions.get-config($config, 'grid-breakpoints');
       @extend .container-fluid;
     }
 
-    @include breakpoints.media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    @include mixins.media-breakpoint-up($breakpoint, $grid-breakpoints) {
       %responsive-container-#{$breakpoint} {
         max-width: $container-max-width;
       }
@@ -36,7 +37,7 @@ $grid-breakpoints: functions.get-config($config, 'grid-breakpoints');
       @each $name, $width in $grid-breakpoints {
         @if ($extend-breakpoint) {
 
-          .container#{breakpoints.breakpoint-infix($name, $grid-breakpoints)} {
+          .container#{mixins.breakpoint-infix($name, $grid-breakpoints)} {
             @extend %responsive-container-#{$breakpoint};
           }
 

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../config';
 
 // Breakpoint viewport sizes and media queries.
@@ -11,13 +12,13 @@
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.
 @function breakpoint-min($name, $breakpoints) {
-  $min: map-get($breakpoints, $name);
+  $min: map.get($breakpoints, $name);
   @return if($min != 0, $min, null);
 }
 
 // Maximum breakpoint width.
 @function breakpoint-max($name, $breakpoints) {
-  $max: map-get($breakpoints, $name);
+  $max: map.get($breakpoints, $name);
   @return if($max and $max > 0, $max - .02, null);
 }
 

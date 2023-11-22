@@ -12,7 +12,7 @@
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-congig($config, 'prefix');
+$prefix: functions.get-config($config, 'prefix');
 
 $is-reset-enabled: functions.get-config($config, 'enable.reset');
 $is-button-pointers-enabled: functions.get-config($config, 'enable.button-pointers');

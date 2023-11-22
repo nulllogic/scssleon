@@ -1,6 +1,6 @@
 .PHONY: help build docs dist watch
 
-CURRENT_DIR := $PWD
+CURRENT_DIR := $(PWD)
 
 help:
 	@echo "[ENV SETUP]"

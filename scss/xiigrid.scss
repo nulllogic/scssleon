@@ -155,5 +155,8 @@
 // Helpers
 @use "helpers/clearfix";
 
-//// Utilities
-//@use "utilities/api";
+// Utilities
+@use "utilities/api" with (
+  $config : config.$updated,
+  $theme : theme.$updated
+);

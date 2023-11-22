@@ -1,29 +1,36 @@
+@use 'sass:map';
 
-@use '../config';
-@use '../utilities';
+@use '../functions' as functions;
 @use '../mixins' as mixins;
 
+$config: nil !default;
+$theme: nil !default;
+
+$grid-breakpoints: functions.get-config($config, 'grid-breakpoints');
+
 // Loop over each breakpoint
-@each $breakpoint in map-keys(config.$grid-breakpoints) {
+@each $breakpoint, $size in $grid-breakpoints {
+
+// @debug $breakpoint, $size;
 
   // Generate media query if needed
-  @include mixins.media-breakpoint-up($breakpoint) {
-    $infix: mixins.breakpoint-infix($breakpoint, config.$grid-breakpoints);
-
-    // Loop over each utility property
-    @each $key, $utility in utilities.$utilities {
-      @if type-of($utility) == "map" and (map-get($utility, responsive) or $infix == "") {
-        @include mixins.generate-utility($utility, $infix);
-      }
-    }
-  }
+//  @include mixins.media-breakpoint-up($breakpoint, $size) {
+//    $infix: mixins.breakpoint-infix($breakpoint, $size);
+//
+//    // Loop over each utility property
+//    @each $key, $utility in utilities.$utilities {
+//      @if type-of($utility) == "map" and (map-get($utility, responsive) or $infix == "") {
+//        @include mixins.generate-utility($utility, $infix);
+//      }
+//    }
+//  }
 }
 
 // Print utilities
 @media print {
-  @each $key, $utility in utilities.$utilities {
-    @if type-of($utility) == "map" and map-get($utility, print) == true {
-      @include mixins.generate-utility($utility, "-print");
-    }
-  }
+//  @each $key, $utility in utilities.$utilities {
+//    @if type-of($utility) == "map" and map-get($utility, print) == true {
+//      @include mixins.generate-utility($utility, "-print");
+//    }
+//  }
 }

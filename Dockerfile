@@ -1,4 +1,4 @@
-FROM node:current-slim as astro
+FROM node:slim as astro
 
 LABEL version="1.0.0"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
@@ -8,6 +8,6 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN ["npm", "i"]
+RUN npm install
 
 CMD ["npm", "run", "watch"]
