@@ -1,4 +1,4 @@
-// Config
+// ↓ Config
 // Override default config | @example
 @use "config" as config with (
   $custom : (
@@ -45,7 +45,7 @@
   )
 );
 
-// Theme
+// ↓ Theme
 /* Override default settings in the theme | @example */
 @use "themes/default" as theme with (
   $custom : (
@@ -62,7 +62,7 @@
   )
 );
 
-// Root
+// ↓ Root
 @use 'root' with (
   $config : config.$updated,
   $theme: theme.$updated
@@ -88,23 +88,23 @@
   $theme: theme.$updated
 );
 
-// Container
+// ↓ Container
 @use 'components/container' with (
   $config : config.$updated
 );
 
-// Grid
+// ↓ Grid
 @use 'components/grid' with (
   $config : config.$updated,
 );
 
-// Badge
+// ↓ Badge
 @use 'components/badge' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
-// Form
+// ↓ Form
 @use 'components/form' with (
   $config : config.$updated,
   $theme: theme.$updated
@@ -114,13 +114,13 @@
 //@use "components/button";
 ////@use "components/button-group";
 
-// Navigation bar
+// ↓ Navigation bar
 @use 'components/navbar' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
-// Breadcrumbs
+// ↓ Breadcrumbs
 @use 'components/breadcrumb' with (
   $config : config.$updated,
   $theme: theme.$updated
@@ -131,31 +131,31 @@
   $theme: theme.$updated
 );
 
-// Table
+// ↓ Table
 @use 'components/table' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
-// Pagination
+// ↓ Pagination
 @use 'components/pagination' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
-// Placeholder
+// ↓ Placeholder
 @use 'components/placeholder' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
-// Modal
+// ↓ Modal
 ////@use "components/modal";
 
-// Helpers
+// ↓ Helpers
 @use "helpers/clearfix";
 
-// Utilities
+// ↓ Utilities
 @use "utilities/api" with (
   $config : config.$updated,
   $theme : theme.$updated

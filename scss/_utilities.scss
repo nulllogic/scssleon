@@ -11,11 +11,51 @@ $utilities: () !default;
 
 $utilities: map.merge((
   "display" : (
-
+    responsive: false,
+    values: (
+      block: block,
+      inline-block: inline-block,
+      inline: inline,
+      flex: flex,
+      inline-flex: inline-flex,
+      table: table,
+      inline-table: inline-table,
+      table-caption: table-caption,
+      table-cell: table-cell,
+      table-column: table-column,
+      table-column-group: table-column-group,
+      table-footer-group: table-footer-group,
+      table-header-group: table-header-group,
+      table-row-group: table-row-group,
+      table-row: table-row,
+      flow-root: flow-root,
+      grid: grid,
+      inline-grid: inline-grid,
+      contents: contents,
+      list-item: list-item,
+      hidden: hidden
+    ),
   ),
   // Flex
+  flex: (
+    responsive: false,
+    shorthand: flex,
+    values: (
+      initial: 0 1 auto,
+      1: 1 1 0%,
+      auto: 1 1 auto,
+      none: none
+    ),
+  ),
   "flex-direction" : (
-
+    responsive: false,
+    shorthand: flex,
+    values: (
+      row: row,
+      row-reverse: row-reverse,
+      col: column,
+      col-reverse: column-reverse
+    ),
   ),
   "flex-glow" : (
 
@@ -24,19 +64,40 @@ $utilities: map.merge((
 
   ),
   "flex-wrap" : (
+    values : (
+      flex-wrap : flex-wrap,
+    )
+  ),
 
+  "order" : (
+    values : (
+      first: -1,
+      0: 0,
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      last: 6,
+    )
   ),
   
   "align-items" : (
 
   ),
+
   "align-content" : (
-
+    values: (
+      center: center,
+      start: flex-start,
+      end: flex-end,
+      between: space-between,
+      around: space-around,
+      evenly: space-evenly,
+    ),
   ),
+
   "align-self" : (
-
-  ),
-  "order" : (
 
   ),
 
@@ -45,15 +106,24 @@ $utilities: map.merge((
   ),
 
   "float" : (
-
+    values: (
+      left: left,
+      right: right,
+      none: none,
+    )
   ),
 
   "overflow" : (
 
   ),
-
   "position" : (
-
+    values: (
+      static: static,
+      fixed: fixed,
+      absolute: absolute,
+      relative : relative,
+      sticky : sticky
+    )
   ),
 
   "width" : (
@@ -86,6 +156,10 @@ $utilities: map.merge((
   ),
 
   "visibility" : (
-
+    values: (
+      visible: visible,
+      invisible: invisible,
+      collapse: collapse,
+    )
   )
-), $uti)
+), $utilities)
