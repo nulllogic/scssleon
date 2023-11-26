@@ -340,6 +340,16 @@ $utilities: map.merge((
       auto-rows-max: max-content,
       auto-rows-fr: minmax(0, 1fr)
     )
+  ),
+
+  "column-gap" : (
+    responsive: false,
+    property: "column-gap",
+    values: (
+      gap-x-1 : .25rem,
+      gap-x-2 : .5rem,
+      gap-x-3 : .75rem
+    )
   )
 
 ), $utilities)
