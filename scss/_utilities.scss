@@ -12,6 +12,7 @@ $utilities: () !default;
 $utilities: map.merge((
   "display" : (
     responsive: false,
+    property: 'display',
     values: (
       block: block,
       inline-block: inline-block,
@@ -36,87 +37,186 @@ $utilities: map.merge((
       hidden: hidden
     ),
   ),
+
   // Flex
-  flex: (
+  "flex": (
     responsive: false,
-    shorthand: flex,
+    property: "flex",
     values: (
-      initial: 0 1 auto,
-      1: 1 1 0%,
-      auto: 1 1 auto,
-      none: none
+      flex-initial: 0 1 auto,
+      flex-1: 1 1 0%,
+      flex-auto: 1 1 auto,
+      flex-none: none
     ),
   ),
+
   "flex-direction" : (
     responsive: false,
-    shorthand: flex,
+    property: "flex-direction",
     values: (
-      row: row,
-      row-reverse: row-reverse,
-      col: column,
-      col-reverse: column-reverse
+      flex-row: row,
+      flex-row-reverse: row-reverse,
+      flex-col: column,
+      flex-col-reverse: column-reverse
     ),
   ),
-  "flex-glow" : (
 
+  "flex-grow" : (
+   responsive: false,
+   property: "flex-grow",
+   values: (
+      grow: 1,
+      grow-0: 0
+   )
   ),
+
   "flex-shrink" : (
-
+    responsive: false,
+    property: "flex-shrink",
+    values : (
+      shrink : 1,
+      shrink-0 : 0
+    )
   ),
+
   "flex-wrap" : (
+    responsive: false,
+    property: "flex-wrap",
     values : (
       flex-wrap : flex-wrap,
+      flex-wrap-reverse: flex-wrap-reverse,
+      flex-nowrap: flex-nowrap
     )
   ),
 
   "order" : (
+    responsive: false,
+    property: "order",
     values : (
-      first: -1,
-      0: 0,
-      1: 1,
-      2: 2,
-      3: 3,
-      4: 4,
-      5: 5,
-      last: 6,
+      order-none: 0,
+      order-first: -9999,
+      order-1: 1,
+      order-2: 2,
+      order-3: 3,
+      order-4: 4,
+      order-5: 5,
+      order-6: 6,
+      order-last: 9999,
     )
   ),
   
   "align-items" : (
-
+    responsive: false,
+    property: "align-items",
+    values: (
+      align-items-start: flex-start,
+      align-items-end: flex-end,
+      align-items-center: center,
+      align-items-baseline: baseline,
+      align-items-stretch: stretch
+    )
   ),
 
   "align-content" : (
+    responsive: false,
+    property: "align-content",
     values: (
-      center: center,
-      start: flex-start,
-      end: flex-end,
-      between: space-between,
-      around: space-around,
-      evenly: space-evenly,
+      align-content-center: center,
+      align-content-start: flex-start,
+      align-content-end: flex-end,
+      align-content-between: space-between,
+      align-content-around: space-around,
+      align-content-evenly: space-evenly
     ),
   ),
 
   "align-self" : (
+    responsive: false,
+    property: "align-self",
+    values: (
+      align-self-start : flex-start,
+      align-self-end: flex-end,
+      align-self-center: center,
+      align-self-stretch: stretch,
+      align-self-baseline: baseline
+    )
+  ),
 
+  "justify-content": (
+    responsive: false,
+    property: "justify-content",
+    values: (
+      justify-content-start: flex-start,
+      justify-content-end: flex-end,
+      justify-content-center: center,
+      justify-content-between: space-between,
+      justify-content-around: space-around,
+      justify-content-evenly: space-evenly,
+      justify-content-stretch: stretch
+    )
+  ),
+
+  "justify-items" : (
+    responsive: false,
+    property: "justify-items",
+    values: (
+      justify-items-start: start,
+      justify-items-end: end,
+      justify-items-center: center,
+      justify-items-stretch: stretch
+    )
+  ),
+
+  "justify-self" : (
+    responsive: false,
+    property: "justify-self",
+    values: (
+      justify-self-start: start,
+      justify-self-end: end,
+      justify-self-center: center,
+      justify-self-stretch: stretch
+    )
   ),
 
   "vertical-align" : (
-
+    responsive: false,
+    property: "vertical-align",
+    values: (
+      align-baseline: baseline,
+      align-top: top,
+      align-middle: middle,
+      align-bottom: bottom,
+      align-text-top: text-top,
+      align-text-bottom: text-bottom,
+      align-sub: sub,
+      align-super: super
+    )
   ),
 
   "float" : (
+    responsive: false,
+    property: "float",
     values: (
-      left: left,
-      right: right,
-      none: none,
+      float-left: left,
+      float-right: right,
+      float-none: none,
     )
   ),
 
   "overflow" : (
-
+    responsive: false,
+    property: "overflow",
+    values: (
+      overflow-auto: auto, //@TODO check later
+      overflow-hidden: hidden,
+      overflow-scroll: scroll,
+      overflow-visible: visible
+    )
   ),
+
   "position" : (
+    responsive: false,
+    property: "position",
     values: (
       static: static,
       fixed: fixed,
@@ -126,36 +226,67 @@ $utilities: map.merge((
     )
   ),
 
-  "width" : (
-
-  ),
-
+//  "width" : (
+//
+//  ),
+//
   "max-width" : (
-
+    responsive: false,
+    property: "max-width",
+    values: (
+      max-w-full : 100%,
+      max-w-none: none
+    )
   ),
 
-  // @TODO inspect later
   "min-height" : (
-
+    responsive: false,
+    property: "min-height",
+    values: (
+      min-h-0: 0px,
+      min-h-full: 100%,
+      min-h-screen: 100vh
+    )
   ),
 
   "text-align" : (
-
+    responsive: false,
+    property: "text-align",
+    values: (
+      "text-left": left,
+      "text-right" : right,
+      "text-center" : center
+    )
   ),
-
-  "word-wrap" : (
-
-  ),
-
+//
+//  "word-wrap" : (
+//
+//  ),
+//
   "white-space" : (
-
+    responsive: false,
+    property: "white-space",
+    values: (
+      white-space-normal : normal,
+      white-space-nowrap: nowrap,
+      white-space-brake-spaces: break-spaces
+    )
   ),
 
   "user-select" : (
-
+    responsive: false,
+    property: "user-select",
+    values: (
+      select-none: none,
+      select-text: text,
+      select-all: all,
+      select-auto: auto
+    )
   ),
 
   "visibility" : (
+    responsive: false,
+    property: "visibility",
     values: (
       visible: visible,
       invisible: invisible,
