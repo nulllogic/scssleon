@@ -132,10 +132,10 @@
 );
 
 // ↓ Table
-@use 'components/table' with (
-  $config : config.$updated,
-  $theme: theme.$updated
-);
+//@use 'components/table' with (
+//  $config : config.$updated,
+//  $theme: theme.$updated
+//);
 
 // ↓ Pagination
 @use 'components/pagination' with (
@@ -160,3 +160,9 @@
   $config : config.$updated,
   $theme : theme.$updated
 );
+
+// @TODO 
+// 1. navbar
+// 2. shadows rules
+// 3. pagination
+// 4. buttons

@@ -292,5 +292,54 @@ $utilities: map.merge((
       invisible: invisible,
       collapse: collapse,
     )
+  ),
+
+  "grid-rows" : (
+    responsive: false,
+    property: "grid-template-rows",
+    values : (
+      grid-rows-1 : repeat(1, minmax(0, 1fr)),
+      grid-rows-2 : repeat(2, minmax(0, 1fr)),
+      grid-rows-3 : repeat(3, minmax(0, 1fr)),
+      grid-rows-4 : repeat(4, minmax(0, 1fr)),
+      grid-rows-5 : repeat(5, minmax(0, 1fr)),
+      grid-rows-6 : repeat(6, minmax(0, 1fr)),
+      grid-rows-none : none
+    )
+  ),
+
+  "grid-auto-flow" : (
+    responsive: false,
+    property: "grid-auto-flow",
+    values: (
+      grid-flow-row : row,
+      grid-flow-col : column,
+      grid-flow-dense : dense,
+      grid-flow-row-dense : row dense,
+      grid-flow-col-dense : column dense 
+    )
+  ),
+
+  "grid-auto-columns" : (
+    responsive: false,
+    property: "grid-auto-columns",
+    values: (
+      auto-cols-auto : auto,
+      auto-cols-min : min-content,
+      auto-cols-max : max-content,
+      auto-cols-fr : minmax(0, 1fr)
+    )
+  ),
+
+  "grid-auto-rows" : (
+    responsive: false,
+    property: "grid-auto-rows",
+    values : (
+      auto-rows-auto : auto,
+      auto-rows-min : min-content,
+      auto-rows-max: max-content,
+      auto-rows-fr: minmax(0, 1fr)
+    )
   )
+
 ), $utilities)

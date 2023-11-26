@@ -321,11 +321,12 @@ $components-config: (
 
     pagination : (
 
-      display: flex,
-      list-style: none,
       --item-margin: 0,
       --link-padding: .6rem,
       --border-radius: .1875rem,
+
+      display: flex,
+      list-style: none,
 
       colors: (
         light : (

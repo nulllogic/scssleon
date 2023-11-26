@@ -45,6 +45,14 @@ $pagination: functions.get-theme($theme, 'components.pagination');
         }
       }
     }
+    
+    &:only-child {
+      .link {
+        @if ($is-border-radius-enabled) {
+          @include mixins.border-radius(var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius))
+        }
+      }
+    }
 
     &.active {
       .link {
