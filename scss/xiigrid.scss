@@ -110,6 +110,12 @@
   $theme: theme.$updated
 );
 
+// ↓ Buttons
+@use 'components/button' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
 ////@use "components/icon";
 //@use "components/button";
 ////@use "components/button-group";

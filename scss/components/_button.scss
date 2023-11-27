@@ -6,158 +6,54 @@
 
 @use '../config';
 @use '../themes/default' as theme;
+@use '../functions' as functions;
 
 @use '../mixins' as mixins;
 @use '../mixins/variants/button' as variant;
 
+$config: nil !default;
+$theme: nil !default;
+
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$is-shadow-enabled: functions.get-config($config, 'shadow');
+$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+
+$button-component: functions.get-theme($theme, 'components.button');
+
 .btn {
 
-  // scss-docs-start btn-css-vars
-  --#{config.$prefix}btn-padding: #{config.$btn-padding};
-  --#{config.$prefix}btn-spinner-size: 1.25rem;
-  // scss-docs-end btn-css-vars
+ // border: #{config.$btn-border-width} solid var(--#{config.$prefix}btn-border-color);
 
-  padding: var(--#{config.$prefix}btn-padding) var(--#{config.$prefix}btn-padding);
-  color: var(--#{config.$prefix}btn-color);
+//  @include mixins.border-radius(config.$btn-border-radius);
+//  @include mixins.box-shadow(config.$btn-box-shadow);
+//  @include mixins.transition(config.$btn-transition);
+  
+    @include mixins.generate-properties('button', $button-component, $config);
 
-  border: #{config.$btn-border-width} solid var(--#{config.$prefix}btn-border-color);
+    background: var(--#{$prefix}-button-background);
+    color: var(--#{$prefix}-button-color);
+    padding: var(--#{$prefix}-button-padding);
+    border: 1px solid #ccc;
 
-  text-align: center;
-  text-decoration: if(config.$link-decoration == none, null, none);
 
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
-  white-space: config.$btn-white-space;
-  cursor: if(config.$enable-button-pointers, pointer, null);
-  user-select: none;
-  background-color: var(--#{config.$prefix}btn-bg);
+  @if($is-border-radius-enabled) {
+    @include mixins.border-radius(var(--#{$prefix}-button-border-radius));
+  }
 
-  @include mixins.border-radius(config.$btn-border-radius);
-  @include mixins.box-shadow(config.$btn-box-shadow);
-  @include mixins.transition(config.$btn-transition);
+  @if($is-shadow-enabled) {
+    @include mixins.box-shadow(var(--#{$prefix}-button-shadow));
+  }
 
   &:hover {
-    color: var(--#{config.$prefix}btn-hover-color);
-    text-decoration: if(config.$link-hover-decoration == underline, none, null);
-    background-color: var(--#{config.$prefix}btn-hover-bg);
-    border-color: var(--#{config.$prefix}btn-hover-border-color);
-  }
-
-  .btn-check:focus + &,
-  &:focus {
-    color: var(--#{config.$prefix}btn-hover-color);
-    border-color: var(--#{config.$prefix}btn-hover-border-color);
-    outline: 0;
-    // Avoid using mixin so we can pass custom focus shadow properly
-    @if config.$enable-shadows {
-      box-shadow: var(--#{config.$prefix}btn-box-shadow), var(--#{config.$prefix}btn-focus-box-shadow);
-    } @else {
-      box-shadow: var(--#{config.$prefix}btn-focus-box-shadow);
-    }
-  }
-
-  .btn-check:checked + &,
-  .btn-check:active + &,
-  &:active,
-  &.active,
-  &.show {
-    color: var(--#{config.$prefix}btn-active-color);
-    background-color: var(--#{config.$prefix}btn-active-bg);
-    border-color: var(--#{config.$prefix}btn-active-border-color);
-    @include mixins.box-shadow(var(--#{config.$prefix}btn-active-shadow));
-
-    &:focus {
-      // Avoid using mixin so we can pass custom focus shadow properly
-      @if config.$enable-shadows {
-        box-shadow: var(--#{config.$prefix}btn-active-shadow), var(--#{config.$prefix}btn-focus-box-shadow);
-      } @else {
-        box-shadow: var(--#{config.$prefix}btn-focus-box-shadow);
-      }
-    }
-  }
-
-  &:disabled,
-  &.disabled,
-  fieldset:disabled & {
-    color: var(--#{config.$prefix}btn-disabled-color);
-    pointer-events: none;
-    background-color: var(--#{config.$prefix}btn-disabled-bg);
-    border-color: var(--#{config.$prefix}btn-disabled-border-color);
-    opacity: var(--#{config.$prefix}btn-disabled-opacity);
-    @include mixins.box-shadow(none);
+    color: red;
+    background: red;
+    border: 1px solid green;
   }
 
   &.btn-link {
-    &:focus {
-      box-shadow: var(--#{config.$prefix}btn-focus-box-shadow);
-    }
+    background: transparent;
+    border: none;
   }
 }
-
-// scss-docs-start btn-variant-loops
-@each $color-scheme, $theme-value in theme.$button-colors {
-  @include mixins.color-scheme($color-scheme) {
-    @each $variant, $variant-options in $theme-value {
-      .btn-#{$variant} {
-        @each $state, $values in $variant-options {
-          @include variant.button($state, $values);
-        }
-      }
-    }
-  }
-}
-
-@each $color-scheme, $theme-value in theme.$button-colors-outline {
-  @include mixins.generate-color-scheme($color-scheme) {
-    @each $variant, $variant-options in $theme-value {
-      .btn-outline-#{$variant} {
-        @each $state, $values in $variant-options {
-          @include variant.button($state, $values);
-        }
-      }
-    }
-  }
-}
-
-// scss-docs-end btn-variant-loops
-
-// Make a button look and behave like a link
-.btn-link {
-
-  --#{config.$prefix}btn-font-weight: #{config.$btn-font-weight};
-  --#{config.$prefix}btn-color: #{config.$btn-link-color};
-  --#{config.$prefix}btn-bg: transparent;
-  --#{config.$prefix}btn-border-color: transparent;
-  --#{config.$prefix}btn-hover-color: #{config.$btn-link-hover-color};
-  --#{config.$prefix}btn-hover-border-color: transparent;
-  --#{config.$prefix}btn-active-border-color: transparent;
-  --#{config.$prefix}btn-disabled-border-color: transparent;
-  --#{config.$prefix}btn-focus-shadow-rgb: #{to-rgb(#a7b5c2)};
-
-  text-decoration: config.$link-decoration;
-  box-shadow: none;
-
-  &:hover,
-  &:focus {
-    text-decoration: config.$link-hover-decoration;
-  }
-
-  &:focus {
-    color: var(--#{config.$prefix}btn-color);
-  }
-
-  &:hover {
-    color: var(--#{config.$prefix}btn-hover-color);
-  }
-}
-
-// Button Sizes
-.btn-lg {
-  //@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
-}
-
-.btn-sm {
-  //@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-}
-
