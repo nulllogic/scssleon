@@ -51,8 +51,10 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
 
   &.wave {
     .el {
-      mask-image: linear-gradient(90deg, #0000, #fff, #0000);
       mask-size: 200% 100%;
+      -webkit-mask-size: 200% 100%;
+      mask-image: linear-gradient(90deg, #0000, #fff, #0000);
+      -webkit-mask-image: linear-gradient(90deg, #0000, #fff, #0000);
       animation: placeholder-wave 2s linear infinite;
     }
   }
@@ -68,5 +70,6 @@ $placeholder : functions.get-theme($theme, 'components.placeholder');
 @keyframes placeholder-wave {
   100% {
     mask-position: -200% 0;
+    -webkit-mask-position: -200% 0;
   }
 }
