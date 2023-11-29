@@ -312,6 +312,7 @@ $components-config: (
       white-space: nowrap,
       user-select: none,
       text-decoration: none,
+      cursor: pointer,
 
       colors: (
         
@@ -321,11 +322,17 @@ $components-config: (
         ),
 
         dark: (
+          // Default
           color: #fff,
           background: rgb(48, 56, 66),
-          border: 1px solid rgba(182, 199, 216, .35)
+          border: 1px solid rgba(240, 246, 252, .25),
+
+          // Hover state
+          hover-color: #fff,
+          hover-background: rgb(59, 68, 81),
+          hover-border: 1px solid rgba(229, 235, 240, .55)
         )
-      )
+      ),
     ),
 
     table : (

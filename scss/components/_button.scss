@@ -46,9 +46,9 @@ $button-component: functions.get-theme($theme, 'components.button');
   }
 
   &:hover {
-    color: red;
-    background: red;
-    border: 1px solid green;
+    color: var(--#{$prefix}-button-hover-color);
+    background: var(--#{$prefix}-button-hover-background);
+    border: var(--#{$prefix}-button-hover-border);
   }
 
   &.btn-link {
