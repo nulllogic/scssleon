@@ -10,6 +10,7 @@ $theme: nil !default;
 $utilities: () !default;
 
 $utilities: map.merge((
+
   "display" : (
     responsive: false,
     property: 'display',
@@ -350,6 +351,6 @@ $utilities: map.merge((
       gap-x-2 : .5rem,
       gap-x-3 : .75rem
     )
-  )
+  ),
 
 ), $utilities)

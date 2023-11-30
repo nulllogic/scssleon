@@ -22,14 +22,9 @@ $alert-component: functions.get-theme($theme, 'components.alert');
 
 .alert {
 
-  position: relative;
-  display: flex;
-
   padding: var(--#{$prefix}-alert-padding);
-  outline: 1px solid transparent;
   border: var(--#{$prefix}-alert-border);
   background: var(--#{$prefix}-alert-background);
-//  box-shadow: var(--#{$prefix}-alert-box-shadow);
 
   @include mixins.generate-properties('alert', $alert-component, $config);
 

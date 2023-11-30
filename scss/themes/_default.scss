@@ -239,6 +239,10 @@ $components-config: (
       --border-radius: .25rem,
       --padding: 1.25rem,
 
+      outline: 1px solid transparent,
+      position: relative,
+      display: flex,
+
       colors: (
 
         light : (

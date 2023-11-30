@@ -24,12 +24,6 @@ $button-component: functions.get-theme($theme, 'components.button');
 
 .btn {
 
- // border: #{config.$btn-border-width} solid var(--#{config.$prefix}btn-border-color);
-
-//  @include mixins.border-radius(config.$btn-border-radius);
-//  @include mixins.box-shadow(config.$btn-box-shadow);
-//  @include mixins.transition(config.$btn-transition);
-  
   @include mixins.generate-properties('button', $button-component, $config);
 
   background: var(--#{$prefix}-button-background);
