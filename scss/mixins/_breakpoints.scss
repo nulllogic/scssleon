@@ -8,13 +8,11 @@ $breakpoints : config.$container-breakpoints-config;
 
 @mixin breakpoint($name) {
 
-  @if not map-has-key($breakpoints, $name) {
-    //@error 'Oops! Invalid breakpoint.';
-    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  @if not map.has-key($breakpoints, $name) {
+    @error 'Oops! `#{$name}` is not a valid breakpoint name.';
   } @else {
-    @media (min-width: map.get($breakpoints, $name)) {
+    @media (min-width: map.get($breakpoints, $name) and not all) {
       @content;
     }
   }
-
 }

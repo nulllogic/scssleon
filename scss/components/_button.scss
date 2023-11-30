@@ -46,4 +46,11 @@ $button-component: functions.get-theme($theme, 'components.button');
     background: transparent;
     border: none;
   }
+
+  &.btn[disabled] {
+    color: var(--#{$prefix}-button-hover-color);
+    background: var(--#{$prefix}-button-hover-background);
+    border: var(--#{$prefix}-button-hover-border);
+  }
+
 }

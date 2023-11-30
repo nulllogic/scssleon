@@ -334,7 +334,12 @@ $components-config: (
           // Hover state
           hover-color: #fff,
           hover-background: rgb(59, 68, 81),
-          hover-border: 1px solid rgba(229, 235, 240, .55)
+          hover-border: 1px solid rgba(229, 235, 240, .55),
+
+          // Disabled state
+          disabled-color: #fff,
+          disabled-background: rgb(59, 68, 81),
+          disabled-border: 1px solid rgba(229, 235, 240, .55),
         )
       ),
     ),
