@@ -20,13 +20,13 @@ $is-spacing-enabled: functions.get-config($config, 'enable.spacing');
 
 $color-scheme: functions.get-config($config, 'color-scheme');
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 @if $is-reset-enabled {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
   // Abbreviations
   // 1. "text-decoration" correct text decoration in Chrome, Edge, Opera, and Safari.

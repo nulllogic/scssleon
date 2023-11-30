@@ -1,9 +1,7 @@
 /*
-*
 ┌┐┌┌─┐┬  ┬┬┌─┐┌─┐┌┬┐┬┌─┐┌┐┌
 │││├─┤└┐┌┘││ ┬├─┤ │ ││ ││││
 ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
-*
 */
 
 @use '../config';
@@ -16,43 +14,6 @@ $theme: nil !default;
 $container-breakpoints: functions.get-config($config, 'container-breakpoints');
 
 .navbar {
-
   position: relative;
-
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-
-  %container-flex-properties {
-    display: flex;
-    flex-wrap: inherit;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  > .container,
-  > .container-fluid {
-    @extend %container-flex-properties;
-  }
-
-  @each $breakpoint, $container-max-width in config.$container-breakpoints-config {
-    > .container#{mixins.breakpoint-infix($breakpoint, config.$container-breakpoints-config)} {
-      @extend %container-flex-properties;
-    }
-  }
-
-  // Navbar navigation items
-  .nav {
-    display: flex;
-    flex: 1 0 0;
-
-    &:last-child {
-      justify-content: flex-end;
-    }
-
-    &.center {
-      flex: 0 0 auto;
-    }
-  }
 }

@@ -1,4 +1,4 @@
-// Helpers
+// ↓ Helpers
 @forward 'mixins/breakpoints';
 @forward 'mixins/clearfix';
 
@@ -7,21 +7,15 @@
 @forward 'mixins/transition';
 @forward 'mixins/gradients';
 
-// Generators
+// ↓ Generators
 @forward 'mixins/generators/color-sheme';
 @forward 'mixins/generators/properties';
 
-
-// Deprecate
-@forward 'mixins/deprecate';
-
-// Utilities
+// ↓ Utilities
 @forward 'mixins/utilities';
 
-// Components
+// ↓ Components
 @forward 'mixins/forms';
-@forward 'mixins/buttons';
 
-// Layout
+// ↓ Layout
 @forward 'mixins/grid';
-@forward 'mixins/container';

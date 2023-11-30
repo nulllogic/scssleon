@@ -2,46 +2,7 @@
 // Override default config | @example
 @use "config" as config with (
   $custom : (
-
     prefix : 'xii',
-    grid-columns : 12,
-
-    grid-breakpoints: (
-      xs: 0,
-      sm: 576px,
-      md: 768px,
-      lg: 992px,
-      xl: 1200px,
-      xxl: 1400px
-    ),
-
-    color-scheme : 'light dark',
-
-    enable: (
-      shadows : true,
-      border-radius: true,
-      transitions: true,
-      reduced-motion : true,
-      smooth-scroll : true,
-      dark-theme: true,
-      spacing : false,
-      reset: false,
-      content: true,
-      rtl : false
-    ),
-
-    z-index : (
-      dropdown: 1000,
-      sticky: 1020,
-      fixed: 1030,
-      offcanvas-backdrop: 1040,
-      offcanvas: 1045,
-      modal-backdrop: 1050,
-      modal: 1055,
-      popover: 1070,
-      tooltip: 1080,
-      toast: 1090
-    )
   )
 );
 
@@ -75,14 +36,14 @@
 );
 
 // Boot
-/* Special utility to dynamically create css properties for html tags, specified in theme */
+// Special utility to dynamically create css properties for html tags, specified in theme
 @use 'boot' with (
   $config : config.$updated,
   $theme: theme.$updated
 );
 
 // Amazing content
-/* Special class `.content` to allow formatting of the default html tags */
+// Special class `.content` to allow formatting of the default html tags
 @use 'content' with (
   $config : config.$updated,
   $theme: theme.$updated
@@ -94,9 +55,9 @@
 );
 
 // ↓ Grid
-@use 'components/grid' with (
-  $config : config.$updated,
-);
+//@use 'components/grid' with (
+//  $config : config.$updated,
+//);
 
 // ↓ Badge
 @use 'components/badge' with (
@@ -156,7 +117,10 @@
 );
 
 // ↓ Modal
-////@use "components/modal";
+@use "components/modal" with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 
 // ↓ Helpers
 @use "helpers/clearfix";

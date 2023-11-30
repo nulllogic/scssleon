@@ -4,12 +4,9 @@
 └─┘└─┘ ┴  ┴ └─┘┘└┘└─┘
 **/
 
-@use '../config';
 @use '../themes/default' as theme;
 @use '../functions' as functions;
-
 @use '../mixins' as mixins;
-@use '../mixins/variants/button' as variant;
 
 $config: nil !default;
 $theme: nil !default;
