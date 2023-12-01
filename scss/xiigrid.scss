@@ -76,6 +76,11 @@
   $config : config.$updated,
   $theme: theme.$updated
 );
+@use 'components/button-group' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
 
 ////@use "components/icon";
 //@use "components/button";

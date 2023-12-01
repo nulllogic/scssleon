@@ -33,7 +33,7 @@ $button-component: functions.get-theme($theme, 'components.button');
   }
 
   @if($is-shadow-enabled) {
-    @include mixins.box-shadow(var(--#{$prefix}-button-shadow));
+    @include mixins.box-shadow(var(--#{$prefix}-button-box-shadow));
   }
 
   &:hover {
