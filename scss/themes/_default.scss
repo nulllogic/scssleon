@@ -385,6 +385,21 @@ $components-config: (
       ),
 
       select : (
+        --border-radius: .25rem,
+        --padding: .5rem .75rem,
+        
+        display: block,
+
+        colors: (
+          light : (
+
+          ),
+          dark : (
+            color: #fff,
+            background: rgb(48, 56, 66),
+            border: 1px solid rgba(240, 246, 252, .25),
+          )
+        )
 
       ),
 

@@ -14,6 +14,11 @@ $theme: nil !default;
   $theme : $theme
 );
 
+@use '../forms/select' with (
+  $config : $config,
+  $theme : $theme
+);
+
 
 //@forward '../forms/form-text';
 //@forward '../forms/form-control';
