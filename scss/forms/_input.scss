@@ -1,0 +1,34 @@
+@use '../themes/default' as theme;
+@use '../functions' as functions;
+@use '../mixins' as mixins;
+
+$config: nil !default;
+$theme: nil !default;
+
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$is-shadow-enabled: functions.get-config($config, 'shadow');
+$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+
+$label-component: functions.get-theme($theme, 'components.form.input');
+
+.input {
+  @include mixins.generate-properties('input', $label-component, $config);
+
+  background: var(--#{$prefix}-input-background);
+  color: var(--#{$prefix}-input-color);
+  padding: var(--#{$prefix}-input-padding);
+  border: var(--#{$prefix}-input-border);
+
+  @if($is-border-radius-enabled) {
+    @include mixins.border-radius(var(--#{$prefix}-input-border-radius));
+  }
+
+  @if($is-shadow-enabled) {
+    @include mixins.box-shadow(var(--#{$prefix}-input-box-shadow));
+  }
+
+
+}
+

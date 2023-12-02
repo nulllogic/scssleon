@@ -359,6 +359,48 @@ $components-config: (
       ),
     ),
 
+    form : (
+      label : (
+        display: block,
+        margin-bottom: 10px,
+      ),
+      
+      input : (
+        --border-radius: .25rem,
+        --padding: .5rem .75rem,
+        
+        display: block,
+
+        colors: (
+          light : (
+
+          ),
+          dark : (
+            color: #fff,
+            background: rgb(48, 56, 66),
+            border: 1px solid rgba(240, 246, 252, .25),
+          )
+        )
+
+      ),
+
+      select : (
+
+      ),
+
+      checkbox : (
+
+      ),
+
+      radio : (
+
+      ),
+
+      validation : (
+
+      )
+    ),
+
     table : (
 
     ),

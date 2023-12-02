@@ -1,36 +1,15 @@
-//
-// Labels
-//
+@use '../themes/default' as theme;
+@use '../functions' as functions;
+@use '../mixins' as mixins;
 
-//.form-label {
-//  margin-bottom: $form-label-margin-bottom;
-//  @include font-size($form-label-font-size);
-//  font-style: $form-label-font-style;
-//  font-weight: $form-label-font-weight;
-//  color: $form-label-color;
-//}
-//
-//// For use with horizontal and inline forms, when you need the label (or legend)
-//// text to align with the form controls.
-//.col-form-label {
-//  padding-top: add($input-padding-y, $input-border-width);
-//  padding-bottom: add($input-padding-y, $input-border-width);
-//  margin-bottom: 0; // Override the `<legend>` default
-//  @include font-size(inherit); // Override the `<legend>` default
-//  font-style: $form-label-font-style;
-//  font-weight: $form-label-font-weight;
-//  line-height: $input-line-height;
-//  color: $form-label-color;
-//}
-//
-//.col-form-label-lg {
-//  padding-top: add($input-padding-y-lg, $input-border-width);
-//  padding-bottom: add($input-padding-y-lg, $input-border-width);
-//  @include font-size($input-font-size-lg);
-//}
-//
-//.col-form-label-sm {
-//  padding-top: add($input-padding-y-sm, $input-border-width);
-//  padding-bottom: add($input-padding-y-sm, $input-border-width);
-//  @include font-size($input-font-size-sm);
-//}
+$config: nil !default;
+$theme: nil !default;
+
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$label-component: functions.get-theme($theme, 'components.form.label');
+
+.label {
+  @include mixins.generate-properties('label', $label-component, $config);
+}
