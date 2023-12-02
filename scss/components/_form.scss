@@ -24,7 +24,7 @@ $theme: nil !default;
   $theme : $theme
 );
 
-@use '../forms/check' with (
+@use '../forms/checkbox' with (
   $config : $config,
   $theme : $theme
 );

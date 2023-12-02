@@ -404,10 +404,36 @@ $components-config: (
       ),
 
       checkbox : (
+        --border-radius: .25rem,
+        --padding: .5rem .75rem,
+        
+        colors: (
+          light : (
+
+          ),
+          dark : (
+            color: #fff,
+            background: rgb(48, 56, 66),
+            border: 1px solid rgba(240, 246, 252, .25),
+          )
+        )
 
       ),
 
       radio : (
+        --border-radius: .25rem,
+        --padding: .5rem .75rem,
+        
+        colors: (
+          light : (
+
+          ),
+          dark : (
+            color: #fff,
+            background: rgb(48, 56, 66),
+            border: 1px solid rgba(240, 246, 252, .25),
+          )
+        )
 
       ),
 

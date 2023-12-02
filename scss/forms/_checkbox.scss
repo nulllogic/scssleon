@@ -11,10 +11,10 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 $is-shadow-enabled: functions.get-config($config, 'shadow');
 $is-border-radius-enabled: functions.get-config($config, 'border-radius');
 
-$label-component: functions.get-theme($theme, 'components.form.radio');
+$label-component: functions.get-theme($theme, 'components.form.checkbox');
 
-.radio {
-  @include mixins.generate-properties('radio', $label-component, $config);
+.checkbox {
+  @include mixins.generate-properties('checkbox', $label-component, $config);
 
   background: var(--#{$prefix}-select-background);
   color: var(--#{$prefix}-select-color);
@@ -30,5 +30,4 @@ $label-component: functions.get-theme($theme, 'components.form.radio');
   }
 
 }
-
 
