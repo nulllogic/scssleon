@@ -359,6 +359,21 @@ $components-config: (
       ),
     ),
 
+    card : (
+     --border-radius: .25rem,
+      --padding: 10px,
+      margin: 0,
+      colors: (
+        light : (
+          background: rbg(200, 200, 200)
+        ),
+        dark : (
+          border: 1px solid rgba(240, 246, 252, .25),
+          background: rgb(13, 17, 23)
+        )
+      )
+    ),
+
     form : (
       label : (
         display: block,
