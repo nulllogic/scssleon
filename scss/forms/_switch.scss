@@ -1,0 +1,18 @@
+@use '../themes/default' as theme;
+@use '../functions' as functions;
+@use '../mixins' as mixins;
+
+$config: nil !default;
+$theme: nil !default;
+
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$is-shadow-enabled: functions.get-config($config, 'shadow');
+$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+
+$label-component: functions.get-theme($theme, 'components.form.input');
+
+.switch {
+
+}

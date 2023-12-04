@@ -1,0 +1,20 @@
+/*
+┌─┐┌─┐┬─┐┌┬┐
+│  ├─┤├┬┘ ││
+└─┘┴ ┴┴└──┴┘
+ */
+
+@use '../config';
+@use '../mixins' as mixins;
+@use '../functions' as functions;
+
+$config: nil !default;
+$theme: nil !default;
+
+$container-breakpoints: functions.get-config($config, 'container-breakpoints');
+
+
+.card {
+
+}
+

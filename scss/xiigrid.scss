@@ -59,6 +59,13 @@
 //  $config : config.$updated,
 //);
 
+// ↓ Card
+@use 'components/card' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
+
 // ↓ Badge
 @use 'components/badge' with (
   $config : config.$updated,
@@ -126,6 +133,19 @@
   $config : config.$updated,
   $theme: theme.$updated
 );
+
+// ↓ Loader
+@use "components/loader" with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
+// ↓ Nav
+@use "components/nav" with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
 
 // ↓ Helpers
 @use "helpers/clearfix";

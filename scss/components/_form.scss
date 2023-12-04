@@ -34,6 +34,11 @@ $theme: nil !default;
   $theme : $theme
 );
 
+@use '../forms/switch' with (
+  $config : $config,
+  $theme : $theme
+);
+
 
 //@forward '../forms/form-text';
 //@forward '../forms/form-control';
