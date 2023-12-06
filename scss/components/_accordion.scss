@@ -24,7 +24,7 @@ $accordion-component: functions.get-theme($theme, 'components.accordion');
   border: var(--#{$prefix}-accordion-border);
   background: var(--#{$prefix}-accordion-background);
 
-  @include mixins.generate-properties('accodion', $accordion-component, $config);
+  @include mixins.generate-properties('accordion', $accordion-component, $config);
 
   @if($is-border-radius-enabled) {
     @include mixins.border-radius(var(--#{$prefix}-accordion-border-radius));

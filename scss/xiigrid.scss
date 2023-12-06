@@ -110,6 +110,12 @@
   $theme: theme.$updated
 );
 
+@use 'components/accordion' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
+
 // ↓ Table
 //@use 'components/table' with (
 //  $config : config.$updated,

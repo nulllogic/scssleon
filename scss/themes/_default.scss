@@ -258,7 +258,7 @@ $components-config: (
       ),
     ),
 
-    accodion : (
+    accordion : (
       
       --border-radius: .25rem,
       --padding: 1.25rem,
@@ -271,7 +271,7 @@ $components-config: (
         ),
 
         dark : (
-          background: rbg(46, 56, 66),
+          background: rgb(46, 56, 66),
         )
       )
     ),
@@ -531,6 +531,20 @@ $components-config: (
         dark : (
           background: #ccc
         )
+      )
+    ),
+
+    nav : (
+
+      colors: (
+        light : (
+          background : #ccc
+        ),
+        
+        dark: (
+          background: rgb(45,56,66)
+        )
+
       )
     )
   )
