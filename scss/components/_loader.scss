@@ -12,11 +12,15 @@ $config: nil !default;
 $theme: nil !default;
 
 $container-breakpoints: functions.get-config($config, 'container-breakpoints');
-$is-transitions-enabled: functions.get-config($config, 'enable.transitions');
+$are-transitions-enabled: functions.get-config($config, 'enable.transitions');
 
 .loader {
   width: 14px;
   height: 14px;
   display: inline-flex;
+
+  @if($are-transitions-enabled) {
+
+  }
 }
 

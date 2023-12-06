@@ -258,6 +258,24 @@ $components-config: (
       ),
     ),
 
+    accodion : (
+      
+      --border-radius: .25rem,
+      --padding: 1.25rem,
+
+      position: relative,
+
+      colors: (
+        light : (
+
+        ),
+
+        dark : (
+          background: rbg(46, 56, 66),
+        )
+      )
+    ),
+
     badge : (
 
       --border-radius: .25rem,
