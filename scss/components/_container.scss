@@ -5,16 +5,41 @@
 **/
 
 @use 'sass:map';
-@use '../mixins' as mixins;
+@use '../themes/default' as theme;
 @use '../functions' as functions;
+@use '../mixins' as mixins;
 
 $config: nil !default;
+$theme: nil !default;
 
-$is-container-classes-enabled: functions.get-config($config, 'enable.container-classes');
-$container-breakpoints: functions.get-config($config, 'container-breakpoints');
-$grid-breakpoints: functions.get-config($config, 'grid-breakpoints');
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$breakpoints: functions.get-config($config, 'breakpoints');
+
+$container-component: functions.get-theme($theme, 'components.container');
 
 // Container
-@if $is-container-classes-enabled {
-  
+
+@mixin get_container_classes() {
+  @include mixins.generate-properties('container', $container-component, $config);
 }
+
+.container {
+  max-width: 100%;
+  @include get_container_classes();
+}
+
+@each $name, $size in $breakpoints {
+  @include mixins.breakpoint($size, 'min') {
+    .#{$name}\:container {
+      max-width: $size;
+      @include get_container_classes();
+    }
+  }
+}
+
+/**
+==[ Note ]==
+We are using mixin here, because @include is not working with @media query in SCSS | 07.12.2023
+**/

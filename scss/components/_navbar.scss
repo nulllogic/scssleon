@@ -4,16 +4,42 @@
 ┘└┘┴ ┴ └┘ ┴└─┘┴ ┴ ┴ ┴└─┘┘└┘
 */
 
-@use '../config';
-@use '../mixins' as mixins;
+@use '../themes/default' as theme;
 @use '../functions' as functions;
+@use '../mixins' as mixins;
 
 $config: nil !default;
 $theme: nil !default;
 
-$container-breakpoints: functions.get-config($config, 'container-breakpoints');
+$prefix: functions.get-config($config, 'prefix');
+$color-scheme: functions.get-config($config, 'color-scheme');
+
+$is-shadow-enabled: functions.get-config($config, 'shadow');
+$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+
+$navbar-component: functions.get-theme($theme, 'components.navbar');
 
 .navbar {
+
+  @include mixins.generate-properties('navbar', $navbar-component, $config);
+
   position: relative;
   display: flex;
+
+  background: var(--#{$prefix}-navbar-background);
+  color: var(--#{$prefix}-navbar-color);
+  padding: var(--#{$prefix}-navbar-padding);
+  border: var(--#{$prefix}-navbar-border);
+
+  .left {
+
+  }
+
+  .center {
+
+  }
+
+  .right {
+
+  }
 }

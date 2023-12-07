@@ -17,11 +17,9 @@ $color-scheme: functions.get-config($config, 'color-scheme');
 $is-shadow-enabled: functions.get-config($config, 'shadow');
 $is-border-radius-enabled: functions.get-config($config, 'border-radius');
 
-
 $container-breakpoints: functions.get-config($config, 'container-breakpoints');
 
 $card-component: functions.get-theme($theme, 'components.card');
-
 
 .card {
   

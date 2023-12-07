@@ -51,7 +51,8 @@
 
 // ↓ Container
 @use 'components/container' with (
-  $config : config.$updated
+  $config : config.$updated,
+  $theme: theme.$updated
 );
 
 // ↓ Grid
@@ -64,7 +65,6 @@
   $config : config.$updated,
   $theme: theme.$updated
 );
-
 
 // ↓ Badge
 @use 'components/badge' with (
@@ -92,12 +92,6 @@
 ////@use "components/icon";
 //@use "components/button";
 ////@use "components/button-group";
-
-// ↓ Navigation bar
-@use 'components/navbar' with (
-  $config : config.$updated,
-  $theme: theme.$updated
-);
 
 // ↓ Breadcrumbs
 @use 'components/breadcrumb' with (
@@ -152,6 +146,11 @@
   $theme: theme.$updated
 );
 
+// ↓ Navigation bar
+@use 'components/navbar' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
 
 // ↓ Helpers
 @use "helpers/clearfix";

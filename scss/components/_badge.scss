@@ -20,8 +20,13 @@ $badge-component: functions.get-theme($theme, 'components.badge');
 
 .badge {
 
-  // scss-docs-start badge-css-vars
   @include mixins.generate-properties('badge', $badge-component, $config);
+
+  display: inline-flex;
+  padding: var(--#{$prefix}-badge-padding);
+  color: var(--#{$prefix}-badge-color);
+  background: var(--#{$prefix}-badge-background);
+  border: var(--#{$prefix}-badge-border);
 
   @if($is-border-radius-enabled) {
     @include mixins.border-radius(var(--#{$prefix}-badge-border-radius));
@@ -30,10 +35,6 @@ $badge-component: functions.get-theme($theme, 'components.badge');
   @if($is-shadow-enabled) {
     @include mixins.box-shadow(var(--#{$prefix}-badge-box-shadow));
   }
-
-  display: inline-block;
-  padding: var(--#{$prefix}-badge-padding);
-  color: var(--#{$prefix}-badge-color);
 }
 
 //// Quick fix for badges in buttons

@@ -1,18 +1,10 @@
 @use 'sass:map';
-@use '../config';
+@use '../functions' as functions;
 
-$config: nil !default;
-$theme: nil !default;
+@mixin breakpoint($size, $type) {
 
-$breakpoints : config.$container-breakpoints-config;
-
-@mixin breakpoint($name) {
-
-  @if not map.has-key($breakpoints, $name) {
-    @error 'Oops! `#{$name}` is not a valid breakpoint name.';
-  } @else {
-    @media (min-width: map.get($breakpoints, $name) and not all) {
-      @content;
-    }
+  @media (screen and min-width: $size) {
+    @content;
   }
+
 }

@@ -27,6 +27,11 @@
 @function get-config($config, $value) {
   $val: null;
 
+  @if($config == nil) {
+    @warn 'Config variable is nil';
+    @return nil;
+  }
+
   @if (str-index($value, '.')) {
     $path: str-split($value, '.');
     $val: map.get($config, $path...);
@@ -43,6 +48,12 @@
 
 @function get-theme($theme, $value) {
   $val: null;
+
+
+  @if($theme == nil) {
+    @warn 'Theme variable is nil';
+    @return nil;
+  }
 
   @if (str-index($value, '.')) {
     $path: str-split($value, '.');
