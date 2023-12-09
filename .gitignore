@@ -17,3 +17,6 @@ package_lock.json
 # Node modules
 node_modules
 package-lock.json
+
+# Ignore generated SCSS
+./dist
