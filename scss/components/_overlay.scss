@@ -1,3 +1,9 @@
+/*
+┌─┐┬  ┬┌─┐┬─┐┬  ┌─┐┬ ┬
+│ │└┐┌┘├┤ ├┬┘│  ├─┤└┬┘
+└─┘ └┘ └─┘┴└─┴─┘┴ ┴ ┴
+*/
+
 @use '../themes/default' as theme;
 @use '../functions' as functions;
 @use '../mixins' as mixins;
@@ -11,8 +17,8 @@ $color_scheme: functions.get-config($config, 'color-scheme');
 $is_shadow_enabled: functions.get-config($config, 'shadow');
 $is_border_radius_enabled: functions.get-config($config, 'border-radius');
 
-$label-component: functions.get-theme($theme, 'components.form.input');
+$overlay_component: functions.get-theme($theme, 'components.overlay');
 
-.switch {
-
+.overlay {
+  @include mixins.generate-properties('overlay', $overlay_component, $config);
 }

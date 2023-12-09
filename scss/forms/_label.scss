@@ -6,7 +6,7 @@ $config: nil !default;
 $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
-$color-scheme: functions.get-config($config, 'color-scheme');
+$color_scheme: functions.get-config($config, 'color-scheme');
 
 $label-component: functions.get-theme($theme, 'components.form.label');
 

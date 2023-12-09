@@ -1,5 +1,6 @@
 FROM alpine:latest as linux
 
+LABEL name="xiidocs"
 LABEL version="1.0.0"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
 LABEL description="Docker container for XII/Grid generator"

@@ -12,17 +12,18 @@ $config: nil !default;
 $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
-$color-scheme: functions.get-config($config, 'color-scheme');
+$color_scheme: functions.get-config($config, 'color-scheme');
 
-$is-shadow-enabled: functions.get-config($config, 'shadow');
-$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+$is_shadow_enabled: functions.get-config($config, 'shadow');
+$is_border_radius_enabled: functions.get-config($config, 'border-radius');
 
-$button-component: functions.get-theme($theme, 'components.button-group');
+$button_group: functions.get-theme($theme, 'components.button-group');
 
 .btn-group {
- 
+
+  @include mixins.generate-properties('button-group', $button_group, $config);
+
   // Remove border radius for inner buttons
-  
   .btn:first-child {
     border-start-end-radius: 0;
     border-end-end-radius: 0;
@@ -49,6 +50,15 @@ $button-component: functions.get-theme($theme, 'components.button-group');
   .btn:hover,
   .btn:focus {
     z-index: 1
+  }
+
+  &.separated {
+    gap: var(--#{$prefix}-button-group-gap);
+
+    .btn {
+      margin: 0;
+      border-radius: var(--#{$prefix}-button-border-radius);
+    }
   }
 
 }

@@ -67,11 +67,11 @@ $grid-breakpoints-config: (
 
 $default-config: map.deep-merge($default-config, $grid-breakpoints-config);
 
-$color-scheme-config: (
+$color_scheme-config: (
   color-scheme : 'light dark',
 );
 
-$default-config: map.deep-merge($default-config, $color-scheme-config);
+$default-config: map.deep-merge($default-config, $color_scheme-config);
 
 $enable-rules-config: (
   enable : (

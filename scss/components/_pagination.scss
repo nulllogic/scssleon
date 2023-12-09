@@ -11,17 +11,17 @@ $config: nil !default;
 $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
-$color-scheme: functions.get-config($config, 'color-scheme');
+$color_scheme: functions.get-config($config, 'color-scheme');
 
-$is-shadow-enabled: functions.get-config($config, 'enable.shadow');
-$is-border-radius-enabled: functions.get-config($config, 'enable.border-radius');
+$is_shadow_enabled: functions.get-config($config, 'enable.shadow');
+$is_border_radius_enabled: functions.get-config($config, 'enable.border-radius');
 
 $pagination: functions.get-theme($theme, 'components.pagination');
 .pagination {
 
   @include mixins.generate-properties('pagination', $pagination, $config);
 
-  @if ($is-shadow-enabled) {
+  @if ($is_shadow_enabled) {
     @include mixins.box-shadow(var(--#{$prefix}-pagination-box-shadow));
   }
 
@@ -33,7 +33,7 @@ $pagination: functions.get-theme($theme, 'components.pagination');
 
     &:first-child {
       .link {
-        @if ($is-border-radius-enabled) {
+        @if ($is_border_radius_enabled) {
           @include mixins.border-radius(var(--#{$prefix}-pagination-border-radius) 0 0 var(--#{$prefix}-pagination-border-radius));
         }
       }
@@ -41,7 +41,7 @@ $pagination: functions.get-theme($theme, 'components.pagination');
 
     &:last-child {
       .link {
-        @if ($is-border-radius-enabled) {
+        @if ($is_border_radius_enabled) {
           @include mixins.border-radius(0 var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius) 0);
         }
       }
@@ -49,7 +49,7 @@ $pagination: functions.get-theme($theme, 'components.pagination');
     
     &:only-child {
       .link {
-        @if ($is-border-radius-enabled) {
+        @if ($is_border_radius_enabled) {
           @include mixins.border-radius(var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius) var(--#{$prefix}-pagination-border-radius))
         }
       }

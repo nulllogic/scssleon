@@ -6,10 +6,10 @@ $config: nil !default;
 $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
-$color-scheme: functions.get-config($config, 'color-scheme');
+$color_scheme: functions.get-config($config, 'color-scheme');
 
-$is-shadow-enabled: functions.get-config($config, 'shadow');
-$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+$is_shadow_enabled: functions.get-config($config, 'shadow');
+$is_border_radius_enabled: functions.get-config($config, 'border-radius');
 
 $label-component: functions.get-theme($theme, 'components.form.select');
 
@@ -23,11 +23,11 @@ $label-component: functions.get-theme($theme, 'components.form.select');
   appearance: none;
   -webkit-appearance: none;
 
-  @if($is-border-radius-enabled) {
+  @if($is_border_radius_enabled) {
     @include mixins.border-radius(var(--#{$prefix}-select-border-radius));
   }
 
-  @if($is-shadow-enabled) {
+  @if($is_shadow_enabled) {
     @include mixins.box-shadow(var(--#{$prefix}-select-box-shadow));
   }
 

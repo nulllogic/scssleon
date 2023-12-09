@@ -116,6 +116,12 @@
 //  $theme: theme.$updated
 //);
 
+// ↓ Overlay
+@use 'components/overlay' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
 // ↓ Pagination
 @use 'components/pagination' with (
   $config : config.$updated,

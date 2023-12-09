@@ -12,10 +12,10 @@ $config: nil !default;
 $theme: nil !default;
 
 $prefix: functions.get-config($config, 'prefix');
-$color-scheme: functions.get-config($config, 'color-scheme');
+$color_scheme: functions.get-config($config, 'color-scheme');
 
-$is-shadow-enabled: functions.get-config($config, 'shadow');
-$is-border-radius-enabled: functions.get-config($config, 'border-radius');
+$is_shadow_enabled: functions.get-config($config, 'shadow');
+$is_border_radius_enabled: functions.get-config($config, 'border-radius');
 
 $container-breakpoints: functions.get-config($config, 'container-breakpoints');
 
@@ -30,11 +30,11 @@ $card-component: functions.get-theme($theme, 'components.card');
   padding: var(--#{$prefix}-card-padding);
   border: var(--#{$prefix}-card-border);
 
-  @if($is-border-radius-enabled) {
+  @if($is_border_radius_enabled) {
     @include mixins.border-radius(var(--#{$prefix}-card-border-radius));
   }
 
-  @if($is-shadow-enabled) {
+  @if($is_shadow_enabled) {
     @include mixins.box-shadow(var(--#{$prefix}-card-box-shadow));
   }
 

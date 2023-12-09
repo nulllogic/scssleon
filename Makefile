@@ -15,4 +15,5 @@ watch:
 
 build:
 	@echo "[Building Docker image]"
-	docker build -t xiigrid . --no-cache
+	docker image prune --filter label=name=xiigrid
+	docker build -t xiigrid .

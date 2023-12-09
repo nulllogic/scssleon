@@ -18,7 +18,7 @@ $is-reset-enabled: functions.get-config($config, 'enable.reset');
 $is-button-pointers-enabled: functions.get-config($config, 'enable.button-pointers');
 $is-spacing-enabled: functions.get-config($config, 'enable.spacing');
 
-$color-scheme: functions.get-config($config, 'color-scheme');
+$color_scheme: functions.get-config($config, 'color-scheme');
 
 @each $tag, $properties in functions.get-theme($theme, 'html') {
   #{$tag} {
