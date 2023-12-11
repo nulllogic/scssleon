@@ -11,7 +11,7 @@ dist:
 
 watch:
 	@echo "[Watching for changes]"
-	docker run --rm -it -v $(CURRENT_DIR)/:/app xiigrid npm run watch
+	docker run --rm -it -v $(CURRENT_DIR)/:/app xiigrid --watch ./scss/xiigrid.scss ./dist/css/xiigrid.css
 
 build:
 	@echo "[Building Docker image]"
