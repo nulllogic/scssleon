@@ -16,4 +16,4 @@ watch:
 build:
 	@echo "[Building Docker image]"
 	docker image prune --filter label=name=xiigrid
-	docker build -t xiigrid .
+	docker build --build-arg SASS_VERSION=1.69.5 -t xiigrid .

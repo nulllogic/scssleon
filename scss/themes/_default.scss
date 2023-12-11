@@ -456,7 +456,7 @@ $components-config: (
         light : (
         ),
         dark : (
-          background: rgb(48, 56, 66),
+          background: rgba(15, 23, 42, .25),
         )
       )
 
@@ -507,6 +507,8 @@ $components-config: (
     ),
 
     nav : (
+
+      --gap: 10px,
 
       display: flex,
 

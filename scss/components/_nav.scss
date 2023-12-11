@@ -51,5 +51,11 @@ $nav-component: functions.get-theme($theme, 'components.nav');
   &.vertical {
     flex-direction : column;
   }
+
+  .item {
+    .link {
+      display: inline-flex;
+    }
+  }
 }
 
