@@ -1,4 +1,4 @@
-.PHONY: help build docs dist watch
+.PHONY: help build docs dist watch clear
 
 CURRENT_DIR := $(PWD)
 
@@ -9,11 +9,14 @@ dist:
 	@echo "[Compiling SCSS files and minifying]"
 	npm run css && npm run minify
 
+clear:
+	@echo "[Cleaning old Docker images]"
+	docker rmi `docker images --filter dangling=true -q`
+
 watch:
 	@echo "[Watching for changes]"
-	docker run --rm -it -v $(CURRENT_DIR)/:/app xiigrid --watch ./scss/xiigrid.scss ./dist/css/xiigrid.css
+	docker run --init --rm -it -v $(CURRENT_DIR)/:/app xiigrid --watch ./scss/xiigrid.scss ./dist/css/xiigrid.css
 
 build:
 	@echo "[Building Docker image]"
-	docker image prune --filter label=name=xiigrid
 	docker build --build-arg SASS_VERSION=1.69.5 -t xiigrid .

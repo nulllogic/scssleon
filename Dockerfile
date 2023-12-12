@@ -25,4 +25,5 @@ RUN TARGET_ARCH=$(arch | sed s/aarch64/arm64/ | sed s/x86_64/x64/) &&  \
     tar -xvz --strip-components 1 -C /opt/
 
 WORKDIR /app
+
 ENTRYPOINT [ "/opt/sass" ]
