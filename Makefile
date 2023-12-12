@@ -11,7 +11,7 @@ dist:
 
 clear:
 	@echo "[Cleaning old Docker images]"
-	docker rmi `docker images --filter dangling=true -q`
+	docker rmi -f $(docker images -f "dangling=true" -q)
 
 watch:
 	@echo "[Watching for changes]"

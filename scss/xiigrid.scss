@@ -160,7 +160,8 @@
 
 // ↓ Helpers
 @use "helpers/clearfix";
-@use "helpers/screenreader";
+@use "helpers/screen_reader";
+@use "helpers/text_truncate";
 
 // ↓ Utilities
 @use "utilities/api" with (
