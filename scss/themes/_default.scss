@@ -489,6 +489,7 @@ $components-config: (
         )
       )
     ),
+
     placeholder : (
       --height: 0.55rem,
       --background: rgba(228, 229, 231, 1),
@@ -538,6 +539,26 @@ $components-config: (
         ),
         dark: (
           background: rgb(45, 56, 66)
+        )
+      )
+    ),
+
+    sidecap : (
+      position: absolute,
+      top: 0,
+      right: 0,
+      height: 100%,
+
+      display: flex,
+      flex-direction: column,
+
+      colors: (
+        light : (
+          background : #ccc
+        ),
+        dark: (
+          background: rgb(45, 56, 66),
+          box-shadow: 0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26, .28)
         )
       )
     )

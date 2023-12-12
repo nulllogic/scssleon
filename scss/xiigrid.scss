@@ -158,6 +158,12 @@
   $theme: theme.$updated
 );
 
+// ↓ Sidecap
+@use 'components/sidecap' with (
+  $config : config.$updated,
+  $theme: theme.$updated
+);
+
 // ↓ Helpers
 @use "helpers/clearfix";
 @use "helpers/screen_reader";
