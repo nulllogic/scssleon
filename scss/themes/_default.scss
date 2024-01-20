@@ -527,10 +527,9 @@ $components-config: (
     navbar : (
 
       position: relative,
-      display: flex,
+      display: grid,
       width: 100%,
       max-width: 100%,
-      justify-content: space-between,
       align-items: center,
 
       colors: (

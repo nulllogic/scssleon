@@ -28,15 +28,14 @@ $navbar-component: functions.get-theme($theme, 'components.navbar');
   padding: var(--#{$prefix}-navbar-padding);
   border: var(--#{$prefix}-navbar-border);
 
-  .left {
+  grid-template-columns: 1fr 1fr 1fr;
 
+  .left {
   }
 
   .center {
-
   }
 
   .right {
-
   }
 }
