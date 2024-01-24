@@ -28,7 +28,11 @@ $navbar-component: functions.get-theme($theme, 'components.navbar');
   padding: var(--#{$prefix}-navbar-padding);
   border: var(--#{$prefix}-navbar-border);
 
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: var(--#{$prefix}-navbar-grid-template-columns);
+  grid-gap: var(--#{$prefix}-navbar-gap);
+
+  justify-content: center;
+  justify-items: center;
 
   .left {
   }
@@ -37,5 +41,10 @@ $navbar-component: functions.get-theme($theme, 'components.navbar');
   }
 
   .right {
+    justify-items: end;
+  }
+
+  &.centered {
+    grid-template-columns: auto 1fr auto;
   }
 }

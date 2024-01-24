@@ -526,6 +526,9 @@ $components-config: (
 
     navbar : (
 
+      --grid-template-columns: repeat(3, 100px),
+      --gap : 10px,
+
       position: relative,
       display: grid,
       width: 100%,
