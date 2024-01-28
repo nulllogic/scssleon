@@ -31,17 +31,15 @@ $navbar-component: functions.get-theme($theme, 'components.navbar');
   grid-template-columns: var(--#{$prefix}-navbar-grid-template-columns);
   grid-gap: var(--#{$prefix}-navbar-gap);
 
-  justify-content: center;
-  justify-items: center;
-
   .left {
+    justify-self: var(--#{$prefix}-navbar-left-column-alignment);
   }
 
   .center {
   }
 
   .right {
-    justify-items: end;
+    justify-self: var(--#{$prefix}-navbar-right-column-alignment);
   }
 
   &.centered {

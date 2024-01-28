@@ -526,14 +526,17 @@ $components-config: (
 
     navbar : (
 
-      --grid-template-columns: repeat(3, 100px),
+      --grid-template-columns: auto auto 1fr,
       --gap : 10px,
+      --left-column-aligment: start,
+      --right-column-alignment: end,
 
       position: relative,
       display: grid,
       width: 100%,
       max-width: 100%,
       align-items: center,
+      justify-items: start,
 
       colors: (
         light : (
