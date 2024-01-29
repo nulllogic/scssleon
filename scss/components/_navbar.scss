@@ -42,7 +42,4 @@ $navbar-component: functions.get-theme($theme, 'components.navbar');
     justify-self: var(--#{$prefix}-navbar-right-column-alignment);
   }
 
-  &.centered {
-    grid-template-columns: auto 1fr auto;
-  }
 }

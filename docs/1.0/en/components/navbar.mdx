@@ -47,8 +47,11 @@ Wrap a series of buttons with `.btn` in `.btn-group`.
   </nav>
 </Snippet>
 
+## Centered navbar example
+
+
 <Snippet lang="html">
-  <nav class="navbar centered">
+  <nav class="navbar centered" style="--xii-navbar-grid-template-columns: 1fr 100px 1fr">
     <div class="left">
         <ul class="nav horizontal">
             <li class="item">
@@ -69,10 +72,14 @@ Wrap a series of buttons with `.btn` in `.btn-group`.
         </ul>
     </div>
     <div class="center">
-        search
+        logo
     </div>
     <div class="right">
-        right
+        <ul class="nav horizontal">
+          <li class="item">
+            <a class="item" href="#">Github</a>
+          </li>
+        </ul>
     </div>
   </nav>
 </Snippet>

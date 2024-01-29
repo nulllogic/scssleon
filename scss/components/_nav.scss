@@ -27,6 +27,9 @@ $nav-component: functions.get-theme($theme, 'components.nav');
   color: var(--#{$prefix}-nav-color);
   padding: var(--#{$prefix}-nav-padding);
   border: var(--#{$prefix}-nav-border);
+  flex-direction: var(--#{$prefix}-nav-flex-direction);
+  align-items: var(--#{$prefix}-nav-align-items);
+  gap: var(--#{$prefix}-nav-gap);
 
   @if($is_border_radius_enabled) {
     @include mixins.border-radius(var(--#{$prefix}-nav-border-radius));

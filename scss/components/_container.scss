@@ -22,7 +22,7 @@ $container-component: functions.get-theme($theme, 'components.container');
 // Container
 @each $name, $size in $breakpoints {
   @include mixins.breakpoint($size, 'min') {
-    .#{$name}\:container {
+    .container.#{$name} {
       max-width: $size;
       @include mixins.generate-properties('container', $container-component, $config);
     }
