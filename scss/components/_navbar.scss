@@ -36,6 +36,7 @@ $navbar-component: functions.get-theme($theme, 'components.navbar');
   }
 
   .center {
+    justify-self: var(--#{$prefix}-navbar-center-column-alignment);
   }
 
   .right {

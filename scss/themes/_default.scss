@@ -463,31 +463,28 @@ $components-config: (
     ),
 
     pagination : (
-      --item-margin: 0,
-      --link-padding: .6rem,
-      --border-radius: .1875rem,
-      display: flex,
-      list-style: none,
+      --grid-template-columns: auto auto 1fr,
+      --gap : 10px,
+      --left-column-aligment: start,
+      --center-column-alignment: center,
+      --right-column-alignment: end,
+
+      position: relative,
+      display: grid,
+      width: 100%,
+      max-width: 100%,
+      align-items: center,
+      justify-items: start,
+
       colors: (
         light : (
-          box-shadow: none,
-          --background: #f1f2f4,
-          --background-hover: #f1f2f4,
-          --border: 1px solid #caced3,
-          --border-hover: 1px solid #cacfff
+          background : #ccc
         ),
-        dark : (
-          box-shadow: none,
-          --background: rgba(33, 38, 45, 1),
-          --background-hover: #343d46,
-          --border: 1px solid rgba(240, 246, 252, 0.1),
-          --border-hover: 1px solid rgba(187, 187, 199, 1),
-          --active-background: rgba(21, 84, 182, 1),
-          --active-border-hover: 1px solid rgba(202, 203, 255, 1),
-          --active-background-hover: rgba(21, 84, 182, 1),
-          --disabled-background: rgba(74, 82, 89, 1)
+        dark: (
+          background: rgb(45, 56, 66)
         )
       )
+      
     ),
 
     placeholder : (
@@ -531,6 +528,7 @@ $components-config: (
       --grid-template-columns: auto auto 1fr,
       --gap : 10px,
       --left-column-aligment: start,
+      --center-column-alignnent: center,
       --right-column-alignment: end,
 
       position: relative,

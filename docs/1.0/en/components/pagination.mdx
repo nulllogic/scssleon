@@ -7,45 +7,44 @@ toc: true
 import {Snippet} from "/app/src/components/snippet"
 
 ## Default pagination
-<Snippet lang="html">
-    <nav aria-label="Pagination">
-        <ul class="pagination">
-            <li class="item">
-                <a href="#" class="link btn">1</a>
-            </li>
-            <li class="item">
-                <a href="#" class="link btn">2</a>
-            </li>
-            <li class="item">
-                <a href="#" class="link btn">3</a>
-            </li>
-        </ul>
-    </nav>
-</Snippet>
-
-## Disabled and active states
 
 <Snippet lang="html">
-    <nav aria-label="Page navigation">
-        <ul class="pagination">
-           <li class="item disabled">
-                <a href="#" class="link">1</a>
-           </li>
-           <li class="item">
-                <a href="#" class="link">2</a>
-           </li>
-           <li class="item active">
-                <a href="#" class="link">3</a>
-           </li>
-           <li class="item">
-                <a href="#" class="link">4</a>
-           </li>
-           <li class="item">
-                <a href="#" class="link">5</a>
-           </li>
-        </ul>
-    </nav>
+  <nav class="pagination" aria-label="Pagination" 
+    style="--xii-pagination-grid-template-columns: 1fr 1fr">
+    <div class="left">
+        <p>Showing 1 to 10 of 97 results</p>
+    </div>
+    <div class="right">
+        <div class="btn-group separated" role="group" aria-label="Basic example">
+          <button type="button" class="btn">Left</button>
+          <button type="button" class="btn">Middle</button>
+          <button type="button" class="btn">Right</button>
+        </div>
+    </div>
+  </nav>
 </Snippet>
+
+## Pagination centered
+
+<Snippet lang="html">
+  <nav class="pagination" aria-label="Pagination" 
+    style="--xii-pagination-grid-template-columns: 100px 1fr 100px">
+    <div class="left">
+      <button class="btn">Previous</button>
+    </div>
+    <div class="center">
+      <div class="btn-group separated" role="group" aria-label="Basic example">
+        <button type="button" class="btn">Left</button>
+        <button type="button" class="btn">Middle</button>
+        <button type="button" class="btn">Right</button>
+      </div>
+    </div>
+    <div class="right">
+      <button class="btn">Next</button>
+    </div>
+  </nav>
+</Snippet>
+
 
 ## SVG icons
 
