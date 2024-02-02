@@ -36,9 +36,3 @@ $badge-component: functions.get-theme($theme, 'components.badge');
     @include mixins.box-shadow(var(--#{$prefix}-badge-box-shadow));
   }
 }
-
-//// Quick fix for badges in buttons
-//.btn .badge {
-//  position: relative;
-//  top: -1px;
-//}
