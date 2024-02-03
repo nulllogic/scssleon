@@ -9,7 +9,7 @@
 *
 *
 * XII/Grid v1.0.0 (https://nulllogic.github.io/xiigrid/)
-* Copyright 2011-2022 NullLogic
+* Copyright 2011-2024 NullLogic
 * Licensed under MIT (https://nulllogic.github.io/xiigrid//blob/main/LICENSE)
 */
 
@@ -32,7 +32,7 @@ $custom: nil !default;
 $default-config: (
   // scss-docs-start root-variables
   prefix : 'xii',
-  grid-columns : 12,
+  wrapper-class : 'wrapper'
   // scss-docs-end root-variables
 );
 
@@ -86,7 +86,7 @@ $enable-rules-config: (
     rtl : false,
     button-pointers: true,
     content-class: true,
-    grid-classes: true
+    wrapper : true
   )
 );
 
