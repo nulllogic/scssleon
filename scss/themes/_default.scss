@@ -143,6 +143,19 @@ $html-config: (
     pre: (
     ),
     code: (
+      color: var(--code-color),
+      background: var(--code-background),
+      padding: 0 5px,
+      colors: (
+        light : (
+          background: '#fff',
+          color: '#ccc',
+        ),
+        dark : (
+          background : rgba(38,69,116,1),
+          color: '#fff'
+        )
+      )
     ),
     kbd: (
     ),
