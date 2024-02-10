@@ -27,4 +27,16 @@ $sidecap-component: functions.get-theme($theme, 'components.sidecap');
   color: var(--#{$prefix}-sidecap-color);
   box-shadow: var(--#{$prefix}-sidecap-box-shadow);
 
+  .top {
+    position: relative;
+  }
+
+  .middle {
+
+  }
+
+  .bottom {
+
+  }
+
 }
