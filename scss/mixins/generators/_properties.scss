@@ -2,6 +2,16 @@
 @use '../../functions' as functions;
 @use '../../mixins/generators/color-sheme' as mixin;
 
+@mixin generate-subclasses($prefix, $tag, $properties) {
+  @each $property, $values in $properties {
+    #{$property} {
+      @each $val, $value in $values {
+        @debug $val, $value;
+      }
+    }
+  }
+}
+
 @mixin generate-properties($tag, $properties, $config) {
   $prefix: functions.get-config($config, 'prefix');
 
@@ -38,8 +48,21 @@
 
     }
 
+    // Attributes elements properties
+    @if ($property == 'subclasses') {
+      @include generate-subclasses($prefix, $tag, $value);
+    }
+
     // All other elements
-    @if ($property != 'pseudo' and $property != 'colors' and $property != 'attributes' and str-index($property, '--') != 1 and $property != 'dark' and $property != 'light') {
+    @if (
+      $property != 'pseudo' and
+      $property != 'colors' and
+      $property != 'attributes' and
+      $property != 'subclasses' and
+      str-index($property, '--') != 1 and
+      $property != 'dark' and
+      $property != 'light'
+    ) {
 
       @if (type-of($value) == 'string' and str-index($value, 'var(--') == 1) {
         #{$property} : #{meta.inspect(functions.str-replace($value,'--','--' + $prefix + '-'))};

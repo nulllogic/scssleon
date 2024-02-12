@@ -22,11 +22,6 @@ $pagination-component: functions.get-theme($theme, 'components.pagination');
 
   @include mixins.generate-properties('pagination', $pagination-component, $config);
 
-  background: var(--#{$prefix}-pagination-background);
-  color: var(--#{$prefix}-pagination-color);
-  padding: var(--#{$prefix}-pagination-padding);
-  border: var(--#{$prefix}-pagination-border);
-
   grid-template-columns: var(--#{$prefix}-pagination-grid-template-columns);
   grid-gap: var(--#{$prefix}-pagination-gap);
 
