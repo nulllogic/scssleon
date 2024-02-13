@@ -6,7 +6,7 @@
   @each $property, $values in $properties {
     #{$property} {
       @each $val, $value in $values {
-        @debug $val, $value;
+
       }
     }
   }
