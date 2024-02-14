@@ -523,6 +523,18 @@ $components-config: (
         ),
         dark: (
         )
+      ),
+
+      subclasses : (
+        '.item' : (
+          display: flex,
+          subclasses : (
+            '.link' : (
+              display: inline-flex,
+              padding: 10px
+            )
+          )
+        )
       )
 
     ),
@@ -551,16 +563,6 @@ $components-config: (
         )
       ),
 
-      subclasses : (
-        '.item' : (
-          display: flex,
-          subclasses : (
-            '.link' : (
-              display: flex,
-            )
-          )
-        )
-      )
     ),
 
     sidecap : (

@@ -47,7 +47,7 @@ $nav-component: functions.get-theme($theme, 'components.nav');
   @if($is_shadow_enabled) {
     @include mixins.box-shadow(var(--#{$prefix}-nav-box-shadow));
   }
-
+/*
   &.tabs {
 
   }
@@ -69,12 +69,13 @@ $nav-component: functions.get-theme($theme, 'components.nav');
       display: inline-flex;
     }
   }
+*/
 }
 
 @if $is_wrapper_enabled {
   
   .#{$wrapper_class} .nav {
-    @extend %nav;
+    @extend %navbar;
   }
 
 } @else {

@@ -5,8 +5,12 @@
 @mixin generate-subclasses($prefix, $tag, $properties) {
   @each $property, $values in $properties {
     #{$property} {
-      @each $val, $value in $values {
-
+      @each $selector, $value in $values {
+        @if($selector != 'subclasses') {
+          #{$selector} : #{meta.inspect($value)};
+        } @else {
+          @include generate-subclasses($prefix, $tag, $value);
+        }
       }
     }
   }
