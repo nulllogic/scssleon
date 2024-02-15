@@ -2,21 +2,22 @@
 @use '../../functions' as functions;
 @use '../../mixins/generators/color-sheme' as mixin;
 
+@mixin generate-css-properties($tag, $prefix, $property, $value) {
+  --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
+}
+
 @mixin generate-css-variables() {
 
 }
 
-@mixin generate-subclasses($prefix, $tag, $properties) {
-  @each $property, $values in $properties {
-    #{$property} {
-      @each $selector, $value in $values {
-        @if($selector != 'subclasses') {
-          #{$selector} : #{meta.inspect($value)};
-        } @else {
-          @include generate-subclasses($prefix, $tag, $value);
-        }
-      }
-    }
+@mixin generate-colors() {
+
+}
+
+@mixin generate-subclasses($tag, $class, $properties, $config) {
+  @debug $class, $properties;
+  #{$class} {
+    @include generate-properties($tag, $properties, $config);
   }
 }
 
@@ -26,12 +27,15 @@
   @each $property, $value in $properties {
 
     // Variables
-    @if (str-index($property, '--') == 1) {
-      --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
+    // Looking for "--" symbols in the beggining of the property
+    // Example // --flex-direction : row
+    @if (type-of($property) == 'string' and str-index($property, '--') == 1) {
+      @include generate-css-properties($tag, $prefix, $property, $value);
     }
 
-    // Colors properties
-    @if ($property == 'colors') {
+
+    // Colors
+    @else if ($property =='colors') {
 
       @each $color, $color-properties in $value {
         @each $scheme in functions.str-split(functions.get-config($config, 'color-scheme'), ' ') {
@@ -44,30 +48,23 @@
           }
         }
       }
+    } 
+
+    // Subclasses
+    @else if ($property == 'subclasses') {
+      @each $class, $class_properties in $value {
+        @include generate-subclasses($tag, $class, $class_properties, $config);
+      }
     }
 
-    // Attributes elements properties
-    @if ($property == 'subclasses') {
-      @include generate-subclasses($prefix, $tag, $value);
-    }
-
-    // All other elements
-    @if (
-      $property != 'pseudo' and
-      $property != 'colors' and
-      $property != 'attributes' and
-      $property != 'subclasses' and
-      str-index($property, '--') != 1 and
-      $property != 'dark' and
-      $property != 'light'
-    ) {
+    @else {
 
       @if (type-of($value) == 'string' and str-index($value, 'var(--') == 1) {
         #{$property} : #{meta.inspect(functions.str-replace($value,'--','--' + $prefix + '-'))};
       } @else {
         #{$property} : #{meta.inspect($value)};
       }
-    }
 
+    }
   }
 }

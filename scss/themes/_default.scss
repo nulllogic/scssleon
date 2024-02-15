@@ -532,7 +532,7 @@ $components-config: (
           --flex-direction : row,
         ),
         '&.vertical' : (
-          --flex-direction : column,
+          --flex-direction : row,
         ),
         '&.tabs' : (
 
@@ -547,15 +547,12 @@ $components-config: (
             '.link' : (
               display: inline-flex,
               padding: 10px,
-              pseudo: (
-                'hover' : (
+              subclasses: (
+                '&:hover' : (
                   text-decoration : none
                 )
               )
             ),
-            '.link:hover' : (
-              text-decoration : none
-            )
           )
         )
       )

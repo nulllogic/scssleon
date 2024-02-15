@@ -15,11 +15,6 @@ $theme: nil !default;
 
 /* Variables assigment */
 $prefix: functions.get-config($config, 'prefix');
-$color_scheme: functions.get-config($config, 'color-scheme');
-
-/* Configuration variables assigment */
-$is_shadow_enabled: functions.get-config($config, 'shadow');
-$is_border_radius_enabled: functions.get-config($config, 'border-radius');
 
 /* Wrapper class variables assigment */
 $is_wrapper_enabled: functions.get-config($config, 'enable.wrapper');
@@ -29,16 +24,7 @@ $wrapper_class: functions.get-config($config, 'wrapper-class');
 $nav-component: functions.get-theme($theme, 'components.nav');
 
 %nav {
-
   @include mixins.generate-properties('nav', $nav-component, $config);
-
-  @if($is_border_radius_enabled) {
-    @include mixins.border-radius(var(--#{$prefix}-nav-border-radius));
-  }
-
-  @if($is_shadow_enabled) {
-    @include mixins.box-shadow(var(--#{$prefix}-nav-box-shadow));
-  }
 }
 
 @if $is_wrapper_enabled {
