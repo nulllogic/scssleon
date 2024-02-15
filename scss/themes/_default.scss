@@ -532,7 +532,7 @@ $components-config: (
           --flex-direction : row,
         ),
         '&.vertical' : (
-          --flex-direction : row,
+          --flex-direction : column,
         ),
         '&.tabs' : (
 

@@ -60,7 +60,7 @@
     @else {
 
       @if (type-of($value) == 'string' and str-index($value, 'var(--') == 1) {
-        #{$property} : #{meta.inspect(functions.str-replace($value,'--','--' + $prefix + '-'))};
+        #{$property} : #{meta.inspect(functions.str-replace($value,'--','--' + $prefix + '-' + $tag + '-'))};
       } @else {
         #{$property} : #{meta.inspect($value)};
       }
