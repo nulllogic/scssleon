@@ -1,22 +1,23 @@
 // ↓ Helpers
-@forward 'mixins/breakpoints';
-@forward 'mixins/clearfix';
+@forward "mixins/breakpoints";
+@forward "mixins/clearfix";
 
-@forward 'mixins/box-shadow';
-@forward 'mixins/border-radius';
-@forward 'mixins/transition';
-@forward 'mixins/gradients';
+@forward "mixins/box-shadow";
+@forward "mixins/border-radius";
+@forward "mixins/transition";
+@forward "mixins/gradients";
 
 // ↓ Generators
-@forward 'mixins/generators/color-sheme';
-@forward 'mixins/generators/properties';
-@forward 'mixins/generators/wrapper';
+@forward "mixins/generators/color-sheme";
+@forward "mixins/generators/components";
+@forward "mixins/generators/properties";
+@forward "mixins/generators/wrapper";
 
 // ↓ Utilities
-@forward 'mixins/utilities';
+@forward "mixins/utilities";
 
 // ↓ Components
-@forward 'mixins/forms';
+@forward "mixins/forms";
 
 // ↓ Layout
-@forward 'mixins/grid';
+@forward "mixins/grid";

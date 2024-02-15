@@ -544,6 +544,7 @@ $components-config: (
         '.item' : (
           display: block,
           width: 100%,
+
           subclasses : (
             '.link' : (
               display: inline-flex,
