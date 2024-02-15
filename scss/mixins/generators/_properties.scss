@@ -2,6 +2,10 @@
 @use '../../functions' as functions;
 @use '../../mixins/generators/color-sheme' as mixin;
 
+@mixin generate-css-variables() {
+
+}
+
 @mixin generate-subclasses($prefix, $tag, $properties) {
   @each $property, $values in $properties {
     #{$property} {
@@ -40,16 +44,6 @@
           }
         }
       }
-    }
-
-    // Pseudo elements properties
-    @if ($property == 'pseudo') {
-
-    }
-
-    // Attributes elements properties
-    @if ($property == 'attributes') {
-
     }
 
     // Attributes elements properties
