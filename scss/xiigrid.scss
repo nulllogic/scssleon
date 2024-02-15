@@ -1,60 +1,60 @@
 // ↓ Config
 // Override default config | @example
 @use "config" as config with (
-  $custom : (
-    prefix : 'xii',
+  $custom: (
+    prefix: "xii",
     enable: (
-      wrapper: false
-    )
+      wrapper: false,
+    ),
   )
 );
 
 // ↓ Theme
 /* Override default settings in the theme | @example */
 @use "themes/default" as theme with (
-  $custom : (
+  $custom: (
     html: (
-      body : (
-        light : (
-          background : #fff
+      body: (
+        light: (
+          background: #fff,
         ),
-        dark : (
-          background : #ccc
-        )
-      )
-    )
+        dark: (
+          background: #ccc,
+        ),
+      ),
+    ),
   )
 );
 
 // ↓ Root
-@use 'root' with (
-  $config : config.$updated,
+@use "root" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // Great reset
-@use 'reset' with (
-  $config : config.$updated,
+@use "reset" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // Boot
 // Special utility to dynamically create css properties for html tags, specified in theme
-@use 'boot' with (
-  $config : config.$updated,
+@use "boot" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // Amazing content
 // Special class `.content` to allow formatting of the default html tags
-@use 'content' with (
-  $config : config.$updated,
+@use "content" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Container
-@use 'components/container' with (
-  $config : config.$updated,
+@use "components/container" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
@@ -64,54 +64,52 @@
 //);
 
 // ↓ Card
-@use 'components/card' with (
-  $config : config.$updated,
+@use "components/card" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Badge
-@use 'components/badge' with (
-  $config : config.$updated,
+@use "components/badge" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Form
-@use 'components/form' with (
-  $config : config.$updated,
+@use "components/form" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Buttons
-@use 'components/button' with (
-  $config : config.$updated,
+@use "components/button" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
-@use 'components/button-group' with (
-  $config : config.$updated,
+@use "components/button-group" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
-
 
 ////@use "components/icon";
 //@use "components/button";
 ////@use "components/button-group";
 
 // ↓ Breadcrumbs
-@use 'components/breadcrumb' with (
-  $config : config.$updated,
+@use "components/breadcrumb" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
-@use 'components/alert' with (
-  $config : config.$updated,
+@use "components/alert" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
-@use 'components/accordion' with (
-  $config : config.$updated,
+@use "components/accordion" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
-
 
 // ↓ Table
 //@use 'components/table' with (
@@ -120,50 +118,50 @@
 //);
 
 // ↓ Overlay
-@use 'components/overlay' with (
-  $config : config.$updated,
+@use "components/overlay" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Pagination
-@use 'components/pagination' with (
-  $config : config.$updated,
+@use "components/pagination" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Placeholder
-@use 'components/placeholder' with (
-  $config : config.$updated,
+@use "components/placeholder" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Modal
 @use "components/modal" with (
-  $config : config.$updated,
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Loader
 @use "components/loader" with (
-  $config : config.$updated,
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Nav
 @use "components/nav" with (
-  $config : config.$updated,
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Navigation bar
-@use 'components/navbar' with (
-  $config : config.$updated,
+@use "components/navbar" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
 // ↓ Sidecap
-@use 'components/sidecap' with (
-  $config : config.$updated,
+@use "components/sidecap" with (
+  $config: config.$updated,
   $theme: theme.$updated
 );
 
@@ -174,6 +172,6 @@
 
 // ↓ Utilities
 @use "utilities/api" with (
-  $config : config.$updated,
-  $theme : theme.$updated
+  $config: config.$updated,
+  $theme: theme.$updated
 );

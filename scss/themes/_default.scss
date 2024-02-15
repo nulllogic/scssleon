@@ -477,7 +477,7 @@ $components-config: (
     ),
 
     pagination : (
-      
+
       --grid-template-columns: auto auto 1fr,
       --gap : 10px,
       --left-column-aligment: start,
@@ -493,6 +493,7 @@ $components-config: (
     ),
 
     placeholder : (
+
       --height: 0.55rem,
       --background: rgba(228, 229, 231, 1),
       --border-radius: .1875rem,
@@ -582,7 +583,6 @@ $components-config: (
           background: rgb(45, 56, 66)
         )
       ),
-
     ),
 
     sidecap : (

@@ -4,23 +4,29 @@
 ┴  ┴ ┴└─┘┴┘└┘┴ ┴ ┴ ┴└─┘┘└┘
 */
 
-@use '../mixins' as mixins;
-@use '../functions' as functions;
+@use "../mixins" as mixins;
+@use "../functions" as functions;
 
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-config($config, 'prefix');
-$color_scheme: functions.get-config($config, 'color-scheme');
+$prefix: functions.get-config($config, "prefix");
+$color_scheme: functions.get-config($config, "color-scheme");
 
-$is_shadow_enabled: functions.get-config($config, 'enable.shadow');
-$is_border_radius_enabled: functions.get-config($config, 'enable.border-radius');
+$is_shadow_enabled: functions.get-config($config, "enable.shadow");
+$is_border_radius_enabled: functions.get-config(
+  $config,
+  "enable.border-radius"
+);
 
-$pagination-component: functions.get-theme($theme, 'components.pagination');
+$pagination-component: functions.get-theme($theme, "components.pagination");
 
 .pagination {
-
-  @include mixins.generate-properties('pagination', $pagination-component, $config);
+  @include mixins.generate-properties(
+    "pagination",
+    $pagination-component,
+    $config
+  );
 
   grid-template-columns: var(--#{$prefix}-pagination-grid-template-columns);
   grid-gap: var(--#{$prefix}-pagination-gap);
@@ -36,5 +42,4 @@ $pagination-component: functions.get-theme($theme, 'components.pagination');
   .right {
     justify-self: var(--#{$prefix}-pagination-right-column-alignment);
   }
-
 }

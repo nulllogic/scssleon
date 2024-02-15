@@ -5,39 +5,23 @@
 **/
 
 /* Load settings and functions */
-@use '../themes/default' as theme;
-@use '../functions' as functions;
-@use '../mixins' as mixins;
+@use "../themes/default" as theme;
+@use "../functions" as functions;
+@use "../mixins" as mixins;
 
 /* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
-/* Variables assigment */
-$prefix: functions.get-config($config, 'prefix');
-
-/* Wrapper class variables assigment */
-$is_wrapper_enabled: functions.get-config($config, 'enable.wrapper');
-$wrapper_class: functions.get-config($config, 'wrapper-class');
-
 /* Loading component settings and styling */
-$nav-component: functions.get-theme($theme, 'components.nav');
+$nav-component: functions.get-theme($theme, "components.nav");
 
 %nav {
-  @include mixins.generate-properties('nav', $nav-component, $config);
+  @include mixins.generate-properties("nav", $nav-component, $config);
 }
 
-@if $is_wrapper_enabled {
-  
-  .#{$wrapper_class} .nav {
-    @extend %navbar;
-  }
-
-} @else {
-  
+@include mixins.generate-wrapper($config) {
   .nav {
     @extend %nav;
   }
-
 }
-
