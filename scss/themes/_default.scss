@@ -480,6 +480,7 @@ $components-config: (
 
       --grid-template-columns: auto auto 1fr,
       --gap : 10px,
+
       --left-column-aligment: start,
       --center-column-alignment: center,
       --right-column-alignment: end,
@@ -489,7 +490,22 @@ $components-config: (
       width: 100%,
       max-width: 100%,
       align-items: center,
-      justify-items: start
+      
+      grid-template-columns: var(--grid-template-columns),
+      grid-gap: var(--gap),
+      
+
+      subclasses : (
+        ".left" : (
+          justify-self: var(--left-column-alignment),
+        ),
+        ".center" : (
+          justify-self: var(--center-column-alignment),
+        ),
+        ".right" : (
+          justify-self: var(--right-column-alignment)
+        )
+      )
     ),
 
     placeholder : (
@@ -574,7 +590,6 @@ $components-config: (
       width: 100%,
       max-width: 100%,
       align-items: center,
-      justify-items: start,
 
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
@@ -588,10 +603,10 @@ $components-config: (
 
       subclasses : (
         ".left" : (
-          justify-self: var(--left-column-aligment),
+          justify-self: var(--left-column-alignment),
         ),
         ".center" : (
-          justify-self: var(--center-column-alignnent),
+          justify-self: var(--center-column-alignment),
         ),
         ".right" : (
           justify-self: var(--right-column-alignment)
