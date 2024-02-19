@@ -576,14 +576,27 @@ $components-config: (
       align-items: center,
       justify-items: start,
 
+      grid-template-columns: var(--grid-template-columns),
+      grid-gap: var(--gap),
+
       colors: (
         light : (
-          background : #ccc
         ),
         dark: (
-          background: rgb(45, 56, 66)
         )
       ),
+
+      subclasses : (
+        ".left" : (
+          justify-self: var(--left-column-aligment),
+        ),
+        ".center" : (
+          justify-self: var(--center-column-alignnent),
+        ),
+        ".right" : (
+          justify-self: var(--right-column-alignment)
+        )
+      )
     ),
 
     sidecap : (
