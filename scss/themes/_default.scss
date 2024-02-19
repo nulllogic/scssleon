@@ -490,10 +490,9 @@ $components-config: (
       width: 100%,
       max-width: 100%,
       align-items: center,
-      
+
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
-      
 
       subclasses : (
         ".left" : (
