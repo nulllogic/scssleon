@@ -1,69 +1,83 @@
 @use "sass:meta";
-@use '../../functions' as functions;
-@use '../../mixins/generators/color-sheme' as mixin;
+@use "sass:string";
+@use "../../functions" as functions;
+@use "../../mixins/generators/color-sheme" as mixin;
 
 @mixin generate-css-properties($tag, $prefix, $property, $value) {
-  --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')} : #{meta.inspect($value)};
+  --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')}: #{meta.inspect(
+      $value
+    )};
 }
 
-@mixin generate-css-variables() {
-
+@mixin generate-css-variables($prefix, $tag, $property, $value) {
+  @if (meta.type-of($value) == "string" and str-index($value, "var(--") == 1) {
+    #{$property}: #{meta.inspect(
+        functions.str-replace($value, "--", "--" + $prefix + "-" + $tag + "-")
+      )};
+  } @else if
+    (type-of($value) == "string" and str-index($value, "var(global(") == 1)
+  {
+    #{$property}: #{meta.inspect(
+        functions.str-replace(
+          string.slice($value, 0, string.length($value) - 1),
+          "global(--",
+          "--" + $prefix + "-root-"
+        )
+      )};
+  } @else {
+    #{$property}: #{meta.inspect($value)};
+  }
 }
 
-@mixin generate-colors() {
-
+@mixin generate-colors($prefix, $tag, $value, $config) {
+  @each $color, $color-properties in $value {
+    @each $scheme
+      in functions.str-split(functions.get-config($config, "color-scheme"), " ")
+    {
+      @if $scheme == $color {
+        @include mixin.generate-color-scheme($color) {
+          @each $color-property, $color-value in $color-properties {
+            --#{$prefix}-#{$tag}-#{functions.str-replace($color-property, '--', '')}: #{meta.inspect(
+                $color-value
+              )};
+          }
+        }
+      }
+    }
+  }
 }
 
 @mixin generate-subclasses($tag, $class, $properties, $config) {
-  @debug $class, $properties;
   #{$class} {
     @include generate-properties($tag, $properties, $config);
   }
 }
 
 @mixin generate-properties($tag, $properties, $config) {
-  $prefix: functions.get-config($config, 'prefix');
+  $prefix: functions.get-config($config, "prefix");
 
   @each $property, $value in $properties {
-
     // Variables
     // Looking for "--" symbols in the beggining of the property
     // Example // --flex-direction : row
-    @if (type-of($property) == 'string' and str-index($property, '--') == 1) {
+    @if (
+      meta.type-of($property) == "string" and str-index($property, "--") == 1
+    ) {
       @include generate-css-properties($tag, $prefix, $property, $value);
     }
 
     // Colors
-    @else if ($property =='colors') {
-
-      @each $color, $color-properties in $value {
-        @each $scheme in functions.str-split(functions.get-config($config, 'color-scheme'), ' ') {
-          @if $scheme == $color {
-            @include mixin.generate-color-scheme($color) {
-              @each $color-property, $color-value in $color-properties {
-                --#{$prefix}-#{$tag}-#{functions.str-replace($color-property, '--', '')}: #{meta.inspect($color-value)};
-              }
-            }
-          }
-        }
-      }
-    } 
+    @else if ($property == "colors") {
+      @include generate-colors($prefix, $tag, $value, $config);
+    }
 
     // Subclasses
-    @else if ($property == 'subclasses') {
+    @else if ($property == "subclasses") {
       @each $class, $class_properties in $value {
         @include generate-subclasses($tag, $class, $class_properties, $config);
       }
-    }
-
-    @else {
-
-      @if (type-of($value) == 'string' and str-index($value, 'var(--') == 1) {
-        #{$property} : #{meta.inspect(functions.str-replace($value,'--','--' + $prefix + '-' + $tag + '-'))};
-      } @else {
-        #{$property} : #{meta.inspect($value)};
-      }
-
+    } @else {
+      @include generate-css-variables($prefix, $tag, $property, $value);
     }
   }
 }

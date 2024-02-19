@@ -17,7 +17,7 @@ $html-config: (
       font-size : 1rem,
       font-weight: normal,
       line-height : 1,
-      font-family: var(--root-font-family-default),
+      font-family: var(global(--font-family-default)),
       color: var(--body-color),
       background: var(--body-background),
       colors: (
@@ -311,6 +311,16 @@ $components-config: (
         ),
         dark : (
         )
+      ),
+      subclasses : (
+        ".item" : (
+          display: inline-flex,
+          subclasses : (
+            ".link" : (
+
+            )
+          )
+        )
       )
     ),
 
@@ -473,7 +483,6 @@ $components-config: (
           background: rgba(15, 23, 42, .25),
         )
       )
-
     ),
 
     pagination : (
