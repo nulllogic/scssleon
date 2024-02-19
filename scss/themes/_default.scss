@@ -510,19 +510,50 @@ $components-config: (
 
     placeholder : (
 
-      --height: 0.55rem,
-      --background: rgba(228, 229, 231, 1),
+      --min-height: 0.55rem,
       --border-radius: .1875rem,
-      --spacing: .6rem,
-      --last-line-width: 80%,
+      --gap: .6rem,
+
       cursor: wait,
-      
+      display: flex,
+      flex-direction: column,
+
+      gap: var(--gap),
+
       colors: (
         light : (
           background: #ccc
         ),
         dark : (
           background: #ccc
+        )
+      ),
+
+      subclasses : (
+        ".el" : (
+            min-height: var(--min-height),
+            border-radius: var(--border-radius),
+            background: var(--background)
+        ),
+
+        "&.glow" : (
+          subclasses : (
+            ".el" : (
+              animation: placeholder-glow 2s ease-in-out infinite,
+            )
+          )
+        ),
+
+        "&.wave" : (
+          subclasses : (
+            ".el" : (
+              mask-size: 200% 100%,
+              -webkit-mask-size: 200% 100%,
+              mask-image: linear-gradient(90deg, #0000, #fff, #0000),
+              -webkit-mask-image: linear-gradient(90deg, #0000, #fff, #0000),
+              animation: placeholder-wave 2s linear infinite,
+            )
+          )
         )
       )
     ),
