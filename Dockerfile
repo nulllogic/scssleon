@@ -5,7 +5,7 @@ LABEL version="1.0.0"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
 LABEL description="Docker container for XII/Grid generator"
 
-ARG SASS_VERSION="1.69.5"
+ARG SASS_VERSION="1.71.0"
 
 RUN apk update && apk add curl
 
@@ -21,8 +21,8 @@ WORKDIR /tmp
 # -L server reports that the requested page has moved to a different location
 
 RUN TARGET_ARCH=$(arch | sed s/aarch64/arm64/ | sed s/x86_64/x64/) &&  \
-    curl -fsSL https://github.com/sass/dart-sass/releases/download/${SASS_VERSION}/dart-sass-${SASS_VERSION}-linux-musl-${TARGET_ARCH}.tar.gz |  \
-    tar -xvz --strip-components 1 -C /opt/
+  curl -fsSL https://github.com/sass/dart-sass/releases/download/${SASS_VERSION}/dart-sass-${SASS_VERSION}-linux-musl-${TARGET_ARCH}.tar.gz |  \
+  tar -xvz --strip-components 1 -C /opt/
 
 WORKDIR /app
 
