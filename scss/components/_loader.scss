@@ -4,23 +4,12 @@
 ┴─┘└─┘┴ ┴─┴┘└─┘┴└─
  */
 
-@use '../config';
-@use '../mixins' as mixins;
-@use '../functions' as functions;
+/* Load settings and functions */
+@use "../themes/default" as theme;
+@use "../mixins" as mixins;
 
+/* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
-$container-breakpoints: functions.get-config($config, 'container-breakpoints');
-$are-transitions-enabled: functions.get-config($config, 'enable.transitions');
-
-.loader {
-  width: 14px;
-  height: 14px;
-  display: inline-flex;
-
-  @if($are-transitions-enabled) {
-
-  }
-}
-
+@include mixins.generate-component("loader", "loading", $config, $theme);

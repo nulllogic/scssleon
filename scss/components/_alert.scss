@@ -4,36 +4,12 @@
 ┴ ┴┴─┘└─┘┴└─ ┴ └─┘
 **/
 
-@use '../mixins' as mixins;
-@use '../functions' as functions;
+/* Load settings and functions */
+@use "../mixins" as mixins;
+@use "../functions" as functions;
 
-@use '../mixins/variants/alert' as variants;
-
+/* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
-/* Variables assigment */
-$prefix: functions.get-config($config, 'prefix');
-$color_scheme: functions.get-config($config, 'color-scheme');
-
-$is_shadow_enabled: functions.get-config($config, 'shadow');
-$is_border_radius_enabled: functions.get-config($config, 'border-radius');
-
-$alert-component: functions.get-theme($theme, 'components.alert');
-
-.alert {
-
-  padding: var(--#{$prefix}-alert-padding);
-  border: var(--#{$prefix}-alert-border);
-  background: var(--#{$prefix}-alert-background);
-
-  @include mixins.generate-properties('alert', $alert-component, $config);
-
-  @if($is_border_radius_enabled) {
-    @include mixins.border-radius(var(--#{$prefix}-alert-border-radius));
-  }
-
-  @if($is_shadow_enabled) {
-    @include mixins.box-shadow(var(--#{$prefix}-alert-box-shadow));
-  }
-}
+@include mixins.generate-component("alert", "alert", $config, $theme);

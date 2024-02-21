@@ -4,21 +4,12 @@
 └─┘ └┘ └─┘┴└─┴─┘┴ ┴ ┴
 */
 
-@use '../themes/default' as theme;
-@use '../functions' as functions;
-@use '../mixins' as mixins;
+/* Load settings and functions */
+@use "../mixins" as mixins;
+@use "../functions" as functions;
 
+/* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-config($config, 'prefix');
-$color_scheme: functions.get-config($config, 'color-scheme');
-
-$is_shadow_enabled: functions.get-config($config, 'shadow');
-$is_border_radius_enabled: functions.get-config($config, 'border-radius');
-
-$overlay_component: functions.get-theme($theme, 'components.overlay');
-
-.overlay {
-  @include mixins.generate-properties('overlay', $overlay_component, $config);
-}
+@include mixins.generate-component("overlay", "overlay", $config, $theme);

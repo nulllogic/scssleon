@@ -4,9 +4,11 @@
 └─┘┴ ┴─┴┘└─┘└─┘
 **/
 
+/* Load settings and functions */
 @use "../mixins" as mixins;
 @use "../functions" as functions;
 
+/* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
