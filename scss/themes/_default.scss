@@ -276,9 +276,18 @@ $components-config: (
       font-size: .75rem,
       line-height: 1rem,
       font-weight: 500,
+
       white-space: nowrap,
       vertical-align: middle,
       align-items: center,
+      display: inline-flex,
+
+      padding: var(--padding),
+      border-radius: var(--border-radius),
+      color: var(--color),
+      background: var(--background),
+      box-shadow: var(--box-shadow),
+      border: var(--border),
 
       colors: (
         light : (
