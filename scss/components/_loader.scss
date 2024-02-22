@@ -2,7 +2,7 @@
 ┬  ┌─┐┌─┐┌┬┐┌─┐┬─┐
 │  │ │├─┤ ││├┤ ├┬┘
 ┴─┘└─┘┴ ┴─┴┘└─┘┴└─
- */
+*/
 
 /* Load settings and functions */
 @use "../themes/default" as theme;
@@ -13,3 +13,4 @@ $config: nil !default;
 $theme: nil !default;
 
 @include mixins.generate-component("loader", "loading", $config, $theme);
+
