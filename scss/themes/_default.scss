@@ -411,13 +411,53 @@ $components-config: (
       --gap: 10px,
 
       display: flex,
-      flex-wrap: wrap
+      flex-wrap: wrap,
+
+      subclasses : (
+        ".btn:first-child" : (
+          border-start-end-radius: 0,
+          border-end-end-radius: 0,
+        ),
+
+        ".btn:last-child" : (
+          border-start-start-radius: 0,
+          border-end-start-radius: 0,
+        ),
+
+        ".btn:not(:first-child)" : (
+          margin-left: - 1px
+        ),
+
+        ".btn:not(:first-child, :last-child)" : (
+          border-radius: 0
+        ),
+
+        ".btn:only-child" : (
+
+        ),
+
+        ".btn:hover, .btn:focus" : (
+          z-index: 1
+        ),
+
+        "&.separated" : (
+          gap: var(--gap),
+
+          subclasses : (
+            ".btn" : (
+              margin: 0,
+              border-radius: var(--border-radius)
+            )
+          )
+        )
+      )
     ),
 
     card : (
       --border-radius: .25rem,
       --padding: 10px,
       margin: 0,
+
       colors: (
         light : (
           background: rgb(200, 200, 200)
@@ -438,6 +478,7 @@ $components-config: (
       ),
 
     ),
+
     form : (
       label : (
         display: block,

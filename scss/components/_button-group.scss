@@ -4,61 +4,12 @@
 └─┘└─┘ ┴  ┴ └─┘┘└┘  └─┘┴└─└─┘└─┘┴
 */
 
-@use '../themes/default' as theme;
-@use '../functions' as functions;
-@use '../mixins' as mixins;
+/* Load settings and functions */
+@use "../mixins" as mixins;
+@use "../functions" as functions;
 
+/* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-config($config, 'prefix');
-$color_scheme: functions.get-config($config, 'color-scheme');
-
-$is_shadow_enabled: functions.get-config($config, 'shadow');
-$is_border_radius_enabled: functions.get-config($config, 'border-radius');
-
-$button_group: functions.get-theme($theme, 'components.button-group');
-
-.btn-group {
-
-  @include mixins.generate-properties('button-group', $button_group, $config);
-
-  // Remove border radius for inner buttons
-  .btn:first-child {
-    border-start-end-radius: 0;
-    border-end-end-radius: 0;
-  }
-
-  .btn:last-child {
-    border-start-start-radius: 0;
-    border-end-start-radius: 0;
-  }
-
-  .btn:not(:first-child) {
-    margin-left: - 1px;
-  }
-
-  .btn:not(:first-child, :last-child) {
-    @include mixins.border-radius(0 0 0 0);
-  }
-
-  // Only one button inside
-  .btn:only-child {
-    @include mixins.border-radius(var(--#{$prefix}-button-border-radius));
-  }
-
-  .btn:hover,
-  .btn:focus {
-    z-index: 1
-  }
-
-  &.separated {
-    gap: var(--#{$prefix}-button-group-gap);
-
-    .btn {
-      margin: 0;
-      border-radius: var(--#{$prefix}-button-border-radius);
-    }
-  }
-
-}
+@include mixins.generate-component("button-group", "btn-group", $config, $theme);
