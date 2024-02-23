@@ -19,4 +19,4 @@ watch:
 
 build:
 	@echo "[Building Docker image]"
-	docker build --build-arg SASS_VERSION=1.70.0 -t xiigrid .
+	docker build --build-arg SASS_VERSION=1.71.0 -t xiigrid .

@@ -346,6 +346,9 @@ $components-config: (
       user-select: none,
       text-decoration: none,
       cursor: pointer,
+
+      vertical-align: middle,
+      font-size: 1em,
  
       padding: var(--padding),
       border: var(--border),
@@ -442,6 +445,7 @@ $components-config: (
 
         "&.separated" : (
           gap: var(--gap),
+          --border-radius: 5px,
 
           subclasses : (
             ".btn" : (
@@ -457,6 +461,10 @@ $components-config: (
       --border-radius: .25rem,
       --padding: 10px,
       margin: 0,
+
+      background: var(--background),
+      padding: var(--padding),
+      border-radius: var(--border-radius),
 
       colors: (
         light : (
@@ -675,8 +683,7 @@ $components-config: (
 
         ),
         '.item' : (
-          display: block,
-          width: 100%,
+          width: auto,
 
           subclasses : (
             '.link' : (

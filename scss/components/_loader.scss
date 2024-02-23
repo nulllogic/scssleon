@@ -12,5 +12,4 @@
 $config: nil !default;
 $theme: nil !default;
 
-@include mixins.generate-component("loader", "loading", $config, $theme);
-
+@include mixins.generate-component("loader", "loader", $config, $theme);

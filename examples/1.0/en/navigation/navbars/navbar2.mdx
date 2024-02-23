@@ -7,31 +7,35 @@ group: navbars
 import {Snippet} from "/app/src/components/snippet"
 
 <Snippet>
-  <div style="width: 100%;">
-    <div class="flex align-items-center justify-content-between">
-      <div class="flex align-items-center">
-        <div>
-          Logo
-        </div>
-        <div class="inline-flex"> 
-          <a href="#" class="btn">
-            Dashboard
-          </a>
-          <a href="#" class="btn">
-            Projects
-          </a>
-        </div>
-      </div>
-      <div>
-        <div class="inline-flex">
-          <a href="#" class="btn">
-            1
-          </a>
-        </div>
-      </div>
+  <nav class="navbar" style="--xii-navbar-grid-template-columns: 1fr 100px 1fr">
+    <div class="left">
+        <ul class="nav horizontal">
+            <li class="item">
+              <a class="link active" aria-current="page" href="#">Active</a>
+            </li>
+            <li class="item">
+              <a class="link" href="#">Link</a>
+            </li>
+            <li class="item">
+              <a class="link" href="#">Link</a>
+            </li>
+            <li class="item">
+              <a class="link" href="#">Link</a>
+            </li>
+            <li class="item">
+              <a class="link disabled" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
     </div>
-  </div>
+    <div class="center">
+        logo
+    </div>
+    <div class="right">
+        <ul class="nav horizontal">
+          <li class="item">
+            <a class="item" href="#">Github</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
 </Snippet>
-
-
-
