@@ -7,33 +7,22 @@ group: pagination
 import {Snippet} from "/app/src/components/snippet"
 
 <Snippet>
-  <div style="width: 100%;">
-    <nav class="flex align-items-center justify-content-between">
-      <div>
-        <a href="#" class="btn">
-          Previous
-        </a>
+  <nav class="pagination" aria-label="Pagination"
+      style="--xii-pagination-grid-template-columns: 100px 1fr 100px">
+      <div class="left">
+        <button class="btn">Previous</button>
       </div>
-      <div>
-        <div class="inline-flex" arial-label="pagination">
-          <a href="#" class="btn">
-            1
-          </a>
-          <a href="#" class="btn">
-            2
-          </a>
-          <a href="#" class="btn">
-            3
-          </a>
+      <div class="center">
+        <div class="btn-group separated" role="group" aria-label="Basic example">
+          <button type="button" class="btn">Left</button>
+          <button type="button" class="btn">Middle</button>
+          <button type="button" class="btn">Right</button>
         </div>
       </div>
-      <div>
-        <a href="#" class="btn" aria-label="Next">
-          Next
-        </a>
+      <div class="right">
+        <button class="btn">Next</button>
       </div>
     </nav>
-  </div>
 </Snippet>
 
 
