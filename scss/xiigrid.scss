@@ -14,14 +14,7 @@
 @use "themes/default" as theme with (
   $custom: (
     html: (
-      body: (
-        light: (
-          background: #fff,
-        ),
-        dark: (
-          background: #ccc,
-        ),
-      ),
+      body: (),
     ),
   )
 );

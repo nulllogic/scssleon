@@ -1,7 +1,3 @@
-@use '../config';
-
-// scss-docs-start border-radius-mixins
 @mixin border-radius($radius) {
   border-radius: $radius;
 }
-// scss-docs-end border-radius-mixins

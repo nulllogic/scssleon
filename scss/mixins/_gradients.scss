@@ -1,12 +1,6 @@
-@use '../config';
-
 // Gradients
 // scss-docs-start gradient-bg-mixin
 @mixin gradient-bg($color: null) {
   background-color: $color;
-
-  @if config.$enable-gradients {
-    background-image: var(--#{config.$prefix}gradient);
-  }
 }
 // scss-docs-end gradient-bg-mixin
