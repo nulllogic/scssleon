@@ -2,7 +2,6 @@
 @use "sass:string";
 
 // Main theme colors
-$custom: nil !default;
 $theme: () !default;
 
 $html-config: (
@@ -301,7 +300,6 @@ $components-config: (
           border: 1px solid #ccc,
         )
       )
-
     ),
 
     breadcrumb : (
@@ -761,5 +759,3 @@ $components-config: (
 );
 
 $theme: map.deep-merge($components-config, $theme);
-
-$updated: map.deep-merge($theme, $custom);

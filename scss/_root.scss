@@ -1,20 +1,22 @@
 /* - ૮₍ ˃ ⤙ ˂ ₎ა – root  */
-@use 'sass:string';
-@use './mixins' as mixins;
-@use './functions' as functions;
+@use "sass:string";
+@use "./mixins" as mixins;
+@use "./functions" as functions;
 
 $config: () !default;
 $theme: () !default;
 
-$prefix: functions.get-config($config, 'prefix');
+$prefix: functions.get-config($config, "prefix");
 
-$is-smooth-scroll-enabled: functions.get-config($config, 'enable.smooth-scroll');
-$color_scheme: functions.get-config($config, 'color-scheme');
+$is-smooth-scroll-enabled: functions.get-config(
+  $config,
+  "enable.smooth-scroll"
+);
+$color_scheme: functions.get-config($config, "color-scheme");
 
-$root-variables: functions.get-theme($theme, 'root.variables');
+$root-variables: functions.get-theme($theme, "root.variables");
 
 :root {
-
   @if $is-smooth-scroll-enabled {
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
@@ -23,5 +25,10 @@ $root-variables: functions.get-theme($theme, 'root.variables');
 
   color-scheme: string.unquote($color_scheme);
 
-  @include mixins.generate-properties('root', functions.get-theme($theme, 'root'), $config);
+  @include mixins.generate-properties(
+    "root",
+    functions.get-theme($theme, "root"),
+    $config
+  );
 }
+

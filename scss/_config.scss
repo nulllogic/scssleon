@@ -13,13 +13,12 @@
 * Licensed under MIT (https://nulllogic.github.io/xiigrid//blob/main/LICENSE)
 */
 
-
 /*
 ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
 │  │ ││││├┤ ││ ┬
 └─┘└─┘┘└┘└  ┴└─┘
 */
-@use 'sass:map';
+@use "sass:map";
 
 // Root
 
@@ -27,13 +26,12 @@
 // User config
 // ==================================================
 // Deep merged with the default config. This means that this will override existing keys and append new key value pairs.
-$custom: nil !default;
+$config: () global !default;
 
 $default-config: (
   // scss-docs-start root-variables
-  prefix : 'xii',
-  wrapper-class : 'wrapper'
-  // scss-docs-end root-variables
+  prefix: "xii",
+  wrapper-class: "wrapper" // scss-docs-end root-variables
 );
 
 // Container breakpoints
@@ -44,8 +42,8 @@ $breakpoints-config: (
     md: 720px,
     lg: 960px,
     xl: 1140px,
-    xxl: 1320px
-  )
+    xxl: 1320px,
+  ),
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -60,54 +58,53 @@ $grid-breakpoints-config: (
     md: 768px,
     lg: 992px,
     xl: 1200px,
-    xxl: 1400px
-  )
+    xxl: 1400px,
+  ),
 );
 // scss-docs-end grid-breakpoints
 
 $default-config: map.deep-merge($default-config, $grid-breakpoints-config);
 
 $color_scheme-config: (
-  color-scheme : 'light dark',
+  color-scheme: "light dark",
 );
 
 $default-config: map.deep-merge($default-config, $color_scheme-config);
 
 $enable-rules-config: (
-  enable : (
-    shadow : true,
+  enable: (
+    shadow: true,
     border-radius: true,
     transitions: true,
-    reduced-motion : true,
-    smooth-scroll : true,
+    reduced-motion: true,
+    smooth-scroll: true,
     dark-theme: true,
-    spacing : false,
+    spacing: false,
     reset: true,
-    rtl : false,
+    rtl: false,
     button-pointers: true,
     content-class: true,
-    wrapper : true
-  )
+    wrapper: true,
+  ),
 );
 
 $default-config: map.deep-merge($default-config, $enable-rules-config);
 
 // Content
 $content-default-config: (
-  content : (
+  content: (
     elements: (
-      margin : 0 0 1rem 0
-    )
-  )
+      margin: 0 0 1rem 0,
+    ),
+  ),
 ) !default;
 
 $default-config: map.deep-merge($default-config, $content-default-config);
 
-
 // Z-index
 // scss-docs-start z-index-stack
 $z-index-config: (
-  z-index : (
+  z-index: (
     dropdown: 1000,
     sticky: 1020,
     fixed: 1030,
@@ -117,11 +114,13 @@ $z-index-config: (
     modal: 1055,
     popover: 1070,
     tooltip: 1080,
-    toast: 1090
-  )
+    toast: 1090,
+  ),
 ) !default;
 // scss-docs-end z-index-stack
 
 $default-config: map.deep-merge($default-config, $z-index-config);
 
-$updated: map.deep-merge($default-config, $custom);
+$config: map.deep-merge($default-config, $config);
+
+@debug $config;
