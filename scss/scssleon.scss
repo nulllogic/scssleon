@@ -17,7 +17,9 @@
  * Main configuration - initial setup requirement
  */
 
-// Defining two main variables at the top
+// Defining two main variables ( config and theme ) at the top
+// Those two variables will be used to store configuration settings and theme settings
+// You can easily customize any available options to fit your needs
 $config: (
   prefix: "xii",
   enable: (

@@ -5,7 +5,6 @@
 **/
 
 /* Load settings and functions */
-@use "../themes/default" as theme;
 @use "../mixins" as mixins;
 
 /* SCSS variables definition requirement */
@@ -13,3 +12,4 @@ $config: nil !default;
 $theme: nil !default;
 
 @include mixins.generate-component("nav", "nav", $config, $theme);
+

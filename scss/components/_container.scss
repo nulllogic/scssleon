@@ -4,27 +4,31 @@
 └─┘└─┘┘└┘ ┴ ┴ ┴┴┘└┘└─┘┴└─
 **/
 
-@use 'sass:map';
-@use '../themes/default' as theme;
-@use '../functions' as functions;
-@use '../mixins' as mixins;
+@use "sass:map";
+@use "../themes/default" as theme;
+@use "../functions" as functions;
+@use "../mixins" as mixins;
 
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-config($config, 'prefix');
-$color_scheme: functions.get-config($config, 'color-scheme');
+$prefix: functions.get-config($config, "prefix");
+$color_scheme: functions.get-config($config, "color-scheme");
 
-$breakpoints: functions.get-config($config, 'breakpoints');
+$breakpoints: functions.get-config($config, "breakpoints");
 
-$container-component: functions.get-theme($theme, 'components.container');
+$container-component: functions.get-theme($theme, "components.container");
 
 // Container
 @each $name, $size in $breakpoints {
-  @include mixins.breakpoint($size, 'min') {
+  @include mixins.breakpoint($size, "min") {
     .container.#{$name} {
       max-width: $size;
-      @include mixins.generate-properties('container', $container-component, $config);
+      @include mixins.generate-properties(
+        "container",
+        $container-component,
+        $config
+      );
     }
   }
 }

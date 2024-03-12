@@ -659,6 +659,9 @@ $components-config: (
       display: flex,
       flex-direction: var(--flex-direction),
       gap : var(--gap),
+      margin: 0,
+      padding: 0,
+      list-style-type: none,
 
       colors: (
         light : (
@@ -685,11 +688,22 @@ $components-config: (
 
           subclasses : (
             '.link' : (
-              display: inline-flex,
-              padding: 10px,
-              subclasses: (
-                '&:hover' : (
-                  text-decoration : none
+                display: inline-flex,
+                padding: 10px,
+                color: var(--color),
+                
+                colors: (
+                  light : (
+                    color: '#333',
+                  ),
+                  dark : (
+                    color: '#fff'
+                  )
+                ),
+
+                subclasses: (
+                  '&:hover' : (
+                    text-decoration : none
                 )
               )
             ),
@@ -712,6 +726,8 @@ $components-config: (
       width: 100%,
       max-width: 100%,
       align-items: center,
+      margin: 0,
+      padding: 0,
 
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),

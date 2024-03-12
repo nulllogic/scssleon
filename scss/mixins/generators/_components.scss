@@ -14,6 +14,7 @@
   );
 
   %#{$component} {
+    @debug $component;
     @include mix1.generate-properties($component, $theme-component, $config);
   }
 
