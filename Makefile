@@ -15,8 +15,8 @@ clear:
 
 watch:
 	@echo "[Watching for changes]"
-	docker run --init --rm -it -v $(CURRENT_DIR)/:/app xiigrid --watch ./scss/xiigrid.scss ./dist/css/xiigrid.css
+	docker run --init --rm -it -v $(CURRENT_DIR)/:/app scssleon --watch ./scss/scssleon.scss ./dist/css/scssleon.css
 
 build:
 	@echo "[Building Docker image]"
-	docker build --build-arg SASS_VERSION=1.71.1 -t xiigrid .
+	docker build --build-arg SASS_VERSION=1.71.1 -t scssleon .

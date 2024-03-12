@@ -1,19 +1,4 @@
 /*
-*
-* ██╗  ██╗██╗██╗     ██████╗ ██████╗ ██╗██████╗
-* ╚██╗██╔╝██║██║    ██╔════╝ ██╔══██╗██║██╔══██╗
-*  ╚███╔╝ ██║██║    ██║  ███╗██████╔╝██║██║  ██║
-*  ██╔██╗ ██║██║    ██║   ██║██╔══██╗██║██║  ██║
-* ██╔╝ ██╗██║██║    ╚██████╔╝██║  ██║██║██████╔╝
-* ╚═╝  ╚═╝╚═╝╚═╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
-*
-*
-* XII/Grid v1.0.0 (https://nulllogic.github.io/xiigrid/)
-* Copyright 2011-2024 NullLogic
-* Licensed under MIT (https://nulllogic.github.io/xiigrid//blob/main/LICENSE)
-*/
-
-/*
 ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
 │  │ ││││├┤ ││ ┬
 └─┘└─┘┘└┘└  ┴└─┘
@@ -26,7 +11,7 @@
 // User config
 // ==================================================
 // Deep merged with the default config. This means that this will override existing keys and append new key value pairs.
-$config: () global !default;
+$config: () !default;
 
 $default-config: (
   // scss-docs-start root-variables
@@ -122,5 +107,3 @@ $z-index-config: (
 $default-config: map.deep-merge($default-config, $z-index-config);
 
 $config: map.deep-merge($default-config, $config);
-
-@debug $config;

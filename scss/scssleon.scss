@@ -1,0 +1,207 @@
+/*
+ * ------------------------------------------------------------------
+ * ███████╗ ██████╗ ██████╗███████╗██╗     ███████╗ ██████╗ ███╗   ██╗
+ * ██╔════╝██╔════╝██╔════╝██╔════╝██║     ██╔════╝██╔═══██╗████╗  ██║
+ * ███████╗██║     ██║     ███████╗██║     █████╗  ██║   ██║██╔██╗ ██║
+ * ╚════██║██║     ██║     ╚════██║██║     ██╔══╝  ██║   ██║██║╚██╗██║
+ * ███████║╚██████╗╚██████╗███████║███████╗███████╗╚██████╔╝██║ ╚████║
+ * ╚══════╝ ╚═════╝ ╚═════╝╚══════╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
+ *
+ * SCSSLEON v1.0.0 (https://nulllogic.github.io/scssleon/)
+ * Copyright 2011-2024 NullLogic
+ * Licensed under MIT (https://nulllogic.github.io/scssleon/blob/main/LICENSE)
+ * ------------------------------------------------------------------
+ */
+
+/* ------------------------------------------------------------------
+ * Main configuration - initial setup requirement
+ */
+
+// Defining two main variables at the top
+$config: (
+  prefix: "xii",
+  enable: (
+    wrapper: false,
+  ),
+) !default;
+
+$theme: (
+  html: (
+    body: (),
+  ),
+) !default;
+
+// ↓ Config
+// Override default config | @example
+@use "config" as config with (
+  $config: $config
+);
+
+// ↓ Theme
+/* Override default settings in the theme | @example */
+@use "themes/default" as theme with (
+  $theme: $theme
+);
+
+// Gettings updated variables
+$config: config.$config;
+$theme: theme.$theme;
+
+/*
+ * End of initial setup confiruation
+ * ------------------------------------------------------------------
+ */
+
+/* ------------------------------------------------------------------
+ * Loading modules - this is default configuration with all modules enabled
+ */
+
+// ↓ Root
+@use "root" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// Great reset
+@use "reset" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// Boot
+// Special utility to dynamically create css properties for html tags, specified in theme
+@use "boot" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// Amazing content
+// Special class `.content` to allow formatting of the default html tags
+@use "content" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Container
+@use "components/container" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Grid
+//@use 'components/grid' with (
+//  $config : config.$updated,
+//);
+
+// ↓ Card
+@use "components/card" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Badge
+@use "components/badge" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Form
+@use "components/form" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Buttons
+@use "components/button" with (
+  $config: $config,
+  $theme: $theme
+);
+@use "components/button-group" with (
+  $config: $config,
+  $theme: $theme
+);
+
+////@use "components/icon";
+//@use "components/button";
+////@use "components/button-group";
+
+// ↓ Breadcrumbs
+@use "components/breadcrumb" with (
+  $config: $config,
+  $theme: $theme
+);
+
+@use "components/alert" with (
+  $config: $config,
+  $theme: $theme
+);
+
+@use "components/accordion" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Table
+//@use 'components/table' with (
+//  $config : config.$updated,
+//  $theme: theme.$updated
+//);
+
+// ↓ Overlay
+@use "components/overlay" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Pagination
+@use "components/pagination" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Placeholder
+@use "components/placeholder" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Modal
+@use "components/modal" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Loader
+@use "components/loader" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Nav
+@use "components/nav" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Navigation bar
+@use "components/navbar" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Sidecap
+@use "components/sidecap" with (
+  $config: $config,
+  $theme: $theme
+);
+
+// ↓ Helpers
+@use "helpers/clearfix";
+@use "helpers/screen_reader";
+@use "helpers/text_truncate";
+
+// ↓ Utilities
+@use "utilities/api" with (
+  $config: $config,
+  $theme: $theme
+);
