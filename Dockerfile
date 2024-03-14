@@ -1,9 +1,9 @@
 FROM alpine:latest as linux
 
-LABEL name="xiidocs"
+LABEL name="scssleon"
 LABEL version="1.0.0"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
-LABEL description="Docker container for XII/Grid generator"
+LABEL description="Docker container for SCSSleon generator"
 
 ARG SASS_VERSION="1.71.1"
 
