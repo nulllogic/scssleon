@@ -3,30 +3,19 @@
 │  │ ││││ │ ├┤ │││ │
 └─┘└─┘┘└┘ ┴ └─┘┘└┘ ┴
 */
-@use 'sass:map';
-@use 'functions' as functions;
+@use "sass:map";
+@use "functions" as functions;
+@use "./mixins" as mixins;
 
 $config: nil !default;
 $theme: nil !default;
 
-$is-content-enabled: functions.get-config($config, 'enable.content');
-$content-elements-margin: functions.get-config($config, 'content.elements.margin');
+$is-content-enabled: functions.get-config($config, "enable.content");
 
 @if ($is-content-enabled) {
-  .content {
-    h1, h2, h3, h4, h5, h6,
-    p,
-    dl,
-    ol,
-    ul,
-    blockquote,
-    pre,
-    table:not(:last-child) {
-      margin: $content-elements-margin;
-    }
-
-    p {
-      line-height: 1.5;
+  @each $tag, $properties in functions.get-theme($theme, "content") {
+    #{$tag} {
+      @include mixins.generate-properties(#{$tag}, $properties, $config);
     }
   }
 }

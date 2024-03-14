@@ -4,24 +4,26 @@
 ┴└─└─┘└─┘└─┘ ┴
 */
 
-@use 'sass:map';
+@use "sass:map";
 @use "sass:meta";
-@use 'functions' as functions;
-@use 'mixins' as mixins;
+@use "functions" as functions;
+@use "mixins" as mixins;
 
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-config($config, 'prefix');
+$prefix: functions.get-config($config, "prefix");
 
-$is-reset-enabled: functions.get-config($config, 'enable.reset');
-$is-button-pointers-enabled: functions.get-config($config, 'enable.button-pointers');
-$is-spacing-enabled: functions.get-config($config, 'enable.spacing');
+$is-reset-enabled: functions.get-config($config, "enable.reset");
+$is-button-pointers-enabled: functions.get-config(
+  $config,
+  "enable.button-pointers"
+);
+$is-spacing-enabled: functions.get-config($config, "enable.spacing");
 
-$color_scheme: functions.get-config($config, 'color-scheme');
+$color_scheme: functions.get-config($config, "color-scheme");
 
 @if $is-reset-enabled {
-
   *,
   *::before,
   *::after {
@@ -67,7 +69,6 @@ $color_scheme: functions.get-config($config, 'color-scheme');
     }
   }
 
-
   // Code
   pre,
   code,
@@ -101,9 +102,9 @@ $color_scheme: functions.get-config($config, 'color-scheme');
   }
 
   kbd {
-    padding: .1875rem .375rem;
-    font-size: .875em;
-    border-radius: .25rem;
+    padding: 0.1875rem 0.375rem;
+    font-size: 0.875em;
+    border-radius: 0.25rem;
 
     kbd {
       padding: 0;
@@ -111,20 +112,17 @@ $color_scheme: functions.get-config($config, 'color-scheme');
     }
   }
 
-
   // Figures
   // Apply a consistent margin strategy (matches our type styles).
   figure {
     margin: 0;
   }
 
-
   // Images and content
   img,
   svg {
     vertical-align: middle;
   }
-
 
   // Tables
   // Prevent double borders
@@ -157,11 +155,10 @@ $color_scheme: functions.get-config($config, 'color-scheme');
     border-width: 0;
   }
 
-
   // Forms
   // Remove the default `border-radius` that macOS Chrome adds.
   button {
-    border-radius: 0
+    border-radius: 0;
   }
 
   // Explicitly remove focus outline in Chromium when it shouldn't be
@@ -204,7 +201,9 @@ $color_scheme: functions.get-config($config, 'color-scheme');
 
   // Remove the dropdown arrow only from text type inputs built with datalists in Chrome.
   // See https://stackoverflow.com/a/54997118
-  [list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
+  [list]:not([type="date"]):not([type="datetime-local"]):not(
+      [type="month"]
+    ):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
     display: none !important;
   }
 
@@ -234,7 +233,7 @@ $color_scheme: functions.get-config($config, 'color-scheme');
 
   // 1. "resize" textareas should really only resize vertically so they don't break their (horizontal) containers.
   textarea {
-    resize: vertical
+    resize: vertical;
   }
 
   // 1. "min-width" browsers set a default `min-width: min-content;` on fieldsets,
@@ -311,7 +310,6 @@ $color_scheme: functions.get-config($config, 'color-scheme');
     padding: 0;
   }
 
-
   // 1. Inherit font family and line height for file input buttons
   // 2. Correct the inability to style clickable types in iOS and Safari.
   ::file-selector-button {
@@ -326,22 +324,20 @@ $color_scheme: functions.get-config($config, 'color-scheme');
 
   // Remove border from iframe
   iframe {
-    border: 0
+    border: 0;
   }
 
   // Summary
   // 1. "display" add the correct display in all browsers
   summary {
     display: list-item;
-    cursor: pointer
+    cursor: pointer;
   }
-
 
   // Progress
   progress {
     vertical-align: baseline;
   }
-
 
   // Hidden attribute
   [hidden] {

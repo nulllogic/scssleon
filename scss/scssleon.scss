@@ -70,9 +70,10 @@ $theme: theme.$theme;
   $theme: $theme
 );
 
-// Boot
-// Special utility to dynamically create css properties for html tags, specified in theme
-@use "boot" with (
+// Base
+// Special utility, that will dynamically generate CSS
+// properties for HTML tags, specified in theme
+@use "base" with (
   $config: $config,
   $theme: $theme
 );

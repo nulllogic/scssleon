@@ -42,44 +42,51 @@ $html-config: (
         )
       )
     ),
+  )
+);
+
+$theme: map.deep-merge($theme, $html-config);
+
+$content-config: (
+  content : (
     h1 : (
       font-size: 3.5rem,
       line-height : inherit,
-      margin: 0,
+      margin: 0 0 15px 0,
       font-weight: 500
     ),
     h2 : (
       font-size: 2.8rem,
       line-height : inherit,
-      margin: 0,
+      margin: 0 0 15px 0,
       font-weight: 500
     ),
     h3 : (
       font-size: 2.4rem,
       line-height : inherit,
-      margin: 0,
+      margin: 0 0 15px 0,
       font-weight: 500
     ),
     h4 : (
       font-size: 2rem,
       line-height : inherit,
-      margin: 0,
+      margin: 0 0 15px 0,
       font-weight: 500
     ),
     h5 : (
       font-size: 1.8rem,
       line-height : inherit,
-      margin: 0,
+      margin: 0 0 15px 0,
       font-weight: 500
     ),
     h6 : (
       font-size: 1.625rem,
       line-height : inherit,
-      margin: 0,
+      margin: 0 0 15px 0,
       font-weight: 500
     ),
     p : (
-      margin: 0
+      margin: 0 0 15px 0
     ),
     abbr: (
       attributes : (
@@ -93,28 +100,20 @@ $html-config: (
       line-height: inherit,
     ),
     ol: (
-      list-style: none,
-      margin: 0,
-      padding: 0
+      margin-bottom: 15px,
     ),
     ul: (
-      list-style: none,
-      margin: 0,
-      padding: 0
+      margin-bottom: 15px,
     ),
     dl: (
-      list-style: none,
-      margin: 0,
-      padding: 0
+      margin-bottom: 15px,
     ),
     dt: (
       font-weight: normal,
     ),
     dd: (
       margin: 0 0 .5rem 0,
-    ),
-    blockquote: (
-      margin: 0 0 1rem
+      padding: 0
     ),
     b : (
       font-weight: bold
@@ -134,11 +133,14 @@ $html-config: (
     sup : (
       top: -.5em
     ),
+    details: (
+      margin-bottom: 15px,
+    ),
     pre: (
     ),
     code: (
-      color: var(--code-color),
-      background: var(--code-background),
+      color: var(--color),
+      background: var(--background),
       padding: 0 5px,
       colors: (
         light : (
@@ -154,8 +156,10 @@ $html-config: (
     kbd: (
     ),
     figure: (
+      margin: 0 0 15px 0,
     ),
     img : (
+      margin: 0 0 15px 0,
       vertical-align: middle
     ),
     svg : (
@@ -164,6 +168,13 @@ $html-config: (
     output: (
     ),
     iframe: (
+      margin: 0 0 15px 0,
+    ),
+    embed : (
+      margin: 0 0 15px 0,
+    ),
+    object: (
+      margin: 0 0 15px 0,
     ),
     summary: (
     ),
@@ -205,10 +216,11 @@ $html-config: (
     th : (
     ),
     hr : (
-      margin: 15px 0 0 0,
+      margin: 15px 0,
       border: 0,
       border-top-width: 1px,
       border-top-style: solid,
+      border-top-color: var(--border-top-color),
       colors: (
         light: (
           border-top-color: #ccc
@@ -221,7 +233,7 @@ $html-config: (
   )
 );
 
-$theme: map.deep-merge($html-config, $theme);
+$theme: map.deep-merge($theme, $content-config);
 
 $components-config: (
   components: (
@@ -548,6 +560,7 @@ $components-config: (
       )
     ),
     table : (
+      width: 100%,
     ),
 
     overlay : (
