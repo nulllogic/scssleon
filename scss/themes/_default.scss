@@ -320,6 +320,7 @@ $components-config: (
       align-items: center,
       display: flex,
       flex-wrap: wrap,
+      padding: var(--padding),
       colors: (
         light : (
         ),
