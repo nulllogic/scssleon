@@ -14,7 +14,7 @@
  */
 
 /* ------------------------------------------------------------------
- * Main configuration - initial setup requirement
+ * Main configuration - initial configuration requirement
  */
 
 // Defining two main variables ( config and theme ) at the top
@@ -45,12 +45,12 @@ $theme: (
   $theme: $theme
 );
 
-// Gettings updated variables
+// Getting updated variables
 $config: config.$config;
 $theme: theme.$theme;
 
 /*
- * End of initial setup confiruation
+ * End of initial setup configuration
  * ------------------------------------------------------------------
  */
 
