@@ -1,5 +1,6 @@
 @use "sass:meta";
 @use "sass:string";
+
 @use "../../functions" as functions;
 @use "../../mixins/generators/color-sheme" as mixin;
 
@@ -58,8 +59,8 @@
 
   @each $property, $value in $properties {
     // Variables
-    // Looking for "--" symbols in the beggining of the property
-    // Example // --flex-direction : row
+    // Looking for "--" symbols in the beginning of the property
+    // Example: --flex-direction : row
     @if (
       meta.type-of($property) == "string" and str-index($property, "--") == 1
     ) {

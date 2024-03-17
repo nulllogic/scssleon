@@ -40,7 +40,27 @@ $html-config: (
         dark : (
           color: '#ccc'
         )
+      ),
+      subclasses : (
+        "&[target='_blank']" : (
+
+        )
       )
+    ),
+    ol: (
+      margin: 0,
+      padding: 0,
+      list-style-type: none,
+    ),
+    ul: (
+      margin: 0,
+      padding: 0,
+      list-style-type: none,
+    ),
+    dl: (
+      margin: 0,
+      padding: 0,
+      list-style-type: none,
     ),
   )
 );

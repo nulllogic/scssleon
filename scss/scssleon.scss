@@ -13,9 +13,11 @@
  * ------------------------------------------------------------------
  */
 
-/* ------------------------------------------------------------------
- * Main configuration - initial configuration requirement
- */
+/*
+-------------------------------------------------------
+Main configuration - initial configuration requirement
+-------------------------------------------------------
+*/
 
 // Defining two main variables ( config and theme ) at the top
 // Those two variables will be used to store configuration settings and theme settings
@@ -49,10 +51,8 @@ $theme: (
 $config: config.$config;
 $theme: theme.$theme;
 
-/*
- * End of initial setup configuration
- * ------------------------------------------------------------------
- */
+/* Main configuration END
+-------------------------------------------------------*/
 
 /* ------------------------------------------------------------------
  * Loading modules - this is default configuration with all modules enabled

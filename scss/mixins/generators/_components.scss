@@ -1,26 +1,32 @@
 @use "sass:map";
+@use "sass:meta";
+
+@use "properties";
+@use "wrapper";
+
 @use "../../functions" as functions;
 
-@use "../../mixins/generators/_properties.scss" as mix1;
-@use "../../mixins/generators/_wrapper.scss" as mix2;
-
-// @TODO update mixins usage
-//
 @mixin generate-component($component, $class, $config, $theme) {
-  /* Loading component settings and styling */
-  $theme-component: functions.get-theme(
-    $theme,
-    "components" + "." + $component
-  );
 
-  %#{$component} {
-    @debug $component;
-    @include mix1.generate-properties($component, $theme-component, $config);
+  $theme-component : '';
+
+  @if (meta.type-of($component) == 'string') {
+    /* Loading component settings and styling */
+    $theme-component: functions.get-theme(
+        $theme,
+        "components" + "." + $component
+    );
+  } @else {
+    $theme-component : $component;
   }
 
-  @include mix2.generate-wrapper($config) {
+  %#{$class} {
+    @include properties.generate-properties($component, $theme-component, $config);
+  }
+
+  @include wrapper.generate-wrapper($config) {
     .#{$class} {
-      @extend %#{$component};
+      @extend %#{$class};
     }
   }
 }
