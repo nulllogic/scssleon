@@ -267,6 +267,7 @@ $components-config: (
       --padding: 1.25rem,
 
       position: relative,
+      width: 100%,
 
       colors: (
         light : (
@@ -411,6 +412,9 @@ $components-config: (
           background: transparent,
           border: none,
           box-shadow: none
+        ),
+        "&.loading" : (
+          cursor: wait,
         ),
         "&.btn[disabled]" : (
           cursor: not-allowed,
