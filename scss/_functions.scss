@@ -49,7 +49,6 @@
 @function get-theme($theme, $value) {
   $val: null;
 
-
   @if($theme == nil) {
     @warn 'Theme variable is nil';
     @return nil;

@@ -1,5 +1,6 @@
 @use "sass:meta";
 @use "sass:string";
+@use "sass:map";
 
 @use "../../functions" as functions;
 @use "../../mixins/generators/color-sheme" as mixin;
@@ -15,9 +16,7 @@
     #{$property}: #{meta.inspect(
         functions.str-replace($value, "--", "--" + $prefix + "-" + $tag + "-")
       )};
-  } @else if
-    (type-of($value) == "string" and str-index($value, "var(global(") == 1)
-  {
+  } @else if (type-of($value) == "string" and str-index($value, "var(global(") == 1) {
     #{$property}: #{meta.inspect(
         functions.str-replace(
           string.slice($value, 0, string.length($value) - 1),
@@ -32,9 +31,7 @@
 
 @mixin generate-colors($prefix, $tag, $value, $config) {
   @each $color, $color-properties in $value {
-    @each $scheme
-      in functions.str-split(functions.get-config($config, "color-scheme"), " ")
-    {
+    @each $scheme in functions.str-split(functions.get-config($config, "color-scheme"), " ") {
       @if $scheme == $color {
         @include mixin.generate-color-scheme($color) {
           @each $color-property, $color-value in $color-properties {
@@ -54,25 +51,52 @@
   }
 }
 
+@mixin generate-responsive($tag, $class, $properties, $config) {
+  $breakpoints: functions.get-config($config, "breakpoints");
+
+  @each $breakpoint, $value in $breakpoints {
+    @debug $value;
+    $property: map.get($properties, $breakpoint);
+
+    @if $property != null {
+      @media (min-width: $value) {
+        @include generate-properties($tag, $property, $config);
+      }
+    }
+  }
+}
+
 @mixin generate-properties($tag, $properties, $config) {
   $prefix: functions.get-config($config, "prefix");
 
   @each $property, $value in $properties {
+    @debug $property;
+    @debug meta.type-of($property) == "string";
+    @debug meta.type-of($value) == "map";
+    @debug str-index($property, "--") == 1;
+
     // Variables
     // Looking for "--" symbols in the beginning of the property
     // Example: --flex-direction : row
     @if (
-      meta.type-of($property) == "string" and str-index($property, "--") == 1
+      meta.type-of($property) == "string"
+      //and meta.type-of($value) == "map"
+      and str-index($property, "--") == 1
     ) {
       @include generate-css-properties($tag, $prefix, $property, $value);
     }
 
-    // Colors
+      // Colors
     @else if ($property == "colors") {
       @include generate-colors($prefix, $tag, $value, $config);
     }
 
-    // Subclasses
+      // Responsive
+    @else if ($property == "responsive") {
+      @include generate-responsive($prefix, $tag, $value, $config);
+    }
+
+      // Subclasses
     @else if ($property == "subclasses") {
       @each $class, $class_properties in $value {
         @include generate-subclasses($tag, $class, $class_properties, $config);
