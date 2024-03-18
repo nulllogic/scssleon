@@ -79,11 +79,6 @@
   $prefix: functions.get-config($config, "prefix");
 
   @each $property, $value in $properties {
-    //   @debug $property;
-    //   @debug meta.type-of($property) == "string";
-    //   @debug meta.type-of($value) == "map";
-    //   @debug str-index($property, "--") == 1;
-
     // Variables
     // Looking for "--" symbols in the beginning of the property
     // Example: --flex-direction : row
