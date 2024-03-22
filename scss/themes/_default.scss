@@ -43,7 +43,15 @@ $html-config: (
       ),
       subclasses : (
         "&[target='_blank']" : (
-
+          subclasses : (
+            "&:after" : (
+              background: red,
+              display: inline-flex,
+              width: 12px,
+              height: 12px,
+              content : ''
+            )
+          ),
         )
       )
     ),
