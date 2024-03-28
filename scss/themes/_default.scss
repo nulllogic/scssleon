@@ -3,6 +3,7 @@
 
 // Main theme colors
 $theme: () !default;
+$updated-theme : () !default;
 
 $html-config: (
   root: (
@@ -17,8 +18,8 @@ $html-config: (
       font-weight: normal,
       line-height : 1,
       font-family: var(global(--font-family-default)),
-      color: var(--body-color),
-      background: var(--body-background),
+      color: var(--color),
+      background: var(--background),
       colors: (
         light : (
           background: '#fff',
@@ -73,48 +74,55 @@ $html-config: (
   )
 );
 
-$theme: map.deep-merge($theme, $html-config);
+$updated-theme: map.deep-merge($updated-theme, $html-config);
 
 $content-config: (
   content : (
     h1 : (
       font-size: 3.5rem,
       line-height : inherit,
-      margin: 0 0 15px 0,
-      font-weight: 500
+      font-weight: 500,
+      margin: 0,
+      padding: 0 0 15px 0
     ),
     h2 : (
       font-size: 2.8rem,
       line-height : inherit,
-      margin: 0 0 15px 0,
-      font-weight: 500
+      font-weight: 500,
+      margin: 0,
+      padding: 0 0 15px 0
     ),
     h3 : (
       font-size: 2.4rem,
       line-height : inherit,
-      margin: 0 0 15px 0,
-      font-weight: 500
+      font-weight: 500,
+      margin: 0,
+      padding: 0 0 15px 0
     ),
     h4 : (
       font-size: 2rem,
       line-height : inherit,
-      margin: 0 0 15px 0,
-      font-weight: 500
+      font-weight: 500,
+      margin: 0,
+      padding: 0 0 15px 0
     ),
     h5 : (
       font-size: 1.8rem,
       line-height : inherit,
-      margin: 0 0 15px 0,
-      font-weight: 500
+      font-weight: 500,
+      margin: 0,
+      padding: 0 0 15px 0
     ),
     h6 : (
       font-size: 1.625rem,
       line-height : inherit,
-      margin: 0 0 15px 0,
-      font-weight: 500
+      font-weight: 500,
+      margin: 0,
+      padding: 0 0 15px 0
     ),
     p : (
-      margin: 0 0 15px 0
+      margin: 0,
+      padding: 0 0 15px 0
     ),
     abbr: (
       attributes : (
@@ -261,7 +269,7 @@ $content-config: (
   )
 );
 
-$theme: map.deep-merge($theme, $content-config);
+$updated-theme: map.deep-merge($updated-theme, $content-config);
 
 $components-config: (
   components: (
@@ -820,4 +828,6 @@ $components-config: (
   )
 );
 
-$theme: map.deep-merge($components-config, $theme);
+$updated-theme: map.deep-merge($updated-theme, $components-config);
+
+$theme: map.deep-merge($updated-theme, $theme);
