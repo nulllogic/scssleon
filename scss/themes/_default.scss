@@ -71,6 +71,15 @@ $html-config: (
       padding: 0,
       list-style-type: none,
     ),
+    img : (
+      vertical-align: middle,
+      width: auto,
+      height: auto,
+      max-width: 100%,
+    ),
+    p : (
+      margin: 0
+    )
   )
 );
 
@@ -196,7 +205,6 @@ $content-config: (
     ),
     img : (
       margin: 0 0 15px 0,
-      vertical-align: middle
     ),
     svg : (
       vertical-align: middle

@@ -13,9 +13,12 @@ $theme: nil !default;
 $is-content-enabled: functions.get-config($config, "enable.content");
 
 @if ($is-content-enabled) {
-  @each $tag, $properties in functions.get-theme($theme, "content") {
-    #{$tag} {
-      @include mixins.generate-properties(#{$tag}, $properties, $config);
+  .content {
+    @each $tag, $properties in functions.get-theme($theme, "content") {
+      #{$tag} {
+        @include mixins.generate-properties(#{$tag}, $properties, $config);
+      }
     }
   }
 }
+
