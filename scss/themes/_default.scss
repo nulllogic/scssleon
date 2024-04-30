@@ -8,7 +8,7 @@ $updated-theme : () !default;
 $html-config: (
   root: (
     --font-family-default : string.unquote("system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"),
-    --font-family-monospace : string.unquote("SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"),
+    --font-family-monospace : string.unquote("ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"),
   ),
   html : (
     body : (
@@ -20,6 +20,8 @@ $html-config: (
       font-family: var(global(--font-family-default)),
       color: var(--color),
       background: var(--background),
+      text-rendering: optimizelegibility,
+      -webkit-font-smoothing: antialiased,
       colors: (
         light : (
           background: '#fff',
@@ -182,6 +184,7 @@ $content-config: (
       margin-bottom: 15px,
     ),
     pre: (
+      font-family: var(global(--font-family-monospace)),
     ),
     code: (
       color: var(--color),
@@ -377,7 +380,7 @@ $components-config: (
           display: inline-flex,
           subclasses : (
             ".link" : (
-            
+
             )
           )
         )
@@ -405,7 +408,7 @@ $components-config: (
 
       vertical-align: middle,
       font-size: 1em,
- 
+
       padding: var(--padding),
       border: var(--border),
       background: var(--background),
@@ -428,17 +431,17 @@ $components-config: (
           background: #fff
         ),
         dark: (
- 
+
         // Default
           color: #fff,
           background: rgb(48, 56, 66),
           border: 1px solid rgba(240, 246, 252, .25),
-  
+
           // Hover state
           hover-color: #fff,
           hover-background: rgb(59, 68, 81),
           hover-border: 1px solid rgba(229, 235, 240, .55),
-   
+
           // Disabled state
           disabled-color: #484f58,
           disabled-background: #21262d,
@@ -754,7 +757,7 @@ $components-config: (
                 display: inline-flex,
                 padding: 10px,
                 color: var(--color),
-                
+
                 colors: (
                   light : (
                     color: '#333',

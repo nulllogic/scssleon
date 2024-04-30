@@ -1,6 +1,7 @@
 @use '../config';
 @use '../mixins' as mixins;
 
+/* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
