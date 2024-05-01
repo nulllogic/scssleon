@@ -91,11 +91,6 @@ $theme: theme.$theme;
   $theme: $theme
 );
 
-// ↓ Grid
-//@use 'components/grid' with (
-//  $config : config.$updated,
-//);
-
 // ↓ Card
 @use "components/card" with (
   $config: $config,
