@@ -719,16 +719,16 @@ $components-config: (
     nav : (
 
       --flex-direction: row,
-      --align-items: center,
+      --align-items: auto,
       --gap: 0,
 
       display: flex,
       flex-direction: var(--flex-direction),
+      align-items: var(--align-items),
       gap : var(--gap),
       margin: 0,
       padding: 0,
       list-style-type: none,
-      align-items: center,
 
       colors: (
         light : (
@@ -739,6 +739,7 @@ $components-config: (
 
       subclasses : (
         '&.horizontal' : (
+          --align-items: center,
           --flex-direction : row,
         ),
         '&.vertical' : (
