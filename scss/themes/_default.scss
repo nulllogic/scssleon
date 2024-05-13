@@ -522,20 +522,24 @@ $components-config: (
     card : (
       --border-radius: .25rem,
       --padding: 10px,
-      margin: 0,
 
       background: var(--background),
       padding: var(--padding),
       border-radius: var(--border-radius),
+      box-shadow: var(--shadow),
+      border: var(--border),
+
       height: 100%,
+      margin: 0,
 
       colors: (
         light : (
           background: rgb(200, 200, 200)
         ),
         dark : (
-          border: 1px solid rgba(240, 246, 252, .25),
-          background: rgb(13, 17, 23)
+          border: 1px solid rgba(48, 54, 61, .75),
+          background: rgb(22, 27, 34),
+          shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
         )
       )
     ),
