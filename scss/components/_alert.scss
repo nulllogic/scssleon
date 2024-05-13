@@ -13,4 +13,3 @@ $config: nil !default;
 $theme: nil !default;
 
 @include mixins.generate-component("alert", "alert", $config, $theme);
-
