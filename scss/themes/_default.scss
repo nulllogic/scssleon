@@ -459,12 +459,12 @@ $components-config: (
       ),
 
       subclasses : (
-        "&:hover" : (
+        "&:hover:not(.loading, [disabled])" : (
           color: var(--hover-color),
           background: var(--hover-background),
           border: var(--hover-border),
         ),
-        "&:active" : (
+        "&:active:not(.loading, [disabled])" : (
           color: var(--active-color),
           background: var(--active-background),
           border: var(--active-border),
