@@ -455,16 +455,17 @@ $components-config: (
           active-background: rgb(39, 45, 53),
           active-border: 1px solid rgba(240, 246, 252, .25),
           active-shadow: string.unquote("-0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset,0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset, 0rem 0.125rem 0.0625rem 0rem rgba(26,26,26,0.2) inset")
+
         )
       ),
 
       subclasses : (
-        "&:hover:not(.loading, [disabled])" : (
+        "&:hover:not(.loading, [disabled], .btn-link)" : (
           color: var(--hover-color),
           background: var(--hover-background),
           border: var(--hover-border),
         ),
-        "&:active:not(.loading, [disabled])" : (
+        "&:active:not(.loading, [disabled], .btn-link)" : (
           color: var(--active-color),
           background: var(--active-background),
           border: var(--active-border),
@@ -473,7 +474,12 @@ $components-config: (
         "&.btn-link" : (
           background: transparent,
           border: none,
-          box-shadow: none
+          box-shadow: none,
+          subclasses: (
+            "&:hover": (
+              text-decoration: underline,
+            )
+          )
         ),
         "&.loading" : (
           cursor: wait,
