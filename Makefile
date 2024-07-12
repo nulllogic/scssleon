@@ -19,4 +19,4 @@ watch:
 
 build:
 	@echo "[Building Docker image]"
-	docker build --build-arg SASS_VERSION=1.77.5 -t scssleon .
+	docker build --build-arg SASS_VERSION=1.77.8 -t scssleon .
