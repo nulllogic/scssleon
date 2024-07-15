@@ -24,7 +24,9 @@ $root-variables: functions.get-theme($theme, "root.variables");
     }
   }
 
-  color-scheme: string.unquote($color_scheme);
+  & {
+    color-scheme: string.unquote($color_scheme);
+  }
 
   @include mixins.generate-properties(
     "root",
