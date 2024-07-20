@@ -4,4 +4,12 @@
 .idea/
 assets/
 node_modules/
-scss/
+dist/
+.dockerignore
+.eslintignore
+.prettierignore
+CHANGELOG.md
+CONTRIBUTING.md
+Dockerfile
+Makefile
+README.md
