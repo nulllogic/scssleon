@@ -114,7 +114,7 @@ $theme: theme.$theme;
   $config: $config,
   $theme: $theme
 );
-@use "components/button-group" with (
+@use "components/button_group" with (
   $config: $config,
   $theme: $theme
 );
