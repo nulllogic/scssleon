@@ -1,12 +1,14 @@
-// Form validation
-//
-// Provide feedback to users when form field values are valid or invalid. Works
-// primarily for client-side validation via scoped `:invalid` and `:valid`
-// pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
-// server-side validation.
+@use '../themes/default' as theme;
+@use '../functions' as functions;
+@use '../mixins' as mixins;
 
-// scss-docs-start form-validation-states-loop
-//@each $state, $data in $form-validation-states {
-//  @include form-validation-state($state, $data...);
-//}
-// scss-docs-end form-validation-states-loop
+/* SCSS variables definition requirement */
+$config: nil !default;
+$theme: nil !default;
+
+@include mixins.generate-component(
+  "form.validation",
+  "validation",
+  $config,
+  $theme
+);

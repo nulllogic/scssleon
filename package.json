@@ -1,7 +1,7 @@
 {
   "name": "@nulllogic/scssleon",
-  "description": "Most advanced responsive front-end SCSS framework",
-  "version": "1.0.2",
+  "description": "Most advanced, simple and clean SCSS framework",
+  "version": "1.0.3",
   "version_short": "1.0",
   "keywords": [
     "css",
@@ -11,7 +11,8 @@
     "front-end",
     "css-framework",
     "framework",
-    "web"
+    "web",
+    "scssleon"
   ],
   "scripts": {
     "css": "npm run css-compile",
@@ -27,14 +28,13 @@
     "clean-css": "^5.3.3"
   },
   "homepage": "https://nulllogic.github.io/scssleon",
-  "main": ".babelrc.js",
   "style": "dist/scssleon.css",
   "sass": "scss/scssleon.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nulllogic/scssleon.git"
   },
-  "author": "Vladimir Lukyanov",
+  "author": "NullLogic",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nulllogic/scssleon/issues"
