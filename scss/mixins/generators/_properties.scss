@@ -8,36 +8,28 @@
 @mixin generate-css-properties($tag, $property, $value, $config) {
   $prefix: functions.get-config($config, "prefix");
 
-  & {
-    --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')}: #{meta.inspect(
+  --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
-  }
 }
 
 @mixin generate-css-variables($tag, $property, $value, $config) {
   $prefix: functions.get-config($config, "prefix");
 
   @if (meta.type-of($value) == "string" and str-index($value, "var(--") == 1) {
-    & {
-      #{$property}: #{meta.inspect(
-        functions.str-replace($value, "--", "--" + $prefix + "-" + $tag + "-")
-      )};
-    }
+    #{$property}: #{meta.inspect(
+      functions.str-replace($value, "--", "--" + $prefix + "-" + $tag + "-")
+    )};
   } @else if (type-of($value) == "string" and str-index($value, "var(global(") == 1) {
-    & {
-      #{$property}: #{meta.inspect(
+    #{$property}: #{meta.inspect(
         functions.str-replace(
           string.slice($value, 0, string.length($value) - 1),
           "global(--",
           "--" + $prefix + "-root-"
         )
       )};
-    }
   } @else {
-    & {
-      #{$property}: #{meta.inspect($value)};
-    }
+    #{$property}: #{meta.inspect($value)};
   }
 }
 
@@ -49,11 +41,9 @@
       @if $scheme == $color {
         @include mixin.generate-color-scheme($color) {
           @each $color-property, $color-value in $color-properties {
-            & {
-              --#{$prefix}-#{$tag}-#{functions.str-replace($color-property, '--', '')}: #{meta.inspect(
-                $color-value
-              )};
-            }
+            --#{$prefix}-#{$tag}-#{functions.str-replace($color-property, '--', '')}: #{meta.inspect(
+              $color-value
+            )};
           }
         }
       }
@@ -89,7 +79,7 @@
     // Looking for "--" symbols in the beginning of the property
     // Example: --flex-direction : row
     @if (
-        meta.type-of($property) == "string" and str-index($property, "--") == 1
+      meta.type-of($property) == "string" and str-index($property, "--") == 1
     ) {
       @include generate-css-properties($tag, $property, $value, $config);
     }
