@@ -4,27 +4,15 @@
 └─┘┴ ┴└─┘└─┘
 */
 
-@use "sass:map";
-@use "sass:meta";
-@use "functions" as functions;
-@use "mixins" as mixins;
+/* Load settings and functions */
+@use 'mixins' as mixins;
+@use 'functions' as functions;
 
+/* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-config($config, "prefix");
-
-$is-reset-enabled: functions.get-config($config, "enable.reset");
-$is-button-pointers-enabled: functions.get-config(
-  $config,
-  "enable.button-pointers"
-);
-
-$is-spacing-enabled: functions.get-config($config, "enable.spacing");
-
-$color_scheme: functions.get-config($config, "color-scheme");
-
-@each $tag, $properties in functions.get-theme($theme, "html") {
+@each $tag, $properties in functions.get-theme($theme, 'html') {
   #{$tag} {
     @include mixins.generate-properties(#{$tag}, $properties, $config);
   }

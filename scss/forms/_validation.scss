@@ -1,14 +1,14 @@
-@use '../themes/default' as theme;
-@use '../functions' as functions;
+/* Load mixins/functions */
 @use '../mixins' as mixins;
+@use '../functions' as functions;
 
 /* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
 @include mixins.generate-component(
-  "form.validation",
-  "validation",
+  'form.validation',
+  'validation',
   $config,
   $theme
 );
