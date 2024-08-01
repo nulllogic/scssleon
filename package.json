@@ -1,7 +1,7 @@
 {
   "name": "@nulllogic/scssleon",
   "description": "Most advanced, simple and clean SCSS framework",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "version_short": "1.0",
   "keywords": [
     "css",
@@ -38,5 +38,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nulllogic/scssleon/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
