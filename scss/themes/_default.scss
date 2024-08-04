@@ -55,6 +55,9 @@ $html-config: (
               content : ''
             )
           ),
+        ),
+        "&:hover": (
+          text-decoration: none
         )
       )
     ),
@@ -290,12 +293,26 @@ $components-config: (
       --border-radius: .25rem,
       --padding: 1.25rem,
 
+      --grid-template-columns: auto auto 1fr,
+      --gap : 10px,
+
+      --left-column-aligment: start,
+      --center-column-alignment: center,
+      --right-column-alignment: end,
+
       box-shadow: var(--shadow),
       background: var(--background),
 
       outline: 1px solid transparent,
+
       position: relative,
-      display: flex,
+      display: grid,
+      width: 100%,
+      max-width: 100%,
+      align-items: center,
+
+      grid-template-columns: var(--grid-template-columns),
+      grid-gap: var(--gap),
 
       colors: (
         light : (
@@ -307,8 +324,19 @@ $components-config: (
           border: 1px solid rgba(182, 199, 216, .35),
           shadow: string.unquote("inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1)"),
         )
-      )
+      ),
 
+      subclasses : (
+        ".left" : (
+          justify-self: var(--left-column-alignment),
+        ),
+        ".center" : (
+          justify-self: var(--center-column-alignment),
+        ),
+        ".right" : (
+          justify-self: var(--right-column-alignment)
+        ),
+      )
     ),
 
     accordion : (

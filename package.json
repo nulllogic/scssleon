@@ -23,8 +23,10 @@
     "docs-build": "docker run --rm -it -v $(pwd):/src klakegg/hugo:alpine",
     "docs-serve": "docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:alpine server"
   },
+  "dependencies": {
+    "sass": "^1.77.8"
+  },
   "devDependencies": {
-    "sass": "^1.77.8",
     "clean-css": "^5.3.3"
   },
   "homepage": "https://nulllogic.github.io/scssleon-docs",

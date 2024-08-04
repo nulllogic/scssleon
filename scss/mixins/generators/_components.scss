@@ -1,20 +1,20 @@
-@use "sass:map";
-@use "sass:meta";
+@use 'sass:map';
+@use 'sass:meta';
 
-@use "properties";
-@use "wrapper";
+@use 'properties';
+@use 'wrapper';
 
-@use "../../functions" as functions;
+@use '../../functions' as functions;
 
 @mixin generate-component($component, $class, $config, $theme) {
-  $theme-component: "";
+  $theme-component: '';
 
   // Checking, if the component was previously defined inside theme components
-  @if (meta.type-of($component) == "string") {
+  @if (meta.type-of($component) == 'string') {
     /* Loading component settings and styling */
     $theme-component: functions.get-theme(
       $theme,
-      "components" + "." + $component
+      'components' + '.' + $component
     );
   } @else {
     $theme-component: $component;
@@ -31,3 +31,4 @@
   }
 }
 
+//@mixin generate-components($component, $class, $config, $theme) {
