@@ -13,15 +13,20 @@ $html-config: (
   html : (
     body : (
       margin: 0,
+
       -webkit-text-size-adjust: 100%,
       font-size : 1rem,
       font-weight: normal,
-      line-height : 1,
       font-family: var(global(--font-family-default)),
+      line-height : 1,
+
       color: var(--color),
       background: var(--background),
+
       text-rendering: optimizelegibility,
       -webkit-font-smoothing: antialiased,
+      font-synthesis-weight: none,
+
       colors: (
         light : (
           background: '#fff',
@@ -45,6 +50,9 @@ $html-config: (
         )
       ),
       subclasses : (
+        "&:hover": (
+          text-decoration: none
+        ),
         "&[target='_blank']" : (
           subclasses : (
             "&:after" : (
@@ -55,9 +63,6 @@ $html-config: (
               content : ''
             )
           ),
-        ),
-        "&:hover": (
-          text-decoration: none
         )
       )
     ),
@@ -81,6 +86,9 @@ $html-config: (
       width: auto,
       height: auto,
       max-width: 100%,
+    ),
+    "h1,h2,h3,h4,h5,h6" : (
+      margin: 0
     ),
     p : (
       margin: 0
@@ -136,7 +144,7 @@ $content-config: (
     ),
     p : (
       margin: 0,
-      padding: 0 0 15px 0
+      padding: 0 0 15px 0,
     ),
     abbr: (
       attributes : (
@@ -291,10 +299,9 @@ $components-config: (
     alert: (
 
       --border-radius: .25rem,
-      --padding: 1.25rem,
-
       --grid-template-columns: auto auto 1fr,
-      --gap : 10px,
+      --gap : 0.5rem,
+      --padding: 0.5rem,
 
       --left-column-aligment: start,
       --center-column-alignment: center,
@@ -302,6 +309,7 @@ $components-config: (
 
       box-shadow: var(--shadow),
       background: var(--background),
+      border-radius: var(--border-radius),
 
       outline: 1px solid transparent,
 
@@ -313,6 +321,7 @@ $components-config: (
 
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
+      padding: var(--padding),
 
       colors: (
         light : (
