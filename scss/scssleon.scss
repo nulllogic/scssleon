@@ -64,13 +64,13 @@ $theme: theme.$theme;
   $theme: $theme
 );
 
-// Great reset
+// ↓ Great reset
 @use "reset" with (
   $config: $config,
   $theme: $theme
 );
 
-// Base
+// ↓ Base
 // Special utility, that will dynamically generate CSS
 // properties for HTML tags, specified in theme
 @use "base" with (
@@ -78,7 +78,7 @@ $theme: theme.$theme;
   $theme: $theme
 );
 
-// Amazing content
+// ↓ Amazing content
 // Special class `.content` to allow formatting of the default html tags
 @use "content" with (
   $config: $config,

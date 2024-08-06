@@ -15,7 +15,7 @@ $html-config: (
       margin: 0,
 
       -webkit-text-size-adjust: 100%,
-      font-size : 1rem,
+      font-size : 1em,
       font-weight: normal,
       font-family: var(global(--font-family-default)),
       line-height : 1,
@@ -86,12 +86,6 @@ $html-config: (
       width: auto,
       height: auto,
       max-width: 100%,
-    ),
-    "h1,h2,h3,h4,h5,h6" : (
-      margin: 0
-    ),
-    p : (
-      margin: 0
     )
   )
 );
@@ -102,42 +96,42 @@ $content-config: (
   content : (
     h1 : (
       font-size: 3.5rem,
-      line-height : inherit,
+      line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h2 : (
       font-size: 2.8rem,
-      line-height : inherit,
+      line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h3 : (
       font-size: 2.4rem,
-      line-height : inherit,
+      line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h4 : (
       font-size: 2rem,
-      line-height : inherit,
+      line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h5 : (
       font-size: 1.8rem,
-      line-height : inherit,
+      line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h6 : (
       font-size: 1.625rem,
-      line-height : inherit,
+      line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
@@ -145,6 +139,7 @@ $content-config: (
     p : (
       margin: 0,
       padding: 0 0 15px 0,
+      line-height: clamp(1.25em, 4vw, 1.5em),
     ),
     abbr: (
       attributes : (
@@ -200,7 +195,7 @@ $content-config: (
     code: (
       color: var(--color),
       background: var(--background),
-      padding: 0 5px,
+      padding: 2px 5px,
       colors: (
         light : (
           background: '#fff',
@@ -298,18 +293,22 @@ $components-config: (
 
     alert: (
 
-      --border-radius: .25rem,
+      --border-radius: .5rem,
       --grid-template-columns: auto auto 1fr,
       --gap : 0.5rem,
-      --padding: 0.5rem,
+      --padding: 0.825rem,
 
-      --left-column-aligment: start,
-      --center-column-alignment: center,
-      --right-column-alignment: end,
+      --left-column-justify-self: start,
+      --left-column-align-self: start,
+      --center-column-justify-self: center,
+      --center-column-align-self: center,
+      --right-column-justify-self: end,
+      --right-column-align-self: start,
 
       box-shadow: var(--shadow),
       background: var(--background),
       border-radius: var(--border-radius),
+      border: var(--border),
 
       outline: 1px solid transparent,
 
@@ -318,6 +317,8 @@ $components-config: (
       width: 100%,
       max-width: 100%,
       align-items: center,
+
+      line-height: 1rem,
 
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
@@ -329,21 +330,24 @@ $components-config: (
           shadow: string.unquote("inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1)"),
         ),
         dark : (
-          background: rgb(48, 56, 66),
-          border: 1px solid rgba(182, 199, 216, .35),
-          shadow: string.unquote("inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1)"),
+          background: rgb(18, 18, 24),
+          border: 1px solid rgba(48, 54, 61, 0.75),
+          shadow: string.unquote("rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"),
         )
       ),
 
       subclasses : (
         ".left" : (
-          justify-self: var(--left-column-alignment),
+          justify-self: var(--left-column-justify-self),
+          align-self: var(--left-column-align-self),
         ),
         ".center" : (
-          justify-self: var(--center-column-alignment),
+          justify-self: var(--center-column-justify-self),
+          align-self: var(--center-column-align-self),
         ),
         ".right" : (
-          justify-self: var(--right-column-alignment)
+          justify-self: var(--right-column-justify-self),
+          align-self: var(--right-column-align-self),
         ),
       )
     ),
@@ -513,9 +517,10 @@ $components-config: (
           background: transparent,
           border: none,
           box-shadow: none,
+          text-decoration: underline,
           subclasses: (
             "&:hover": (
-              text-decoration: underline,
+              text-decoration: none,
             )
           )
         ),
@@ -892,6 +897,8 @@ $components-config: (
 
       display: flex,
       flex-direction: column,
+
+      background: var(--background),
 
       colors: (
         light : (

@@ -16,11 +16,11 @@ Welcome to XII/Grid CSS framework ! It's the most advanced responsive front-end 
   <a href="https://nulllogic.net/"><img src="./.imgs/logo.png" alt="NullLogic logo"></a>
 </p>
 
-## ┌ Quickstart ┐
+## ┌ 🧭 Quickstart ┐
 
 [![IMAGE ALT TEXT HERE](http://www.sergiuko.com/wp-content/uploads/2012/04/vimeo-preview-627x351.jpg)](https://vimeo.com/83573522)
 
-## ┌ Documentation ┐
+## ┌ 📚 Documentation ┐
 
 <p align="left">
   <img src="./.imgs/documentation.jpg" width="100%" alt="xiigrid documentation">
@@ -58,7 +58,7 @@ Learn more about using Hugo by reading its [documentation](https://gohugo.io/doc
 <a href="https://www.browserstack.com"><img src="./.imgs/browserstack.jpg" alt="browserstack"></a><br />
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
-## ┌ License ┐
+## ┌ 📜 License ┐
 
 <p align="left">
   <img src="./.imgs/license.jpg" width="100%" alt="xiigrid licence">
