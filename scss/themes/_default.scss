@@ -3,7 +3,7 @@
 
 // Main theme colors
 $theme: () !default;
-$updated-theme : () !default;
+$updated-theme: () !default;
 
 $html-config: (
   root: (
@@ -13,20 +13,16 @@ $html-config: (
   html : (
     body : (
       margin: 0,
-
       -webkit-text-size-adjust: 100%,
       font-size : 1em,
       font-weight: normal,
       font-family: var(global(--font-family-default)),
       line-height : 1,
-
       color: var(--color),
       background: var(--background),
-
       text-rendering: optimizelegibility,
       -webkit-font-smoothing: antialiased,
       font-synthesis-weight: none,
-
       colors: (
         light : (
           background: '#fff',
@@ -95,42 +91,42 @@ $updated-theme: map.deep-merge($updated-theme, $html-config);
 $content-config: (
   content : (
     h1 : (
-      font-size: 3.5rem,
+      font-size: 3.75rem,
       line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h2 : (
-      font-size: 2.8rem,
+      font-size: 3rem,
       line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h3 : (
-      font-size: 2.4rem,
+      font-size: 2.25rem,
       line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h4 : (
-      font-size: 2rem,
+      font-size: 1.875rem,
       line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h5 : (
-      font-size: 1.8rem,
+      font-size: 1.5rem,
       line-height: inherit,
       font-weight: 500,
       margin: 0,
       padding: 0 0 15px 0
     ),
     h6 : (
-      font-size: 1.625rem,
+      font-size: 1.25rem,
       line-height: inherit,
       font-weight: 500,
       margin: 0,
@@ -202,7 +198,7 @@ $content-config: (
           color: '#ccc',
         ),
         dark : (
-          background : rgba(38,69,116,1),
+          background : rgba(38, 69, 116, 1),
           color: '#fff'
         )
       )
@@ -290,40 +286,31 @@ $updated-theme: map.deep-merge($updated-theme, $content-config);
 
 $components-config: (
   components: (
-
     alert: (
-
       --border-radius: .5rem,
       --grid-template-columns: auto auto 1fr,
       --gap : 0.5rem,
       --padding: 0.825rem,
-
       --left-column-justify-self: start,
       --left-column-align-self: start,
       --center-column-justify-self: center,
       --center-column-align-self: center,
       --right-column-justify-self: end,
       --right-column-align-self: start,
-
       box-shadow: var(--shadow),
       background: var(--background),
       border-radius: var(--border-radius),
       border: var(--border),
-
       outline: 1px solid transparent,
-
       position: relative,
       display: grid,
       width: 100%,
       max-width: 100%,
       align-items: center,
-
       line-height: 1rem,
-
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
       padding: var(--padding),
-
       colors: (
         light : (
           background: rgba(246, 246, 247, 1),
@@ -335,31 +322,27 @@ $components-config: (
           shadow: string.unquote("rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"),
         )
       ),
-
       subclasses : (
-        ".left" : (
+        '.left' : (
           justify-self: var(--left-column-justify-self),
           align-self: var(--left-column-align-self),
         ),
-        ".center" : (
+        '.center' : (
           justify-self: var(--center-column-justify-self),
           align-self: var(--center-column-align-self),
         ),
-        ".right" : (
+        '.right' : (
           justify-self: var(--right-column-justify-self),
           align-self: var(--right-column-align-self),
         ),
       )
     ),
-
     accordion : (
-
       --border-radius: .25rem,
-      --padding: 1.25rem,
+      --padding: 1rem,
 
       position: relative,
       width: 100%,
-
       colors: (
         light : (
         ),
@@ -367,31 +350,63 @@ $components-config: (
           border: 1px solid rgba(182, 199, 216, .35),
           background: rgb(46, 56, 66),
         )
+      ),
+      subclasses : (
+        '.item' : (
+          padding-bottom: var(--padding),
+          subclasses : (
+            '.title' : (
+              display: flex,
+              padding-bottom: var(--padding),
+              subclasses : (
+                '> button' : (
+                  color: inherit,
+                  background: none,
+                  border: none,
+                  cursor: pointer,
+                  display: flex,
+                  padding: 0,
+                  font-size: inherit,
+                  width: 100%,
+                  align-items: center,
+                  justify-content: space-between,
+                  border-bottom: 1px solid #ccc,
+                  subclasses : (
+                    '.left' : (
+                      justify-self: var(--left-column-alignment),
+                    ),
+                    '.center' : (
+                      justify-self: var(--center-column-alignment),
+                    ),
+                    '.right' : (
+                      justify-self: var(--right-column-alignment)
+                    )
+                  )
+                )
+              )
+            ),
+            '.content' : (
+            )
+          )
+        )
       )
-
     ),
-
     badge : (
-
       --border-radius: .25rem,
       --padding: .125rem .625rem,
-
       font-size: .75rem,
       line-height: 1rem,
       font-weight: 500,
-
       white-space: nowrap,
       vertical-align: middle,
       align-items: center,
       display: inline-flex,
-
       padding: var(--padding),
       border-radius: var(--border-radius),
       color: var(--color),
       background: var(--background),
       box-shadow: var(--box-shadow),
       border: var(--border),
-
       colors: (
         light : (
           color: #ccc,
@@ -405,7 +420,6 @@ $components-config: (
         )
       )
     ),
-
     breadcrumb : (
       --padding: 0 0 0 5px,
       list-style: none,
@@ -425,82 +439,66 @@ $components-config: (
           display: inline-flex,
           subclasses : (
             ".link" : (
-
             )
           )
         )
       )
     ),
-
     button : (
+      --padding: .5rem .75rem,
       --border-radius: .25rem,
       --box-shadow : (
         inset 0 0 0 1px rgba(0, 0, 0, 0.05),
-        inset 0 1px 2px 0 rgba(78, 83, 90, 0.1)
-        //   inset -0.0625rem 0 0 #e3e3e3,
+        inset 0 1px 2px 0 rgba(78, 83, 90, 0.1) //   inset -0.0625rem 0 0 #e3e3e3,
         //   inset 0.0625rem 0 0 #e3e3e3,
         //   inset 0 0.0625rem 0 #e3e3e3
       ),
-      --padding: .5rem .75rem,
-
       display: inline-flex,
       align-items: center,
       align-content: center,
       white-space: nowrap,
-      user-select: none,
       text-decoration: none,
       cursor: pointer,
-
       vertical-align: middle,
       font-size: 1em,
-
       padding: var(--padding),
       border: var(--border),
       background: var(--background),
       color: var(--color),
       border-radius: var(--border-radius),
-
       // This one is required for button group use
       position: relative,
-
       transition: (
         color .15s ease-in-out,
         background-color .15s ease-in-out,
         border-color .15s ease-in-out,
         box-shadow .15s ease-in-out
       ),
-
       colors: (
         light: (
           color: #fff,
           background: #fff
         ),
         dark: (
-
           // Default
           color: #fff,
           background: rgb(48, 56, 66),
           border: 1px solid rgba(240, 246, 252, .25),
-
           // Hover state
           hover-color: #fff,
           hover-background: rgb(59, 68, 81),
           hover-border: 1px solid rgba(229, 235, 240, .55),
-
           // Disabled state
           disabled-color: #484f58,
           disabled-background: #21262d,
           disabled-border: 1px solid rgba(240, 246, 252, 0.1),
-
           // Active state
           active-color: #fff,
           active-background: rgb(39, 45, 53),
           active-border: 1px solid rgba(240, 246, 252, .25),
           active-shadow: string.unquote("-0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset,0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset, 0rem 0.125rem 0.0625rem 0rem rgba(26,26,26,0.2) inset")
-
         )
       ),
-
       subclasses : (
         "&:hover:not(.loading, [disabled], .btn-link)" : (
           color: var(--hover-color),
@@ -536,44 +534,33 @@ $components-config: (
         )
       )
     ),
-
     button-group: (
       --gap: 10px,
-
       display: flex,
       flex-wrap: wrap,
-
       subclasses : (
         ".btn:first-child" : (
           border-start-end-radius: 0,
           border-end-end-radius: 0,
         ),
-
         ".btn:last-child" : (
           border-start-start-radius: 0,
           border-end-start-radius: 0,
         ),
-
         ".btn:not(:first-child)" : (
           margin-left: - 1px
         ),
-
         ".btn:not(:first-child, :last-child)" : (
           border-radius: 0
         ),
-
         ".btn:only-child" : (
-
         ),
-
         ".btn:hover, .btn:focus" : (
           z-index: 1
         ),
-
         "&.separated" : (
           gap: var(--gap),
           --border-radius: 5px,
-
           subclasses : (
             ".btn" : (
               margin: 0,
@@ -583,20 +570,16 @@ $components-config: (
         )
       )
     ),
-
     card : (
       --border-radius: .25rem,
       --padding: .5rem,
-
       background: var(--background),
       padding: var(--padding),
       border-radius: var(--border-radius),
       box-shadow: var(--shadow),
       border: var(--border),
-
       height: 100%,
       margin: 0,
-
       colors: (
         light : (
           background: rgb(200, 200, 200)
@@ -608,7 +591,6 @@ $components-config: (
         )
       )
     ),
-
     container : (
       margin: 0 auto,
       width: 100%,
@@ -616,9 +598,7 @@ $components-config: (
         light : (),
         dark : ()
       ),
-
     ),
-
     form : (
       label : (
         display: block,
@@ -687,41 +667,43 @@ $components-config: (
 
     overlay : (
 
+      background : var(--background),
+
       position: absolute,
       top: 0,
       bottom: 0,
       left: 0,
       right: 0,
+
       width: 100%,
       height: 100%,
+
+      display: flex,
+      align-items: center,
+      justify-content: center,
 
       colors: (
         light : (
         ),
         dark : (
-          background: rgba(15, 23, 42, .25),
+          background: rgba(15, 23, 42, .85),
         )
       )
     ),
 
     pagination : (
-
       --grid-template-columns: auto auto 1fr,
       --gap : 10px,
-
       --left-column-aligment: start,
       --center-column-alignment: center,
       --right-column-alignment: end,
-
       position: relative,
       display: grid,
       width: 100%,
       max-width: 100%,
       align-items: center,
-
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
-
       subclasses : (
         ".left" : (
           justify-self: var(--left-column-alignment),
@@ -734,19 +716,14 @@ $components-config: (
         )
       ),
     ),
-
     placeholder : (
-
       --min-height: 0.55rem,
       --border-radius: .1875rem,
       --gap: .6rem,
-
       cursor: wait,
       display: flex,
       flex-direction: column,
-
       gap: var(--gap),
-
       colors: (
         light : (
           background: #ccc
@@ -755,14 +732,12 @@ $components-config: (
           background: #ccc
         )
       ),
-
       subclasses : (
         ".el" : (
-            min-height: var(--min-height),
-            border-radius: var(--border-radius),
-            background: var(--background)
+          min-height: var(--min-height),
+          border-radius: var(--border-radius),
+          background: var(--background)
         ),
-
         "&.glow" : (
           subclasses : (
             ".el" : (
@@ -770,7 +745,6 @@ $components-config: (
             )
           )
         ),
-
         "&.wave" : (
           subclasses : (
             ".el" : (
@@ -788,7 +762,7 @@ $components-config: (
     nav : (
 
       --flex-direction: row,
-      --align-items: auto,
+      --align-items: center,
       --gap: 0,
 
       display: flex,
@@ -810,46 +784,40 @@ $components-config: (
         '&.horizontal' : (
           --align-items: center,
           --flex-direction : row,
+          --gap : 12.5px,
         ),
         '&.vertical' : (
           --flex-direction : column,
+          --align-items: auto,
         ),
         '&.tabs' : (
-
         ),
         '&.pills' : (
-
         ),
         '.item' : (
           width: auto,
-
           subclasses : (
             '.link' : (
-                display: inline-flex,
-                padding: 10px,
-                color: var(--color),
-
-                colors: (
-                  light : (
-                    color: '#333',
-                  ),
-                  dark : (
-                    color: '#fff'
-                  )
+              display: inline-flex,
+              color: var(--color),
+              colors: (
+                light : (
+                  color: '#333',
                 ),
-
-                subclasses: (
-                  '&:hover' : (
-                    text-decoration : none
+                dark : (
+                  color: '#fff'
+                )
+              ),
+              subclasses: (
+                '&:hover' : (
+                  text-decoration : none
                 )
               )
             ),
           )
         )
       )
-
     ),
-
     navbar : (
 
       --grid-template-columns: auto auto 1fr,
@@ -857,7 +825,6 @@ $components-config: (
       --left-column-aligment: start,
       --center-column-alignnent: center,
       --right-column-alignment: end,
-
       position: relative,
       display: grid,
       width: 100%,
@@ -865,17 +832,14 @@ $components-config: (
       align-items: center,
       margin: 0,
       padding: 0,
-
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
-
       colors: (
         light : (
         ),
         dark: (
         )
       ),
-
       subclasses : (
         ".left" : (
           justify-self: var(--left-column-alignment),
@@ -890,23 +854,23 @@ $components-config: (
     ),
 
     sidecap : (
+
       position: absolute,
       top: 0,
       right: 0,
       height: 100%,
-
       display: flex,
       flex-direction: column,
+      width: 300px,
 
       background: var(--background),
-
       colors: (
         light : (
           background : #ccc
         ),
         dark: (
           background: rgb(45, 56, 66),
-          box-shadow: 0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26, .28)
+          box-shadow: 0rem 1.25rem 1.25rem -0.5rem rgba(26, 26, 26, .28)
         )
       )
     )
