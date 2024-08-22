@@ -33,6 +33,6 @@
 
 //@mixin generate-components($component, $class, $config, $theme) {
 
-@mixin extend-components ($config, $theme, $components...) {
-  @debug $components;
+@mixin get-structure ($component) {
+  @debug $component;
 }
