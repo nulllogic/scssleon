@@ -18,12 +18,6 @@ $color_scheme: functions.get-config($config, "color-scheme");
 $root-variables: functions.get-theme($theme, "root.variables");
 
 :root {
-  @if $is-smooth-scroll-enabled {
-    @media (prefers-reduced-motion: no-preference) {
-      scroll-behavior: smooth;
-    }
-  }
-
   color-scheme: string.unquote($color_scheme);
 
   @include mixins.generate-properties(
@@ -31,4 +25,10 @@ $root-variables: functions.get-theme($theme, "root.variables");
     functions.get-theme($theme, "root"),
     $config
   );
+
+  @if $is-smooth-scroll-enabled {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
 }
