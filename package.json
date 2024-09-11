@@ -24,7 +24,7 @@
     "docs-serve": "docker run --rm -it -v $(pwd):/src -p 1313:1313 klakegg/hugo:alpine server"
   },
   "dependencies": {
-    "sass": "^1.77.8"
+    "sass": "^1.78.0"
   },
   "devDependencies": {
     "clean-css": "^5.3.3"
