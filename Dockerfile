@@ -5,7 +5,7 @@ LABEL version="1.0.0"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
 LABEL description="Docker container for SCSSleon generator"
 
-ARG SASS_VERSION="1.83.0"
+ARG SASS_VERSION="1.83.1"
 
 RUN apk update && apk add curl
 
