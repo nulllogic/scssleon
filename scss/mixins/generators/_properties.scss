@@ -16,11 +16,11 @@
 @mixin generate-css-variables($tag, $property, $value, $config) {
   $prefix: functions.get-config($config, "prefix");
 
-  @if (meta.type-of($value) == "string" and str-index($value, "var(--") == 1) {
+  @if (meta.type-of($value) == "string" and string.index($value, "var(--") == 1) {
     #{$property}: #{meta.inspect(
       functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
     )};
-  } @else if (type-of($value) == "string" and str-index($value, "var(global(") == 1) {
+  } @else if (meta.type-of($value) == "string" and string.index($value, "var(global(") == 1) {
     #{$property}: #{meta.inspect(
         functions.replace(
           string.slice($value, 0, string.length($value) - 1),
@@ -79,7 +79,7 @@
     // Looking for "--" symbols in the beginning of the property
     // Example: --flex-direction : row
     @if (
-      meta.type-of($property) == "string" and str-index($property, "--") == 1
+      meta.type-of($property) == "string" and string.index($property, "--") == 1
     ) {
       @include generate-css-properties($tag, $property, $value, $config);
     }

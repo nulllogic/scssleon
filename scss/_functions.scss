@@ -3,10 +3,10 @@
 @use 'sass:string';
 
 @function replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + replace(str-slice($string, $index + string.length($search)), $search, $replace);
+    @return string.slice($string, 1, $index - 1) + $replace + replace(string.slice($string, $index + string.length($search)), $search, $replace);
   }
 
   @return $string;
@@ -20,7 +20,7 @@
     @return nil;
   }
 
-  @if (str-index($value, '.')) {
+  @if (string.index($value, '.')) {
     $path: string.split($value, '.');
     $val: map.get($config, $path...);
   } @else {
@@ -42,7 +42,7 @@
     @return nil;
   }
 
-  @if (str-index($value, '.')) {
+  @if (string.index($value, '.')) {
     $path: string.split($value, '.');
     $val: map.get($theme, $path...);
   } @else {
