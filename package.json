@@ -1,8 +1,8 @@
 {
   "name": "@nulllogic/scssleon",
   "description": "Most advanced, simple and clean SCSS framework",
-  "version": "1.0.37",
-  "version_short": "1.0",
+  "version": "1.0.38",
+  "version_short": "1.0.38",
   "keywords": [
     "css",
     "sass",
@@ -21,7 +21,7 @@
     "watch": "sass --watch ./scss:./dist/css"
   },
   "dependencies": {
-    "sass": "^1.88.0"
+    "sass": "^1.89.0"
   },
   "devDependencies": {
 

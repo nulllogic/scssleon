@@ -1,25 +1,12 @@
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:string';
 
-@function str-split($string, $separator) {
-  $split-arr: ();
-  $index : str-index($string, $separator);
-  @while $index != null {
-    $item: str-slice($string, 1, $index - 1);
-    $split-arr: append($split-arr, $item);
-    $string: str-slice($string, $index + 1);
-    $index : str-index($string, $separator);
-  }
-  $split-arr: append($split-arr, $string);
-
-  @return $split-arr;
-}
-
-@function str-replace($string, $search, $replace: '') {
+@function replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace + replace(str-slice($string, $index + string.length($search)), $search, $replace);
   }
 
   @return $string;
@@ -34,7 +21,7 @@
   }
 
   @if (str-index($value, '.')) {
-    $path: str-split($value, '.');
+    $path: string.split($value, '.');
     $val: map.get($config, $path...);
   } @else {
     $val: map.get($config, $value);
@@ -56,7 +43,7 @@
   }
 
   @if (str-index($value, '.')) {
-    $path: str-split($value, '.');
+    $path: string.split($value, '.');
     $val: map.get($theme, $path...);
   } @else {
     $val: map.get($theme, $value);
@@ -74,13 +61,13 @@
 //
 // Requires the use of quotes around data URIs.
 @function escape-svg($string) {
-  @if str-index($string, "data:image/svg+xml") {
+  @if string.index($string, "data:image/svg+xml") {
     @each $char, $encoded in $escaped-characters {
       // Do not escape the url brackets
-      @if str-index($string, "url(") == 1 {
-        $string: url("#{str-replace(str-slice($string, 6, -3), $char, $encoded)}");
+      @if string.index($string, "url(") == 1 {
+        $string: url("#{string.replace(string.slice($string, 6, -3), $char, $encoded)}");
       } @else {
-        $string: str-replace($string, $char, $encoded);
+        $string: string.replace($string, $char, $encoded);
       }
     }
   }

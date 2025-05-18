@@ -8,7 +8,7 @@
 @mixin generate-css-properties($tag, $property, $value, $config) {
   $prefix: functions.get-config($config, "prefix");
 
-  --#{$prefix}-#{$tag}-#{functions.str-replace($property, '--', '')}: #{meta.inspect(
+  --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
 }
@@ -18,11 +18,11 @@
 
   @if (meta.type-of($value) == "string" and str-index($value, "var(--") == 1) {
     #{$property}: #{meta.inspect(
-      functions.str-replace($value, "--", "--" + $prefix + "-" + $tag + "-")
+      functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
     )};
   } @else if (type-of($value) == "string" and str-index($value, "var(global(") == 1) {
     #{$property}: #{meta.inspect(
-        functions.str-replace(
+        functions.replace(
           string.slice($value, 0, string.length($value) - 1),
           "global(--",
           "--" + $prefix + "-root-"
@@ -37,11 +37,11 @@
   $prefix: functions.get-config($config, "prefix");
 
   @each $color, $color-properties in $value {
-    @each $scheme in functions.str-split(functions.get-config($config, "color-scheme"), " ") {
+    @each $scheme in string.split(functions.get-config($config, "color-scheme"), " ") {
       @if $scheme == $color {
         @include mixin.generate-color-scheme($color) {
           @each $color-property, $color-value in $color-properties {
-            --#{$prefix}-#{$tag}-#{functions.str-replace($color-property, '--', '')}: #{meta.inspect(
+            --#{$prefix}-#{$tag}-#{functions.replace($color-property, '--', '')}: #{meta.inspect(
               $color-value
             )};
           }

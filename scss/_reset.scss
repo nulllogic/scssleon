@@ -48,11 +48,13 @@ $color_scheme: functions.get-config($config, "color-scheme");
   h5,
   h6 {
     margin: 0;
+    line-height: normal;
   }
 
   // Paragraph
   p {
     margin: 0;
+    line-height: normal;
   }
 
   // Lists
