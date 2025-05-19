@@ -13,7 +13,6 @@ $config: nil !default;
 $theme: nil !default;
 
 @each $tag, $properties in functions.get-theme($theme, 'html') {
-  @debug $tag;
   #{$tag} {
     @include mixins.generate-properties(#{$tag}, $properties, $config);
   }

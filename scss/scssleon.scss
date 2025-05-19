@@ -53,8 +53,6 @@ $theme: (
 $config: config.$config;
 $theme: theme.$theme;
 
-/* Main configuration END
--------------------------------------------------------*/
 
 /* ------------------------------------------------------------------
  * Loading modules - this is default configuration with all modules enabled
@@ -131,11 +129,13 @@ $theme: theme.$theme;
   $theme: $theme
 );
 
+// ↓ Alert
 @use "components/alert" with (
   $config: $config,
   $theme: $theme
 );
 
+// ↓ Accordion
 @use "components/accordion" with (
   $config: $config,
   $theme: $theme
