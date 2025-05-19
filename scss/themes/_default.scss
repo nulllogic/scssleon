@@ -464,7 +464,9 @@ $components-config: (
         )
       )
     ),
+
     button : (
+
       --padding: .5rem .75rem,
       --border-radius: .25rem,
       --box-shadow : (
@@ -473,6 +475,7 @@ $components-config: (
         //   inset 0.0625rem 0 0 #e3e3e3,
         //   inset 0 0.0625rem 0 #e3e3e3
       ),
+
       display: inline-flex,
       align-items: center,
       align-content: center,
@@ -488,12 +491,14 @@ $components-config: (
       border-radius: var(--border-radius),
       // This one is required for button group use
       position: relative,
+
       transition: (
         color .15s ease-in-out,
         background-color .15s ease-in-out,
         border-color .15s ease-in-out,
         box-shadow .15s ease-in-out
       ),
+
       colors: (
         light: (
           color: #fff,
@@ -519,6 +524,7 @@ $components-config: (
           active-shadow: string.unquote("-0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset,0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset, 0rem 0.125rem 0.0625rem 0rem rgba(26,26,26,0.2) inset")
         )
       ),
+
       subclasses : (
         "&:hover:not(.loading, [disabled], .btn-link)" : (
           color: var(--hover-color),
@@ -554,6 +560,7 @@ $components-config: (
         )
       )
     ),
+
     button-group: (
       --gap: 10px,
       display: flex,
@@ -590,9 +597,36 @@ $components-config: (
         )
       )
     ),
+
+    dropdown: (
+      position: absolute,
+      top: 100%,
+      left: 0,
+      border: var(--border),
+      border-radius: 0.25rem,
+      padding: 4px 0,
+      width: 200px,
+      height: auto,
+      background: var(--background),
+
+      colors: (
+        light : (
+          border: 1px solid #dddee0,
+          background: rgb(200, 200, 200),
+        ),
+        dark : (
+          border: 1px solid rgba(48, 54, 61, .75),
+          background: rgb(22, 27, 34),
+          shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
+        )
+      )
+    ),
+
     card : (
+
       --border-radius: .25rem,
       --padding: .5rem,
+
       background: var(--background),
       padding: var(--padding),
       border-radius: var(--border-radius),
@@ -600,6 +634,7 @@ $components-config: (
       border: var(--border),
       height: 100%,
       margin: 0,
+
       colors: (
         light : (
           background: rgb(200, 200, 200)
@@ -611,6 +646,7 @@ $components-config: (
         )
       )
     ),
+
     container : (
       margin: 0 auto,
       width: 100%,
@@ -619,6 +655,7 @@ $components-config: (
         dark : ()
       ),
     ),
+
     form : (
       label : (
         display: block,
@@ -712,11 +749,13 @@ $components-config: (
     ),
 
     pagination : (
+
       --grid-template-columns: auto auto 1fr,
       --gap : 10px,
       --left-column-aligment: start,
       --center-column-alignment: center,
       --right-column-alignment: end,
+
       position: relative,
       display: grid,
       width: 100%,
@@ -724,6 +763,7 @@ $components-config: (
       align-items: center,
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
+
       subclasses : (
         ".left" : (
           justify-self: var(--left-column-alignment),
@@ -736,6 +776,7 @@ $components-config: (
         )
       ),
     ),
+
     placeholder : (
       --min-height: 0.55rem,
       --border-radius: .1875rem,
