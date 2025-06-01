@@ -90,16 +90,11 @@ $default-config: map.deep-merge($default-config, $content-default-config);
 // scss-docs-start z-index-stack
 $z-index-config: (
   z-index: (
-    dropdown: 1000,
-    sticky: 1020,
-    fixed: 1030,
-    offcanvas-backdrop: 1040,
-    offcanvas: 1045,
-    modal-backdrop: 1050,
-    modal: 1055,
-    popover: 1070,
-    tooltip: 1080,
-    toast: 1090,
+    dropdown: 4,
+    header: 5,
+    overlay: 6,
+    modal : 7,
+
   ),
 ) !default;
 // scss-docs-end z-index-stack

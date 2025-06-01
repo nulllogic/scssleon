@@ -201,19 +201,19 @@ $content-config: (
       font-family: var(global(--font-family-monospace)),
     ),
     code: (
-      color: var(--color),
-      background: var(--background),
-      padding: 2px 5px,
-      colors: (
-        light : (
-          background: '#fff',
-          color: '#ccc',
-        ),
-        dark : (
-          background : rgb(53, 56, 65),
-          color: '#fff'
-        )
-      )
+      //color: var(--color),
+      //background: var(--background),
+      //padding: 2px 5px,
+      //colors: (
+      //  light : (
+      //    background: '#fff',
+      //    color: '#ccc',
+      //  ),
+      //  dark : (
+      //    background : rgb(53, 56, 65),
+      //    color: '#fff'
+      //  )
+      //)
     ),
     kbd: (
     ),
@@ -411,9 +411,12 @@ $components-config: (
         )
       )
     ),
+
     badge : (
+
       --border-radius: .25rem,
       --padding: .125rem .625rem,
+
       font-size: .75rem,
       line-height: 1rem,
       font-weight: 500,
@@ -427,6 +430,7 @@ $components-config: (
       background: var(--background),
       box-shadow: var(--box-shadow),
       border: var(--border),
+
       colors: (
         light : (
           color: #ccc,
@@ -439,21 +443,26 @@ $components-config: (
           border: 1px solid #ccc,
         )
       )
+
     ),
     breadcrumb : (
+
       --padding: 0 0 0 5px,
+
       list-style: none,
       align-items: center,
       display: flex,
       flex-wrap: wrap,
       padding: var(--padding),
       margin: 0,
+
       colors: (
         light : (
         ),
         dark : (
         )
       ),
+
       subclasses : (
         ".item" : (
           display: inline-flex,
@@ -662,8 +671,10 @@ $components-config: (
         margin-bottom: 10px,
       ),
       input : (
+
         --border-radius: .25rem,
         --padding: .5rem .75rem,
+
         display: block,
         colors: (
           light : (
@@ -778,13 +789,16 @@ $components-config: (
     ),
 
     placeholder : (
+
       --min-height: 0.55rem,
       --border-radius: .1875rem,
       --gap: .6rem,
+
       cursor: wait,
       display: flex,
       flex-direction: column,
       gap: var(--gap),
+
       colors: (
         light : (
           background: #ccc
@@ -793,6 +807,7 @@ $components-config: (
           background: #ccc
         )
       ),
+
       subclasses : (
         ".el" : (
           min-height: var(--min-height),
@@ -879,6 +894,7 @@ $components-config: (
         )
       )
     ),
+
     navbar : (
 
       --grid-template-columns: auto auto 1fr,
@@ -886,6 +902,7 @@ $components-config: (
       --left-column-aligment: start,
       --center-column-alignnent: center,
       --right-column-alignment: end,
+
       position: relative,
       display: grid,
       width: 100%,
@@ -895,12 +912,14 @@ $components-config: (
       padding: 0,
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
+
       colors: (
         light : (
         ),
         dark: (
         )
       ),
+
       subclasses : (
         ".left" : (
           justify-self: var(--left-column-alignment),
@@ -925,6 +944,7 @@ $components-config: (
       width: 300px,
 
       background: var(--background),
+
       colors: (
         light : (
           background : #ccc
