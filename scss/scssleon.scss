@@ -48,7 +48,7 @@ $theme: (
 // ↓ Theme
 /* Override default settings in the theme | @example */
 @use "themes/default" as theme with (
-  $theme: $theme
+  $theme: $theme,
 );
 
 // Getting updated variables
