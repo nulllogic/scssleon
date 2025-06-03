@@ -21,7 +21,7 @@
     "watch": "sass --watch ./scss:./dist/css"
   },
   "dependencies": {
-    "sass": "^1.89.0"
+    "sass": "^1.89.1"
   },
   "devDependencies": {
 
