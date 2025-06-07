@@ -79,7 +79,7 @@
     // Looking for "--" symbols in the beginning of the property
     // Example: --flex-direction : row
     @if (
-      meta.type-of($property) == "string" and string.index($property, "--") == 1
+        meta.type-of($property) == "string" and string.index($property, "--") == 1
     ) {
       @include generate-css-properties($tag, $property, $value, $config);
     }
