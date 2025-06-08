@@ -25,9 +25,9 @@ $container-component: functions.get-theme($theme, "components.container");
     .container.#{$name} {
       max-width: $size;
       @include mixins.generate-properties(
-              "container",
-              $container-component,
-              $config
+          "container",
+          $container-component,
+          $config
       );
     }
   }

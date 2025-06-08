@@ -5,12 +5,10 @@
 @use "../../functions" as functions;
 @use "../../mixins/generators/color-sheme" as mixin;
 
-@mixin generate-css-properties($tag, $property, $value, $config, $params : ()) {
+@mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
   $prefix: functions.get-config($config, "prefix");
 
-  @debug functions.get-config($params, 'add_pseudo_tag');
-
-  @if(functions.get-config($params, 'add_pseudo_tag') != nil and functions.get-config($params, 'add_pseudo_tag') == false) {
+  @if(functions.get-config($options, 'add_pseudo_tag') != nil and functions.get-config($options, 'add_pseudo_tag') == false) {
     --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
@@ -59,9 +57,9 @@
   }
 }
 
-@mixin generate-subclasses($tag, $class, $properties, $config, $params : ()) {
+@mixin generate-subclasses($tag, $class, $properties, $config, $options : ()) {
   #{$class} {
-    @include generate-properties($tag, $properties, $config, $params);
+    @include generate-properties($tag, $properties, $config, $options);
   }
 }
 
@@ -79,7 +77,7 @@
   }
 }
 
-@mixin generate-properties($tag, $properties, $config, $params : ()) {
+@mixin generate-properties($tag, $properties, $config, $options : ()) {
   $prefix: functions.get-config($config, "prefix");
 
   @each $property, $value in $properties {
@@ -89,7 +87,7 @@
     @if (
         meta.type-of($property) == "string" and string.index($property, "--") == 1
     ) {
-      @include generate-css-properties($tag, $property, $value, $config, $params);
+      @include generate-css-properties($tag, $property, $value, $config, $options);
     }
 
       // Colors
@@ -105,7 +103,7 @@
       // Subclasses
     @else if ($property == "subclasses") {
       @each $class, $class_properties in $value {
-        @include generate-subclasses($tag, $class, $class_properties, $config, $params);
+        @include generate-subclasses($tag, $class, $class_properties, $config, $options);
       }
     } @else {
       @include generate-css-variables($tag, $property, $value, $config);

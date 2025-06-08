@@ -6,7 +6,7 @@
 
 @use '../../functions' as functions;
 
-@mixin generate-component($component, $class, $config, $theme, $params) {
+@mixin generate-component($component, $class, $config, $theme, $options : ()) {
   $theme-component: '';
 
   // Checking, if the component was previously defined inside theme's components
@@ -21,7 +21,7 @@
   }
 
   %#{$class} {
-    @include properties.generate-properties($class, $theme-component, $config, $params);
+    @include properties.generate-properties($class, $theme-component, $config, $options);
   }
 
   @include wrapper.generate-wrapper($config) {

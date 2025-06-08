@@ -12,4 +12,4 @@
 $config: nil !default;
 $theme: nil !default;
 
-@include mixins.generate-component('card', 'card', $config, $theme, ());
+@include mixins.generate-component('card', 'card', $config, $theme);

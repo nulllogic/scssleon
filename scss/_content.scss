@@ -15,7 +15,9 @@ $is-content-enabled: functions.get-config($config, "enable.content");
 @if ($is-content-enabled) {
   .content {
     @each $tag, $properties in functions.get-theme($theme, "content") {
-      #{$tag} {
+
+      // Only apply styling to elements, that stand right after `.content` class
+      & > #{$tag} {
         @include mixins.generate-properties(#{$tag}, $properties, $config);
       }
     }

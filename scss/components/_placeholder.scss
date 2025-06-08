@@ -12,13 +12,7 @@
 $config: nil !default;
 $theme: nil !default;
 
-@include mixins.generate-component(
-        'placeholder',
-        'placeholder',
-        $config,
-        $theme,
-            ()
-);
+@include mixins.generate-component('placeholder', 'placeholder', $config, $theme);
 
 @keyframes placeholder-glow {
   50% {

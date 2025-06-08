@@ -355,6 +355,7 @@ $components-config: (
       )
 
     ),
+
     accordion : (
 
       --border-radius: .25rem,
@@ -382,6 +383,7 @@ $components-config: (
 
               display: flex,
               border-bottom: 1px solid #ccc,
+              justify-content: space-between,
 
               subclasses : (
                 '> button' : (
@@ -400,6 +402,12 @@ $components-config: (
             ),
 
             '.answer' : (
+              display: none,
+              subclasses : (
+                '&.show' : (
+                  display: block,
+                )
+              )
             )
           )
         )
@@ -904,6 +912,7 @@ $components-config: (
       align-items: center,
       margin: 0,
       padding: 0,
+
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
 
