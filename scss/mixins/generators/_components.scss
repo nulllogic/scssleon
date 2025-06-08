@@ -6,10 +6,10 @@
 
 @use '../../functions' as functions;
 
-@mixin generate-component($component, $class, $config, $theme) {
+@mixin generate-component($component, $class, $config, $theme, $params) {
   $theme-component: '';
 
-  // Checking, if the component was previously defined inside theme components
+  // Checking, if the component was previously defined inside theme's components
   @if (meta.type-of($component) == 'string') {
     /* Loading component settings and styling */
     $theme-component: functions.get-theme(
@@ -21,7 +21,7 @@
   }
 
   %#{$class} {
-    @include properties.generate-properties($class, $theme-component, $config);
+    @include properties.generate-properties($class, $theme-component, $config, $params);
   }
 
   @include wrapper.generate-wrapper($config) {

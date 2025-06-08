@@ -362,6 +362,7 @@ $components-config: (
 
       position: relative,
       width: 100%,
+
       colors: (
         light : (
         ),
@@ -370,15 +371,18 @@ $components-config: (
           background: rgb(46, 56, 66),
         )
       ),
+
       subclasses : (
 
         '.item' : (
           padding-bottom: var(--padding),
 
           subclasses : (
-            '.title' : (
+            '.question' : (
+
               display: flex,
-              padding-bottom: var(--padding),
+              border-bottom: 1px solid #ccc,
+
               subclasses : (
                 '> button' : (
                   color: inherit,
@@ -390,23 +394,12 @@ $components-config: (
                   font-size: inherit,
                   width: 100%,
                   align-items: center,
-                  justify-content: space-between,
-                  border-bottom: 1px solid #ccc,
-                  subclasses : (
-                    '.left' : (
-                      justify-self: var(--left-column-alignment),
-                    ),
-                    '.center' : (
-                      justify-self: var(--center-column-alignment),
-                    ),
-                    '.right' : (
-                      justify-self: var(--right-column-alignment)
-                    )
-                  )
+                  justify-content: space-between
                 )
               )
             ),
-            '.content' : (
+
+            '.answer' : (
             )
           )
         )

@@ -23,7 +23,7 @@ $root-variables: functions.get-theme($theme, "root.variables");
   @include mixins.generate-properties(
     "root",
     functions.get-theme($theme, "root"),
-    $config
+    $config,
   );
 
   @if $is-smooth-scroll-enabled {

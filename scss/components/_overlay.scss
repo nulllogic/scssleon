@@ -12,4 +12,4 @@
 $config: nil !default;
 $theme: nil !default;
 
-@include mixins.generate-component('overlay', 'overlay', $config, $theme);
+@include mixins.generate-component('overlay', 'overlay', $config, $theme, ());

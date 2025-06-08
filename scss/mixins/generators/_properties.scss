@@ -5,12 +5,20 @@
 @use "../../functions" as functions;
 @use "../../mixins/generators/color-sheme" as mixin;
 
-@mixin generate-css-properties($tag, $property, $value, $config) {
+@mixin generate-css-properties($tag, $property, $value, $config, $params : ()) {
   $prefix: functions.get-config($config, "prefix");
 
-  --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect(
+  @debug functions.get-config($params, 'add_pseudo_tag');
+
+  @if(functions.get-config($params, 'add_pseudo_tag') != nil and functions.get-config($params, 'add_pseudo_tag') == false) {
+    --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
+  } @else {
+    --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect(
+      $value
+    )};
+  }
 }
 
 @mixin generate-css-variables($tag, $property, $value, $config) {
@@ -51,9 +59,9 @@
   }
 }
 
-@mixin generate-subclasses($tag, $class, $properties, $config) {
+@mixin generate-subclasses($tag, $class, $properties, $config, $params : ()) {
   #{$class} {
-    @include generate-properties($tag, $properties, $config);
+    @include generate-properties($tag, $properties, $config, $params);
   }
 }
 
@@ -71,7 +79,7 @@
   }
 }
 
-@mixin generate-properties($tag, $properties, $config) {
+@mixin generate-properties($tag, $properties, $config, $params : ()) {
   $prefix: functions.get-config($config, "prefix");
 
   @each $property, $value in $properties {
@@ -81,7 +89,7 @@
     @if (
         meta.type-of($property) == "string" and string.index($property, "--") == 1
     ) {
-      @include generate-css-properties($tag, $property, $value, $config);
+      @include generate-css-properties($tag, $property, $value, $config, $params);
     }
 
       // Colors
@@ -97,7 +105,7 @@
       // Subclasses
     @else if ($property == "subclasses") {
       @each $class, $class_properties in $value {
-        @include generate-subclasses($tag, $class, $class_properties, $config);
+        @include generate-subclasses($tag, $class, $class_properties, $config, $params);
       }
     } @else {
       @include generate-css-variables($tag, $property, $value, $config);
