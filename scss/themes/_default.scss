@@ -359,10 +359,14 @@ $components-config: (
     accordion : (
 
       --border-radius: .25rem,
-      --padding: 1rem,
+      --padding: 0.5rem,
+      --item-padding: 0 0 .5rem 0,
 
+      border-radius: var(--border-radius),
       position: relative,
       width: 100%,
+
+      padding: var(--padding),
 
       colors: (
         light : (
@@ -376,7 +380,7 @@ $components-config: (
       subclasses : (
 
         '.item' : (
-          padding-bottom: var(--padding),
+          padding: var(--item-padding),
 
           subclasses : (
             '.question' : (
@@ -408,6 +412,10 @@ $components-config: (
                   display: block,
                 )
               )
+            ),
+
+            '&:last-child' : (
+              padding-bottom: 0,
             )
           )
         )

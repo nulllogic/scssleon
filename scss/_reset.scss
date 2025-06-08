@@ -138,7 +138,10 @@ $color_scheme: functions.get-config($config, "color-scheme");
 
   // Images and content
   img,
+  iframe,
   svg {
+    // Adding `display` rule here, because if `display` is not specified, 2px will be added
+    display: inline-block;
     vertical-align: middle;
   }
 
