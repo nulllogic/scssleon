@@ -401,15 +401,26 @@ $components-config: (
                   width: 100%,
                   align-items: center,
                   justify-content: space-between
+                ),
+                '&.open' : (
+                  subclasses : (
+                    '.icon' : (
+                      transform: rotate(180deg)
+                    )
+                  )
+                ),
+                '.icon' : (
+
                 )
               )
             ),
 
             '.answer' : (
-              display: none,
+              display: block,
+              padding: 0.5rem 0,
               subclasses : (
-                '&.show' : (
-                  display: block,
+                '&[hidden]' : (
+                  display: none,
                 )
               )
             ),
