@@ -667,7 +667,9 @@ $components-config: (
 
       colors: (
         light : (
-          background: rgb(200, 200, 200)
+          background: rgb(242, 242, 242),
+          border : 1px solid rgb(235, 235, 235),
+          box-shadow: 0 1px 8px -2px rgba(0, 0, 0, 0.12),
         ),
         dark : (
           border: 1px solid rgba(48, 54, 61, .75),
