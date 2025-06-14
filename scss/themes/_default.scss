@@ -777,7 +777,7 @@ $components-config: (
         light : (
         ),
         dark : (
-          background: rgba(15, 23, 42, .85),
+          background: rgba(20, 20, 20, .85),
         )
       )
     ),
@@ -961,23 +961,43 @@ $components-config: (
 
     sidecap : (
 
+      display: flex,
+      flex-direction: column,
+
       position: absolute,
       top: 0,
       right: 0,
       height: 100%,
-      display: flex,
-      flex-direction: column,
       width: 300px,
 
       background: var(--background),
+      box-shadow: var(--box-shadow),
+      //border-left: 1px solid rgb(4, 90, 195),
 
       colors: (
         light : (
-          background : #ccc
+          background : #ccc,
+          box-shadow: string.unquote('0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26,.28)'),
         ),
         dark: (
-          background: rgb(45, 56, 66),
-          box-shadow: 0rem 1.25rem 1.25rem -0.5rem rgba(26, 26, 26, .28)
+          background: rgb(22, 27, 34),
+          box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
+        )
+      ),
+
+      subclasses : (
+        '.top' : (
+          display: flex,
+          padding: 0.25rem,
+          justify-content: space-between,
+        ),
+        '.middle' : (
+          height: 100%,
+          padding: 0.25rem,
+        ),
+        '.bottom' : (
+          display: flex,
+          padding: 0.25rem,
         )
       )
     )
