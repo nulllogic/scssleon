@@ -899,10 +899,10 @@ $components-config: (
               color: var(--color),
               colors: (
                 light : (
-                  color: '#333',
+                  color: rgba(255, 255, 255, 1),
                 ),
                 dark : (
-                  color: '#fff'
+                  color: rgba(255, 255, 255, 1),
                 )
               ),
               subclasses: (
