@@ -40,6 +40,12 @@ $html-config: (
           background : rgba(18, 20, 23, 1),
           color: '#ccc'
         )
+      ),
+
+      subclasses : (
+        '&[scroll-lock]' : (
+          overflow: hidden
+        )
       )
     ),
 
@@ -769,7 +775,7 @@ $components-config: (
       width: 100%,
       height: 100%,
 
-      display: flex,
+      display: none,
       align-items: center,
       justify-content: center,
 
@@ -778,6 +784,12 @@ $components-config: (
         ),
         dark : (
           background: rgba(20, 20, 20, .85),
+        )
+      ),
+
+      subclasses : (
+        '&.show' : (
+          display: flex
         )
       )
     ),
@@ -966,7 +978,7 @@ $components-config: (
       display: flex,
       flex-direction: column,
 
-      position: absolute,
+      position: fixed,
       top: 0,
       right: 0,
       height: 100%,
