@@ -672,7 +672,7 @@ $components-config: (
           box-shadow: 0 1px 8px -2px rgba(0, 0, 0, 0.12),
         ),
         dark : (
-          border: 1px solid rgba(48, 54, 61, .75),
+          border: 1px solid #3d444d,
           background: rgb(22, 27, 34),
           shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
         )
@@ -961,6 +961,8 @@ $components-config: (
 
     sidecap : (
 
+      --width : 20.75rem,
+
       display: flex,
       flex-direction: column,
 
@@ -968,11 +970,16 @@ $components-config: (
       top: 0,
       right: 0,
       height: 100%,
-      width: 300px,
 
+      width: var(--width),
       background: var(--background),
       box-shadow: var(--box-shadow),
       //border-left: 1px solid rgb(4, 90, 195),
+
+      will-change: transform,
+      transition: transform 300ms cubic-bezier(0.25,0.1,0.25,1),
+      transform-origin: right,
+      transform: translateX(100%),
 
       colors: (
         light : (
@@ -980,12 +987,15 @@ $components-config: (
           box-shadow: string.unquote('0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26,.28)'),
         ),
         dark: (
-          background: rgb(22, 27, 34),
+          background: rgb(13, 17, 23),
           box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
         )
       ),
 
       subclasses : (
+        '&.open' : (
+          transform: translateX(0),
+        ),
         '.top' : (
           display: flex,
           padding: 0.25rem,
