@@ -901,7 +901,7 @@ $components-config: (
       margin: 0 auto,
       border: 1px solid #3d444d,
       border-radius: 7px,
-      transition: string.unquote('opacity 0.15s cubic-bezier(0.25,0.1,0.25,1), display 0.15s cubic-bezier(0.25,0.1,0.25,1) allow-discrete, transform 0.15s cubic-bezier(0.25,0.1,0.25,1)'),
+      transition: string.unquote('opacity 0.15s ease-in, display 0.15s ease-in allow-discrete, transform 0.15s ease-in'),
       transform: scale(.75),
 
       box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
@@ -1072,7 +1072,7 @@ $components-config: (
       box-shadow: var(--box-shadow),
       //border-left: 1px solid rgb(4, 90, 195),
       transform: translateX(100%),
-      transition: string.unquote('opacity 0.3s cubic-bezier(0.25,0.1,0.25,1), transform 0.3s cubic-bezier(0.25,0.1,0.25,1), display 0.3s cubic-bezier(0.25,0.1,0.25,1) allow-discrete'),
+      transition: string.unquote('opacity 0.3s ease-in, transform 0.3s ease-in, display 0.3s ease-in allow-discrete'),
       opacity : 0,
 
       _colors: (
