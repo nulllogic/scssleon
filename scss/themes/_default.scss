@@ -965,6 +965,7 @@ $components-config: (
         '&.vertical' : (
           --flex-direction : column,
           --align-items: auto,
+          --gap : 0.5rem,
         ),
         '&.tabs' : (
         ),
