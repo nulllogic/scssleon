@@ -872,53 +872,64 @@ $components-config: (
 
     modal : (
 
-      --width : 20.75rem,
-
-      display: flex,
-      flex-direction: column,
+      display: none,
+      justify-content: align-center,
 
       position: fixed,
       top: 0,
       right: 0,
-      height: 100%,
+      left: 0,
+      bottom: 0,
 
-      width: var(--width),
-      background: var(--background),
-      box-shadow: var(--box-shadow),
+      height: 100%,
+      width: 100%,
+      align-items: center,
+      padding: 1rem,
+
+      //background: var(--background),
+      //box-shadow: var(--box-shadow),
       //border-left: 1px solid rgb(4, 90, 195),
 
-      will-change: transform,
-      transition: transform 300ms cubic-bezier(0.25,0.1,0.25,1),
-      transform-origin: right,
-      transform: translateX(100%),
+      //will-change: transform,
+      //transition: transform 300ms cubic-bezier(0.25,0.1,0.25,1),
+      //transform-origin: right,
+      //transform: translateX(100%),
 
       colors: (
         light : (
-          background : #ccc,
+          //background : #ccc,
           box-shadow: string.unquote('0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26,.28)'),
         ),
         dark: (
-          background: rgb(13, 17, 23),
+          //background: rgb(13, 17, 23),
           box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
         )
       ),
 
       subclasses : (
         '&.open' : (
-          transform: translateX(0),
+          display: flex,
+        ),
+        '.inner' : (
+            padding: 0.5rem,
+            background: rgb(13, 17, 23),
+            max-width: 42rem,
+            width: 100%,
+            margin: 0 auto,
+            border: 1px solid #3d444d,
+            border-radius: 7px,
+            box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;')
         ),
         '.top' : (
           display: flex,
-          padding: 0.25rem,
           justify-content: space-between,
         ),
         '.middle' : (
           height: 100%,
-          padding: 0.25rem,
+          padding: 1rem 0,
         ),
         '.bottom' : (
           display: flex,
-          padding: 0.25rem,
         )
       )
     ),
