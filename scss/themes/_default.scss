@@ -50,7 +50,7 @@ $html-config: (
     ),
 
     a : (
-      text-decoration : underline,
+      text-decoration : none,
       color: var(--color),
 
       colors: (
@@ -108,6 +108,14 @@ $updated-theme: map.deep-merge($updated-theme, $html-config);
 
 $content-config: (
   content : (
+    a : (
+      text-decoration: underline,
+      subclasses : (
+        '&:hover' : (
+          text-decoration: none,
+        )
+      )
+    ),
     h1 : (
       font-size: 3.75rem,
       line-height: 1,
