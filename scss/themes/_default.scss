@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use "sass:string";
 
-// Main theme colors
+// Main theme _colors
 $theme: () !default;
 $updated-theme: () !default;
 
@@ -31,7 +31,7 @@ $html-config: (
       color: var(--color),
       background: var(--background),
 
-      colors: (
+      _colors: (
         light : (
           background: '#fff',
           color: '#ccc',
@@ -42,7 +42,7 @@ $html-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         '&[scroll-lock]' : (
           overflow: hidden
         )
@@ -53,7 +53,7 @@ $html-config: (
       text-decoration : none,
       color: var(--color),
 
-      colors: (
+      _colors: (
         light : (
           color: '#ccc',
         ),
@@ -62,12 +62,12 @@ $html-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         "&:hover": (
           text-decoration: none
         ),
         "&[target='_blank']" : (
-          subclasses : (
+          _subclasses : (
             "&:after" : (
               background: red,
               display: inline-flex,
@@ -110,7 +110,7 @@ $content-config: (
   content : (
     a : (
       text-decoration: underline,
-      subclasses : (
+      _subclasses : (
         '&:hover' : (
           text-decoration: none,
         )
@@ -219,7 +219,7 @@ $content-config: (
       //color: var(--color),
       //background: var(--background),
       //padding: 2px 5px,
-      //colors: (
+      //_colors: (
       //  light : (
       //    background: '#fff',
       //    color: '#ccc',
@@ -297,7 +297,7 @@ $content-config: (
       border-top-width: 1px,
       border-top-style: solid,
       border-top-color: var(--border-top-color),
-      colors: (
+      _colors: (
         light: (
           border-top-color: #ccc
         ),
@@ -341,7 +341,7 @@ $components-config: (
       grid-gap: var(--gap),
       padding: var(--padding),
 
-      colors: (
+      _colors: (
         light : (
           background: rgba(246, 246, 247, 1),
           shadow: string.unquote("inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1)"),
@@ -353,7 +353,7 @@ $components-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         '.left' : (
           justify-self: var(--left-column-justify-self),
           align-self: var(--left-column-align-self),
@@ -382,7 +382,7 @@ $components-config: (
 
       padding: var(--padding),
 
-      colors: (
+      _colors: (
         light : (
         ),
         dark : (
@@ -391,19 +391,19 @@ $components-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
 
         '.item' : (
           padding: var(--item-padding),
 
-          subclasses : (
+          _subclasses : (
             '.question' : (
 
               display: flex,
               border-bottom: 1px solid #ccc,
               justify-content: space-between,
 
-              subclasses : (
+              _subclasses : (
                 '> button' : (
                   color: inherit,
                   background: none,
@@ -417,7 +417,7 @@ $components-config: (
                   justify-content: space-between
                 ),
                 '&.open' : (
-                  subclasses : (
+                  _subclasses : (
                     '.icon' : (
                       transform: rotate(180deg)
                     )
@@ -432,7 +432,7 @@ $components-config: (
             '.answer' : (
               display: block,
               padding: 0.5rem 0,
-              subclasses : (
+              _subclasses : (
                 '&[hidden]' : (
                   display: none,
                 )
@@ -466,7 +466,7 @@ $components-config: (
       box-shadow: var(--box-shadow),
       border: var(--border),
 
-      colors: (
+      _colors: (
         light : (
           color: #ccc,
           box-shadow: none
@@ -491,17 +491,17 @@ $components-config: (
       padding: var(--padding),
       margin: 0,
 
-      colors: (
+      _colors: (
         light : (
         ),
         dark : (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         ".item" : (
           display: inline-flex,
-          subclasses : (
+          _subclasses : (
             ".link" : (
             )
           )
@@ -543,7 +543,7 @@ $components-config: (
         box-shadow .15s ease-in-out
       ),
 
-      colors: (
+      _colors: (
         light: (
           color: #fff,
           background: #fff
@@ -569,7 +569,7 @@ $components-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         "&:hover:not(.loading, [disabled], .btn-link)" : (
           color: var(--hover-color),
           background: var(--hover-background),
@@ -586,7 +586,7 @@ $components-config: (
           border: none,
           box-shadow: none,
           text-decoration: underline,
-          subclasses: (
+          _subclasses: (
             "&:hover": (
               text-decoration: none,
             )
@@ -609,7 +609,7 @@ $components-config: (
       --gap: 10px,
       display: flex,
       flex-wrap: wrap,
-      subclasses : (
+      _subclasses : (
         ".btn:first-child" : (
           border-start-end-radius: 0,
           border-end-end-radius: 0,
@@ -632,7 +632,7 @@ $components-config: (
         "&.separated" : (
           gap: var(--gap),
           --border-radius: 5px,
-          subclasses : (
+          _subclasses : (
             ".btn" : (
               margin: 0,
               border-radius: var(--border-radius)
@@ -653,7 +653,7 @@ $components-config: (
       height: auto,
       background: var(--background),
 
-      colors: (
+      _colors: (
         light : (
           border: 1px solid #dddee0,
           background: rgb(200, 200, 200),
@@ -679,7 +679,7 @@ $components-config: (
       height: 100%,
       margin: 0,
 
-      colors: (
+      _colors: (
         light : (
           background: rgb(242, 242, 242),
           border : 1px solid rgb(235, 235, 235),
@@ -696,7 +696,7 @@ $components-config: (
     container : (
       margin: 0 auto,
       width: 100%,
-      colors: (
+      _colors: (
         light : (),
         dark : ()
       ),
@@ -713,7 +713,7 @@ $components-config: (
         --padding: .5rem .75rem,
 
         display: block,
-        colors: (
+        _colors: (
           light : (
           ),
           dark : (
@@ -727,7 +727,7 @@ $components-config: (
         --border-radius: .25rem,
         --padding: .5rem .75rem,
         display: block,
-        colors: (
+        _colors: (
           light : (
           ),
           dark : (
@@ -740,7 +740,7 @@ $components-config: (
       checkbox : (
         --border-radius: .25rem,
         --padding: .5rem .75rem,
-        colors: (
+        _colors: (
           light : (
           ),
           dark : (
@@ -753,7 +753,7 @@ $components-config: (
       radio : (
         --border-radius: .25rem,
         --padding: .5rem .75rem,
-        colors: (
+        _colors: (
           light : (
           ),
           dark : (
@@ -787,7 +787,7 @@ $components-config: (
       align-items: center,
       justify-content: center,
 
-      colors: (
+      _colors: (
         light : (
         ),
         dark : (
@@ -795,7 +795,7 @@ $components-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         '&.show' : (
           display: flex
         )
@@ -818,7 +818,7 @@ $components-config: (
       grid-template-columns: var(--grid-template-columns),
       grid-gap: var(--gap),
 
-      subclasses : (
+      _subclasses : (
         ".left" : (
           justify-self: var(--left-column-alignment),
         ),
@@ -842,7 +842,7 @@ $components-config: (
       flex-direction: column,
       gap: var(--gap),
 
-      colors: (
+      _colors: (
         light : (
           background: #ccc
         ),
@@ -851,21 +851,21 @@ $components-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         ".el" : (
           min-height: var(--min-height),
           border-radius: var(--border-radius),
           background: var(--background)
         ),
         "&.glow" : (
-          subclasses : (
+          _subclasses : (
             ".el" : (
               animation: placeholder-glow 2s ease-in-out infinite,
             )
           )
         ),
         "&.wave" : (
-          subclasses : (
+          _subclasses : (
             ".el" : (
               mask-size: 200% 100%,
               -webkit-mask-size: 200% 100%,
@@ -881,18 +881,9 @@ $components-config: (
     modal : (
 
       display: none,
-      justify-content: align-center,
+      height: auto,
 
-      position: fixed,
-      top: 0,
-      right: 0,
-      left: 0,
-      bottom: 0,
-
-      height: 100%,
-      width: 100%,
       align-items: center,
-      padding: 1rem,
 
       //background: var(--background),
       //box-shadow: var(--box-shadow),
@@ -903,7 +894,20 @@ $components-config: (
       //transform-origin: right,
       //transform: translateX(100%),
 
-      colors: (
+      padding: 0.5rem,
+      background: rgb(13, 17, 23),
+      max-width: 42rem,
+      width: 100%,
+      margin: 0 auto,
+      border: 1px solid #3d444d,
+      border-radius: 7px,
+      transition-behavior: allow-discrete,
+      transition: opacity 0.2s linear,
+      opacity: 0,
+
+      box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
+
+      _colors: (
         light : (
           //background : #ccc,
           box-shadow: string.unquote('0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26,.28)'),
@@ -914,19 +918,15 @@ $components-config: (
         )
       ),
 
-      subclasses : (
-        '&.open' : (
+      _subclasses : (
+        '&[open]' : (
           display: flex,
-        ),
-        '.inner' : (
-            padding: 0.5rem,
-            background: rgb(13, 17, 23),
-            max-width: 42rem,
-            width: 100%,
-            margin: 0 auto,
-            border: 1px solid #3d444d,
-            border-radius: 7px,
-            box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;')
+          opacity: 1,
+          _atrule : (
+            '@starting-style' : (
+              opacity: 1,
+            )
+          )
         ),
         '.top' : (
           display: flex,
@@ -957,14 +957,14 @@ $components-config: (
       padding: 0,
       list-style-type: none,
 
-      colors: (
+      _colors: (
         light : (
         ),
         dark: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         '&.horizontal' : (
           --align-items: center,
           --flex-direction : row,
@@ -981,11 +981,11 @@ $components-config: (
         ),
         '.item' : (
           width: auto,
-          subclasses : (
+          _subclasses : (
             '.link' : (
               display: inline-flex,
               color: var(--color),
-              colors: (
+              _colors: (
                 light : (
                   color: rgba(255, 255, 255, 1),
                 ),
@@ -993,7 +993,7 @@ $components-config: (
                   color: rgba(255, 255, 255, 1),
                 )
               ),
-              subclasses: (
+              _subclasses: (
                 '&:hover' : (
                   text-decoration : none
                 )
@@ -1025,14 +1025,14 @@ $components-config: (
 
       z-index: 5,
 
-      colors: (
+      _colors: (
         light : (
         ),
         dark: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         ".left" : (
           justify-self: var(--left-column-alignment),
         ),
@@ -1067,7 +1067,7 @@ $components-config: (
       transform-origin: right,
       transform: translateX(100%),
 
-      colors: (
+      _colors: (
         light : (
           background : #ccc,
           box-shadow: string.unquote('0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26,.28)'),
@@ -1078,7 +1078,7 @@ $components-config: (
         )
       ),
 
-      subclasses : (
+      _subclasses : (
         '&.open' : (
           transform: translateX(0),
         ),

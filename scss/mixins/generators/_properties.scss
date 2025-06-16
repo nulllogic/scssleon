@@ -77,6 +77,19 @@
   }
 }
 
+@mixin generate-atrule($tag, $value, $config, $options) {
+  @each $at-rule, $properties in $value {
+    // Keep @ at the beginning
+    @#{functions.replace($at-rule, '@', '')} {
+      @include generate-properties($tag, $properties, $config, $options);
+    }
+  }
+}
+
+@mixin generate-animation($tag, $value, $config, $options) {
+
+}
+
 @mixin generate-properties($tag, $properties, $config, $options : ()) {
   $prefix: functions.get-config($config, "prefix");
 
@@ -90,22 +103,27 @@
       @include generate-css-properties($tag, $property, $value, $config, $options);
     }
 
-      // Colors
-    @else if ($property == "colors") {
+    // Colors
+    @else if ($property == "_colors") {
       @include generate-colors($tag, $value, $config);
     }
 
-      // Responsive
-    @else if ($property == "responsive") {
+    // Responsive
+    @else if ($property == "_responsive") {
       @include generate-responsive($tag, $value, $config);
     }
 
-      // Subclasses
-    @else if ($property == "subclasses") {
+    // Sub classes
+    @else if ($property == "_subclasses") {
       @each $class, $class_properties in $value {
         @include generate-subclasses($tag, $class, $class_properties, $config, $options);
       }
-    } @else {
+    }
+    // At-rules
+    @else if ($property == "_atrule") {
+      @include generate-atrule($tag, $value, $config, $options);
+    }
+    @else {
       @include generate-css-variables($tag, $property, $value, $config);
     }
   }
