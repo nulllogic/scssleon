@@ -930,6 +930,7 @@ $components-config: (
         ),
         '.bottom' : (
           display: flex,
+          justify-content: flex-end,
         )
       )
     ),
