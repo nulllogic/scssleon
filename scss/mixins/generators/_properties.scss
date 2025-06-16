@@ -86,8 +86,12 @@
   }
 }
 
-@mixin generate-animation($tag, $value, $config, $options) {
+@mixin generate-print($tag, $value, $config, $options) {
+  //@TODO
+}
 
+@mixin generate-animation($tag, $value, $config, $options) {
+  //@TODO
 }
 
 @mixin generate-properties($tag, $properties, $config, $options : ()) {
