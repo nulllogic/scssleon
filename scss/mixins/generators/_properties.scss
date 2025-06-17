@@ -91,7 +91,18 @@
 }
 
 @mixin generate-animation($tag, $value, $config, $options) {
-  //@TODO
+  @each $name, $properties in $value {
+    // Check, if _animation is not empty ;;
+    @if(meta.type-of($properties) != 'list') {
+      @keyframes #{$name} {
+        @each $offset, $offset-value in $properties {
+          #{$offset} {
+            @include generate-properties($tag, $offset-value, $config, $options);
+          }
+        }
+      }
+    }
+  }
 }
 
 @mixin generate-properties($tag, $properties, $config, $options : ()) {
@@ -127,6 +138,11 @@
     @else if ($property == "_atrule") {
       @include generate-atrule($tag, $value, $config, $options);
     }
+    // Animations
+    @else if ($property == "_animations") {
+      @include generate-animation($tag, $value, $config, $options);
+    }
+
     @else {
       @include generate-css-variables($tag, $property, $value, $config);
     }

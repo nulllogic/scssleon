@@ -814,8 +814,36 @@ $components-config: (
       validation : (
       )
     ),
+
     table : (
       width: 100%,
+      _subclasses : (
+        '.top > * > *' : (
+          padding: 0.5rem 0,
+          border-bottom: 1px solid rgb(73, 80, 87),
+        ),
+        '.middle > * > *' : (
+            padding: 0.5rem 0,
+            border-bottom: 1px solid rgb(73, 80, 87),
+        ),
+        '.bottom > * > *' : (
+            padding: 0.5rem 0,
+        ),
+        '&.stripe' : (
+          _subclasses : (
+            'tbody tr:nth-child(odd) td' : (
+              background: rgba(33, 37, 41, 0.95),
+            )
+          )
+        ),
+        '&.hover' : (
+            _subclasses : (
+                'tbody tr:hover td' : (
+                    background: rgba(33, 37, 41, 0.95),
+                )
+            )
+        )
+      )
     ),
 
     overlay : (
@@ -922,6 +950,20 @@ $components-config: (
               animation: placeholder-wave 2s linear infinite,
             )
           )
+        )
+      ),
+
+      _animations : (
+        'placeholder-glow' : (
+          '50%' : (
+            opacity: 0.5,
+          )
+        ),
+        'placeholder-wave' : (
+            '100%' : (
+              mask-position: -200% 0,
+              -webkit-mask-position: -200% 0,
+            )
         )
       )
     ),
