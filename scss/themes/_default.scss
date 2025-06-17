@@ -768,10 +768,14 @@ $components-config: (
           --padding: .5rem .75rem,
 
           font-size: inherit,
+          font-weight: inherit,
           display: block,
 
+          appearance: none,
+
           padding: var(--padding),
-          //border-radius: var(--border-radius),
+          border-radius: var(--border-radius),
+          border: var(--border),
 
           _colors: (
             light : (
@@ -789,10 +793,15 @@ $components-config: (
           --border-radius: .25rem,
           --padding: .5rem .75rem,
 
+          font-size: inherit,
+          font-weight: inherit,
           display: block,
 
+          appearance: none,
+
           padding: var(--padding),
-          //border-radius: var(--border-radius),
+          border-radius: var(--border-radius),
+          border: var(--border),
 
           _colors: (
             light : (
@@ -810,7 +819,16 @@ $components-config: (
           --border-radius: .25rem,
           --padding: .5rem .75rem,
 
+          font-size: inherit,
+          font-weight: inherit,
           display: block,
+
+          appearance: none,
+
+          padding: var(--padding),
+          border-radius: var(--border-radius),
+          border: var(--border),
+
           _colors: (
             light : (
             ),
@@ -823,13 +841,22 @@ $components-config: (
         ),
 
         '.checkbox' : (
+
           --border-radius: .25rem,
           --padding: .5rem .75rem,
+
+          //padding: var(--padding),
+          border-radius: var(--border-radius),
+          border: var(--border),
+
+          width: 1em,
+          height: 1em,
+          appearance: none,
+
           _colors: (
             light : (
             ),
             dark : (
-              color: #fff,
               background: rgb(48, 56, 66),
               border: 1px solid rgba(240, 246, 252, .25),
             )
@@ -837,8 +864,17 @@ $components-config: (
         ),
 
         '.radio' : (
+
           --border-radius: .25rem,
           --padding: .5rem .75rem,
+
+          border-radius: var(--border-radius),
+          border: var(--border),
+
+          width: 1em,
+          height: 1em,
+          appearance: none,
+
           _colors: (
             light : (
             ),
@@ -849,6 +885,15 @@ $components-config: (
             )
           )
         ),
+        //'.input' : (
+        //  _subclasses: (
+        //    '&:focus' : (
+        //        border-color: #86b7fe,
+        //        outline: 0,
+        //        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25),
+        //    )
+        //  )
+        //)
       ),
     ),
 
