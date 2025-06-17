@@ -657,15 +657,32 @@ $components-config: (
     ),
 
     dropdown: (
-      position: absolute,
-      top: 100%,
-      left: 0,
-      border: var(--border),
-      border-radius: 0.25rem,
-      padding: 4px 0,
-      width: 200px,
-      height: auto,
-      background: var(--background),
+
+      position: relative,
+      display: inline-block,
+
+      _subclasses : (
+        '&.on-hover:hover' : (
+            _subclasses : (
+              '.menu' : (
+                display: block
+              )
+            )
+        ),
+        '.menu' : (
+          display: none,
+          position: absolute,
+          top: 100%,
+          left: 0,
+          border-radius: 0.25rem,
+          padding: 4px 0,
+          width: 200px,
+          height: auto,
+
+          border: var(--border),
+          background: var(--background),
+        )
+      ),
 
       _colors: (
         light : (
