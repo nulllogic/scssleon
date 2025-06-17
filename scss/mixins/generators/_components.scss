@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use 'sass:meta';
+@use 'sass:list';
 
 @use 'properties';
 @use 'wrapper';
@@ -31,7 +32,14 @@
   }
 }
 
-//@mixin generate-components($component, $class, $config, $theme) {
+@mixin generate-components($components, $config, $theme) {
+  // Check, if components are not empty
+  @if(meta.type-of($components) == 'list' and list.length($components) > 0) {
+    @each $component in $components {
+      @include generate-component(list.nth($component, 1), list.nth($component, 2), $config, $theme)
+    }
+  }
+}
 
 @mixin get-structure ($component) {
   @debug $component;

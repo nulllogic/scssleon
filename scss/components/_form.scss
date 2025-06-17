@@ -1,50 +1,9 @@
-@use '../config';
+/* Load mixins/functions */
 @use '../mixins' as mixins;
+@use '../functions' as functions;
 
 /* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
 
-@use '../forms/label' with (
-  $config : $config,
-  $theme : $theme
-);
-
-@use '../forms/input' with (
-  $config : $config,
-  $theme : $theme
-);
-
-@use '../forms/select' with (
-  $config : $config,
-  $theme : $theme
-);
-
-@use '../forms/radio' with (
-  $config : $config,
-  $theme : $theme
-);
-
-@use '../forms/checkbox' with (
-  $config : $config,
-  $theme : $theme
-);
-
-@use '../forms/range' with (
-  $config : $config,
-  $theme : $theme
-);
-
-@use '../forms/switch' with (
-  $config : $config,
-  $theme : $theme
-);
-
-
-//@forward '../forms/form-text';
-//@forward '../forms/form-control';
-//@forward '../forms/form-select';
-//@forward '../forms/form-check';
-//@forward '../forms/form-range';
-//@forward '../forms/input-group';
-//@forward '../forms/validation';
+@include mixins.generate-component('form', 'form', $config, $theme);

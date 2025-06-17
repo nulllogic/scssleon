@@ -751,68 +751,105 @@ $components-config: (
     ),
 
     form : (
-      label : (
-        display: block,
-        margin-bottom: 10px,
-      ),
-      input : (
 
-        --border-radius: .25rem,
-        --padding: .5rem .75rem,
+      _subclasses : (
+        '.field' : (
+          margin-bottom: 1rem,
+        ),
 
-        display: block,
-        _colors: (
-          light : (
-          ),
-          dark : (
-            color: #fff,
-            background: rgb(48, 56, 66),
-            border: 1px solid rgba(240, 246, 252, .25),
+        '.label' : (
+            display: block,
+            margin-bottom: 10px,
+        ),
+
+        '.input' : (
+
+          --border-radius: .25rem,
+          --padding: .5rem .75rem,
+
+          font-size: inherit,
+          display: block,
+
+          padding: var(--padding),
+          //border-radius: var(--border-radius),
+
+          _colors: (
+            light : (
+            ),
+            dark : (
+              color: #fff,
+              background: rgb(48, 56, 66),
+              border: 1px solid rgba(240, 246, 252, .25),
+            )
           )
-        )
-      ),
-      select : (
-        --border-radius: .25rem,
-        --padding: .5rem .75rem,
-        display: block,
-        _colors: (
-          light : (
-          ),
-          dark : (
-            color: #fff,
-            background: rgb(48, 56, 66),
-            border: 1px solid rgba(240, 246, 252, .25),
+        ),
+
+        '.textarea' : (
+
+          --border-radius: .25rem,
+          --padding: .5rem .75rem,
+
+          display: block,
+
+          padding: var(--padding),
+          //border-radius: var(--border-radius),
+
+          _colors: (
+            light : (
+            ),
+            dark : (
+              color: #fff,
+              background: rgb(48, 56, 66),
+              border: 1px solid rgba(240, 246, 252, .25),
+            )
           )
-        )
-      ),
-      checkbox : (
-        --border-radius: .25rem,
-        --padding: .5rem .75rem,
-        _colors: (
-          light : (
-          ),
-          dark : (
-            color: #fff,
-            background: rgb(48, 56, 66),
-            border: 1px solid rgba(240, 246, 252, .25),
+        ),
+
+        '.select' : (
+
+          --border-radius: .25rem,
+          --padding: .5rem .75rem,
+
+          display: block,
+          _colors: (
+            light : (
+            ),
+            dark : (
+              color: #fff,
+              background: rgb(48, 56, 66),
+              border: 1px solid rgba(240, 246, 252, .25),
+            )
           )
-        )
-      ),
-      radio : (
-        --border-radius: .25rem,
-        --padding: .5rem .75rem,
-        _colors: (
-          light : (
-          ),
-          dark : (
-            color: #fff,
-            background: rgb(48, 56, 66),
-            border: 1px solid rgba(240, 246, 252, .25),
+        ),
+
+        '.checkbox' : (
+          --border-radius: .25rem,
+          --padding: .5rem .75rem,
+          _colors: (
+            light : (
+            ),
+            dark : (
+              color: #fff,
+              background: rgb(48, 56, 66),
+              border: 1px solid rgba(240, 246, 252, .25),
+            )
           )
-        )
+        ),
+
+        '.radio' : (
+          --border-radius: .25rem,
+          --padding: .5rem .75rem,
+          _colors: (
+            light : (
+            ),
+            dark : (
+              color: #fff,
+              background: rgb(48, 56, 66),
+              border: 1px solid rgba(240, 246, 252, .25),
+            )
+          )
+        ),
       ),
-      validation : (
-      )
     ),
 
     table : (
