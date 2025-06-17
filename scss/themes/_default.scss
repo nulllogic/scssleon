@@ -416,6 +416,7 @@ $components-config: (
                   align-items: center,
                   justify-content: space-between
                 ),
+
                 '&.open' : (
                   _subclasses : (
                     '.icon' : (
@@ -430,11 +431,24 @@ $components-config: (
             ),
 
             '.answer' : (
+
               display: block,
               padding: 0.5rem 0,
+              height: auto,
+
+              transition: string.unquote('opacity 0.15s ease-in, display 0.15s ease-in allow-discrete'),
+
+              _atrule : (
+                  '@starting-style' : (
+                      opacity: 0
+                  )
+              ),
+
               _subclasses : (
                 '&[hidden]' : (
                   display: none,
+                  opacity: 0,
+                  transition: string.unquote('opacity 0.15s ease-out, display 0.15s ease-out allow-discrete'),
                 )
               )
             ),
