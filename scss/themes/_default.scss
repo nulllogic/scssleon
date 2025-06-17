@@ -752,6 +752,14 @@ $components-config: (
 
     form : (
 
+      _colors: (
+        light : (
+        ),
+        dark : (
+          box-shadow-focus: 0 0 0 .25rem rgba(13, 110, 253, .25),
+        )
+      ),
+
       _subclasses : (
         '.field' : (
           margin-bottom: 1rem,
@@ -848,17 +856,34 @@ $components-config: (
           //padding: var(--padding),
           border-radius: var(--border-radius),
           border: var(--border),
+          background: var(--background),
 
-          width: 1em,
-          height: 1em,
+          width: 16px,
+          height: 16px,
           appearance: none,
 
           _colors: (
             light : (
             ),
             dark : (
-              background: rgb(48, 56, 66),
+              background: transparent,
               border: 1px solid rgba(240, 246, 252, .25),
+            )
+          ),
+
+          _subclasses : (
+            '&:focus' : (
+              box-shadow: var(--box-shadow-focus),
+            ),
+            '&:checked' : (
+              _colors: (
+                light : (
+                ),
+                dark : (
+                    background: rgb(64, 80, 99),
+                    border: 1px solid rgba(240, 246, 252, .25),
+                )
+              ),
             )
           )
         ),
@@ -885,15 +910,6 @@ $components-config: (
             )
           )
         ),
-        //'.input' : (
-        //  _subclasses: (
-        //    '&:focus' : (
-        //        border-color: #86b7fe,
-        //        outline: 0,
-        //        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25),
-        //    )
-        //  )
-        //)
       ),
     ),
 
