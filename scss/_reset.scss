@@ -353,6 +353,22 @@ $color_scheme: functions.get-config($config, "color-scheme");
     vertical-align: baseline;
   }
 
+  // Definition list
+  dl {
+    dd {
+      margin: 0;
+    }
+
+    dt {
+      margin: 0;
+    }
+  }
+
+  // Blockquote
+  blockquote {
+    margin: 0;
+  }
+
   // Hidden attribute
   [hidden] {
     display: none !important;

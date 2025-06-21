@@ -66,6 +66,7 @@
 @mixin generate-responsive($tag, $properties, $config) {
   $breakpoints: functions.get-config($config, "breakpoints");
 
+  // @TODO rewrite function to add warning, if breakpoint is missing
   @each $breakpoint, $value in $breakpoints {
     $property: map.get($properties, $breakpoint);
 

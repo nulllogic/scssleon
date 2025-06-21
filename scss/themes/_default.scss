@@ -475,6 +475,7 @@ $components-config: (
       vertical-align: middle,
       align-items: center,
       display: inline-flex,
+
       padding: var(--padding),
       border-radius: var(--border-radius),
       color: var(--color),
@@ -496,6 +497,7 @@ $components-config: (
       )
 
     ),
+
     breadcrumb : (
 
       --padding: 0 0 0 5px,
@@ -861,6 +863,7 @@ $components-config: (
           width: 16px,
           height: 16px,
           appearance: none,
+          outline : none,
 
           _colors: (
             light : (
