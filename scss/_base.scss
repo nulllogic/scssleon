@@ -4,6 +4,8 @@
 └─┘┴ ┴└─┘└─┘
 */
 
+@use "sass:string";
+
 /* Load settings and functions */
 @use 'mixins' as mixins;
 @use 'functions' as functions;
@@ -11,6 +13,20 @@
 /* SCSS variables definition requirement */
 $config: nil !default;
 $theme: nil !default;
+
+$color_scheme: functions.get-config($config, "color-scheme");
+
+html {
+  color-scheme: string.unquote($color_scheme);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark
+}
+
+html[data-theme="light"] {
+  color-scheme: light
+}
 
 @each $tag, $properties in functions.get-theme($theme, 'html') {
   #{$tag} {

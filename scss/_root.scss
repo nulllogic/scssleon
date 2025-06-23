@@ -13,12 +13,9 @@ $is-smooth-scroll-enabled: functions.get-config(
   "enable.smooth-scroll"
 );
 
-$color_scheme: functions.get-config($config, "color-scheme");
-
 $root-variables: functions.get-theme($theme, "root.variables");
 
 :root {
-  color-scheme: string.unquote($color_scheme);
 
   @include mixins.generate-properties(
     "root",

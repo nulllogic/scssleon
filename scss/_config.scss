@@ -15,8 +15,8 @@ $config: () !default;
 
 $default-config: (
   // scss-docs-start root-variables
-  prefix: "xii",
-  wrapper-class: "wrapper" // scss-docs-end root-variables
+  prefix: 'xii',
+  wrapper-class: 'wrapper' // scss-docs-end root-variables
 );
 
 // Container breakpoints
@@ -51,7 +51,7 @@ $grid-breakpoints-config: (
 $default-config: map.deep-merge($default-config, $grid-breakpoints-config);
 
 $color_scheme-config: (
-  color-scheme: "light dark",
+  color-scheme: 'light dark',
 );
 
 $default-config: map.deep-merge($default-config, $color_scheme-config);
