@@ -346,6 +346,7 @@ $components-config: (
       _colors: (
         light : (
           background: rgba(246, 246, 247, 1),
+          border: 1px solid rgba(48, 54, 61, 0.75),
           shadow: string.unquote("inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1)"),
         ),
         dark : (
