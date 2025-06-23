@@ -1,17 +1,5 @@
 @use 'sass:map';
 
-@use '../../functions' as functions;
-
-// Media that add color variables
-
 @mixin generate-color-scheme($schema) {
-  @if $schema == 'light' {
-    @media (prefers-color-scheme: light) {
-      @content
-    }
-  } @else if $schema == 'dark' {
-    @media (prefers-color-scheme: dark) {
-      @content
-    }
-  }
+  @content
 }

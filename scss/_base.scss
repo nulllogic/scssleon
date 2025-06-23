@@ -5,6 +5,7 @@
 */
 
 @use "sass:string";
+@use "sass:map";
 
 /* Load settings and functions */
 @use 'mixins' as mixins;
@@ -29,7 +30,21 @@ html[data-theme="light"] {
 }
 
 @each $tag, $properties in functions.get-theme($theme, 'html') {
-  #{$tag} {
-    @include mixins.generate-properties(#{$tag}, $properties, $config);
+
+  @each $scheme in string.split(functions.get-config($config, "color-scheme"), " ") {
+    @if $scheme == 'light' {
+      #{$tag} {
+        @include mixins.generate-properties(#{$tag}, $properties, $config);
+      }
+    }
+
+    @if $scheme == 'dark' {
+      [data-theme="#{$scheme}"] #{$tag} {
+        @include mixins.generate-properties(#{$tag}, $properties, $config, map.deep-merge((
+            only_dark_colors : true,
+        ), $config));
+      }
+    }
   }
+
 }

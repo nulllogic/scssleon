@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:list';
+@use 'sass:string';
 
 @use 'properties';
 @use 'wrapper';
@@ -14,33 +15,56 @@
   @if (meta.type-of($component) == 'string') {
     /* Loading component settings and styling */
     $theme-component: functions.get-theme(
-      $theme,
-      'components' + '.' + $component
+            $theme,
+            'components' + '.' + $component
     );
   } @else {
     $theme-component: $component;
   }
 
-  %#{$class} {
-    @include properties.generate-properties($class, $theme-component, $config, $options);
-  }
+  @each $scheme in string.split(functions.get-config($config, "color-scheme"), " ") {
 
-  @include wrapper.generate-wrapper($config) {
-    .#{$class} {
-      @extend %#{$class};
+    @if $scheme == 'light' {
+
+      %component_light {
+        @include properties.generate-properties($class, $theme-component, $config, $options);
+      }
+
+      @include wrapper.generate-wrapper($config) {
+        .#{$class} {
+          @extend %component_light;
+        }
+      }
+    }
+
+    @if $scheme == 'dark' {
+
+      %component_dark {
+        @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
+            only_dark_colors : true,
+        ), $config));
+      }
+
+      @include wrapper.generate-wrapper(map.deep-merge((
+          only_dark_colors : true,
+      ), $config)) {
+        :global([data-theme="#{$scheme}"] .#{$class}) {
+          @extend %component_dark;
+        }
+      }
     }
   }
 }
 
 @mixin generate-components($components, $config, $theme) {
   // Check, if components are not empty
-  @if(meta.type-of($components) == 'list' and list.length($components) > 0) {
+  @if (meta.type-of($components) == 'list' and list.length($components) > 0) {
     @each $component in $components {
       @include generate-component(list.nth($component, 1), list.nth($component, 2), $config, $theme)
     }
   }
 }
 
-@mixin get-structure ($component) {
+@mixin get-structure($component) {
   @debug $component;
 }

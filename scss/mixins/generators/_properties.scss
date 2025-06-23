@@ -8,7 +8,7 @@
 @mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
   $prefix: functions.get-config($config, "prefix");
 
-  @if(functions.get-config($options, 'add_pseudo_tag') != nil and functions.get-config($options, 'add_pseudo_tag') == false) {
+  @if (functions.get-config($options, 'add_pseudo_tag') != nil and functions.get-config($options, 'add_pseudo_tag') == false) {
     --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
@@ -39,19 +39,15 @@
   }
 }
 
-@mixin generate-colors($tag, $value, $config) {
+@mixin generate-colors($tag, $value, $config, $requested_color : 'light') {
   $prefix: functions.get-config($config, "prefix");
 
   @each $color, $color-properties in $value {
-    @each $scheme in string.split(functions.get-config($config, "color-scheme"), " ") {
-      @if $scheme == $color {
-        @include mixin.generate-color-scheme($color) {
-          @each $color-property, $color-value in $color-properties {
-            --#{$prefix}-#{$tag}-#{functions.replace($color-property, '--', '')}: #{meta.inspect(
+    @if ($color == $requested_color) {
+      @each $color-property, $color-value in $color-properties {
+        --#{$prefix}-#{$tag}-#{functions.replace($color-property, '--', '')}: #{meta.inspect(
               $color-value
             )};
-          }
-        }
       }
     }
   }
@@ -67,16 +63,16 @@
   $breakpoints: functions.get-config($config, "breakpoints");
 
   @each $property, $value in $properties {
-    $has-matched-breakpoint : false;
+    $has-matched-breakpoint: false;
 
     @each $breakpoint, $width in $breakpoints {
-      @if($property == $breakpoint) {
-        $has-matched-breakpoint : true;
+      @if ($property == $breakpoint) {
+        $has-matched-breakpoint: true;
       }
     }
 
-    @if($has-matched-breakpoint) {
-      $width : map.get($breakpoints, $property);
+    @if ($has-matched-breakpoint) {
+      $width: map.get($breakpoints, $property);
 
       @media (min-width: $width) {
         @include generate-properties($tag, $value, $config);
@@ -93,8 +89,8 @@
   @each $at-rule, $properties in $value {
     // Keep @ at the beginning
     @#{functions.replace($at-rule, '@', '')} {
-      @include generate-properties($tag, $properties, $config, $options);
-    }
+    @include generate-properties($tag, $properties, $config, $options);
+  }
   }
 }
 
@@ -105,7 +101,7 @@
 @mixin generate-animation($tag, $value, $config, $options) {
   @each $name, $properties in $value {
     // Check, if _animation is not empty ;;
-    @if(meta.type-of($properties) != 'list') {
+    @if (meta.type-of($properties) != 'list') {
       @keyframes #{$name} {
         @each $offset, $offset-value in $properties {
           #{$offset} {
@@ -119,44 +115,55 @@
 
 @mixin generate-properties($tag, $properties, $config, $options : ()) {
   $prefix: functions.get-config($config, "prefix");
+  $is_dark_colors_only: functions.get-config($options, 'only_dark_colors') != nil and functions.get-config($options, 'only_dark_colors') == true;
 
-  @each $property, $value in $properties {
-    // Variables
-    // Looking for "--" symbols in the beginning of the property
-    // Example: --flex-direction : row
-    @if (
-        meta.type-of($property) == "string" and string.index($property, "--") == 1
-    ) {
-      @include generate-css-properties($tag, $property, $value, $config, $options);
-    }
-
-    // Colors
-    @else if ($property == "_colors") {
-      @include generate-colors($tag, $value, $config);
-    }
-
-    // Responsive
-    @else if ($property == "_responsive") {
-      @include generate-responsive($tag, $value, $config);
-    }
-
-    // Sub classes
-    @else if ($property == "_subclasses") {
-      @each $class, $class_properties in $value {
-        @include generate-subclasses($tag, $class, $class_properties, $config, $options);
+  @if ($is_dark_colors_only) {
+    @each $property, $value in $properties {
+      @if ($property == "_colors") {
+        @include generate-colors($tag, $value, $config, 'dark');
+      } @else if ($property == "_subclasses") {
+        @each $class, $class_properties in $value {
+          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
+        }
       }
     }
-    // At-rules
-    @else if ($property == "_atrule") {
-      @include generate-atrule($tag, $value, $config, $options);
-    }
-    // Animations
-    @else if ($property == "_animations") {
-      @include generate-animation($tag, $value, $config, $options);
-    }
+  } @else {
+    @each $property, $value in $properties {
+      // Variables
+      // Looking for "--" symbols in the beginning of the property
+      // Example: --flex-direction : row
+      @if (
+          meta.type-of($property) == "string" and string.index($property, "--") == 1
+      ) {
+        @include generate-css-properties($tag, $property, $value, $config, $options);
+      }
 
-    @else {
-      @include generate-css-variables($tag, $property, $value, $config);
+        // Colors
+      @else if ($property == "_colors") {
+        @include generate-colors($tag, $value, $config, 'light');
+      }
+
+        // Responsive
+      @else if ($property == "_responsive") {
+        @include generate-responsive($tag, $value, $config);
+      }
+
+        // Sub classes
+      @else if ($property == "_subclasses") {
+        @each $class, $class_properties in $value {
+          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
+        }
+      }
+        // At-rules
+      @else if ($property == "_atrule") {
+        @include generate-atrule($tag, $value, $config, $options);
+      }
+        // Animations
+      @else if ($property == "_animations") {
+        @include generate-animation($tag, $value, $config, $options);
+      } @else {
+        @include generate-css-variables($tag, $property, $value, $config);
+      }
     }
   }
 }
