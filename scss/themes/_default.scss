@@ -1,6 +1,9 @@
 @use 'sass:map';
 @use "sass:string";
 
+$config: () !default;
+@use '../functions' as functions;
+
 // Main theme _colors
 $theme: () !default;
 $updated-theme: () !default;
@@ -666,6 +669,8 @@ $components-config: (
       display: inline-block,
       padding: 0 0 .5rem 0,
 
+      z-index: functions.get-config($config, 'z-index.dropdown'),
+
       _subclasses : (
         '&.on-hover:hover' : (
             _subclasses : (
@@ -964,6 +969,8 @@ $components-config: (
       align-items: center,
       justify-content: center,
 
+      z-index: functions.get-config($config, "z-index.overlay"),
+
       _colors: (
         light : (
         ),
@@ -1098,6 +1105,8 @@ $components-config: (
       box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
       opacity: 0,
       //transition: string.unquote('opacity 1s, display 1s allow-discrete'),
+
+      z-index: functions.get-config($config, "z-index.modal"),
 
       _colors: (
         light : (

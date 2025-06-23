@@ -66,15 +66,26 @@
 @mixin generate-responsive($tag, $properties, $config) {
   $breakpoints: functions.get-config($config, "breakpoints");
 
-  // @TODO rewrite function to add warning, if breakpoint is missing
-  @each $breakpoint, $value in $breakpoints {
-    $property: map.get($properties, $breakpoint);
+  @each $property, $value in $properties {
+    $has-matched-breakpoint : false;
 
-    @if $property != null {
-      @media (min-width: $value) {
-        @include generate-properties($tag, $property, $config);
+    @each $breakpoint, $width in $breakpoints {
+      @if($property == $breakpoint) {
+        $has-matched-breakpoint : true;
       }
     }
+
+    @if($has-matched-breakpoint) {
+      $width : map.get($breakpoints, $property);
+
+      @media (min-width: $width) {
+        @include generate-properties($tag, $value, $config);
+      }
+
+    } @else {
+      @warn 'Invalid breakpoint '#{$property}'.';
+    }
+
   }
 }
 

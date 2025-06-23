@@ -49,6 +49,7 @@ $theme: (
 /* Override default settings in the theme | @example */
 @use "themes/default" as theme with (
   $theme: $theme,
+  $config: config.$config,
 );
 
 // Getting updated variables

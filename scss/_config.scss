@@ -87,7 +87,6 @@ $content-default-config: (
 $default-config: map.deep-merge($default-config, $content-default-config);
 
 // Z-index
-// scss-docs-start z-index-stack
 $z-index-config: (
   z-index: (
     dropdown: 4,
@@ -96,7 +95,6 @@ $z-index-config: (
     modal : 7,
   ),
 ) !default;
-// scss-docs-end z-index-stack
 
 $default-config: map.deep-merge($default-config, $z-index-config);
 
