@@ -565,8 +565,23 @@ $components-config: (
 
       _colors: (
         light: (
+          // Default
           color: #fff,
-          background: #fff
+          background: rgb(48, 56, 66),
+          border: 1px solid rgba(240, 246, 252, .25),
+          // Hover state
+          hover-color: #fff,
+          hover-background: rgb(59, 68, 81),
+          hover-border: 1px solid rgba(229, 235, 240, .55),
+          // Disabled state
+          disabled-color: #484f58,
+          disabled-background: #21262d,
+          disabled-border: 1px solid rgba(240, 246, 252, 0.1),
+          // Active state
+          active-color: #fff,
+          active-background: rgb(39, 45, 53),
+          active-border: 1px solid rgba(240, 246, 252, .25),
+          active-shadow: string.unquote("-0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset,0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset, 0rem 0.125rem 0.0625rem 0rem rgba(26,26,26,0.2) inset")
         ),
         dark: (
           // Default

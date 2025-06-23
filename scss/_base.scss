@@ -32,6 +32,7 @@ html[data-theme="light"] {
 @each $tag, $properties in functions.get-theme($theme, 'html') {
 
   @each $scheme in string.split(functions.get-config($config, "color-scheme"), " ") {
+
     @if $scheme == 'light' {
       #{$tag} {
         @include mixins.generate-properties(#{$tag}, $properties, $config);
