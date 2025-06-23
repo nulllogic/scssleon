@@ -83,7 +83,7 @@
       }
 
     } @else {
-      @warn 'Invalid breakpoint '#{$property}'.';
+      @warn '❗️Invalid breakpoint '#{$property}'.';
     }
 
   }
