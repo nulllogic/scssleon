@@ -523,12 +523,6 @@ $components-config: (
 
       --padding: .5rem .75rem,
       --border-radius: .25rem,
-      --box-shadow : (
-        inset 0 0 0 1px rgba(0, 0, 0, 0.05),
-        inset 0 1px 2px 0 rgba(78, 83, 90, 0.1) //   inset -0.0625rem 0 0 #e3e3e3,
-        //   inset 0.0625rem 0 0 #e3e3e3,
-        //   inset 0 0.0625rem 0 #e3e3e3
-      ),
 
       display: inline-flex,
       align-items: center,
@@ -1004,6 +998,10 @@ $components-config: (
       _subclasses : (
         '&.show' : (
           display: flex
+        ),
+        '&.blurred' : (
+          -webkit-backdrop-filter: blur(10px),
+          backdrop-filter: blur(10px),
         )
       )
     ),
