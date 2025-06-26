@@ -68,17 +68,6 @@ $html-config: (
         "&:hover": (
           text-decoration: none
         ),
-        "&[target='_blank']" : (
-          _subclasses : (
-            "&:after" : (
-              background: red,
-              display: inline-flex,
-              width: 12px,
-              height: 12px,
-              content : ''
-            )
-          ),
-        )
       )
 
     ),
