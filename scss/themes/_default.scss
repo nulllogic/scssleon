@@ -1040,6 +1040,7 @@ $components-config: (
       cursor: wait,
       display: flex,
       flex-direction: column,
+
       gap: var(--gap),
 
       _subclasses : (
@@ -1049,7 +1050,7 @@ $components-config: (
           background: var(--background),
           _colors: (
               light : (
-                  background: rgb(175, 175, 175),
+                  background: rgba(190, 190, 190, 0.75),
               ),
               dark : (
                   background: #ccc
