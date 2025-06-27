@@ -725,12 +725,13 @@ $components-config: (
 
       _colors: (
         light : (
-          border: 1px solid #dddee0,
-          background: rgb(200, 200, 200),
+          background: rgba(246, 246, 247, 1),
+          border: 1px solid rgb(219, 219, 219),
+          shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
         ),
         dark : (
-          border: 1px solid rgba(48, 54, 61, .75),
-          background: rgb(22, 27, 34),
+          background: rgb(18, 18, 24),
+          border: 1px solid rgba(48, 54, 61, 0.75),
           shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
         )
       )
@@ -1112,12 +1113,13 @@ $components-config: (
       //transform-origin: right,
       //transform: translateX(100%),
 
-      padding: 0.5rem,
       background: var(--background),
+      border: var(--border),
+
+      padding: 0.5rem,
       max-width: 42rem,
       width: 100%,
       margin: 0 auto,
-      border: 1px solid #3d444d,
       border-radius: 7px,
       transition: string.unquote('opacity 0.15s ease-in, display 0.15s ease-in allow-discrete, transform 0.15s ease-in'),
       transform: scale(.75),
@@ -1126,14 +1128,16 @@ $components-config: (
       opacity: 0,
       //transition: string.unquote('opacity 1s, display 1s allow-discrete'),
 
-      z-index: functions.get-config($config, "z-index.modal"),
+      z-index: functions.get-config($config, 'z-index.modal'),
 
       _colors: (
         light : (
-          background : #ccc,
+          border: 1px solid rgba(198, 198, 198, .75),
+          background : rgba(246, 246, 247, 1),
           box-shadow: string.unquote('0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26,.28)'),
         ),
         dark: (
+          border: 1px solid rgba(48, 54, 61, 0.75),
           background: rgb(13, 17, 23),
           box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
         )
