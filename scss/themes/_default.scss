@@ -778,6 +778,7 @@ $components-config: (
 
       _colors: (
         light : (
+          box-shadow-focus: 0 0 0 .25rem rgba(13, 110, 253, .25),
         ),
         dark : (
           box-shadow-focus: 0 0 0 .25rem rgba(13, 110, 253, .25),
@@ -811,6 +812,9 @@ $components-config: (
 
           _colors: (
             light : (
+              color: inherit,
+              background: rgb(250, 250, 250),
+              border: 1px solid rgb(219, 219, 219),
             ),
             dark : (
               color: #fff,
@@ -837,6 +841,9 @@ $components-config: (
 
           _colors: (
             light : (
+              color: inherit,
+              background: rgb(250, 250, 250),
+              border: 1px solid rgb(219, 219, 219),
             ),
             dark : (
               color: #fff,
@@ -863,6 +870,9 @@ $components-config: (
 
           _colors: (
             light : (
+              color: inherit,
+              background: rgb(250, 250, 250),
+              border: 1px solid rgb(219, 219, 219),
             ),
             dark : (
               color: #fff,
@@ -889,6 +899,8 @@ $components-config: (
 
           _colors: (
             light : (
+              background: transparent,
+              border: 1px solid rgba(240, 246, 252, .25),
             ),
             dark : (
               background: transparent,
@@ -905,8 +917,8 @@ $components-config: (
                 light : (
                 ),
                 dark : (
-                    background: rgb(64, 80, 99),
-                    border: 1px solid rgba(240, 246, 252, .25),
+                  background: rgb(64, 80, 99),
+                  border: 1px solid rgba(240, 246, 252, .25),
                 )
               ),
             )
@@ -927,6 +939,9 @@ $components-config: (
 
           _colors: (
             light : (
+              color: #fff,
+              background: rgb(48, 56, 66),
+              border: 1px solid rgba(240, 246, 252, .25),
             ),
             dark : (
               color: #fff,
