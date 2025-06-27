@@ -1293,18 +1293,20 @@ $components-config: (
       width: var(--width),
       background: var(--background),
       box-shadow: var(--box-shadow),
-      //border-left: 1px solid rgb(4, 90, 195),
+      border-left: var(--border),
       transform: translateX(100%),
       transition: string.unquote('opacity 0.3s ease-in, transform 0.3s ease-in, display 0.3s ease-in allow-discrete'),
       opacity : 0,
 
       _colors: (
         light : (
-          background : #ccc,
+          background: rgba(246, 246, 247, 1),
+          border: 1px solid rgb(219, 219, 219),
           box-shadow: string.unquote('0rem 1.25rem 1.25rem -0.5rem rgba(26,26,26,.28)'),
         ),
         dark: (
-          background: rgb(13, 17, 23),
+          background: rgb(18, 18, 24),
+          border: 1px solid rgba(48, 54, 61, 0.75),
           box-shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;'),
         )
       ),

@@ -3,8 +3,8 @@
 
 @mixin generate-wrapper($config) {
   /* Wrapper class variables assigment */
-  $is_wrapper_enabled: functions.get-config($config, "enable.wrapper");
-  $wrapper_class: functions.get-config($config, "wrapper-class");
+  $is_wrapper_enabled: functions.get-config($config, 'enable.wrapper');
+  $wrapper_class: functions.get-config($config, 'wrapper-class');
 
   @if $is_wrapper_enabled {
     .#{$wrapper_class} {
