@@ -304,6 +304,7 @@ $updated-theme: map.deep-merge($updated-theme, $content-config);
 
 $components-config: (
   components: (
+
     alert: (
 
       --border-radius: .5rem,
@@ -317,10 +318,14 @@ $components-config: (
       --right-column-justify-self: end,
       --right-column-align-self: start,
 
-      box-shadow: var(--shadow),
+
       background: var(--background),
       border-radius: var(--border-radius),
       border: var(--border),
+      grid-template-columns: var(--grid-template-columns),
+      grid-gap: var(--gap),
+      padding: var(--padding),
+
       outline: 1px solid transparent,
       position: relative,
       display: grid,
@@ -328,20 +333,15 @@ $components-config: (
       max-width: 100%,
       align-items: center,
       line-height: 1rem,
-      grid-template-columns: var(--grid-template-columns),
-      grid-gap: var(--gap),
-      padding: var(--padding),
 
       _colors: (
         light : (
           background: rgba(246, 246, 247, 1),
-          border: 1px solid rgba(48, 54, 61, 0.75),
-          shadow: string.unquote("inset 0 0.0625rem 0 0 rgba(186, 191, 195, 1), inset 0 0 0 0.0625rem rgba(186, 191, 195, 1)"),
+          border: 1px solid rgb(219, 219, 219),
         ),
         dark : (
           background: rgb(18, 18, 24),
           border: 1px solid rgba(48, 54, 61, 0.75),
-          shadow: string.unquote("rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px"),
         )
       ),
 
