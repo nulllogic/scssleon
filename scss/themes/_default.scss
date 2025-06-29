@@ -953,6 +953,59 @@ $components-config: (
       ),
     ),
 
+    loader : (
+      animation: loader-rotation 2s linear infinite,
+
+      _subclasses : (
+        '.circle' : (
+          transform-origin: 50% 50%,
+          stroke-width : 6,
+          stroke-dasharray: 283,
+          stroke-dashoffset: 280,
+          stroke-linecap: round,
+          stroke: var(--stroke),
+          animation: loader-rotation-cicle 1.4s linear infinite,
+        )
+      ),
+
+      _colors : (
+        light : (
+          stroke : rgba(0,0, 0, 0.85),
+        ),
+        dark : (
+          stroke : rgba(255,255, 255, 0.85),
+        )
+      ),
+
+      _animations : (
+        'loader-rotation' : (
+          '0%' : (
+            transform: rotate(0deg),
+          ),
+          '100%' : (
+            transform: rotate(360deg),
+          )
+        ),
+        'loader-rotation-cicle' : (
+          '0%' : (
+            stroke-dashoffset: 280,
+            transform: rotate(0),
+          ),
+          '15%' : (
+            stroke-width : 6,
+          ),
+          '40%' : (
+            stroke-dasharray: 220,
+            stroke-dashoffset: 150,
+          ),
+          '100%' : (
+            stroke-dashoffset: 280,
+            transform: rotate(720deg),
+          )
+        )
+      ),
+    ),
+
     table : (
       width: 100%,
       _subclasses : (
