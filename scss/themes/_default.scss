@@ -558,15 +558,13 @@ $components-config: (
           hover-color: inherit,
           hover-background: rgb(235, 235, 235),
           hover-border: 1px solid rgb(180, 180, 180),
-          // Disabled state
-          disabled-color: #484f58,
-          disabled-background: #21262d,
-          disabled-border: 1px solid rgba(240, 246, 252, 0.1),
           // Active state
           active-color: inherit,
           active-background: rgb(235, 235, 235),
           active-border: 1px solid rgb(180, 180, 180),
-          active-shadow: string.unquote('-0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,.122) inset,0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,.122) inset,0rem 0.125rem 0.0625rem 0rem rgba(26,26,26,.2) inset')
+          active-shadow: string.unquote('-0.0625rem 0rem 0.0625rem 0rem rgba(33,33,33,.1) inset,0.0625rem 0rem 0.0625rem 0rem rgba(3,33,33,.15) inset,0rem 0.125rem 0.0625rem 0rem rgba(44,44,44,0.15) inset'),
+          // Focus
+          focus : 0 0 0 0.2rem rgba(98, 175, 97, .5),
         ),
         dark: (
           // Default
@@ -577,19 +575,21 @@ $components-config: (
           hover-color: #fff,
           hover-background: rgb(59, 68, 81),
           hover-border: 1px solid rgba(229, 235, 240, .55),
-          // Disabled state
-          disabled-color: #484f58,
-          disabled-background: #21262d,
-          disabled-border: 1px solid rgba(240, 246, 252, 0.1),
           // Active state
           active-color: #fff,
           active-background: rgb(39, 45, 53),
           active-border: 1px solid rgba(240, 246, 252, .25),
-          active-shadow: string.unquote("-0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset,0.0625rem 0rem 0.0625rem 0rem rgba(26,26,26,0.122) inset, 0rem 0.125rem 0.0625rem 0rem rgba(26,26,26,0.2) inset")
+          active-shadow: string.unquote('-0.0625rem 0rem 0.0625rem 0rem rgba(15,15,15,.35) inset,0.0625rem 0rem 0.0625rem 0rem rgba(13,13,13, .35) inset,0rem 0.125rem 0.0625rem 0rem rgba(15,15,15,0.35) inset'),
+          // Focus
+          focus : 0 0 0 0.2rem rgba(98, 175, 97, .5),
         )
       ),
 
       _subclasses : (
+        '&:focus-visible:not([disabled])' : (
+          outline: none,
+          box-shadow: var(--focus)
+        ),
         '&:hover:not(.loading, [disabled], .btn-link)' : (
           color: var(--hover-color),
           background: var(--hover-background),
