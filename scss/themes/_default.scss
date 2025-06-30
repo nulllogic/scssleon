@@ -918,6 +918,7 @@ $components-config: (
           border-radius: var(--border-radius),
           border: var(--border),
           background: var(--background),
+          //box-shadow: var(--shadow),
 
           width: 16px,
           height: 16px,
@@ -926,12 +927,14 @@ $components-config: (
 
           _colors: (
             light : (
-              background: transparent,
-              border: 1px solid rgba(240, 246, 252, .25),
+              background: rgba(250, 250, 250, .75),
+              border: 1px solid rgb(219, 219, 219),
+              //shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px ')
             ),
             dark : (
-              background: transparent,
-              border: 1px solid rgba(240, 246, 252, .25),
+              background: rgba(48, 56, 66, .85),
+              border: 1px solid rgb(74, 109, 71, .25),
+              //shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px ')
             )
           ),
 
@@ -942,9 +945,23 @@ $components-config: (
             '&:checked' : (
               _colors: (
                 light : (
+                  background: rgb(74, 109, 71) string.unquote(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e")),
+                  border: 1px solid rgba(11, 47, 10, .25),
                 ),
                 dark : (
-                  background: rgb(64, 80, 99),
+                  background: rgb(74, 109, 71) string.unquote(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e")),
+                  border: 1px solid rgba(240, 246, 252, .25),
+                )
+              ),
+            ),
+            '&:indeterminate' : (
+              _colors: (
+                light : (
+                  border: 1px solid rgba(11, 47, 10, .25),
+                  background: rgb(74, 109, 71) string.unquote(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e")),
+                ),
+                dark : (
+                  background: rgb(74, 109, 71) string.unquote(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e")),
                   border: 1px solid rgba(240, 246, 252, .25),
                 )
               ),
