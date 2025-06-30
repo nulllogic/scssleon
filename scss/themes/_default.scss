@@ -805,6 +805,7 @@ $components-config: (
           display: block,
 
           appearance: none,
+          outline: none,
 
           padding: var(--padding),
           border-radius: var(--border-radius),
@@ -815,11 +816,19 @@ $components-config: (
               color: inherit,
               background: rgb(250, 250, 250),
               border: 1px solid rgb(219, 219, 219),
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
             ),
             dark : (
               color: #fff,
               background: rgb(48, 56, 66),
               border: 1px solid rgba(240, 246, 252, .25),
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+            )
+          ),
+
+          _subclasses : (
+            '&:focus-visible' : (
+              box-shadow: var(--focus-shadow),
             )
           )
         ),
@@ -834,6 +843,7 @@ $components-config: (
           display: block,
 
           appearance: none,
+          outline: none,
 
           padding: var(--padding),
           border-radius: var(--border-radius),
@@ -844,11 +854,19 @@ $components-config: (
               color: inherit,
               background: rgb(250, 250, 250),
               border: 1px solid rgb(219, 219, 219),
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
             ),
             dark : (
               color: #fff,
               background: rgb(48, 56, 66),
               border: 1px solid rgba(240, 246, 252, .25),
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+            )
+          ),
+
+          _subclasses : (
+            '&:focus-visible' : (
+              box-shadow: var(--focus-shadow),
             )
           )
         ),
@@ -863,6 +881,7 @@ $components-config: (
           display: block,
 
           appearance: none,
+          outline: none,
 
           padding: var(--padding),
           border-radius: var(--border-radius),
@@ -873,11 +892,19 @@ $components-config: (
               color: inherit,
               background: rgb(250, 250, 250),
               border: 1px solid rgb(219, 219, 219),
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
             ),
             dark : (
               color: #fff,
               background: rgb(48, 56, 66),
               border: 1px solid rgba(240, 246, 252, .25),
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+            )
+          ),
+
+          _subclasses : (
+            '&:focus-visible' : (
+              box-shadow: var(--focus-shadow),
             )
           )
         ),
@@ -909,7 +936,7 @@ $components-config: (
           ),
 
           _subclasses : (
-            '&:focus' : (
+            '&:focus-visible' : (
               box-shadow: var(--box-shadow-focus),
             ),
             '&:checked' : (
