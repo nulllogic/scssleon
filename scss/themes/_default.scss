@@ -65,7 +65,7 @@ $html-config: (
       ),
 
       _subclasses : (
-        "&:hover": (
+        '&:hover': (
           text-decoration: none
         ),
       )
@@ -509,10 +509,10 @@ $components-config: (
       ),
 
       _subclasses : (
-        ".item" : (
+        '.item' : (
           display: inline-flex,
           _subclasses : (
-            ".link" : (
+            '.link' : (
             )
           )
         )
@@ -607,7 +607,7 @@ $components-config: (
           box-shadow: none,
           text-decoration: underline,
           _subclasses: (
-            "&:hover": (
+            '&:hover': (
               text-decoration: none,
             )
           )
@@ -646,30 +646,30 @@ $components-config: (
       display: flex,
       flex-wrap: wrap,
       _subclasses : (
-        ".btn:first-child" : (
+        '.btn:first-child' : (
           border-start-end-radius: 0,
           border-end-end-radius: 0,
         ),
-        ".btn:last-child" : (
+        '.btn:last-child' : (
           border-start-start-radius: 0,
           border-end-start-radius: 0,
         ),
-        ".btn:not(:first-child)" : (
+        '.btn:not(:first-child)' : (
           margin-left: - 1px
         ),
-        ".btn:not(:first-child, :last-child)" : (
+        '.btn:not(:first-child, :last-child)' : (
           border-radius: 0
         ),
-        ".btn:only-child" : (
+        '.btn:only-child' : (
         ),
-        ".btn:hover, .btn:focus" : (
+        '.btn:hover, .btn:focus' : (
           z-index: 1
         ),
-        "&.separated" : (
+        '&.separated' : (
           gap: var(--gap),
           --border-radius: 5px,
           _subclasses : (
-            ".btn" : (
+            '.btn' : (
               margin: 0,
               border-radius: var(--border-radius)
             )
@@ -788,6 +788,17 @@ $components-config: (
       _subclasses : (
         '.field' : (
           margin-bottom: 1rem,
+
+          _subclasses : (
+            '&.is-invalid' : (
+              _subclasses : (
+                '.input, .textarea, .select' : (
+                  border: 1px solid #dc3545,
+                  background: #ccc url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") no-repeat calc(100% - 9px) 50% / 16px 16px,
+                )
+              )
+            ),
+          )
         ),
 
         '.label' : (
@@ -1117,7 +1128,7 @@ $components-config: (
       align-items: center,
       justify-content: center,
 
-      z-index: functions.get-config($config, "z-index.overlay"),
+      z-index: functions.get-config($config, 'z-index.overlay'),
 
       _colors: (
         light : (
@@ -1155,13 +1166,13 @@ $components-config: (
       grid-gap: var(--gap),
 
       _subclasses : (
-        ".left" : (
+        '.left' : (
           justify-self: var(--left-column-alignment),
         ),
-        ".center" : (
+        '.center' : (
           justify-self: var(--center-column-alignment),
         ),
-        ".right" : (
+        '.right' : (
           justify-self: var(--right-column-alignment)
         )
       ),
@@ -1382,13 +1393,13 @@ $components-config: (
       ),
 
       _subclasses : (
-        ".left" : (
+        '.left' : (
           justify-self: var(--left-column-alignment),
         ),
-        ".center" : (
+        '.center' : (
           justify-self: var(--center-column-alignment),
         ),
-        ".right" : (
+        '.right' : (
           justify-self: var(--right-column-alignment)
         )
       )
