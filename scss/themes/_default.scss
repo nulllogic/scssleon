@@ -1051,19 +1051,30 @@ $components-config: (
               border: 1px solid rgba(11, 47, 10, 0.25),
             ),
             '.toggle' : (
-              background: oklch(0.985 0 89.876),
-              border: 1px solid rgb(219, 219, 219),
+              background: var(--background),
+              border: var(--border),
               border-radius: 1rem,
               display: inline-flex,
               position: relative,
               width: 2.75rem,
               height: 1.5rem,
 
+              _colors: (
+                light : (
+                  background: oklch(0.985 0 89.876),
+                  border: 1px solid rgb(219, 219, 219),
+                ),
+                dark : (
+                  background: rgba(48, 56, 66, 0.85),
+                  border: 1px solid rgba(74, 109, 71, 0.25),
+                )
+              ),
+
               _subclasses : (
                 '.span' : (
 
                   width: 1.25rem,
-                  height: calc(100% - 2px),
+                  //height: calc(100% - 2px),
                   display: flex,
                   align-items: center,
                   justify-content: center,
@@ -1073,10 +1084,22 @@ $components-config: (
                   border-radius: 50%,
 
                   transition: transform .2s cubic-bezier(.4,0,.2,1),
-                  background: white,
                   pointer-events: none,
 
-                  border: 1px solid rgb(219, 219, 219),
+                  border: var(--switcher-border),
+                  background: var(--switcher-background),
+                  //box-shadow: string.unquote('0px 2px 5px 0px rgba(0, 0, 0, 0.3)'),
+
+                  _colors: (
+                    light : (
+                      switcher-background: white,
+                      switcher-border: 1px solid rgb(219, 219, 219),
+                    ),
+                    dark : (
+                      switcher-background: white,
+                      switcher-border: 1px solid rgba(41, 50, 57, 1),
+                    )
+                  ),
 
                   _subclasses : (
                     '.icon' : (
@@ -1084,7 +1107,7 @@ $components-config: (
                       height: .75rem,
                       opacity: 0,
                       display: none,
-                      color: oklch(0.928 0.006 264.531006),
+                      color: oklch(70.7% .022 261.325),
                     ),
                     '.icon:first-child' : (
                       opacity: 1,
