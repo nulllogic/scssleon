@@ -839,6 +839,8 @@ $components-config: (
           border-radius: var(--border-radius),
           border: var(--border),
 
+          transition: box-shadow .15s ease-in-out,
+
           _colors: (
             light : (
               color: inherit,
@@ -876,6 +878,8 @@ $components-config: (
           padding: var(--padding),
           border-radius: var(--border-radius),
           border: var(--border),
+
+          transition: box-shadow .15s ease-in-out,
 
           _colors: (
             light : (
@@ -915,6 +919,8 @@ $components-config: (
           border-radius: var(--border-radius),
           border: var(--border),
 
+          transition: box-shadow .15s ease-in-out,
+
           _colors: (
             light : (
               color: inherit,
@@ -952,6 +958,8 @@ $components-config: (
           height: 16px,
           appearance: none,
           outline : none,
+
+          transition: box-shadow .15s ease-in-out,
 
           _colors: (
             light : (
@@ -1009,6 +1017,8 @@ $components-config: (
           width: 16px,
           height: 16px,
           appearance: none,
+
+          transition: box-shadow .15s ease-in-out,
 
           _colors: (
             light : (
