@@ -790,6 +790,10 @@ $components-config: (
           margin-bottom: 1rem,
 
           _subclasses : (
+            '.inline' : (
+              display: inline-flex,
+              gap: .5rem,
+            ),
             '&.is-invalid' : (
               _subclasses : (
                 '.input, .textarea, .select' : (
@@ -1037,6 +1041,85 @@ $components-config: (
             ),
           )
         ),
+
+        '.switcher' : (
+
+          _subclasses : (
+            // .qhs:is(:where(.qhq):has(:checked) *)
+            '&:has(:checked) .toggle' : (
+              background: rgb(74, 109, 71),
+              border: 1px solid rgba(11, 47, 10, 0.25),
+            ),
+            '.toggle' : (
+              background: oklch(0.985 0 89.876),
+              border: 1px solid rgb(219, 219, 219),
+              border-radius: 1rem,
+              display: inline-flex,
+              position: relative,
+              width: 2.75rem,
+              height: 1.5rem,
+
+              _subclasses : (
+                '.span' : (
+
+                  width: 1.25rem,
+                  height: calc(100% - 2px),
+                  display: flex,
+                  align-items: center,
+                  justify-content: center,
+                  position: absolute,
+                  inset: 1px,
+
+                  border-radius: 50%,
+
+                  transition: transform .2s cubic-bezier(.4,0,.2,1),
+                  background: white,
+                  pointer-events: none,
+
+                  border: 1px solid rgb(219, 219, 219),
+
+                  _subclasses : (
+                    '.icon' : (
+                      width: .75rem,
+                      height: .75rem,
+                      opacity: 0,
+                      display: none,
+                      color: oklch(0.928 0.006 264.531006),
+                    ),
+                    '.icon:first-child' : (
+                      opacity: 1,
+                      display: inherit,
+                    )
+                  )
+                ),
+                '.span:is(:where(.switcher):has(:checked) *)' : (
+                  background: white,
+                  opacity: 1,
+                  transform: translateX(100%),
+                  border: 1px solid #3b5e38,
+
+                  _subclasses : (
+                    '.icon' : (
+                      opacity: 0,
+                      display: none
+
+                    ),
+                    '.icon:last-child' : (
+                      opacity: 1,
+                      display: inherit,
+                      color: rgb(74, 109, 71),
+                    )
+                  )
+                )
+              )
+            ),
+            '.switch' : (
+              appearance: none,
+              position: absolute,
+              inset: 0,
+            )
+          )
+        )
       ),
     ),
 
