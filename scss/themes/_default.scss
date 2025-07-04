@@ -156,7 +156,6 @@ $content-config: (
 
       _subclasses : (
         code : (
-          //box-shadow: rgb(253, 224, 71) 0px -26.529121px 0px 0px inset,
 
           color: var(--color),
           background: var(--background),
@@ -170,7 +169,7 @@ $content-config: (
               color: inherit,
             ),
             dark : (
-              background : rgba(135, 130, 28, 0.54),
+              background : oklch(0.63 0.14 106.66 / 0.54),
               color: inherit,
             )
           )
@@ -237,24 +236,8 @@ $content-config: (
       display: inline,
     ),
     code : (
-      //box-shadow: rgb(253, 224, 71) 0px -26.529121px 0px 0px inset,
-
-      color: var(--color),
-      background: var(--background),
-
       margin-block: -.125rem,
       padding: .125rem .375rem,
-
-      _colors: (
-        light : (
-          background: '#fff',
-          color: '#ccc',
-        ),
-        dark : (
-          background : #0d1117,
-          color: '#fff'
-        )
-      )
     ),
     kbd: (
     ),
