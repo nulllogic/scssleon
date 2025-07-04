@@ -8,7 +8,7 @@
 @mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
   $prefix: functions.get-config($config, "prefix");
 
-  @if (functions.get-config($options, 'add_pseudo_tag') != nil and functions.get-config($options, 'add_pseudo_tag') == false) {
+  @if (functions.get-config($options, 'add_variable_prefix') != nil and functions.get-config($options, 'add_variable_prefix') == false) {
     --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
