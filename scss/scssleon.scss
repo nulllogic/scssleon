@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-@forward "./mixins";
-@forward "./functions";
+@forward './mixins';
+@forward './functions';
 
 /*
  * ------------------------------------------------------------------
@@ -28,7 +28,7 @@ Main configuration - initial configuration requirement
 // Those two variables will be used to store configuration settings and theme settings
 // You can easily customize any available options to fit your needs
 $config: (
-  prefix: "xii",
+  prefix: 'xii',
   enable: (
     wrapper: false,
   ),
@@ -42,13 +42,13 @@ $theme: (
 
 // ↓ Config
 // Override default config | @example
-@use "config" as config with (
+@use 'config' as config with (
   $config: $config
 );
 
 // ↓ Theme
 /* Override default settings in the theme | @example */
-@use "themes/default" as theme with (
+@use 'themes/default' as theme with (
   $theme: $theme,
   $config: config.$config,
 );
@@ -63,13 +63,13 @@ $theme: theme.$theme;
  */
 
 // ↓ Root
-@use "root" with (
+@use 'root' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Great reset
-@use "reset" with (
+@use 'reset' with (
   $config: $config,
   $theme: $theme
 );
@@ -77,70 +77,70 @@ $theme: theme.$theme;
 // ↓ Base
 // Special utility, that will dynamically generate CSS
 // properties for HTML tags, specified in theme
-@use "base" with (
+@use 'base' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Amazing content
 // Special class `.content` to allow formatting of the default html tags
-@use "content" with (
+@use 'content' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Container
-@use "components/container" with (
+@use 'components/container' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Card
-@use "components/card" with (
+@use 'components/card' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Badge
-@use "components/badge" with (
+@use 'components/badge' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Form
-@use "components/form" with (
+@use 'components/form' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Buttons
-@use "components/button" with (
+@use 'components/button' with (
   $config: $config,
   $theme: $theme
 );
-@use "components/button_group" with (
+@use 'components/button_group' with (
   $config: $config,
   $theme: $theme
 );
 
-////@use "components/icon";
-//@use "components/button";
-////@use "components/button-group";
+////@use 'components/icon';
+//@use 'components/button';
+////@use 'components/button-group';
 
 // ↓ Breadcrumbs
-@use "components/breadcrumb" with (
+@use 'components/breadcrumb' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Alert
-@use "components/alert" with (
+@use 'components/alert' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Accordion
-@use "components/accordion" with (
+@use 'components/accordion' with (
   $config: $config,
   $theme: $theme
 );
@@ -152,60 +152,60 @@ $theme: theme.$theme;
 //);
 
 // ↓ Overlay
-@use "components/overlay" with (
+@use 'components/overlay' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Pagination
-@use "components/pagination" with (
+@use 'components/pagination' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Placeholder
-@use "components/placeholder" with (
+@use 'components/placeholder' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Modal
-@use "components/modal" with (
+@use 'components/modal' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Loader
-@use "components/loader" with (
+@use 'components/loader' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Nav
-@use "components/nav" with (
+@use 'components/nav' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Navigation bar
-@use "components/navbar" with (
+@use 'components/navbar' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Sidecap
-@use "components/sidecap" with (
+@use 'components/sidecap' with (
   $config: $config,
   $theme: $theme
 );
 
 // ↓ Helpers
-@use "helpers/clearfix";
-@use "helpers/screen_reader";
-@use "helpers/text_truncate";
+@use 'helpers/clearfix';
+@use 'helpers/screen_reader';
+@use 'helpers/text_truncate';
 
 // ↓ Utilities
-@use "utilities/api" with (
+@use 'utilities/api' with (
   $config: $config,
   $theme: $theme
 );

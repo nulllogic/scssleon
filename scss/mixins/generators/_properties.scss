@@ -114,26 +114,16 @@
 }
 
 @mixin generate-properties($tag, $properties, $config, $options : ()) {
-  $prefix: functions.get-config($config, "prefix");
-  $is_dark_colors_only: functions.get-config($options, 'only_dark_colors') != nil and functions.get-config($options, 'only_dark_colors') == true;
+  $prefix: functions.get-config($config, 'prefix');
+  $is_scheme_dark: functions.get-config($options, 'scheme') != nil and functions.get-config($options, 'scheme') == 'dark';
 
-  @if ($is_dark_colors_only) {
-    @each $property, $value in $properties {
-      @if ($property == "_colors") {
-        @include generate-colors($tag, $value, $config, 'dark');
-      } @else if ($property == "_subclasses") {
-        @each $class, $class_properties in $value {
-          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
-        }
-      }
-    }
-  } @else {
+  @if (not $is_scheme_dark) {
     @each $property, $value in $properties {
       // Variables
       // Looking for "--" symbols in the beginning of the property
       // Example: --flex-direction : row
       @if (
-          meta.type-of($property) == "string" and string.index($property, "--") == 1
+        meta.type-of($property) == "string" and string.index($property, "--") == 1
       ) {
         @include generate-css-properties($tag, $property, $value, $config, $options);
       }
@@ -163,6 +153,16 @@
         @include generate-animation($tag, $value, $config, $options);
       } @else {
         @include generate-css-variables($tag, $property, $value, $config);
+      }
+    }
+  } @else {
+    @each $property, $value in $properties {
+      @if ($property == "_colors") {
+        @include generate-colors($tag, $value, $config, 'dark');
+      } @else if ($property == "_subclasses") {
+        @each $class, $class_properties in $value {
+          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
+        }
       }
     }
   }

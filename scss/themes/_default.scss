@@ -153,6 +153,29 @@ $content-config: (
       margin: 0,
       padding: 0 0 15px 0,
       line-height: clamp(1.25em, 4vw, 1.5em),
+
+      _subclasses : (
+        code : (
+          //box-shadow: rgb(253, 224, 71) 0px -26.529121px 0px 0px inset,
+
+          color: var(--color),
+          background: var(--background),
+
+          margin-block: -.125rem,
+          padding: .125rem .375rem,
+
+          _colors: (
+            light : (
+              background: rgba(228, 221, 83, 0.65),
+              color: inherit,
+            ),
+            dark : (
+              background : rgba(135, 130, 28, 0.54),
+              color: inherit,
+            )
+          )
+        ),
+      )
     ),
     abbr: (
       attributes : (
@@ -169,7 +192,8 @@ $content-config: (
       margin-bottom: 15px,
     ),
     ul: (
-      margin-bottom: 15px,
+      margin-bottom: 0.5rem,
+      margin-inline-start: 1rem,
     ),
     dl: (
       margin-bottom: 15px,
@@ -180,6 +204,10 @@ $content-config: (
     dd: (
       margin: 0 0 .5rem 0,
       padding: 0
+    ),
+    'ul li' : (
+      list-style-type: disc,
+      padding: 0 0 .25rem 0,
     ),
     b : (
       font-weight: bold
@@ -204,22 +232,29 @@ $content-config: (
     ),
     pre: (
       font-family: var(global(--font-family-monospace)),
+      margin-block: -.125rem,
+      padding: .125rem .375rem,
+      display: inline,
     ),
-    code: (
+    code : (
       //box-shadow: rgb(253, 224, 71) 0px -26.529121px 0px 0px inset,
-      //color: var(--color),
-      //background: var(--background),
-      //padding: 2px 5px,
-      //_colors: (
-      //  light : (
-      //    background: '#fff',
-      //    color: '#ccc',
-      //  ),
-      //  dark : (
-      //    background : rgb(53, 56, 65),
-      //    color: '#fff'
-      //  )
-      //)
+
+      color: var(--color),
+      background: var(--background),
+
+      margin-block: -.125rem,
+      padding: .125rem .375rem,
+
+      _colors: (
+        light : (
+          background: '#fff',
+          color: '#ccc',
+        ),
+        dark : (
+          background : #0d1117,
+          color: '#fff'
+        )
+      )
     ),
     kbd: (
     ),

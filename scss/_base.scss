@@ -15,12 +15,13 @@
 $config: nil !default;
 $theme: nil !default;
 
-$color_scheme: functions.get-config($config, "color-scheme");
+$color_scheme: functions.get-config($config, 'color-scheme');
 
 html {
   color-scheme: string.unquote($color_scheme);
 }
 
+// data-theme attribute is changing the color scheme
 html[data-theme="dark"] {
   color-scheme: dark
 }
@@ -30,22 +31,22 @@ html[data-theme="light"] {
 }
 
 @each $tag, $properties in functions.get-theme($theme, 'html') {
-
-  @each $scheme in string.split(functions.get-config($config, "color-scheme"), " ") {
+  @each $scheme in string.split(functions.get-config($config, 'color-scheme'), ' ') {
 
     @if $scheme == 'light' {
       #{$tag} {
-        @include mixins.generate-properties(#{$tag}, $properties, $config);
+        @include mixins.generate-properties(#{$tag}, $properties, $config, (
+          scheme: $scheme,
+        ));
       }
     }
 
     @if $scheme == 'dark' {
       [data-theme="#{$scheme}"] #{$tag} {
-        @include mixins.generate-properties(#{$tag}, $properties, $config, map.deep-merge((
-            only_dark_colors : true,
-        ), $config));
+        @include mixins.generate-properties(#{$tag}, $properties, $config, (
+          scheme: $scheme,
+        ));
       }
     }
   }
-
 }

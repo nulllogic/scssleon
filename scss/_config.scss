@@ -14,13 +14,11 @@
 $config: () !default;
 
 $default-config: (
-  // scss-docs-start root-variables
   prefix: 'xii',
-  wrapper-class: 'wrapper' // scss-docs-end root-variables
+  wrapper: '.wrapper'
 );
 
 // Container breakpoints
-// scss-docs-start container-max-widths
 $breakpoints-config: (
   breakpoints: (
     sm: 540px,
@@ -30,12 +28,10 @@ $breakpoints-config: (
     xxl: 1320px,
   ),
 ) !default;
-// scss-docs-end container-max-widths
 
 $default-config: map.deep-merge($default-config, $breakpoints-config);
 
 // Grid breakpoints
-// scss-docs-start grid-breakpoints
 $grid-breakpoints-config: (
   grid-breakpoints: (
     xs: 0,
@@ -46,7 +42,6 @@ $grid-breakpoints-config: (
     xxl: 1400px,
   ),
 );
-// scss-docs-end grid-breakpoints
 
 $default-config: map.deep-merge($default-config, $grid-breakpoints-config);
 
@@ -69,8 +64,7 @@ $enable-rules-config: (
     rtl: false,
     button-pointers: true,
     content-class: true,
-    wrapper: true,
-    wrapper-class : '.tt'
+    wrapper: false,
   ),
 );
 

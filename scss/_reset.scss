@@ -13,16 +13,16 @@
 $config: nil !default;
 $theme: nil !default;
 
-$prefix: functions.get-config($config, "prefix");
+$prefix: functions.get-config($config, 'prefix');
 
-$is-reset-enabled: functions.get-config($config, "enable.reset");
+$is-reset-enabled: functions.get-config($config, 'enable.reset');
 $is-button-pointers-enabled: functions.get-config(
   $config,
   "enable.button-pointers"
 );
-$is-spacing-enabled: functions.get-config($config, "enable.spacing");
+$is-spacing-enabled: functions.get-config($config, 'enable.spacing');
 
-$color_scheme: functions.get-config($config, "color-scheme");
+$color_scheme: functions.get-config($config, 'color-scheme');
 
 @if $is-reset-enabled {
   *,
