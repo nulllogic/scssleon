@@ -92,6 +92,7 @@ $html-config: (
       height: auto,
       max-width: 100%,
     ),
+
     code : (
 
       margin-block: -.125rem,
@@ -110,6 +111,10 @@ $html-config: (
           color: inherit,
         )
       )
+    ),
+    kbd: (
+      margin-block: -.125rem,
+      padding: .125rem .375rem,
     ),
   )
 );
@@ -231,8 +236,6 @@ $content-config: (
       margin-block: -.125rem,
       padding: .125rem .375rem,
       display: inline,
-    ),
-    kbd: (
     ),
     figure: (
       margin: 0 0 15px 0,
