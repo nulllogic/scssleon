@@ -195,6 +195,33 @@ $content-config: (
       padding: 0 0 15px 0,
       line-height: clamp(1.25em, 4vw, 1.5em),
     ),
+    blockquote: (
+
+      margin: 0px 0px 15px,
+      line-height: clamp(1.25em, 4vw, 1.5em),
+      padding: 10px,
+      font-style: italic,
+      font-size: 1.5rem,
+
+      background: var(--blockquote-background),
+      border-left: var(--blockquote-border),
+
+      _colors: (
+        light: (
+          blockquote-border: 3px solid #ccc,
+          blockquote-background: rgba(0, 0, 0, 0.65),
+        ),
+        dark: (
+          blockquote-border: 3px solid #ccc,
+          blockquote-background: rgba(0, 0, 0, 0.65),
+        )
+      ),
+      _subclasses : (
+        cite : (
+
+        )
+      )
+    ),
     abbr: (
       attributes : (
         title : (
@@ -501,13 +528,11 @@ $components-config: (
 
     breadcrumb : (
 
-      --padding: 0 0 0 5px,
-
       list-style: none,
       align-items: center,
       display: flex,
       flex-wrap: wrap,
-      padding: var(--padding),
+
       margin: 0,
 
       _colors: (
