@@ -870,6 +870,8 @@ $components-config: (
           border-radius: var(--border-radius),
           border: var(--border),
 
+          width: 100%,
+
           transition: box-shadow .15s ease-in-out,
 
           _colors: (
@@ -910,6 +912,8 @@ $components-config: (
           border-radius: var(--border-radius),
           border: var(--border),
 
+          width: 100%,
+
           transition: box-shadow .15s ease-in-out,
 
           _colors: (
@@ -949,6 +953,8 @@ $components-config: (
           padding: var(--padding),
           border-radius: var(--border-radius),
           border: var(--border),
+
+          width: 100%,
 
           transition: box-shadow .15s ease-in-out,
 
