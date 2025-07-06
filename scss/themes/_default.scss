@@ -339,16 +339,9 @@ $components-config: (
     alert: (
 
       --border-radius: .5rem,
-      --grid-template-columns: auto auto 1fr,
+      --grid-template-columns: 20px auto 20px,
       --gap : 0.5rem,
       --padding: 0.825rem,
-      --left-column-justify-self: start,
-      --left-column-align-self: start,
-      --center-column-justify-self: center,
-      --center-column-align-self: center,
-      --right-column-justify-self: end,
-      --right-column-align-self: start,
-
 
       background: var(--background),
       border-radius: var(--border-radius),
@@ -375,21 +368,6 @@ $components-config: (
           border: 1px solid rgba(48, 54, 61, 0.75),
         )
       ),
-
-      _subclasses : (
-        '.left' : (
-          justify-self: var(--left-column-justify-self),
-          align-self: var(--left-column-align-self),
-        ),
-        '.center' : (
-          justify-self: var(--center-column-justify-self),
-          align-self: var(--center-column-align-self),
-        ),
-        '.right' : (
-          justify-self: var(--right-column-justify-self),
-          align-self: var(--right-column-align-self),
-        ),
-      )
 
     ),
 
@@ -1534,9 +1512,6 @@ $components-config: (
 
       --grid-template-columns: auto auto 1fr,
       --gap : 10px,
-      --left-column-aligment: start,
-      --center-column-alignnent: center,
-      --right-column-alignment: end,
 
       position: relative,
       display: grid,
@@ -1550,25 +1525,6 @@ $components-config: (
       grid-gap: var(--gap),
 
       z-index: 5,
-
-      _colors: (
-        light : (
-        ),
-        dark: (
-        )
-      ),
-
-      _subclasses : (
-        '.left' : (
-          justify-self: var(--left-column-alignment),
-        ),
-        '.center' : (
-          justify-self: var(--center-column-alignment),
-        ),
-        '.right' : (
-          justify-self: var(--right-column-alignment)
-        )
-      )
     ),
 
     sidecap : (
