@@ -11,8 +11,8 @@
   $theme-component: '';
 
   $color_scheme: functions.get-config($config, 'color-scheme');
-  $is_wrapper_enabled : functions.get-config($config, 'enable.wrapper');
-  $wrapper_class : functions.get-config($config, 'wrapper');
+  $is_wrapper_enabled: functions.get-config($config, 'enable.wrapper');
+  $wrapper_class: functions.get-config($config, 'wrapper');
 
   // Checking, if the component was previously defined inside theme's components
   @if (meta.type-of($component) == 'string') {
@@ -48,20 +48,20 @@
     @if $scheme == 'dark' {
       @if ($is_wrapper_enabled) {
         #{$wrapper_class}[data-theme="#{$scheme}"] {
-          .#{$class} {
+          .#{$class}:where([data-theme="#{$scheme}"], [data-theme="#{$scheme}"] *) {
             @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
               scheme: $scheme,
             ), $options));
           }
         }
+
       } @else {
-        html[data-theme="#{$scheme}"] {
-          .#{$class} {
-            @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
-              scheme: $scheme,
-            ), $options));
-          }
+        .#{$class}:where([data-theme="#{$scheme}"], [data-theme="#{$scheme}"] *) {
+          @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
+            scheme: $scheme,
+          ), $options));
         }
+
       }
     }
   }
