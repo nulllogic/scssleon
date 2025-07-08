@@ -112,7 +112,10 @@ $html-config: (
         )
       )
     ),
+
     kbd: (
+      font-family: var(global(--font-family-monospace)),
+
       margin-block: -.125rem,
       padding: .125rem .375rem,
 
@@ -479,7 +482,6 @@ $components-config: (
 
               transition: string.unquote('opacity 0.15s ease-in, display 0.15s ease-in allow-discrete'),
 
-              // @TODO remove animation onload
               _atrule : (
                   '@starting-style' : (
                       opacity: 0
