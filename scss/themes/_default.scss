@@ -482,12 +482,6 @@ $components-config: (
 
               transition: string.unquote('opacity 0.15s ease-in, display 0.15s ease-in allow-discrete'),
 
-              _atrule : (
-                  '@starting-style' : (
-                      opacity: 0
-                  )
-              ),
-
               _subclasses : (
                 '&[hidden]' : (
                   display: none,
@@ -499,6 +493,16 @@ $components-config: (
 
             '&:last-child' : (
               padding-bottom: 0,
+            ),
+
+            // Avoid running animation onload and add animation, when user hover the element
+            // @TODO Add focus later, when user navigate by keyboard
+            '&:hover .answer' : (
+              _atrule : (
+                '@starting-style' : (
+                  opacity: 0
+                )
+              ),
             )
           )
         )
