@@ -199,6 +199,12 @@ $theme: theme.$theme;
   $theme: $theme
 );
 
+// ↓ Tooltip
+@use 'components/tooltip' with (
+  $config: $config,
+  $theme: $theme
+);
+
 // ↓ Helpers
 @use 'helpers/clearfix';
 @use 'helpers/screen_reader';
