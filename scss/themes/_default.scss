@@ -1425,10 +1425,27 @@ $components-config: (
     ),
 
     megamenu : (
-      display: relative,
+      position: relative,
       _subclasses : (
+        '.mega-link:hover' : (
+          _subclasses : (
+            '& + .megamenu' : (
+              display: block,
+            )
+          )
+        ),
         '.megamenu' : (
           position: absolute,
+          left: 0,
+          right: 0,
+          width: 100%,
+          background: red,
+          display: none,
+          _subclasses : (
+            '& > *' : (
+              display: none,
+            )
+          )
         ),
       )
     ),
