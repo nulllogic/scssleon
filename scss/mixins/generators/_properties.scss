@@ -7,11 +7,23 @@
 
 @mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
   $prefix: functions.get-config($config, "prefix");
+  $property_custom_options: functions.get-config($options, 'property');
 
-  @if (functions.get-config($options, 'add_variable_prefix') != nil and functions.get-config($options, 'add_variable_prefix') == false) {
-    --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect(
+  @if ($property_custom_options != nil and meta.type-of($property_custom_options) == 'map') {
+
+    $custom_property_name: functions.get-config($property_custom_options, 'name');
+    $is_custom_property_name_enabled: functions.get-config($property_custom_options, 'keep_name');
+
+    @if ($custom_property_name != nil) {
+      --#{$prefix}-#{functions.get-config($property_custom_options, 'name')}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
+    } @else if ($is_custom_property_name_enabled != nil and not $is_custom_property_name_enabled == false) {
+      --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+    } @else {
+
+    }
+
   } @else {
     --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
@@ -19,13 +31,22 @@
   }
 }
 
-@mixin generate-css-variables($tag, $property, $value, $config) {
+@mixin generate-css-variables($tag, $property, $value, $config, $options) {
   $prefix: functions.get-config($config, "prefix");
+  $property_custom_options: functions.get-config($options, 'property');
 
   @if (meta.type-of($value) == "string" and string.index($value, "var(--") == 1) {
-    #{$property}: #{meta.inspect(
+
+    @if ($property_custom_options != nil and meta.type-of($property_custom_options) == 'map') {
+      #{$property}: #{meta.inspect(
+      functions.replace($value, "--", "--" + $prefix + "-" + functions.get-config($property_custom_options, 'name') + "-")
+    )};
+
+    } @else {
+      #{$property}: #{meta.inspect(
       functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
     )};
+    }
   } @else if (meta.type-of($value) == "string" and string.index($value, "var(global(") == 1) {
     #{$property}: #{meta.inspect(
         functions.replace(
@@ -39,15 +60,13 @@
   }
 }
 
-@mixin generate-colors($tag, $value, $config, $requested_color : 'light') {
+@mixin generate-colors($tag, $value, $config, $options, $requested_color : 'light') {
   $prefix: functions.get-config($config, "prefix");
 
   @each $color, $color-properties in $value {
     @if ($color == $requested_color) {
       @each $color-property, $color-value in $color-properties {
-        --#{$prefix}-#{$tag}-#{functions.replace($color-property, '--', '')}: #{meta.inspect(
-              $color-value
-            )};
+        @include generate-css-properties($tag, $color-property, $color-value, $config, $options);
       }
     }
   }
@@ -130,7 +149,7 @@
 
         // Colors
       @else if ($property == "_colors") {
-        @include generate-colors($tag, $value, $config, 'light');
+        @include generate-colors($tag, $value, $config, $options, 'light');
       }
 
         // Responsive
@@ -152,13 +171,13 @@
       @else if ($property == "_animations") {
         @include generate-animation($tag, $value, $config, $options);
       } @else {
-        @include generate-css-variables($tag, $property, $value, $config);
+        @include generate-css-variables($tag, $property, $value, $config, $options);
       }
     }
   } @else {
     @each $property, $value in $properties {
       @if ($property == "_colors") {
-        @include generate-colors($tag, $value, $config, 'dark');
+        @include generate-colors($tag, $value, $config, $options, 'dark');
       } @else if ($property == "_subclasses") {
         @each $class, $class_properties in $value {
           @include generate-subclasses($tag, $class, $class_properties, $config, $options);

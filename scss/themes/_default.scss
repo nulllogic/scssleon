@@ -739,7 +739,7 @@ $components-config: (
       _subclasses : (
         '&.on-hover:hover' : (
             _subclasses : (
-              '.menu' : (
+              '.dropdown' : (
                 display: block,
                 opacity: 1,
                 transform: translateY(0),
@@ -754,7 +754,7 @@ $components-config: (
             )
         ),
 
-        '.menu' : (
+        '.dropdown' : (
           display: none,
           position: absolute,
           top: 100%,
@@ -1650,8 +1650,12 @@ $components-config: (
         ),
 
         '.tooltip' : (
+
+          --padding: 0.25rem 0.5rem,
+
           border: var(--border),
           background: var(--background),
+          padding: var(--padding),
 
           opacity: 0,
           display: none,
@@ -1660,9 +1664,7 @@ $components-config: (
           bottom: calc(100% + 10px),
           left: calc(50% - 1px),
           width: auto,
-          white-space: nowrap,
-          word-wrap: no-wrap,
-          padding: 0.25rem 0.5rem,
+
           font-size: 0.875rem,
           border-radius: 5px,
 
