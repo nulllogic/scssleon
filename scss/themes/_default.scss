@@ -1636,21 +1636,36 @@ $components-config: (
 
         '&:hover .tooltip' : (
           display: block,
+          opacity: 1,
+          transform: translateY(5px),
+
+          transition: string.unquote('transform 0.15s ease-out, opacity 0.15s ease-out, display 0.15s ease-out allow-discrete'),
+
+          _atrule : (
+            '@starting-style' : (
+              opacity: 0,
+              transform: translateY(-3px)
+            )
+          ),
         ),
 
         '.tooltip' : (
           border: var(--border),
           background: var(--background),
 
+          opacity: 0,
           display: none,
 
           position: absolute,
+          bottom: calc(100% + 10px),
+          left: calc(50% - 1px),
           width: auto,
           white-space: nowrap,
           word-wrap: no-wrap,
           padding: 0.25rem 0.5rem,
           font-size: 0.875rem,
           border-radius: 5px,
+
           z-index: functions.get-config($config, 'z-index.tooltip'),
 
           color: inherit,
@@ -1663,6 +1678,16 @@ $components-config: (
             dark : (
               background: #18191b,
               border: 1px solid #35383c,
+            )
+          ),
+
+          transition: string.unquote('transform 0.15s ease-in, opacity 0.15s ease-in, display 0.15s ease-in allow-discrete'),
+          translate: -50% 0,
+
+          _atrule : (
+            '@starting-style' : (
+              opacity: 0,
+              transform: translateY(-3px)
             )
           ),
 
