@@ -1630,68 +1630,77 @@ $components-config: (
 
     tooltip : (
 
-      border: var(--border),
-      background: var(--background),
-
-      display: none,
-
-      position: absolute,
-      width: auto,
-      white-space: nowrap,
-      word-wrap: no-wrap,
-      padding: 0.25rem 0.5rem,
-      font-size: 0.875rem,
-      border-radius: 5px,
-      z-index: functions.get-config($config, 'z-index.tooltip'),
-
-      color: inherit,
-
-      _colors : (
-        light : (
-          background: #fff,
-          border: 1px solid #e5e6ea,
-        ),
-        dark : (
-          background: #18191b,
-          border: 1px solid #35383c,
-        )
-      ),
+      position: relative,
 
       _subclasses : (
 
-        '&:where(.has-tooltip:hover > *)' : (
+        '&:hover .tooltip' : (
           display: block,
         ),
 
-        '& > :first-child' : (
-          position: relative,
-          z-index: functions.get-config($config, 'z-index.tooltip'),
-        ),
-        '&:before' : (
-          content: '',
-          position: absolute,
-          display: block,
-          width: 8px,
-          height: 8px,
-          transform-origin: 50% 50%,
-          transform: rotate(45deg) translateX(-50%),
-          background-color: var(--background),
-          left: calc(50% - 1px),
-          top: calc(100% - 2px),
-        ),
-        '&:after' : (
-          content: '',
-          display: block,
-          position: absolute,
-          width: 8px,
-          height: 8px,
-          transform-origin: 50% 50%,
-          transform: rotate(45deg) translateX(-50%),
+        '.tooltip' : (
           border: var(--border),
-          left: calc(50% - 1px),
-          top: calc(100% - 0.5px),
-          z-index: -1,
+          background: var(--background),
+
+          display: none,
+
+          position: absolute,
+          width: auto,
+          white-space: nowrap,
+          word-wrap: no-wrap,
+          padding: 0.25rem 0.5rem,
+          font-size: 0.875rem,
+          border-radius: 5px,
+          z-index: functions.get-config($config, 'z-index.tooltip'),
+
+          color: inherit,
+
+          _colors : (
+            light : (
+              background: #fff,
+              border: 1px solid #e5e6ea,
+            ),
+            dark : (
+              background: #18191b,
+              border: 1px solid #35383c,
+            )
+          ),
+
+          _subclasses : (
+
+            '& > :first-child' : (
+              position: relative,
+              z-index: functions.get-config($config, 'z-index.tooltip'),
+            ),
+            '&:before' : (
+              content: '',
+              position: absolute,
+              display: block,
+              width: 8px,
+              height: 8px,
+              transform-origin: 50% 50%,
+              transform: rotate(45deg) translateX(-50%),
+              background-color: var(--background),
+              left: calc(50% - 1px),
+              top: calc(100% - 2px),
+            ),
+            '&:after' : (
+              content: '',
+              display: block,
+              position: absolute,
+              width: 8px,
+              height: 8px,
+              transform-origin: 50% 50%,
+              transform: rotate(45deg) translateX(-50%),
+              border: var(--border),
+              left: calc(50% - 1px),
+              top: calc(100% - 0.5px),
+              z-index: -1,
+            ),
+          )
         ),
+
+
       )
     )
   )
