@@ -1431,21 +1431,53 @@ $components-config: (
           _subclasses : (
             '.megamenu' : (
               display: block,
+
+              opacity: 1,
+              transform: translateY(0),
+
+              _atrule : (
+                '@starting-style' : (
+                  opacity: 0,
+                  transform: translateY(-5px)
+                )
+              ),
             )
           )
         ),
         '.megamenu' : (
+          --padding: 0.75rem,
+
+          display: none,
+
           position: absolute,
           left: 0,
           right: 0,
           width: 100%,
-          background: red,
-          display: none,
-          _subclasses : (
-            '& > *' : (
-              display: none,
+
+          margin-top: 5px,
+
+          transition: string.unquote('opacity 0.15s ease-in, transform 0.15s ease-in, display 0.15s ease-in allow-discrete'),
+          transform: translateY(-5px),
+          opacity: 0,
+
+          background: var(--background),
+          border: var(--border),
+          box-shadow: var(--shadow),
+          padding: var(--padding),
+
+          _colors: (
+            light : (
+              background: rgba(246, 246, 247, 1),
+              border: 1px solid rgb(219, 219, 219),
+              shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
+            ),
+            dark : (
+              background: rgb(18, 18, 24),
+              border: 1px solid rgba(48, 54, 61, 0.75),
+              shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
             )
           )
+
         ),
       )
     ),
