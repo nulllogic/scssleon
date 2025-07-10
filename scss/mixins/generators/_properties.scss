@@ -52,15 +52,20 @@
 
 @mixin generate-css-variables($tag, $property, $value, $config, $options) {
   $prefix: functions.get-config($config, 'prefix');
-  $variable_options_exclude: functions.get-config($options, 'property');
 
   $variable_options_custom_name: functions.get-config($options, 'variable.name');
   $variable_options_exclude: functions.get-config($options, 'variable.exclude');
 
+  $variable_name : $tag;
+
+  @if ($variable_options_custom_name != nil) {
+    $variable_name: $variable_options_custom_name;
+  }
+
   @if (meta.type-of($value) == 'string' and string.index($value, 'var(--') == 1) {
 
     #{$property}: #{meta.inspect(
-        functions.replace($value, '--', '--' + $prefix + '-' + $tag + '-')
+        functions.replace($value, '--', '--' + $prefix + '-' + $variable_name + '-')
       )};
 
   } @else if (meta.type-of($value) == 'string' and string.index($value, 'var(global(') == 1) {
