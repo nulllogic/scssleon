@@ -1633,9 +1633,12 @@ $components-config: (
       border: var(--border),
       background: var(--background),
 
-      display: inline-block,
+      display: none,
+
+      position: absolute,
       width: auto,
-      position: relative,
+      white-space: nowrap,
+      word-wrap: no-wrap,
       padding: 0.25rem 0.5rem,
       font-size: 0.875rem,
       border-radius: 5px,
@@ -1655,6 +1658,11 @@ $components-config: (
       ),
 
       _subclasses : (
+
+        '&:where(.has-tooltip:hover > *)' : (
+          display: block,
+        ),
+
         '& > :first-child' : (
           position: relative,
           z-index: functions.get-config($config, 'z-index.tooltip'),
