@@ -6,25 +6,40 @@
 @use "../../mixins/generators/color-sheme" as mixin;
 
 @mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
-  $prefix: functions.get-config($config, "prefix");
+
+  $prefix: functions.get-config($config, 'prefix');
   $property_custom_options: functions.get-config($options, 'property');
 
   @if ($property_custom_options != nil and meta.type-of($property_custom_options) == 'map') {
 
     $custom_property_name: functions.get-config($property_custom_options, 'name');
-    $is_custom_property_name_enabled: functions.get-config($property_custom_options, 'keep_name');
+    $custom_properties_to_exclude: functions.get-config($property_custom_options, 'exclude');
 
     @if ($custom_property_name != nil) {
-      --#{$prefix}-#{functions.get-config($property_custom_options, 'name')}-#{functions.replace($property, '--', '')}: #{meta.inspect(
-      $value
-    )};
-    } @else if ($is_custom_property_name_enabled != nil and not $is_custom_property_name_enabled == false) {
-      --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
-    } @else {
+      --#{$prefix}-#{functions.get-config($property_custom_options, 'name')}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+    }
+
+    @if ($custom_properties_to_exclude != nil and
+      (meta.type-of($custom_properties_to_exclude) == list or meta.type-of($custom_properties_to_exclude) == string)
+    ) {
+
+      @if (meta.type-of($custom_properties_to_exclude) == string) {
+        @if (string.index($property, $custom_properties_to_exclude)) {
+          --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+        } @else {
+          --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+        }
+      }
+
+      @if (meta.type-of($custom_properties_to_exclude) == list) {
+        // @TODO update
+        --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+      }
 
     }
 
   } @else {
+
     --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
@@ -38,15 +53,32 @@
   @if (meta.type-of($value) == "string" and string.index($value, "var(--") == 1) {
 
     @if ($property_custom_options != nil and meta.type-of($property_custom_options) == 'map') {
-      #{$property}: #{meta.inspect(
-      functions.replace($value, "--", "--" + $prefix + "-" + functions.get-config($property_custom_options, 'name') + "-")
-    )};
+
+      $custom_property_name: functions.get-config($property_custom_options, 'name');
+      $custom_properties_to_exclude: functions.get-config($property_custom_options, 'exclude');
+
+      @if ($custom_property_name != nil) {
+        #{$property}: #{meta.inspect(
+          functions.replace($value, "--", "--" + $prefix + "-" + $custom_property_name + "-")
+        )};
+      }
+
+      @if (meta.type-of($custom_properties_to_exclude) == string) {
+        @if (string.index($property, $custom_properties_to_exclude)) {
+          #{$property}: #{meta.inspect(
+            functions.replace($value, "--", "--" + $prefix + "-" + $custom_properties_to_exclude + "-")
+          )};
+        } @else {
+          --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+        }
+      }
 
     } @else {
       #{$property}: #{meta.inspect(
-      functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
-    )};
+        functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
+      )};
     }
+
   } @else if (meta.type-of($value) == "string" and string.index($value, "var(global(") == 1) {
     #{$property}: #{meta.inspect(
         functions.replace(
