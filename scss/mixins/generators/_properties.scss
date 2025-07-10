@@ -1,6 +1,7 @@
 @use "sass:meta";
 @use "sass:string";
 @use "sass:map";
+@use "sass:list";
 
 @use "../../functions" as functions;
 @use "../../mixins/generators/color-sheme" as mixin;
@@ -8,55 +9,59 @@
 @mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
 
   $prefix: functions.get-config($config, 'prefix');
-  $property_custom_options: functions.get-config($options, 'property');
 
-  @if ($property_custom_options != nil and meta.type-of($property_custom_options) == 'map') {
+  $variable_options_custom_name: functions.get-config($options, 'variable.name');
+  $variable_options_exclude: functions.get-config($options, 'variable.exclude');
 
-    $custom_property_name: functions.get-config($property_custom_options, 'name');
-    $custom_properties_to_exclude: functions.get-config($property_custom_options, 'exclude');
+  $variable_name: --#{$prefix};
 
-    @if ($custom_property_name != nil) {
-      --#{$prefix}-#{functions.get-config($property_custom_options, 'name')}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
-    }
+  $exclude: false;
 
-    @if ($custom_properties_to_exclude != nil and
-      (meta.type-of($custom_properties_to_exclude) == list or meta.type-of($custom_properties_to_exclude) == string)
-    ) {
+  @if ($variable_options_custom_name != nil) {
+    $variable_name: $variable_options_custom_name;
+  } @else {
+    $variable_name: $tag;
+  }
 
-      @if (meta.type-of($custom_properties_to_exclude) == string) {
-        @if (string.index($property, $custom_properties_to_exclude)) {
-          --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
-        } @else {
-          --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+  @if ($variable_options_exclude != nil) {
+
+    @if (meta.type-of($variable_options_exclude) == list) {
+      @each $variable_to_exclude in $variable_options_exclude {
+        @if string.index($property, --#{$variable_to_exclude}) {
+          $exclude: true
         }
       }
-
-      @if (meta.type-of($custom_properties_to_exclude) == list) {
-        // @TODO update
-        --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
-      }
-
     }
 
-  } @else {
+    @if (meta.type-of($variable_options_exclude) == string) {
+      @if string.index($property, --#{$variable_options_exclude}) {
+        $exclude: true
+      }
+    }
+  }
 
-    --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect(
+  @if ($exclude != true) {
+    --#{$prefix}-#{$variable_name}-#{functions.replace($property, '--', '')}: #{meta.inspect(
+      $value
+    )};
+  } @else {
+    --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect(
       $value
     )};
   }
+
 }
 
 @mixin generate-css-variables($tag, $property, $value, $config, $options) {
   $prefix: functions.get-config($config, "prefix");
-  $property_custom_options: functions.get-config($options, 'property');
-
+  $variable_options_exclude: functions.get-config($options, 'property');
 
   @if (meta.type-of($value) == "string" and string.index($value, "var(--") == 1) {
 
-    @if ($property_custom_options != nil and meta.type-of($property_custom_options) == 'map') {
+    @if ($variable_options_exclude != nil and meta.type-of($variable_options_exclude) == 'map') {
 
-      $custom_property_name: functions.get-config($property_custom_options, 'name');
-      $custom_properties_to_exclude: functions.get-config($property_custom_options, 'exclude');
+      $custom_property_name: functions.get-config($variable_options_exclude, 'name');
+      $variable_options_exclude: functions.get-config($variable_options_exclude, 'exclude');
 
       @if ($custom_property_name != nil) {
         #{$property}: #{meta.inspect(
@@ -64,13 +69,14 @@
         )};
       }
 
-      @if (meta.type-of($custom_properties_to_exclude) == string) {
+      @if (meta.type-of($variable_options_exclude) == string) {
 
-        @if (string.index($property, $custom_properties_to_exclude)) {
+        @if (string.index($property, $variable_options_exclude)) {
 
           #{$property}: #{meta.inspect(
-            functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
+            functions.replace($value, "--", "--" + $prefix + "-")
           )};
+
         } @else {
           #{$property}: #{meta.inspect(
             functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
@@ -93,7 +99,6 @@
         )
       )};
   } @else {
-    @debug $property;
     #{$property}: #{meta.inspect($value)};
   }
 }
