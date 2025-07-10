@@ -50,6 +50,7 @@
   $prefix: functions.get-config($config, "prefix");
   $property_custom_options: functions.get-config($options, 'property');
 
+
   @if (meta.type-of($value) == "string" and string.index($value, "var(--") == 1) {
 
     @if ($property_custom_options != nil and meta.type-of($property_custom_options) == 'map') {
@@ -64,12 +65,16 @@
       }
 
       @if (meta.type-of($custom_properties_to_exclude) == string) {
+
         @if (string.index($property, $custom_properties_to_exclude)) {
+
           #{$property}: #{meta.inspect(
-            functions.replace($value, "--", "--" + $prefix + "-" + $custom_properties_to_exclude + "-")
+            functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
           )};
         } @else {
-          --#{$prefix}-#{$tag}-#{functions.replace($property, '--', '')}: #{meta.inspect($value)};
+          #{$property}: #{meta.inspect(
+            functions.replace($value, "--", "--" + $prefix + "-" + $tag + "-")
+          )};
         }
       }
 
@@ -88,6 +93,7 @@
         )
       )};
   } @else {
+    @debug $property;
     #{$property}: #{meta.inspect($value)};
   }
 }
