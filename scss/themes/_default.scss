@@ -1455,6 +1455,7 @@ $components-config: (
           width: 100%,
 
           margin-top: 5px,
+          border-radius: 0.25rem,
 
           transition: string.unquote('opacity 0.15s ease-in, transform 0.15s ease-in, display 0.15s ease-in allow-discrete'),
           transform: translateY(-5px),
