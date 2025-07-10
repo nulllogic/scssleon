@@ -67,11 +67,32 @@
   }
 }
 
-@mixin generate-components($components, $config, $theme) {
-  // Check, if components are not empty
-  @if (meta.type-of($components) == 'list' and list.length($components) > 0) {
-    @each $component in $components {
-      @include generate-component(list.nth($component, 1), list.nth($component, 2), $config, $theme)
+@mixin generate-components($args...) {
+
+  // Get components
+  @for $i from 0 to list.length($args) {
+    $component: list.nth($args, $i + 1);
+
+    @if ($component != null) {
+
+      // Checking, if we have `options` as last param at component args list
+      @if(list.length($component) > 4) {
+        @include generate-component(
+            list.nth($component, 1),
+            list.nth($component, 2),
+          $config: list.nth($component, 3),
+          $theme: list.nth($component, 4),
+          $options: list.nth($component, 5),
+        )
+      } @else {
+        @include generate-component(
+            list.nth($component, 1),
+            list.nth($component, 2),
+          $config: list.nth($component, 3),
+          $theme: list.nth($component, 4),
+        )
+      }
+
     }
   }
 }
