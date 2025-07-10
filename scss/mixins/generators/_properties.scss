@@ -133,8 +133,8 @@
   @each $at-rule, $properties in $value {
     // Keep @ at the beginning
     @#{functions.replace($at-rule, '@', '')} {
-    @include generate-properties($tag, $properties, $config, $options);
-  }
+      @include generate-properties($tag, $properties, $config, $options);
+    }
   }
 }
 
