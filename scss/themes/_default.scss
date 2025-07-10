@@ -1429,7 +1429,7 @@ $components-config: (
       _subclasses : (
         '.mega-link:hover' : (
           _subclasses : (
-            '& + .megamenu' : (
+            '.megamenu' : (
               display: block,
             )
           )
@@ -1580,7 +1580,6 @@ $components-config: (
       --grid-template-columns: auto auto 1fr,
       --gap : 10px,
 
-      position: relative,
       display: grid,
       width: 100%,
       max-width: 100%,
