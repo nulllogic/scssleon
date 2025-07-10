@@ -84,6 +84,7 @@ $default-config: map.deep-merge($default-config, $content-default-config);
 // Z-index
 $z-index-config: (
   z-index: (
+    tooltip: 3,
     dropdown: 4,
     header: 5,
     overlay: 6,

@@ -1630,49 +1630,59 @@ $components-config: (
 
     tooltip : (
 
+      border: var(--border),
+      background: var(--background),
+
       display: inline-block,
       width: auto,
       position: relative,
-      padding: 0.5rem,
+      padding: 0.25rem 0.5rem,
       font-size: 0.875rem,
-      filter: drop-shadow(0 1px 1px rgba(173, 168, 168, 0.35)),
-      border: 1px solid rgba(0, 0, 0, 0.1),
-      background-color: #fff,
       border-radius: 5px,
+      z-index: functions.get-config($config, 'z-index.tooltip'),
+
+      color: inherit,
+
+      _colors : (
+        light : (
+          background: #fff,
+          border: 1px solid #e5e6ea,
+        ),
+        dark : (
+          background: #18191b,
+          border: 1px solid #35383c,
+        )
+      ),
 
       _subclasses : (
+        '& > :first-child' : (
+          position: relative,
+          z-index: functions.get-config($config, 'z-index.tooltip'),
+        ),
         '&:before' : (
-          content: " ",
-          pointer-events: none,
+          content: '',
           position: absolute,
-          height: 0,
-          width: 0,
-          border: solid transparent,
-          right: 100%,
-
-          left: 50%,
-          top: 100%,
-
-          margin-left: -6px,
-          border-top-color: rgb(229 229 229),
-          border-width: 6px,
-
+          display: block,
+          width: 8px,
+          height: 8px,
+          transform-origin: 50% 50%,
+          transform: rotate(45deg) translateX(-50%),
+          background-color: var(--background),
+          left: calc(50% - 1px),
+          top: calc(100% - 2px),
         ),
         '&:after' : (
-          content: " ",
-          pointer-events: none,
+          content: '',
+          display: block,
           position: absolute,
-          height: 0,
-          width: 0,
-          border: solid transparent,
-          right: 100%,
-
-          left: 50%,
-          top: 100%,
-
-          margin-left: -5px,
-          border-top-color: #fff,
-          border-width: 5px,
+          width: 8px,
+          height: 8px,
+          transform-origin: 50% 50%,
+          transform: rotate(45deg) translateX(-50%),
+          border: var(--border),
+          left: calc(50% - 1px),
+          top: calc(100% - 0.5px),
+          z-index: -1,
         ),
       )
     )
