@@ -137,12 +137,14 @@ $html-config: (
         light : (
           background: rgb(255, 255, 255),
           color: inherit,
-          border: 1px solid oklch(0.928 0.006 264.531006),
+          border: 1px solid rgba(19, 19, 19, 0.2),
+          shadow: string.unquote(' rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px'),
         ),
         dark : (
           background : oklch(.205 0 0),
           color: inherit,
-          border: 1px solid oklch(0.278 0.033 256.847992),
+          border: 1px solid rgba(19, 19, 19, 0.2),
+          shadow: string.unquote(' rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px'),
         )
       )
     ),
@@ -757,7 +759,7 @@ $components-config: (
 
           display: none,
           position: absolute,
-          top: calc(100% + 5px),
+          top: 100%,
           left: 0,
           border-radius: 0.25rem,
           padding: .5rem,
@@ -773,6 +775,15 @@ $components-config: (
           opacity: 0,
 
           _subclasses : (
+            '&:before': (
+              content: ' ',
+              left: 0,
+              top: -5px,
+              height: 5px,
+              width: 100%,
+              display: block,
+              position: absolute,
+            ),
             '&.to-right' : (
               top: 0,
               left: 100%,
@@ -1478,12 +1489,12 @@ $components-config: (
             light : (
               background: rgba(246, 246, 247, 1),
               border: 1px solid rgb(219, 219, 219),
-              shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
+              shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
             ),
             dark : (
               background: rgb(18, 18, 24),
               border: 1px solid rgba(48, 54, 61, 0.75),
-              shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
+              shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
             )
           )
 
