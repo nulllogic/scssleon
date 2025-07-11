@@ -21,29 +21,15 @@ $default-config: (
 // Container breakpoints
 $breakpoints-config: (
   breakpoints: (
-    sm: 540px,
-    md: 720px,
-    lg: 960px,
-    xl: 1140px,
-    xxl: 1320px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1220px,
+    xxl: 1380px,
   ),
 ) !default;
 
 $default-config: map.deep-merge($default-config, $breakpoints-config);
-
-// Grid breakpoints
-$grid-breakpoints-config: (
-  grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px,
-  ),
-);
-
-$default-config: map.deep-merge($default-config, $grid-breakpoints-config);
 
 $color_scheme-config: (
   color-scheme: 'light dark',

@@ -732,14 +732,13 @@ $components-config: (
 
       position: relative,
       display: inline-block,
-      padding: 0 0 .5rem 0,
 
       z-index: functions.get-config($config, 'z-index.dropdown'),
 
       _subclasses : (
         '&.on-hover:hover' : (
             _subclasses : (
-              '.dropdown' : (
+              '& > .dropdown' : (
                 display: block,
                 opacity: 1,
                 transform: translateY(0),
@@ -755,12 +754,13 @@ $components-config: (
         ),
 
         '.dropdown' : (
+
           display: none,
           position: absolute,
-          top: 100%,
+          top: calc(100% + 5px),
           left: 0,
           border-radius: 0.25rem,
-          padding: 4px 0,
+          padding: .5rem,
           width: 200px,
           height: auto,
 
@@ -770,6 +770,13 @@ $components-config: (
           transition: string.unquote('opacity 0.15s ease-in, transform 0.15s ease-in, display 0.15s ease-in allow-discrete'),
           transform: translateY(-5px),
           opacity: 0,
+
+          _subclasses : (
+            '&.to-right' : (
+              top: 0,
+              left: 100%,
+            )
+          )
         )
       ),
 
