@@ -1705,6 +1705,27 @@ $components-config: (
               transform: translateY(-3px)
             )
           ),
+
+          _subclasses : (
+            '&.to-left' : (
+              transform: translateX(-3px),
+              _atrule : (
+                '@starting-style' : (
+                  opacity: 0,
+                  transform: translateX(-2px)
+                )
+              ),
+            ),
+            '&.to-right' : (
+              transform: translateX(3px),
+              _atrule : (
+                '@starting-style' : (
+                  opacity: 0,
+                  transform: translateX(-2px)
+                )
+              ),
+            )
+          )
         ),
 
         '.tooltip' : (
@@ -1757,30 +1778,104 @@ $components-config: (
               position: relative,
               z-index: functions.get-config($config, 'z-index.tooltip'),
             ),
-            '&:before' : (
-              content: '',
-              position: absolute,
-              display: block,
-              width: 8px,
-              height: 8px,
-              transform-origin: 50% 50%,
-              transform: rotate(45deg) translateX(-50%),
-              background-color: var(--background),
-              left: calc(50% - 1px),
-              top: calc(100% - 2px),
+
+            '&.to-bottom' : (
+              bottom: unset,
+              top: calc(100% + 5px),
+
+              _subclasses : (
+                '&.with-arrow' : (
+                  _subclasses : (
+                    '&:before' : (
+                      left: calc(50% - 1px),
+                      top: -0.5px,
+                    ),
+                    '&:after' : (
+                      left: calc(50% - 1px),
+                      top: -2px,
+                    )
+                  )
+                )
+              )
             ),
-            '&:after' : (
-              content: '',
-              display: block,
-              position: absolute,
-              width: 8px,
-              height: 8px,
-              transform-origin: 50% 50%,
-              transform: rotate(45deg) translateX(-50%),
-              border: var(--border),
-              left: calc(50% - 1px),
-              top: calc(100% - 0.5px),
-              z-index: -1,
+
+            '&.to-right' : (
+              bottom: auto,
+              right: -5px,
+              left: unset,
+              top: 50%,
+              translate: 100% -50%,
+
+              _subclasses : (
+                '&.with-arrow' : (
+                  _subclasses : (
+                    '&:before' : (
+                      left: -0.5px,
+                      top: 50%,
+                    ),
+                    '&:after' : (
+                      left: -2px,
+                      top: 50%,
+                    )
+                  )
+                )
+              )
+            ),
+
+            '&.to-left' : (
+              bottom: auto,
+              top: 50%,
+              left: -5px,
+              right: unset,
+              translate: -100% -50%,
+
+              _subclasses : (
+                '&.with-arrow' : (
+                  _subclasses : (
+                    '&:before' : (
+                      left: calc(100% - 2px),
+                      top: 50%,
+                    ),
+                    '&:after' : (
+                      left: calc(100% - 0.5px),
+                      top: 50%,
+                    )
+                  )
+                )
+              )
+            ),
+
+            '&.with-arrow' : (
+
+              _subclasses : (
+
+                '&:before' : (
+                  content: '',
+                  position: absolute,
+                  display: block,
+                  width: 8px,
+                  height: 8px,
+                  transform-origin: 50% 50%,
+                  transform: rotate(45deg) translateX(-50%),
+                  background-color: var(--background),
+                  left: calc(50% - 1px),
+                  top: calc(100% - 2px),
+                ),
+
+                '&:after' : (
+                  content: '',
+                  display: block,
+                  position: absolute,
+                  width: 8px,
+                  height: 8px,
+                  transform-origin: 50% 50%,
+                  transform: rotate(45deg) translateX(-50%),
+                  border: var(--border),
+                  left: calc(50% - 1px),
+                  top: calc(100% - 0.5px),
+                  z-index: -1,
+                ),
+              )
             ),
           )
         ),
