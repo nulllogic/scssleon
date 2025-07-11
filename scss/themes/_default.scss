@@ -766,6 +766,7 @@ $components-config: (
 
           border: var(--border),
           background: var(--background),
+          box-shadow: var(--shadow),
 
           transition: string.unquote('opacity 0.15s ease-in, transform 0.15s ease-in, display 0.15s ease-in allow-discrete'),
           transform: translateY(-5px),
@@ -784,12 +785,12 @@ $components-config: (
         light : (
           background: rgba(246, 246, 247, 1),
           border: 1px solid rgb(219, 219, 219),
-          shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
+          shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
         ),
         dark : (
           background: rgb(18, 18, 24),
           border: 1px solid rgba(48, 54, 61, 0.75),
-          shadow: rgba(1, 4, 9, 0.4) 0 1px 0 0
+          shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
         )
       )
     ),
