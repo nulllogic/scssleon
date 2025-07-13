@@ -661,8 +661,12 @@ $components-config: (
           border: var(--active-border),
           box-shadow: var(--active-shadow),
         ),
+
         '&.btn-link' : (
+          display: inline-grid,
+          place-items: center,
           background: transparent,
+          padding: 0,
           border: none,
           box-shadow: none,
           text-decoration: underline,
@@ -1514,8 +1518,8 @@ $components-config: (
 
       display: none,
       height: auto,
-
-      align-items: center,
+      flex-direction: column,
+      padding: 0,
 
       //background: var(--background),
       //box-shadow: var(--box-shadow),
@@ -1529,7 +1533,6 @@ $components-config: (
       background: var(--background),
       border: var(--border),
 
-      padding: 0.5rem,
       max-width: 42rem,
       width: 100%,
       margin: 0 auto,
@@ -1569,15 +1572,15 @@ $components-config: (
             )
           ),
         ),
-        '.top' : (
+        '& > :nth-child(1)' : (
           display: flex,
           justify-content: space-between,
         ),
-        '.middle' : (
+        '& > :nth-child(2)' : (
           height: 100%,
           padding: 1rem 0,
         ),
-        '.bottom' : (
+        '& > :nth-child(3)' : (
           display: flex,
           justify-content: flex-end,
         )
@@ -1697,16 +1700,16 @@ $components-config: (
             )
           ),
         ),
-        '.top' : (
+        '& > :nth-child(1)' : (
           display: flex,
           padding: 0.25rem,
           justify-content: space-between,
         ),
-        '.middle' : (
+        '& > :nth-child(2)' : (
           height: 100%,
           padding: 0.25rem,
         ),
-        '.bottom' : (
+        '& > :nth-child(3)' : (
           display: flex,
           padding: 0.25rem,
         )
