@@ -95,8 +95,8 @@ $html-config: (
 
     code : (
 
-      margin-block: -.125rem,
-      padding: .125rem .375rem,
+      //margin-block: -.125rem,
+      //padding: .125rem .375rem,
 
       color: var(--color),
       background: var(--background),
@@ -294,8 +294,16 @@ $content-config: (
     pre: (
       font-family: var(global(--font-family-monospace)),
       margin-block: -.125rem,
-      padding: .125rem .375rem,
-      display: inline,
+      padding: .575rem .375rem,
+      margin: 0 0 15px 0,
+      line-height: 1.1,
+      display: block,
+      border-radius: 0.5rem,
+      _subclasses : (
+        code : (
+          background: none,
+        )
+      )
     ),
     figure: (
       margin: 0 0 15px 0,
@@ -370,7 +378,7 @@ $content-config: (
           border-top-color: #555
         )
       )
-    )
+    ),
   )
 );
 
