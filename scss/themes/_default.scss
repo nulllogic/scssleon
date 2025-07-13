@@ -650,23 +650,23 @@ $components-config: (
           outline: none,
           box-shadow: var(--focus)
         ),
-        '&:hover:not(.loading, [disabled], .btn-link)' : (
+        '&:hover:not(.loading, [disabled], .link, .blank)' : (
           color: var(--hover-color),
           background: var(--hover-background),
           border: var(--hover-border),
         ),
-        '&:active:not(.loading, [disabled], .btn-link)' : (
+        '&:active:not(.loading, [disabled], .link, .blank)' : (
           color: var(--active-color),
           background: var(--active-background),
           border: var(--active-border),
           box-shadow: var(--active-shadow),
         ),
 
-        '&.btn-link' : (
-          display: inline-grid,
-          place-items: center,
+        '&.link' : (
+          display: inline-flex,
+          align-items: center,
           background: transparent,
-          padding: 0,
+          padding: var(--padding),
           border: none,
           box-shadow: none,
           text-decoration: underline,
@@ -675,6 +675,15 @@ $components-config: (
               text-decoration: none,
             )
           )
+        ),
+
+        '&.blank' : (
+          display: inline-flex,
+          align-items: center,
+          padding: 0,
+          border: none,
+          box-shadow: none,
+          background: transparent,
         ),
 
         '&.loading' : (
@@ -836,7 +845,7 @@ $components-config: (
         light : (
           background: rgb(250, 250, 250),
           border : 1px solid rgb(219, 219, 219),
-          shadow: string.unquote('rgba(26, 26, 26, 0.07) 0px 1px 0px 0px')
+          shadow: string.unquote('0 1px 0 1px rgba(99, 99, 99, 0.05)')
         ),
         dark : (
           border: 1px solid #3d444d,
