@@ -1731,7 +1731,7 @@ $components-config: (
 
       _subclasses : (
 
-        '&:hover .tooltip' : (
+        '&.on-hover:hover .tooltip, .tooltip.show' : (
           display: block,
           opacity: 1,
           transform: translateY(5px),

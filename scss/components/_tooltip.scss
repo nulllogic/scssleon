@@ -12,4 +12,4 @@
 $config: nil !default;
 $theme: nil !default;
 
-@include mixins.generate-component('tooltip', 'tooltip', $config, $theme);
+@include mixins.generate-component('tooltip', 'has-tooltip', $config, $theme, (variable: (name : 'tooltip')));
