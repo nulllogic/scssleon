@@ -74,17 +74,17 @@ $html-config: (
     ol: (
       margin: 0,
       padding: 0,
-      list-style-type: none,
+      //list-style-type: none,
     ),
     ul: (
       margin: 0,
       padding: 0,
-      list-style-type: none,
+      //list-style-type: none,
     ),
     dl: (
       margin: 0,
       padding: 0,
-      list-style-type: none,
+      //list-style-type: none,
     ),
     img : (
       vertical-align: middle,
@@ -110,7 +110,7 @@ $html-config: (
           background : oklch(0.63 0.14 106.66 / 0.54),
           color: inherit,
         )
-      )
+      ),
     ),
 
     kbd: (
@@ -249,11 +249,27 @@ $content-config: (
     ol: (
       margin-bottom: 15px,
       line-height: clamp(1.25em, 4vw, 1.5em),
+      //list-style-type: attr(type),
+      margin-left: 1rem,
+      _subclasses : (
+        '& ol': (
+          //list-style-type: attr(type),
+          margin-bottom: 0.5rem,
+          margin-inline-start: 1rem,
+        )
+      )
     ),
     ul: (
       margin-bottom: 0.5rem,
       margin-inline-start: 1rem,
       line-height: clamp(1.25em, 4vw, 1.5em),
+      list-style-type: inherit,
+      _subclasses : (
+        '& ul': (
+          margin-bottom: 0.5rem,
+          margin-inline-start: 1rem,
+        )
+      )
     ),
     dl: (
       margin-bottom: 15px,
@@ -265,10 +281,6 @@ $content-config: (
     dd: (
       margin: 0 0 .5rem 0,
       padding: 0
-    ),
-    'ul li' : (
-      list-style-type: disc,
-      padding: 0 0 15px 0,
     ),
     b : (
       font-weight: bold
