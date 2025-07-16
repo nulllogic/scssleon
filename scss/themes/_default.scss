@@ -976,6 +976,8 @@ $components-config: (
 
           font-size: inherit,
           font-weight: inherit,
+          font-family: inherit,
+
           display: block,
 
           appearance: none,
@@ -984,6 +986,7 @@ $components-config: (
           padding: var(--padding),
           border-radius: var(--border-radius),
           border: var(--border),
+          caret-color: var(--caret-color),
 
           width: 100%,
 
@@ -1140,7 +1143,7 @@ $components-config: (
           appearance: none,
           outline : none,
 
-          transition: box-shadow .15s ease-in-out,
+          transition: string.unquote('box-shadow .15s ease-in-out'),
 
           _colors: (
             light : (
@@ -1200,10 +1203,12 @@ $components-config: (
                 light : (
                   background: oklch(0.985 0 89.876),
                   border: 1px solid rgb(219, 219, 219),
+                  focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
                 ),
                 dark : (
                   background: rgba(48, 56, 66, 0.85),
                   border: 1px solid rgba(74, 109, 71, 0.25),
+                  focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
                 )
               ),
 
