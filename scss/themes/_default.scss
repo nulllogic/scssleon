@@ -770,6 +770,19 @@ $components-config: (
 
       z-index: functions.get-config($config, 'z-index.dropdown'),
 
+      _colors: (
+        light : (
+          background: rgba(246, 246, 247, 1),
+          border: 1px solid rgb(219, 219, 219),
+          shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
+        ),
+        dark : (
+          background: rgb(18, 18, 24),
+          border: 1px solid rgba(48, 54, 61, 0.75),
+          shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
+        )
+      ),
+
       _subclasses : (
         '&.on-hover:hover' : (
             _subclasses : (
@@ -788,7 +801,7 @@ $components-config: (
             )
         ),
 
-        '& .dropdown' : (
+        '.dropdown' : (
 
           display: none,
           position: absolute,
@@ -822,19 +835,6 @@ $components-config: (
               left: 100%,
             )
           )
-        )
-      ),
-
-      _colors: (
-        light : (
-          background: rgba(246, 246, 247, 1),
-          border: 1px solid rgb(219, 219, 219),
-          shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
-        ),
-        dark : (
-          background: rgb(18, 18, 24),
-          border: 1px solid rgba(48, 54, 61, 0.75),
-          shadow: string.unquote('rgba(37, 41, 46, 0.04) 0px 6px 12px -3px, rgba(37, 41, 46, 0.12) 0px 6px 18px 0px'),
         )
       )
     ),
