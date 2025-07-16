@@ -19,19 +19,22 @@ $breakpoints: functions.get-config($config, 'breakpoints');
 $container-component: functions.get-theme($theme, 'components.container');
 
 // Container
-@each $name, $size in $breakpoints {
-  @include mixins.breakpoint($size, 'min') {
-    .container.#{$name} {
-      max-width: $size;
-      @include mixins.generate-properties(
-          'container',
-          $container-component,
-          $config
-      );
+.container {
+  @include mixins.generate-properties(
+      'container',
+      $container-component,
+      $config
+  );
+
+  @each $name, $size in $breakpoints {
+    @include mixins.breakpoint($size, 'min') {
+      &.#{$name} {
+        max-width: $size;
+      }
     }
   }
-}
 
+}
 /**
 ==[ Note ]==
 We are using mixin here, because @include is not working with @media query in SCSS | 07.12.2023
