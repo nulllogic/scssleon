@@ -788,7 +788,7 @@ $components-config: (
             )
         ),
 
-        '.dropdown' : (
+        '& .dropdown' : (
 
           display: none,
           position: absolute,
@@ -870,10 +870,6 @@ $components-config: (
     container : (
       margin: 0 auto,
       width: 100%,
-      _colors: (
-        light : (),
-        dark : ()
-      ),
     ),
 
     form : (
@@ -1268,7 +1264,7 @@ $components-config: (
       animation: loader-rotation 2s linear infinite,
 
       _subclasses : (
-        '.circle' : (
+        '& .circle' : (
           transform-origin: 50% 50%,
           stroke-width : 6,
           stroke-dasharray: 283,
@@ -1479,9 +1475,9 @@ $components-config: (
     megamenu : (
       position: relative,
       _subclasses : (
-        '.mega-link:hover' : (
+        '& .mega-link:hover' : (
           _subclasses : (
-            '.megamenu' : (
+            '& .megamenu' : (
               display: block,
 
               opacity: 1,
@@ -1496,7 +1492,7 @@ $components-config: (
             )
           )
         ),
-        '.megamenu' : (
+        '& .megamenu' : (
           --padding: 0.75rem,
 
           display: none,
@@ -1779,7 +1775,7 @@ $components-config: (
           )
         ),
 
-        '.tooltip' : (
+        '& .tooltip' : (
 
           --padding: 0.25rem 0.5rem,
 
