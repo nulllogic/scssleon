@@ -876,9 +876,11 @@ $components-config: (
 
       _colors: (
         light : (
+          caret-color: oklch(0.442 0.143 142.163),
           box-shadow-focus: 0 0 0 .25rem rgba(13, 110, 253, .25),
         ),
         dark : (
+          caret-color: oklch(0.442 0.143 142.163),
           box-shadow-focus: 0 0 0 .25rem rgba(13, 110, 253, .25),
         )
       ),
@@ -936,6 +938,7 @@ $components-config: (
           padding: var(--padding),
           border-radius: var(--border-radius),
           border: var(--border),
+          caret-color: var(--caret-color),
 
           width: 100%,
 
@@ -946,19 +949,22 @@ $components-config: (
               color: inherit,
               background: rgb(250, 250, 250),
               border: 1px solid rgb(219, 219, 219),
-              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             ),
             dark : (
               color: #fff,
               background: rgb(48, 56, 66),
               border: 1px solid rgba(240, 246, 252, .25),
-              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             )
           ),
 
           _subclasses : (
-            '&:focus-visible' : (
+            '&:focus-visible, &:focus' : (
               box-shadow: var(--focus-shadow),
+              border: var(--focus-border),
             )
           )
         ),
@@ -988,19 +994,22 @@ $components-config: (
               color: inherit,
               background: rgb(250, 250, 250),
               border: 1px solid rgb(219, 219, 219),
-              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             ),
             dark : (
               color: #fff,
               background: rgb(48, 56, 66),
               border: 1px solid rgba(240, 246, 252, .25),
-              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             )
           ),
 
           _subclasses : (
-            '&:focus-visible' : (
+            '&:focus-visible, &:focus' : (
               box-shadow: var(--focus-shadow),
+              border: var(--focus-border),
             )
           )
         ),
@@ -1030,19 +1039,22 @@ $components-config: (
               color: inherit,
               background: rgb(250, 250, 250),
               border: 1px solid rgb(219, 219, 219),
-              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             ),
             dark : (
               color: #fff,
               background: rgb(48, 56, 66),
               border: 1px solid rgba(240, 246, 252, .25),
-              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5)
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             )
           ),
 
           _subclasses : (
-            '&:focus-visible' : (
+            '&:focus-visible, &:focus' : (
               box-shadow: var(--focus-shadow),
+              border: var(--focus-border),
             )
           )
         ),
@@ -1070,17 +1082,22 @@ $components-config: (
               background: rgba(250, 250, 250, .75),
               border: 1px solid rgb(219, 219, 219),
               //shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px ')
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             ),
             dark : (
               background: rgba(48, 56, 66, .85),
               border: 1px solid rgb(74, 109, 71, .25),
               //shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px ')
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             )
           ),
 
           _subclasses : (
-            '&:focus-visible' : (
-              box-shadow: var(--box-shadow-focus),
+            '&:focus-visible, &:focus' : (
+              box-shadow: var(--focus-shadow),
+              border: var(--focus-border),
             ),
             '&:checked' : (
               _colors: (
@@ -1121,6 +1138,7 @@ $components-config: (
           width: 16px,
           height: 16px,
           appearance: none,
+          outline : none,
 
           transition: box-shadow .15s ease-in-out,
 
@@ -1129,17 +1147,22 @@ $components-config: (
               background: rgba(250, 250, 250, .75),
               border: 1px solid rgb(219, 219, 219),
               //shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px ')
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             ),
             dark : (
               background: rgba(48, 56, 66, .85),
               border: 1px solid rgb(74, 109, 71, .25),
               //shadow: string.unquote('rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px ')
+              focus-shadow: 0 0 0 0.2rem rgba(98, 175, 97, .5),
+              focus-border: 1px solid oklch(0.69 0.18 142.52),
             )
           ),
 
           _subclasses : (
-            '&:focus-visible' : (
-              box-shadow: var(--box-shadow-focus),
+            '&:focus-visible, &:focus' : (
+              box-shadow: var(--focus-shadow),
+              border: var(--focus-border),
             ),
             '&:checked' : (
               _colors: (
