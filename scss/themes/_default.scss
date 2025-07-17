@@ -1375,6 +1375,9 @@ $components-config: (
 
     overlay : (
 
+      --align-items : center,
+      --justify-content : center,
+
       background : var(--background),
 
       position: absolute,
@@ -1387,8 +1390,9 @@ $components-config: (
       height: 100%,
 
       display: none,
-      align-items: center,
-      justify-content: center,
+
+      align-items: var(--align-items),
+      justify-content: var(--justify-content),
 
       z-index: functions.get-config($config, 'z-index.overlay'),
 
@@ -1405,8 +1409,8 @@ $components-config: (
           display: flex
         ),
         '&.blurred' : (
-          -webkit-backdrop-filter: blur(10px),
-          backdrop-filter: blur(10px),
+          -webkit-backdrop-filter: blur(5px),
+          backdrop-filter: blur(5px),
         )
       )
     ),
