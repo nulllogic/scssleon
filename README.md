@@ -15,10 +15,54 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 – [ <a href="http://nulllogic.github.io/scssleon-docs" target="_self">Documentation</a> ] — [ <a href="https://github.com/nulllogic/scssleon/issues" target="_blank">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/scssleon" target="_blank">StackOverflow</a> ] –
 </p>
 
+<hr />
+
+## Table of Contents
+- [Why SCSSLEON?](#why-scssleon)
+- [Features](#features)
+- [Quickstart](#quickstart)
+- [Usage Examples](#usage-examples)
+- [Showcase](#showcase)
+- [Contributing](#contributing)
+- [Get Involved](#get-involved)
+- [License](#license)
+
+<hr />
+
 > [!IMPORTANT]
 > **Prerequisites**
 > - Basic knowledge of [SCSS](https://sass-lang.com).
 > - [NodeJS](https://nodejs.org) and [NPM](https://nodejs.org) installed on your system. 
+
+<hr />
+
+## ┌ ✨Why SCSSLEON ┐ 
+
+SCSSLEON is designed for developers who want a lightweight, modular, and highly customizable SCSS framework. Unlike other frameworks, SCSSLEON:
+
+- Offers a minimal footprint for faster load times.
+- Provides intuitive mixins and utilities for rapid development.
+- Supports easy theming with customizable variables.
+- Color scheme support – easily add dark and light theme support
+- Responsive support with zero efforts
+- Easy to learn, easy to use
+- Zero dependencies, except SASS
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<hr />
+
+## ┌ ✨Features ✨ ┐
+
+- **Responsive Grid System**: Build flexible layouts with a customizable 12-column grid.
+- **Theming Support**: Easily customize colors, fonts, and spacing with SCSS variables.
+- **Utility Classes**: Includes helpers for spacing, typography, and visibility.
+- **Lightweight**: Minimal CSS output for faster performance.
+- **Modern CSS**: Built-in support for Flexbox, CSS Grid, and custom properties.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<hr />
 
 ## ┌ 🧭 Getting Started ┐
 
@@ -152,6 +196,7 @@ npm run sass-dev
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<hr />
 
 ## ┌ 📚 Documentation ┐
 
@@ -163,14 +208,9 @@ SCSSleon's documentation is built with [Astro](https://astro.build/) and publicl
 
 Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/).
 
-
-### ─ Running documentation locally
-
-1. From the root `/` directory, run `make docs` in the command line.
-2. Open `http://localhost:8000/scssleon/` in your browser.
-3. Enjoy the documentation locally
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<hr />
 
 ## ┌ Contributing ┐
 
@@ -182,6 +222,8 @@ Documentation search is powered by [Algolia's DocSearch](https://community.algol
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<hr />
+
 ## ┌ Thanks ┐
 
 <p align="left">
@@ -192,6 +234,8 @@ Documentation search is powered by [Algolia's DocSearch](https://community.algol
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<hr />
 
 ## ┌ 📜 License ┐
 [MIT license](LICENSE)
