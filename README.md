@@ -16,17 +16,15 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 </p>
 
 > [!IMPORTANT]
-> **Prerequisites**
+> ### Prerequisites
 > - Node.js and npm installed on your system.
 > - Basic knowledge of SCSS and Node.js.
 
 ## ┌ 🧭 Quickstart ┐
 
-### Install
-
 <details>
-    <summary> Method #1 [ 🛖🔥🦴 ] primitive </summary>
-
+    <summary> Method #1 - NodeJS + NPM basic setup [ 🛖🔥🦴 primitive ] </summary>
+<hr />
 1. Install packages – run the following command in your project directory to install SCSSLEON + SASS:
 
 ```bash
