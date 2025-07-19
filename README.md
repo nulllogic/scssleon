@@ -18,13 +18,14 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 <hr />
 
 ## Table of Contents
-- [Why SCSSLEON?](#why-scssleon)
-- [Features](#features)
-- [Quickstart](#quickstart)
+- [Why SCSSLEON?](#user-content--why-scssleon-)
+- [Features](user-content--features-)
+- [Getting started](#user-content---getting-started-)
 - [Usage Examples](#usage-examples)
 - [Showcase](#showcase)
+- [Documentation](#--documentation-)
 - [Contributing](#contributing)
-- [Get Involved](#get-involved)
+- [Thanks](#thanks)
 - [License](#license)
 
 <hr />
@@ -36,7 +37,7 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 
 <hr />
 
-## ┌ ✨Why SCSSLEON ┐ 
+## ┌ 🤔 Why SCSSLEON ┐ 
 
 SCSSLEON is designed for developers who want a lightweight, modular, and highly customizable SCSS framework. Unlike other frameworks, SCSSLEON:
 
@@ -52,7 +53,7 @@ SCSSLEON is designed for developers who want a lightweight, modular, and highly 
 
 <hr />
 
-## ┌ ✨Features ✨ ┐
+## ┌ ✨ Features ┐
 
 - **Responsive Grid System**: Build flexible layouts with a customizable 12-column grid.
 - **Theming Support**: Easily customize colors, fonts, and spacing with SCSS variables.
@@ -193,6 +194,18 @@ npm run sass-dev
 <img alt="SCSSleon framework" src="./.imgs/method_1.jpg">
 
 </details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<hr />
+
+## ┌ 👓 Usage Examples ┐
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<hr />
+
+## ┌ 📺 Showcase ┐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
