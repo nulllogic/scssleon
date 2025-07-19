@@ -15,17 +15,17 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 – [ <a href="http://nulllogic.github.io/scssleon-docs" target="_self">Documentation</a> ] — [ <a href="https://github.com/nulllogic/scssleon/issues" target="_blank">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/scssleon" target="_blank">StackOverflow</a> ] –
 </p>
 
+> [!IMPORTANT]
+> **Prerequisites**
+> - Node.js and npm installed on your system.
+> - Basic knowledge of SCSS and Node.js.
+
 ## ┌ 🧭 Quickstart ┐
-
-### Prerequisites
-
-- Node.js and npm installed on your system.
-- Basic knowledge of SCSS and Node.js.
 
 ### Install
 
 <details>
-    <summary> Method #1 ( 🛖🔥🦴primitive ) </summary>
+    <summary> Method #1 [ 🛖🔥🦴 ] primitive </summary>
 
 1. Install packages – run the following command in your project directory to install SCSSLEON + SASS:
 
@@ -45,6 +45,28 @@ npm init -y
 "scripts": {
   "sass-dev": "sass --watch --update --style=expanded styles:assets/css --load-path=node_modules",
   "sass-prod": "sass --no-source-map --style=compressed styles:assets/css --load-path=node_modules"
+}
+```
+
+It will look like this : 
+```json
+{
+  "dependencies": {
+    "@nulllogic/scssleon": "^1.0.5",
+    "sass": "^1.89.2"
+  },
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded styles:assets/css --load-path=node_modules",
+    "sass-prod": "sass --no-source-map --style=compressed styles:assets/css --load-path=node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
 ```
 
@@ -115,20 +137,15 @@ $theme: theme.$theme;
     $config: app.$config,
     $theme: app.$theme
 );
-
-// ↓ Container
-@use "@nulllogic/scssleon/scss/container" with (
-    $config: app.$config,
-    $theme: app.$theme
-);
 ```
 
 7. Run node command at root `/` of your project to generate CSS code to `/assets/css`
+
 ```bash
 npm run sass-dev
 ```
 
-8. Profit – you now have output at `/assets/css` directory
+8. Profit – you have output at `/assets/css` directory now 🙌
 
 </details>
 
