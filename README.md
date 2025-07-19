@@ -22,9 +22,12 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 - Node.js and npm installed on your system.
 - Basic knowledge of SCSS and Node.js.
 
+### Install
+
 <details>
-    <summary> Installation ( 🛖🔥🦴primitive ) </summary>
-    1. Install the package. Run the following command in your project directory to install SCSSLEON:
+    <summary> Method #1 ( 🛖🔥🦴primitive ) </summary>
+
+1. Install packages – run the following command in your project directory to install SCSSLEON + SASS:
 
 ```bash
 npm i @nulllogic/scssleon sass
@@ -40,19 +43,19 @@ npm init -y
 
 ```json
 "scripts": {
-  "sass-dev": "sass --watch --update --style=expanded styles:assets/css",
-  "sass-prod": "sass --no-source-map --style=compressed styles:assets/css"
+  "sass-dev": "sass --watch --update --style=expanded styles:assets/css --load-path=node_modules",
+  "sass-prod": "sass --no-source-map --style=compressed styles:assets/css --load-path=node_modules"
 }
 ```
 
-5. Create `app.scss` inside your project in `/style` directory
+5. Create `app.scss` inside your project in `/styles` directory
 
 ```scss
 @use 'sass:map';
 @use "sass:string";
 
-@forward "./scss/mixins";
-@forward "./scss/functions";
+@forward "@nulllogic/scssleon/scss/mixins";
+@forward "@nulllogic/scssleon/scss/functions";
 
 @use "@nulllogic/scssleon/scss/config.scss" as config with (
   // This is main config, that you can tweak
@@ -88,7 +91,7 @@ $config: config.$config;
 $theme: theme.$theme;
 ```
 
-6. Create `base.scss` inside your project in `/style/components` directory
+6. Create `base.scss` inside your project in `/styles/components` directory
 ```scss
 // Loading your SCSS module with pre-defined config and theme
 // ↓ Config
@@ -121,14 +124,15 @@ $theme: theme.$theme;
 ```
 
 7. Run node command at root `/` of your project to generate CSS code to `/assets/css`
-```sh
+```bash
 npm run sass-dev
 ```
+
+8. Profit – you now have output at `/assets/css` directory
 
 </details>
 
 
-8. Profit – you now have output at `/assets/css` directory
 ## ┌ 📚 Documentation ┐
 
 <p align="left">
