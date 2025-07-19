@@ -16,15 +16,16 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 </p>
 
 > [!IMPORTANT]
-> ### Prerequisites
-> - Node.js and npm installed on your system.
-> - Basic knowledge of SCSS and Node.js.
+> **Prerequisites**
+> - Basic knowledge of [SCSS](https://sass-lang.com).
+> - [NodeJS](https://nodejs.org) and [NPM](https://nodejs.org) installed on your system. 
 
-## ┌ 🧭 Quickstart ┐
+## ┌ 🧭 Getting Started ┐
 
 <details>
     <summary> Method #1 - NodeJS + NPM basic setup [ 🛖🔥🦴 primitive ] </summary>
-<hr />
+<br />
+
 1. Install packages – run the following command in your project directory to install SCSSLEON + SASS:
 
 ```bash
@@ -37,7 +38,7 @@ npm i @nulllogic/scssleon sass
 npm init -y
 ```
 
-4. Update `package.json` file. Add following strings
+3. Update `package.json` file. Add following strings
 
 ```json
 "scripts": {
@@ -68,7 +69,7 @@ It will look like this :
 }
 ```
 
-5. Create `app.scss` inside your project in `/styles` directory
+4. Create `app.scss` inside your project in `/styles` directory
 
 ```scss
 @use 'sass:map';
@@ -111,7 +112,7 @@ $config: config.$config;
 $theme: theme.$theme;
 ```
 
-6. Create `base.scss` inside your project in `/styles/components` directory
+5. Create `base.scss` inside your project in `/styles/components` directory
 ```scss
 // Loading your SCSS module with pre-defined config and theme
 // ↓ Config
@@ -137,17 +138,19 @@ $theme: theme.$theme;
 );
 ```
 
-7. Run node command at root `/` of your project to generate CSS code to `/assets/css`
+6. Run node command at root `/` of your project to generate CSS code to `/assets/css`
 
 ```bash
 npm run sass-dev
 ```
 
-8. Profit – you have output at `/assets/css` directory now 🙌
+7. Profit – you have output at `/assets/css` directory now 🙌
 
 <img alt="SCSSleon framework" src="./.imgs/method_1.jpg">
 
 </details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## ┌ 📚 Documentation ┐
@@ -160,11 +163,14 @@ SCSSleon's documentation is built with [Astro](https://astro.build/) and publicl
 
 Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/).
 
+
 ### ─ Running documentation locally
 
 1. From the root `/` directory, run `make docs` in the command line.
 2. Open `http://localhost:8000/scssleon/` in your browser.
 3. Enjoy the documentation locally
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ┌ Contributing ┐
 
@@ -174,6 +180,8 @@ Documentation search is powered by [Algolia's DocSearch](https://community.algol
 
 > For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## ┌ Thanks ┐
 
 <p align="left">
@@ -182,6 +190,8 @@ Documentation search is powered by [Algolia's DocSearch](https://community.algol
 
 <a href="https://www.browserstack.com"><img src="./.imgs/browserstack.jpg" alt="browserstack"></a><br />
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ┌ 📜 License ┐
 [MIT license](LICENSE)
