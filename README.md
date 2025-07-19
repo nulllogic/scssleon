@@ -1,19 +1,19 @@
 <p align="left">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="./.imgs/header.jpg">
-      <img alt="XII/Grid CSS framework" src="./.imgs/header.jpg">
+      <img alt="SCSSleon framework" src="./.imgs/header.jpg">
     </picture>
 </p>
-Welcome to XII/Grid CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
+Welcome to SCSSleon CSS framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
 
 <hr />
 
 <p align="center">
-– [ <a href="https://nulllogic.github.io/xiigrid/">Demo</a> ] — [ <a href="http://nulllogic.github.io/xiigrid/docs">Documentation</a> ] — [ <a href="https://github.com/nulllogic/xiigrid/issues">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/xiigrid">StackOverflow</a> ] –
+– [ <a href="http://nulllogic.github.io/scssleon-docs" target="_self">Documentation</a> ] — [ <a href="https://github.com/nulllogic/scssleon/issues" target="_blank">Bugs/Issues</a> ] — [ <a href="https://stackoverflow.com/questions/tagged/scssleon" target="_blank">StackOverflow</a> ] –
 </p>
 
 <p align="center">
-  <a href="https://nulllogic.net/"><img src="./.imgs/logo.png" alt="NullLogic logo"></a>
+  <a href="https://nulllogic.net/" target="_blank"><img src="./.imgs/logo.png" alt="NullLogic" aria-title="NullLogic"></a>
 </p>
 
 ## ┌ 🧭 Quickstart ┐
@@ -23,28 +23,23 @@ Welcome to XII/Grid CSS framework ! It's the most advanced responsive front-end 
 ## ┌ 📚 Documentation ┐
 
 <p align="left">
-  <img src="./.imgs/documentation.jpg" width="100%" alt="xiigrid documentation">
+  <img src="./.imgs/documentation.jpg" width="100%" alt="SCSSleon documentation">
 </p>
 
-xiigrid's documentation, included in this repo in the root directory, is built with [Hugo](https://gohugo.io/) and publicly hosted on GitHub Pages at <https://nulllogic.github.io/xiigrid//>. The docs may also be run locally.
+SCSSleon's documentation is built with [Astro](https://astro.build/) and publicly hosted on GitHub Pages at <https://nulllogic.github.io/scssleon-docs/>. The docs may also be run locally.
 
-Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/). Working on our search? Be sure to set `debug: true` in `site/assets/js/search.js`.
+Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/).
 
 ### ─ Running documentation locally
 
 1. From the root `/` directory, run `make docs` in the command line.
-2. Open `http://localhost:8000/xiigrid/` in your browser.
+2. Open `http://localhost:8000/scssleon/` in your browser.
 3. Enjoy the documentation locally
-
-
-
-Learn more about using Hugo by reading its [documentation](https://gohugo.io/documentation/).
-
 
 ## ┌ Contributing ┐
 
 <p align="left">
-  <img src="./.imgs/contributing.jpg" width="100%" alt="xiigrid contributing">
+  <img src="./.imgs/contributing.jpg" width="100%" alt="SCSSleon contributing">
 </p>
 
 > For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
@@ -52,18 +47,13 @@ Learn more about using Hugo by reading its [documentation](https://gohugo.io/doc
 ## ┌ Thanks ┐
 
 <p align="left">
-  <img src="./.imgs/thankyou.jpg" width="100%" alt="xiigrid sponsors">
+  <img src="./.imgs/thankyou.jpg" width="100%" alt="SCSSleon sponsors">
 </p>
 
 <a href="https://www.browserstack.com"><img src="./.imgs/browserstack.jpg" alt="browserstack"></a><br />
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
 ## ┌ 📜 License ┐
-
-<p align="left">
-  <img src="./.imgs/license.jpg" width="100%" alt="xiigrid licence">
-</p>
-
 [MIT license](LICENSE)
 
 <!--
@@ -73,4 +63,3 @@ graph LR
   Backend -->|Database| PostgreSQL
   Backend -->|Payment| PaymentService
 ```
--->
