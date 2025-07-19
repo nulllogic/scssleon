@@ -147,6 +147,8 @@ npm run sass-dev
 
 8. Profit – you have output at `/assets/css` directory now 🙌
 
+<img alt="SCSSleon framework" src="./.imgs/method_1.jpg">
+
 </details>
 
 
