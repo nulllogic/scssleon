@@ -545,21 +545,20 @@ $components-config: (
 
       padding: var(--padding),
       border-radius: var(--border-radius),
-      color: var(--color),
       background: var(--background),
       box-shadow: var(--box-shadow),
       border: var(--border),
 
       _colors: (
         light : (
-          color: #ccc,
-          box-shadow: none
+          box-shadow: none,
+          border: 1px solid rgba(33, 33, 33, 0.15),
+          background: rgba(247, 247, 247, 0.85),
         ),
         dark : (
-          color: #ccc,
-          background: rgb(40, 50, 60),
+          background: rgba(40, 50, 60, 0.85),
           box-shadow: none,
-          border: 1px solid #ccc,
+          border: 1px solid rgba(255, 255, 255, 0.15),
         )
       )
     ),
