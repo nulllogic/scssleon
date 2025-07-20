@@ -250,5 +250,10 @@ Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infras
 <hr />
 
 <p align="center">
-  <a href="https://nulllogic.net/" target="_blank"><img src="./.imgs/logo.png" alt="NullLogic" aria-title="NullLogic"></a>
+  <a href="https://nulllogic.net/" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.imgs/logo_nulllogic_dark.png">
+      <img alt="SCSSleon framework" src="./.imgs/logo_nulllogic.png">
+    </picture>
+  </a>
 </p>
