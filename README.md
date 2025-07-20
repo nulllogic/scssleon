@@ -31,10 +31,9 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 - [Contributing](#user-content--contributing-)
 - [Thanks](#user-content--thanks-)
 - [License](#user-content---license-)
-
+<br />
 </details>
 
-<br />
 <hr />
 
 
