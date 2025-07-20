@@ -219,9 +219,10 @@ npm run sass-dev
 
 ## ┌ 📚 Documentation ┐
 
-SCSSleon's documentation is built with [Astro](https://astro.build/) and publicly hosted on GitHub Pages at <https://nulllogic.github.io/scssleon-docs/>. The docs may also be run locally.
+SCSSLeon documentation is available here [http://nulllogic.github.io/scssleon-docs](http://nulllogic.github.io/scssleon-docs)
 
-Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/).
+Documentation is built with [Astro](https://astro.build/) and publicly hosted on GitHub Pages [here](http://nulllogic.github.io/scssleon-docs).
+Search is powered by [Algolia](https://community.algolia.com/docsearch/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
