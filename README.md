@@ -237,7 +237,13 @@ For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
 
 ## ┌ Thanks ┐
 
-<a href="https://www.browserstack.com"><img src="./.imgs/browserstack.jpg" alt="browserstack"></a><br />
+<a href="https://www.browserstack.com" title="BrowserStack" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.imgs/bstack-logo-global.svg">
+      <img alt="SCSSleon framework" src="./.imgs/bstack-logo-global-dark.svg">
+    </picture>
+</a><br />
+
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
