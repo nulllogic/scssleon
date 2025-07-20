@@ -21,15 +21,15 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 <details>
     <summary>↪ ≡─〰─〰─ Show TOC ─〰─〰─≡</summary>
 
-- [Why SCSSLEON?](#user-content---why-scssleon-)
+- [Why SCSSLEON?](#user-content---why-scssleon--)
 - [Features](#user-content---features-)
 - [Getting started](#user-content---getting-started-)
 - [Usage Examples](#user-content---usage-examples-)
-- [Showcase](#showcase)
-- [Documentation](#--documentation-)
-- [Contributing](#contributing)
-- [Thanks](#thanks)
-- [License](#license)
+- [Showcase](#user-content---showcase-)
+- [Documentation](#user-content---documentation-)
+- [Contributing](#user-content--contributing-)
+- [Thanks](#user-content--thanks-)
+- [License](#user-content---license-)
 
 </details>
 
