@@ -18,6 +18,9 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 <hr />
 
 ## Table of Contents
+<details>
+    <summary>↪ ≡─〰─〰─ Show TOC ─〰─〰─≡</summary>
+
 - [Why SCSSLEON?](#user-content---why-scssleon-)
 - [Features](#user-content---features-)
 - [Getting started](#user-content---getting-started-)
@@ -28,16 +31,19 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 - [Thanks](#thanks)
 - [License](#license)
 
-<hr />
-
-> [!IMPORTANT]
-> **Prerequisites**
-> - Basic knowledge of [SCSS](https://sass-lang.com).
-> - [NodeJS](https://nodejs.org) and [NPM](https://nodejs.org) installed on your system. 
+</details>
 
 <hr />
 
-## ┌ 🤔 Why SCSSLEON ┐ 
+
+### ⓘ Prerequisites
+- Knowledge of [SCSS](https://sass-lang.com).
+- [🐳 Docker](https://www.docker.com)
+- [💻 Node](https://nodejs.org) + [📦 NPM](https://nodejs.org)
+
+<hr />
+
+## ┌ 🤔 Why SCSSLEON ? ┐ 
 
 SCSSLEON is designed for developers who want a lightweight, modular, and highly customizable SCSS framework. Unlike other frameworks, SCSSLEON:
 
