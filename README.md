@@ -219,10 +219,6 @@ npm run sass-dev
 
 ## ┌ 📚 Documentation ┐
 
-<p align="left">
-  <img src="./.imgs/documentation.jpg" width="100%" alt="SCSSleon documentation">
-</p>
-
 SCSSleon's documentation is built with [Astro](https://astro.build/) and publicly hosted on GitHub Pages at <https://nulllogic.github.io/scssleon-docs/>. The docs may also be run locally.
 
 Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/).
@@ -233,21 +229,13 @@ Documentation search is powered by [Algolia's DocSearch](https://community.algol
 
 ## ┌ Contributing ┐
 
-<p align="left">
-  <img src="./.imgs/contributing.jpg" width="100%" alt="SCSSleon contributing">
-</p>
-
-> For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
+For contributing, please view the [CONTRIBUTING](CONTRIBUTING.md).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <hr />
 
 ## ┌ Thanks ┐
-
-<p align="left">
-  <img src="./.imgs/thankyou.jpg" width="100%" alt="SCSSleon sponsors">
-</p>
 
 <a href="https://www.browserstack.com"><img src="./.imgs/browserstack.jpg" alt="browserstack"></a><br />
 Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers!
