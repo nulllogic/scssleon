@@ -1,6 +1,7 @@
 /* - ૮₍ ˃ ⤙ ˂ ₎ა – root  */
-@use "sass:string";
-@use "./mixins" as mixins;
+@use 'sass:string';
+
+@use './mixins' as mixins;
 @use "./functions" as functions;
 
 $config: () !default;
@@ -10,16 +11,14 @@ $prefix: functions.get-config($config, "prefix");
 
 $is-smooth-scroll-enabled: functions.get-config(
   $config,
-  "enable.smooth-scroll"
+  'enable.smooth-scroll'
 );
-
-$root-variables: functions.get-theme($theme, "root.variables");
 
 :root {
   /* 🌱𖣂🫚🌿 */
   @include mixins.generate-properties(
-    "root",
-    functions.get-theme($theme, "root"),
+    'root',
+    functions.get-theme($theme, 'root'),
     $config,
   );
 
