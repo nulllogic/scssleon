@@ -20,7 +20,7 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 ## Table of Contents
 <details>
     <summary>↪ ≡─〰─〰─ Show TOC ─〰─〰─≡</summary>
-
+<br />
 
 - [Why SCSSLEON?](#user-content---why-scssleon--)
 - [Features](#user-content---features-)
