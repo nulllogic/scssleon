@@ -204,14 +204,3 @@ $theme: theme.$theme;
   $config: $config,
   $theme: $theme
 );
-
-// ↓ Helpers
-@use 'helpers/clearfix';
-@use 'helpers/screen_reader';
-@use 'helpers/text_truncate';
-
-// ↓ Utilities
-@use 'utilities/api' with (
-  $config: $config,
-  $theme: $theme
-);

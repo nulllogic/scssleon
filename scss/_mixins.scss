@@ -1,21 +1,7 @@
 // ↓ Helpers
 @forward "mixins/breakpoints";
-@forward "mixins/clearfix";
-
-@forward "mixins/box-shadow";
-@forward "mixins/border-radius";
-@forward "mixins/transition";
-@forward "mixins/gradients";
 
 // ↓ Generators
 @forward "mixins/generators/color-sheme";
 @forward "mixins/generators/components";
 @forward "mixins/generators/properties";
-
-// ↓ Utilities
-@forward "mixins/utilities";
-
-// ↓ Components
-@forward "mixins/forms";
-
-// ↓ Layout
