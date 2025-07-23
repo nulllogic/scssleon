@@ -9,10 +9,7 @@
 
 @mixin generate-component($component, $class, $config, $theme, $options : ()) {
   $theme-component: '';
-
   $color_scheme: functions.get-config($config, 'color-scheme');
-  $is_wrapper_enabled: functions.get-config($config, 'enable.wrapper');
-  $wrapper_class: functions.get-config($config, 'wrapper');
 
   // Checking, if the component was previously defined inside theme's components
   @if (meta.type-of($component) == 'string') {
@@ -28,40 +25,18 @@
   @each $scheme in string.split(functions.get-config($config, 'color-scheme'), ' ') {
 
     @if $scheme == 'light' {
-      @if ($is_wrapper_enabled) {
-        #{$wrapper_class} {
-          .#{$class} {
-            @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
-              scheme: $scheme,
-            ), $options));
-          }
-        }
-      } @else {
-        .#{$class} {
-          @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
-            scheme: $scheme,
-          ), $options));
-        }
+      .#{$class} {
+        @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
+          scheme: $scheme,
+        ), $options));
       }
     }
 
     @if $scheme == 'dark' {
-      @if ($is_wrapper_enabled) {
-        #{$wrapper_class}[data-theme="#{$scheme}"] {
-          .#{$class}:where([data-theme="#{$scheme}"], [data-theme="#{$scheme}"] *) {
-            @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
-              scheme: $scheme,
-            ), $options));
-          }
-        }
-
-      } @else {
-        .#{$class}:where([data-theme="#{$scheme}"], [data-theme="#{$scheme}"] *) {
-          @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
-            scheme: $scheme,
-          ), $options));
-        }
-
+      .#{$class}:where([data-theme="#{$scheme}"], [data-theme="#{$scheme}"] *) {
+        @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
+          scheme: $scheme,
+        ), $options));
       }
     }
   }
@@ -72,7 +47,7 @@
   // Get components
   @each $component in $components {
     // Component options param check
-    @if(list.length($component) > 2) {
+    @if (list.length($component) > 2) {
       @include generate-component(
           list.nth($component, 1),
           list.nth($component, 2),

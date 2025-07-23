@@ -4,7 +4,6 @@
 @use "sass:list";
 
 @use "../../functions" as functions;
-@use "../../mixins/generators/color-sheme" as mixin;
 
 @mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
 
