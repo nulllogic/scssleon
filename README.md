@@ -1,6 +1,6 @@
 <p align="left">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./.imgs/header.jpg">
+      <source media="(prefers-color-scheme: dark)" srcset="./.imgs/header_dark.jpg">
       <img alt="SCSSleon framework" src="./.imgs/header.jpg">
     </picture>
 </p>
@@ -19,7 +19,7 @@ Welcome to SCSSLEON framework ! It's the most advanced responsive front-end fram
 
 ## Table of Contents
 <details>
-    <summary>↪ ≡─〰─〰─ Show TOC ─〰─〰─≡</summary>
+    <summary>↪ ≡˚ ✧ ━━━━⊱TOC⊰━━━━ ✧ ₊˚≡</summary>
 <br />
 
 - [Why SCSSLEON?](#user-content---why-scssleon--)
