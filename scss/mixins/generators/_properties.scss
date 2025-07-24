@@ -88,13 +88,9 @@
   $prefix: functions.get-config($config, 'prefix');
 
   @each $color, $color-properties in $value {
-    @each $color-property, $color-value in $color-properties {
-      @if($color != 'dark') {
+    @if ($color == $requested_color) {
+      @each $color-property, $color-value in $color-properties {
         @include generate-css-properties($tag, $color-property, $color-value, $config, $options);
-      } @else {
-        &:where([data-theme="dark"], [data-theme="dark"] *) {
-          @include generate-css-properties($tag, $color-property, $color-value, $config, $options);
-        }
       }
     }
   }
@@ -136,8 +132,8 @@
   @each $at-rule, $properties in $value {
     // Keep @ at the beginning
     @#{functions.replace($at-rule, '@', '')} {
-      @include generate-properties($tag, $properties, $config, $options);
-    }
+    @include generate-properties($tag, $properties, $config, $options);
+  }
   }
 }
 
@@ -164,43 +160,55 @@
   $prefix: functions.get-config($config, 'prefix');
   $is_scheme_dark: functions.get-config($options, 'scheme') != nil and functions.get-config($options, 'scheme') == 'dark';
 
-  @each $property, $value in $properties {
-    // Variables
-    // Looking for "--" symbols in the beginning of the property
-    // Example: --flex-direction : row
-    @if (
-      meta.type-of($property) == 'string' and string.index($property, "--") == 1
-    ) {
-      @include generate-css-properties($tag, $property, $value, $config, $options);
-    }
+  @if (not $is_scheme_dark) {
+    @each $property, $value in $properties {
+      // Variables
+      // Looking for "--" symbols in the beginning of the property
+      // Example: --flex-direction : row
+      @if (
+        meta.type-of($property) == 'string' and string.index($property, "--") == 1
+      ) {
+        @include generate-css-properties($tag, $property, $value, $config, $options);
+      }
 
-      // Colors
-    @else if ($property == '_colors') {
-      @include generate-colors($tag, $value, $config, $options, 'light');
-    }
+        // Colors
+      @else if ($property == '_colors') {
+        @include generate-colors($tag, $value, $config, $options, 'light');
+      }
 
-      // Responsive
-    @else if ($property == '_responsive') {
-      @include generate-responsive($tag, $value, $config);
-    }
+        // Responsive
+      @else if ($property == '_responsive') {
+        @include generate-responsive($tag, $value, $config);
+      }
 
-      // Sub classes
-    @else if ($property == "_subclasses") {
-      @each $class, $class_properties in $value {
-        @include generate-subclasses($tag, $class, $class_properties, $config, $options);
+        // Sub classes
+      @else if ($property == "_subclasses") {
+        @each $class, $class_properties in $value {
+          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
+        }
+      }
+
+        // At-rules
+      @else if ($property == '_atrule') {
+        @include generate-atrule($tag, $value, $config, $options);
+      }
+
+        // Animations
+      @else if ($property == '_animations') {
+        @include generate-animation($tag, $value, $config, $options);
+      } @else {
+        @include generate-css-variables($tag, $property, $value, $config, $options);
       }
     }
-
-      // At-rules
-    @else if ($property == '_atrule') {
-      @include generate-atrule($tag, $value, $config, $options);
-    }
-
-      // Animations
-    @else if ($property == '_animations') {
-      @include generate-animation($tag, $value, $config, $options);
-    } @else {
-      @include generate-css-variables($tag, $property, $value, $config, $options);
+  } @else {
+    @each $property, $value in $properties {
+      @if ($property == '_colors') {
+        @include generate-colors($tag, $value, $config, $options, 'dark');
+      } @else if ($property == '_subclasses') {
+        @each $class, $class_properties in $value {
+          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
+        }
+      }
     }
   }
 }

@@ -22,8 +22,23 @@
     $theme-component: $component;
   }
 
-  .#{$class} {
-    @include properties.generate-properties($class, $theme-component, $config, $options);
+  @each $scheme in string.split(functions.get-config($config, 'color-scheme'), ' ') {
+
+    @if $scheme == 'light' {
+      .#{$class} {
+        @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
+          scheme: $scheme,
+        ), $options));
+      }
+    }
+
+    @if $scheme == 'dark' {
+      .#{$class}:where([data-theme="#{$scheme}"], [data-theme="#{$scheme}"] *) {
+        @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
+          scheme: $scheme,
+        ), $options));
+      }
+    }
   }
 
 }
