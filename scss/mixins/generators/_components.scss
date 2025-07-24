@@ -22,24 +22,10 @@
     $theme-component: $component;
   }
 
-  @each $scheme in string.split(functions.get-config($config, 'color-scheme'), ' ') {
-
-    @if $scheme == 'light' {
-      .#{$class} {
-        @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
-          scheme: $scheme,
-        ), $options));
-      }
-    }
-
-    @if $scheme == 'dark' {
-      .#{$class}:where([data-theme="#{$scheme}"], [data-theme="#{$scheme}"] *) {
-        @include properties.generate-properties($class, $theme-component, $config, map.deep-merge((
-          scheme: $scheme,
-        ), $options));
-      }
-    }
+  .#{$class} {
+    @include properties.generate-properties($class, $theme-component, $config, $options);
   }
+
 }
 
 @mixin generate-components($components, $config, $theme) {
@@ -64,8 +50,4 @@
       )
     }
   }
-}
-
-@mixin get-structure($component) {
-  @debug $component;
 }

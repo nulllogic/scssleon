@@ -41,12 +41,5 @@ html[data-theme="light"] {
       }
     }
 
-    @if $scheme == 'dark' {
-      [data-theme="#{$scheme}"] #{$tag} {
-        @include mixins.generate-properties(#{$tag}, $properties, $config, (
-          scheme: $scheme,
-        ));
-      }
-    }
   }
 }
