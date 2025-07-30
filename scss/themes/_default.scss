@@ -1806,7 +1806,7 @@ $components-config: (
           )
         ),
 
-        '& .tooltip' : (
+        '.tooltip' : (
 
           --padding: 0.25rem 0.5rem,
 
@@ -1829,6 +1829,9 @@ $components-config: (
 
           color: inherit,
 
+          transition: string.unquote('transform 0.15s ease-in, opacity 0.15s ease-in, display 0.15s ease-in allow-discrete'),
+          translate: -50% 0,
+
           _colors : (
             light : (
               background: #fff,
@@ -1839,9 +1842,6 @@ $components-config: (
               border: 1px solid #35383c,
             )
           ),
-
-          transition: string.unquote('transform 0.15s ease-in, opacity 0.15s ease-in, display 0.15s ease-in allow-discrete'),
-          translate: -50% 0,
 
           _atrule : (
             '@starting-style' : (
@@ -1957,8 +1957,6 @@ $components-config: (
             ),
           )
         ),
-
-
       )
     )
   )

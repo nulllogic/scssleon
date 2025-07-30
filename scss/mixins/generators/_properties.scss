@@ -55,7 +55,7 @@
   $variable_options_custom_name: functions.get-config($options, 'variable.name');
   $variable_options_exclude: functions.get-config($options, 'variable.exclude');
 
-  $variable_name : $tag;
+  $variable_name: $tag;
 
   @if ($variable_options_custom_name != nil) {
     $variable_name: $variable_options_custom_name;
@@ -84,13 +84,20 @@
   }
 }
 
-@mixin generate-colors($tag, $value, $config, $options, $requested_color : 'light') {
+@mixin generate-colors($tag, $value, $config, $options) {
   $prefix: functions.get-config($config, 'prefix');
 
   @each $color, $color-properties in $value {
-    @if ($color == $requested_color) {
+    @if ($color == 'light') {
       @each $color-property, $color-value in $color-properties {
         @include generate-css-properties($tag, $color-property, $color-value, $config, $options);
+      }
+    }
+    @if ($color == 'dark') {
+      &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
+        @each $color-property, $color-value in $color-properties {
+          @include generate-css-properties($tag, $color-property, $color-value, $config, $options);
+        }
       }
     }
   }
@@ -160,55 +167,43 @@
   $prefix: functions.get-config($config, 'prefix');
   $is_scheme_dark: functions.get-config($options, 'scheme') != nil and functions.get-config($options, 'scheme') == 'dark';
 
-  @if (not $is_scheme_dark) {
-    @each $property, $value in $properties {
-      // Variables
-      // Looking for "--" symbols in the beginning of the property
-      // Example: --flex-direction : row
-      @if (
-        meta.type-of($property) == 'string' and string.index($property, "--") == 1
-      ) {
-        @include generate-css-properties($tag, $property, $value, $config, $options);
-      }
+  @each $property, $value in $properties {
+    // Variables
+    // Looking for "--" symbols in the beginning of the property
+    // Example: --flex-direction : row
+    @if (
+      meta.type-of($property) == 'string' and string.index($property, "--") == 1
+    ) {
+      @include generate-css-properties($tag, $property, $value, $config, $options);
+    }
 
-        // Colors
-      @else if ($property == '_colors') {
-        @include generate-colors($tag, $value, $config, $options, 'light');
-      }
+    // Colors
+    @else if ($property == '_colors') {
+      @include generate-colors($tag, $value, $config, $options);
+    }
 
-        // Responsive
-      @else if ($property == '_responsive') {
-        @include generate-responsive($tag, $value, $config);
-      }
+    // Responsive
+    @else if ($property == '_responsive') {
+      @include generate-responsive($tag, $value, $config);
+    }
 
-        // Sub classes
-      @else if ($property == "_subclasses") {
-        @each $class, $class_properties in $value {
-          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
-        }
-      }
-
-        // At-rules
-      @else if ($property == '_atrule') {
-        @include generate-atrule($tag, $value, $config, $options);
-      }
-
-        // Animations
-      @else if ($property == '_animations') {
-        @include generate-animation($tag, $value, $config, $options);
-      } @else {
-        @include generate-css-variables($tag, $property, $value, $config, $options);
+    // Sub classes
+    @else if ($property == '_subclasses') {
+      @each $class, $class_properties in $value {
+        @include generate-subclasses($tag, $class, $class_properties, $config, $options);
       }
     }
-  } @else {
-    @each $property, $value in $properties {
-      @if ($property == '_colors') {
-        @include generate-colors($tag, $value, $config, $options, 'dark');
-      } @else if ($property == '_subclasses') {
-        @each $class, $class_properties in $value {
-          @include generate-subclasses($tag, $class, $class_properties, $config, $options);
-        }
-      }
+
+    // At-rules
+    @else if ($property == '_atrule') {
+      @include generate-atrule($tag, $value, $config, $options);
+    }
+
+    // Animations
+    @else if ($property == '_animations') {
+      @include generate-animation($tag, $value, $config, $options);
+    } @else {
+      @include generate-css-variables($tag, $property, $value, $config, $options);
     }
   }
 }
