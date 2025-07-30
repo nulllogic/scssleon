@@ -49,6 +49,18 @@
 
 }
 
+@mixin generate-print-variables($tag, $value, $config, $options) {
+  @media print {
+    @include generate-properties($tag, $value, $config, $options);
+  }
+}
+
+@mixin generate-rtl-variables($tag, $value, $config, $options) {
+  &:where(:dir(rtl),[dir=rtl],[dir=rtl] *) {
+    @include generate-properties($tag, $value, $config, $options);
+  }
+}
+
 @mixin generate-css-variables($tag, $property, $value, $config, $options) {
   $prefix: functions.get-config($config, 'prefix');
 
@@ -144,10 +156,6 @@
   }
 }
 
-@mixin generate-print($tag, $value, $config, $options) {
-  //@TODO
-}
-
 @mixin generate-animation($tag, $value, $config, $options) {
   @each $name, $properties in $value {
     // Check, if _animation is not empty ;;
@@ -165,7 +173,6 @@
 
 @mixin generate-properties($tag, $properties, $config, $options : ()) {
   $prefix: functions.get-config($config, 'prefix');
-  $is_scheme_dark: functions.get-config($options, 'scheme') != nil and functions.get-config($options, 'scheme') == 'dark';
 
   @each $property, $value in $properties {
     // Variables
@@ -187,7 +194,7 @@
       @include generate-responsive($tag, $value, $config);
     }
 
-    // Sub classes
+    // Subclasses
     @else if ($property == '_subclasses') {
       @each $class, $class_properties in $value {
         @include generate-subclasses($tag, $class, $class_properties, $config, $options);
@@ -197,6 +204,16 @@
     // At-rules
     @else if ($property == '_atrule') {
       @include generate-atrule($tag, $value, $config, $options);
+    }
+
+    // Print media query
+    @else if ($property == '_print') {
+      @include generate-print-variables($tag, $value, $config, $options);
+    }
+
+    // RTL support
+    @else if ($property == '_rtl') {
+      @include generate-rtl-variables($tag, $value, $config, $options);
     }
 
     // Animations

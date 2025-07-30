@@ -1,8 +1,8 @@
 {
   "name": "@nulllogic/scssleon",
   "description": "Most advanced, simple and clean SCSS framework",
-  "version": "1.0.7",
-  "version_short": "1.0.7",
+  "version": "1.0.8",
+  "version_short": "1.0.8",
   "keywords": [
     "css",
     "sass",
@@ -16,17 +16,8 @@
     "web",
     "scssleon"
   ],
-  "scripts": {
-    "css": "npm run css-compile",
-    "css-compile": "sass --style expanded --source-map --embed-sources scss/:dist/css/",
-    "dist": "npm run css && npm run minify",
-    "watch": "sass --watch ./scss:./dist/css"
-  },
   "dependencies": {
     "sass": "^1.89.2"
-  },
-  "devDependencies": {
-
   },
   "homepage": "https://nulllogic.github.io/scssleon-docs",
   "style": "dist/scssleon.css",
