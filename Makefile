@@ -19,8 +19,8 @@ watch:
 
 build:
 	@echo "[Building Docker image]"
-	docker build --build-arg SASS_VERSION=1.89.2 -t nulllogic/scssleon .
+	docker build --build-arg SASS_VERSION=1.90.0 -t nulllogic/scssleon .
 
 publish:
 	@echo "[Publishing Docker images]"
-	docker buildx build --platform linux/amd64,linux/arm64 --build-arg SASS_VERSION=1.89.2 -t nulllogic/scssleon:latest --push .
+	docker buildx build --platform linux/amd64,linux/arm64 --build-arg SASS_VERSION=1.90.0 -t nulllogic/scssleon:latest --push .
