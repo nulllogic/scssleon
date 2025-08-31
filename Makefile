@@ -1,6 +1,7 @@
 .PHONY: build docs dist watch clean publish help
 
 CURRENT_DIR := $(PWD)
+SASS_VERSION := 1.91.0
 
 dist:
 	@echo "[Compiling SCSS files and minifying]"
@@ -17,11 +18,11 @@ watch: ## Watch changes
 
 build: ## Build container
 	@echo "[Building Docker image]"
-	docker build --build-arg SASS_VERSION=1.90.0 -t nulllogic/scssleon .
+	docker build --build-arg SASS_VERSION=$(SASS_VERSION) -t nulllogic/scssleon .
 
 publish:
 	@echo "[Publishing Docker images]"
-	docker buildx build --platform linux/amd64,linux/arm64 --build-arg SASS_VERSION=1.90.0 -t nulllogic/scssleon:latest --push .
+	docker buildx build --platform linux/amd64,linux/arm64 --build-arg SASS_VERSION=$(SASS_VERSION) -t nulllogic/scssleon:latest --push .
 
 help: ## Display this help
 	@echo "--HELP--"

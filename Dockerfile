@@ -5,11 +5,14 @@ LABEL version="1.0.0"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
 LABEL description="Docker container for SCSSleon generator"
 
+# Default SASS version
 ARG SASS_VERSION="1.90.0"
 
 RUN apk update && apk add curl
 
-WORKDIR /tmp
+# Declare a volume at /app/scssleon
+VOLUME /app/scssleon
+COPY ./scss /app/scssleon
 
 # 1st command
 # var `arch` get architecture type
