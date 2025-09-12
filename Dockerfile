@@ -1,12 +1,12 @@
 FROM alpine:latest AS linux
 
 LABEL name="scssleon"
-LABEL version="1.0.0"
+LABEL version="1.1.3"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
 LABEL description="Docker container for SCSSleon generator"
 
 # Default SASS version
-ARG SASS_VERSION="1.90.0"
+ARG SASS_VERSION="1.92.1"
 
 RUN apk update && apk add curl
 
