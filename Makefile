@@ -1,7 +1,7 @@
 .PHONY: build docs dist watch clean publish help
 
 CURRENT_DIR := $(PWD)
-SASS_VERSION := 1.93.0
+SASS_VERSION := 1.93.2
 
 dist:
 	@echo "[Compiling SCSS files and minifying]"
@@ -19,6 +19,9 @@ watch: ## Watch changes
 build: ## Build container
 	@echo "[Building Docker image]"
 	docker build --build-arg SASS_VERSION=$(SASS_VERSION) -t nulllogic/scssleon .
+
+package:
+	docker run -it --rm -v $(CURRENT_DIR):/app -w /app node:24-alpine npm i
 
 publish:
 	@echo "[Publishing Docker images]"

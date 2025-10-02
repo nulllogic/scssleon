@@ -1,8 +1,8 @@
 {
   "name": "@nulllogic/scssleon",
   "description": "Most advanced, simple and clean SCSS framework",
-  "version": "1.1.4",
-  "version_short": "1.1.4",
+  "version": "1.2.29",
+  "version_short": "1.2.29",
   "keywords": [
     "css",
     "sass",
@@ -17,7 +17,7 @@
     "scssleon"
   ],
   "dependencies": {
-    "sass": "^1.93.0"
+    "sass": "^1.93.2"
   },
   "homepage": "https://nulllogic.github.io/scssleon-docs",
   "style": "dist/scssleon.css",
