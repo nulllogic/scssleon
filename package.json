@@ -17,7 +17,7 @@
     "scssleon"
   ],
   "dependencies": {
-    "sass": "^1.93.3"
+    "sass": "^1.94.0"
   },
   "homepage": "https://nulllogic.github.io/scssleon-docs",
   "style": "dist/scssleon.css",
