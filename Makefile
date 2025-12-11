@@ -1,7 +1,7 @@
 .PHONY: build docs dist watch clean publish help
 
 CURRENT_DIR := $(PWD)
-SASS_VERSION := 1.95.1
+SASS_VERSION := 1.96.0
 
 dist:
 	@echo "[Compiling SCSS files and minifying]"
