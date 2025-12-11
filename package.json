@@ -14,7 +14,8 @@
     "css-framework",
     "framework",
     "web",
-    "scssleon"
+    "scssleon",
+    "components"
   ],
   "dependencies": {
     "sass": "^1.96.0"
