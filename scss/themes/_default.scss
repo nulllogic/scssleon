@@ -249,7 +249,7 @@ $content-config: (
       margin-bottom: 15px,
       line-height: clamp(1.25em, 4vw, 1.5em),
       //list-style-type: attr(type),
-      margin-left: 1rem,
+      margin-inline-start: 1.5rem,
       _subclasses : (
         '& ol': (
           //list-style-type: attr(type),
@@ -260,7 +260,7 @@ $content-config: (
     ),
     ul: (
       margin-bottom: 0.5rem,
-      margin-inline-start: 1rem,
+      margin-inline-start: 1.25rem,
       line-height: clamp(1.25em, 4vw, 1.5em),
       list-style-type: inherit,
       _subclasses : (
