@@ -267,6 +267,9 @@ $content-config: (
         '& ul': (
           margin-bottom: 0.5rem,
           margin-inline-start: 1rem,
+        ),
+        '& li': (
+          margin-bottom: 0.5rem
         )
       )
     ),

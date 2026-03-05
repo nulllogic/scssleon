@@ -1,7 +1,7 @@
 FROM alpine:latest AS linux
 
 LABEL name="scssleon"
-LABEL version="1.2.9"
+LABEL version="1.3.0"
 LABEL maintainer="Vladimir Lukyanov | vladimir@lukyanov.net"
 LABEL description="Docker container for SCSSleon generator"
 
