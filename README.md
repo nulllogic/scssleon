@@ -5,7 +5,12 @@
     </picture>
 </p>
 
+<p align="center">
+━━━━━━━ ❖ ━━━━━━━
+</p>
+
 # SCSSLEON [![Version Number](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnulllogic%2Fscssleon%2Frefs%2Fheads%2Fmaster%2Fpackage.json&query=%24.version&style=flat&label=version&labelColor=%23b0de48&color=%231b3317)](https://github.com/Tencent/QMUI_Web/ "Version Number")
+
 
 Welcome to SCSSLEON framework ! It's the most advanced responsive front-end framework, that can boost development of your website or project. It was built in love and with love from internet technologies. Peace ! 
 
@@ -269,7 +274,7 @@ Thanks to [BrowserStack](https://www.browserstack.com/) for providing the infras
 <hr />
 
 ## ┌ 📜 License ┐
-[MIT license](LICENSE)
+[MIT](LICENSE) ©
 
 <hr />
 
