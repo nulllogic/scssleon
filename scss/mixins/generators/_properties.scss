@@ -5,48 +5,24 @@
 
 @use "../../functions" as functions;
 
-@mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
+@function add-custom-variable-prefix ($property, $config) {
+  $prefix: functions.get-config($config, 'prefix');
+  $property_with_prefix: '--' + $prefix + '-' + functions.replace($property, '--');
+  @return $property_with_prefix;
+}
 
+@mixin generate-css-properties($tag, $property, $value, $config, $options : ()) {
   $prefix: functions.get-config($config, 'prefix');
 
-  $variable_options_custom_name: functions.get-config($options, 'variable.name');
-  $variable_options_exclude: functions.get-config($options, 'variable.exclude');
+  @if (meta.type-of($value) == 'string' and string.index($value, 'var(--') == 1) {
 
-  $variable_name: $tag;
-
-  $exclude: false;
-
-  @if ($variable_options_custom_name != nil) {
-    $variable_name: $variable_options_custom_name;
-  }
-
-  @if ($variable_options_exclude != nil) {
-
-    @if (meta.type-of($variable_options_exclude) == list) {
-      @each $variable_to_exclude in $variable_options_exclude {
-        @if string.index($property, --#{$variable_to_exclude}) {
-          $exclude: true
-        }
-      }
-    }
-
-    @if (meta.type-of($variable_options_exclude) == string) {
-      @if string.index($property, --#{$variable_options_exclude}) {
-        $exclude: true
-      }
-    }
-  }
-
-  @if ($exclude != true) {
-    --#{$prefix}-#{$variable_name}-#{functions.replace($property, '--', '')}: #{meta.inspect(
-      $value
+    #{$property}: #{meta.inspect(
+      functions.replace($value, 'var(--', 'var(--' + $prefix + '-')
     )};
+
   } @else {
-    --#{$prefix}-#{functions.replace($property, '--', '')}: #{meta.inspect(
-      $value
-    )};
+    #{$property}: #{meta.inspect($value)};
   }
-
 }
 
 @mixin generate-print-variables($tag, $value, $config, $options) {
@@ -102,13 +78,13 @@
   @each $color, $color-properties in $value {
     @if ($color == 'light') {
       @each $color-property, $color-value in $color-properties {
-        @include generate-css-properties($tag, $color-property, $color-value, $config, $options);
+        @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
       }
     }
     @if ($color == 'dark') {
       &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
         @each $color-property, $color-value in $color-properties {
-          @include generate-css-properties($tag, $color-property, $color-value, $config, $options);
+          @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
         }
       }
     }
@@ -151,8 +127,8 @@
   @each $at-rule, $properties in $value {
     // Keep @ at the beginning
     @#{functions.replace($at-rule, '@', '')} {
-    @include generate-properties($tag, $properties, $config, $options);
-  }
+      @include generate-properties($tag, $properties, $config, $options);
+    }
   }
 }
 
@@ -181,46 +157,46 @@
     @if (
       meta.type-of($property) == 'string' and string.index($property, "--") == 1
     ) {
-      @include generate-css-properties($tag, $property, $value, $config, $options);
+      @include generate-css-properties($tag, add-custom-variable-prefix($property, $config), $value, $config, $options);
     }
 
-    // Colors
+      // Colors
     @else if ($property == '_colors') {
       @include generate-colors($tag, $value, $config, $options);
     }
 
-    // Responsive
+      // Responsive
     @else if ($property == '_responsive') {
       @include generate-responsive($tag, $value, $config);
     }
 
-    // Subclasses
+      // Subclasses
     @else if ($property == '_subclasses') {
       @each $class, $class_properties in $value {
         @include generate-subclasses($tag, $class, $class_properties, $config, $options);
       }
     }
 
-    // At-rules
+      // At-rules
     @else if ($property == '_atrule') {
       @include generate-atrule($tag, $value, $config, $options);
     }
 
-    // Print media query
+      // Print media query
     @else if ($property == '_print') {
       @include generate-print-variables($tag, $value, $config, $options);
     }
 
-    // RTL support
+      // RTL support
     @else if ($property == '_rtl') {
       @include generate-rtl-variables($tag, $value, $config, $options);
     }
 
-    // Animations
+      // Animations
     @else if ($property == '_animations') {
       @include generate-animation($tag, $value, $config, $options);
     } @else {
-      @include generate-css-variables($tag, $property, $value, $config, $options);
+      @include generate-css-properties($tag, $property, $value, $config, $options);
     }
   }
 }

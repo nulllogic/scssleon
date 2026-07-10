@@ -25,7 +25,7 @@ $html-config: (
 
       font-size : 1em,
       font-weight: normal,
-      font-family: var(global(--font-family-default)),
+      font-family: var(--font-family-default),
       line-height : 1,
       text-rendering: optimizelegibility,
       font-synthesis-weight: none,
@@ -114,7 +114,7 @@ $html-config: (
     ),
 
     kbd: (
-      font-family: var(global(--font-family-monospace)),
+      font-family: var(--font-family-monospace),
 
       margin-block: -.125rem,
       padding: .125rem .375rem,
@@ -299,7 +299,7 @@ $content-config: (
       margin: 0 0 1rem 0,
     ),
     pre: (
-      font-family: var(global(--font-family-monospace)),
+      font-family: var(--font-family-monospace),
       margin-block: -.125rem,
       padding: .575rem .375rem,
       margin: 0 0 1rem 0,
