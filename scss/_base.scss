@@ -17,23 +17,23 @@ $theme: nil !default;
 
 $color_scheme: functions.get-config($config, 'color-scheme');
 
-html {
-  color-scheme: string.unquote($color_scheme);
-}
+@if functions.get-config($config, 'enable.web_components') == false {
+  html {
+    color-scheme: string.unquote($color_scheme);
+  }
 
-// [data-theme] attribute is changing the color scheme
-html[data-theme="dark"] {
-  color-scheme: dark
-}
+  // [data-theme] attribute is changing the color scheme
+  html[data-theme="dark"] {
+    color-scheme: dark
+  }
 
-html[data-theme="light"] {
-  color-scheme: light
+  html[data-theme="light"] {
+    color-scheme: light
+  }
 }
 
 @each $tag, $properties in functions.get-theme($theme, 'html') {
-  @each $scheme in string.split(functions.get-config($config, 'color-scheme'), ' ') {
-    #{$tag} {
-      @include mixins.generate-properties(#{$tag}, $properties, $config);
-    }
+  #{$tag} {
+    @include mixins.generate-properties(#{$tag}, $properties, $config);
   }
 }

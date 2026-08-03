@@ -82,9 +82,17 @@
       }
     }
     @if ($color == 'dark') {
-      &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
-        @each $color-property, $color-value in $color-properties {
-          @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
+      @if functions.get-config($config, 'enable.web_components') == false {
+        &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
+          @each $color-property, $color-value in $color-properties {
+            @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
+          }
+        }
+      } @else {
+        &:where(:host([data-theme="#{$color}"]), :host([data-theme="#{$color}"]) *) {
+          @each $color-property, $color-value in $color-properties {
+            @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
+          }
         }
       }
     }
@@ -127,8 +135,8 @@
   @each $at-rule, $properties in $value {
     // Keep @ at the beginning
     @#{functions.replace($at-rule, '@', '')} {
-      @include generate-properties($tag, $properties, $config, $options);
-    }
+    @include generate-properties($tag, $properties, $config, $options);
+  }
   }
 }
 

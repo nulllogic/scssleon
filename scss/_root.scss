@@ -7,24 +7,26 @@
 $config: () !default;
 $theme: () !default;
 
-$prefix: functions.get-config($config, "prefix");
+$prefix: functions.get-config($config, 'prefix');
 
 $is-smooth-scroll-enabled: functions.get-config(
   $config,
   'enable.smooth-scroll'
 );
 
-:root {
-  /* 🌱𖣂🫚🌿 */
-  @include mixins.generate-properties(
-    'root',
-    functions.get-theme($theme, 'root'),
-    $config,
-  );
+@if functions.get-config($config, 'enable.web_components') == false {
+  :root {
+    /* 🌱𖣂🫚🌿 */
+    @include mixins.generate-properties(
+      'root',
+      functions.get-theme($theme, 'root'),
+      $config,
+    );
 
-  @if $is-smooth-scroll-enabled {
-    @media (prefers-reduced-motion: no-preference) {
-      scroll-behavior: smooth;
+    @if $is-smooth-scroll-enabled {
+      @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+      }
     }
   }
 }
