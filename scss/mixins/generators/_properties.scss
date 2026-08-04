@@ -82,14 +82,7 @@
       }
     }
     @if ($color == 'dark') {
-      @if functions.get-config($config, 'enable.web_components') == false {
         &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
-          @each $color-property, $color-value in $color-properties {
-            @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
-          }
-        }
-      } @else {
-        &:where(:host([data-theme="#{$color}"]), :host([data-theme="#{$color}"]) *) {
           @each $color-property, $color-value in $color-properties {
             @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
           }
