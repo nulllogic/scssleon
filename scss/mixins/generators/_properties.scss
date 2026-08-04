@@ -82,10 +82,9 @@
       }
     }
     @if ($color == 'dark') {
-        &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
-          @each $color-property, $color-value in $color-properties {
-            @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
-          }
+      &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
+        @each $color-property, $color-value in $color-properties {
+          @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
         }
       }
     }
