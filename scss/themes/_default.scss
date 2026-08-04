@@ -1374,8 +1374,8 @@ $components-config: (
           display: flex
         ),
         '&.blurred' : (
-          -webkit-backdrop-filter: blur(5px),
-          backdrop-filter: blur(5px),
+          -webkit-backdrop-filter: blur(10px),
+          backdrop-filter: blur(10px),
         )
       )
     ),
