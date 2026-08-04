@@ -22,7 +22,7 @@
     $theme-component: $component;
   }
 
-  .#{$class} {
+  #{$class} {
     @include properties.generate-properties($class, $theme-component, $config, $options);
   }
 
