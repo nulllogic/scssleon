@@ -247,6 +247,9 @@ $content-config: (
           //list-style-type: attr(type),
           margin-bottom: 0.5rem,
           margin-inline-start: 1rem,
+        ),
+        '& li': (
+          margin: 0 0 1rem 0,
         )
       )
     ),
@@ -403,14 +406,11 @@ $components-config: (
     accordion : (
 
       --border-radius: .25rem,
-      --padding: 0.5rem,
       --item-padding: 0 0 .5rem 0,
 
       border-radius: var(--border-radius),
       position: relative,
       width: 100%,
-
-      padding: var(--padding),
 
       _colors: (
         light : (
@@ -560,6 +560,7 @@ $components-config: (
 
       --padding: .5rem .75rem,
       --border-radius: .25rem,
+      --gap : 5px,
 
       display: inline-flex,
       align-items: center,
@@ -575,14 +576,15 @@ $components-config: (
       color: var(--color),
       border-radius: var(--border-radius),
       box-shadow: var(--box-shadow),
-      // This one is required for button group use
-      position: relative,
+      gap: var(--gap),
+      will-change: transform,
 
       transition: (
         color .15s ease-in-out,
         background-color .15s ease-in-out,
         border-color .15s ease-in-out,
-        box-shadow .15s ease-in-out
+        box-shadow .15s ease-in-out,
+        transform .15s ease-in-out
       ),
 
       _colors: (
@@ -637,6 +639,7 @@ $components-config: (
           background: var(--active-background),
           border: var(--active-border),
           box-shadow: var(--active-shadow),
+          transform : scale(0.97, 0.97),
         ),
 
         '&.link' : (
@@ -696,6 +699,7 @@ $components-config: (
       --gap: 10px,
       display: flex,
       flex-wrap: wrap,
+      align-items: center,
       _subclasses : (
         '.btn:first-child' : (
           border-start-end-radius: 0,
