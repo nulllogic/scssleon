@@ -403,14 +403,11 @@ $components-config: (
     accordion : (
 
       --border-radius: .25rem,
-      --padding: 0.5rem,
       --item-padding: 0 0 .5rem 0,
 
       border-radius: var(--border-radius),
       position: relative,
       width: 100%,
-
-      padding: var(--padding),
 
       _colors: (
         light : (
