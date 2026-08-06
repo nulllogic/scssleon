@@ -96,7 +96,8 @@ $html-config: (
     code : (
 
       //margin-block: -.125rem,
-      //padding: .125rem .375rem,
+      padding: 0.25rem,
+      border-radius: 0.25rem,
 
       color: var(--color),
       background: var(--background),
