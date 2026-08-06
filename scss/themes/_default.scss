@@ -581,11 +581,11 @@ $components-config: (
       will-change: transform,
 
       transition: (
-        color .15s ease-in-out,
-        background-color .15s ease-in-out,
-        border-color .15s ease-in-out,
-        box-shadow .15s ease-in-out,
-        transform .15s ease-in-out
+        color .15s ease-out,
+        background-color .15s ease-out,
+        border-color .15s ease-out,
+        box-shadow .15s ease-out,
+        transform .15s ease-out
       ),
 
       _colors: (
@@ -1746,8 +1746,6 @@ $components-config: (
           display: block,
           opacity: 1,
           transform: translateY(5px),
-
-          transition: string.unquote('transform 0.15s ease-out, opacity 0.15s ease-out, display 0.15s ease-out allow-discrete'),
 
           _atrule : (
             '@starting-style' : (
