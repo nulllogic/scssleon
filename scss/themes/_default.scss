@@ -243,6 +243,7 @@ $content-config: (
         ),
         '& li': (
           margin: 0 0 1rem 0,
+          padding-inline-start: 0.725rem,
         )
       )
     ),
@@ -813,7 +814,6 @@ $components-config: (
       box-shadow: var(--shadow),
       border: var(--border),
 
-      height: 100%,
       margin: 0,
 
       _colors: (

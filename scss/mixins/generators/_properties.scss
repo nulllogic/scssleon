@@ -76,16 +76,9 @@
   $prefix: functions.get-config($config, 'prefix');
 
   @each $color, $color-properties in $value {
-    @if ($color == 'light') {
+    &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
       @each $color-property, $color-value in $color-properties {
         @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
-      }
-    }
-    @if ($color == 'dark') {
-      &:where([data-theme="#{$color}"], [data-theme="#{$color}"] *) {
-        @each $color-property, $color-value in $color-properties {
-          @include generate-css-properties($tag, add-custom-variable-prefix($color-property, $config), $color-value, $config, $options);
-        }
       }
     }
   }
